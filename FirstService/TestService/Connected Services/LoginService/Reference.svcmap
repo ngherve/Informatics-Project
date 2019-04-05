@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="85bb2605-b094-43f9-a717-984fc42101eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56442/loginReg.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="loginReg.xsd" MetadataType="Schema" ID="0bbfb547-ef6e-4dfc-a90f-3a5f591d4a82" SourceId="1" SourceUrl="http://localhost:56442/loginReg.svc?xsd=xsd1" />
+    <MetadataFile FileName="loginReg2.xsd" MetadataType="Schema" ID="1d786304-ec00-4bf5-9530-f17d9119d4e8" SourceId="1" SourceUrl="http://localhost:56442/loginReg.svc?xsd=xsd2" />
+    <MetadataFile FileName="loginReg.disco" MetadataType="Disco" ID="684ac23f-c0db-475e-9a36-15d57d48b2e0" SourceId="1" SourceUrl="http://localhost:56442/loginReg.svc?disco" />
+    <MetadataFile FileName="loginReg1.xsd" MetadataType="Schema" ID="3405fdb7-0e0d-455d-b6e3-fb7417f84ca7" SourceId="1" SourceUrl="http://localhost:56442/loginReg.svc?xsd=xsd0" />
+    <MetadataFile FileName="loginReg.wsdl" MetadataType="Wsdl" ID="f1cf50b1-9cd6-49ec-91d2-74dddc5d3d12" SourceId="1" SourceUrl="http://localhost:56442/loginReg.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

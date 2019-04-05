@@ -1,0 +1,19 @@
+C:\Users\Khutso Lebea\Desktop\FirstService\FirstService\bin\FirstService.dll.config
+C:\Users\Khutso Lebea\Desktop\FirstService\FirstService\bin\FirstService.dll
+C:\Users\Khutso Lebea\Desktop\FirstService\FirstService\bin\FirstService.pdb
+C:\Users\Khutso Lebea\Desktop\FirstService\FirstService\obj\Debug\FirstService.csproj.CoreCompileInputs.cache
+C:\Users\Khutso Lebea\Desktop\FirstService\FirstService\obj\Debug\FirstService.dll
+C:\Users\Khutso Lebea\Desktop\FirstService\FirstService\obj\Debug\FirstService.pdb
+C:\Users\Khutso Lebea\Desktop\New folder\FirstService\FirstService\bin\FirstService.dll.config
+C:\Users\Khutso Lebea\Desktop\New folder\FirstService\FirstService\bin\FirstService.dll
+C:\Users\Khutso Lebea\Desktop\New folder\FirstService\FirstService\bin\FirstService.pdb
+C:\Users\Khutso Lebea\Desktop\New folder\FirstService\FirstService\obj\Debug\FirstService.csproj.CoreCompileInputs.cache
+C:\Users\Khutso Lebea\Desktop\New folder\FirstService\FirstService\obj\Debug\FirstService.dll
+C:\Users\Khutso Lebea\Desktop\New folder\FirstService\FirstService\obj\Debug\FirstService.pdb
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\bin\FirstService.dll.config
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\bin\FirstService.dll
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\bin\FirstService.pdb
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\obj\Debug\FirstService.csprojAssemblyReference.cache
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\obj\Debug\FirstService.csproj.CoreCompileInputs.cache
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\obj\Debug\FirstService.dll
+F:\My Class Notes\Class Notes 2B\IFM02B2\Practicals\FirstService\FirstService\obj\Debug\FirstService.pdb
