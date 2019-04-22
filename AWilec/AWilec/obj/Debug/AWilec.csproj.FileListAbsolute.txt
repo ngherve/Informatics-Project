@@ -1,0 +1,7 @@
+C:\Users\Dexter\source\repos\AWilec\AWilec\bin\AWilec.dll.config
+C:\Users\Dexter\source\repos\AWilec\AWilec\bin\AWilec.dll
+C:\Users\Dexter\source\repos\AWilec\AWilec\bin\AWilec.pdb
+C:\Users\Dexter\source\repos\AWilec\AWilec\obj\Debug\AWilec.csprojAssemblyReference.cache
+C:\Users\Dexter\source\repos\AWilec\AWilec\obj\Debug\AWilec.csproj.CoreCompileInputs.cache
+C:\Users\Dexter\source\repos\AWilec\AWilec\obj\Debug\AWilec.dll
+C:\Users\Dexter\source\repos\AWilec\AWilec\obj\Debug\AWilec.pdb

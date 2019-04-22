@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AWilec.WilecDBC" CodeBehind="WilecDBC.svc.cs" %>
