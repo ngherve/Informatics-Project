@@ -1,0 +1,226 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="TYPPrototype.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text"; charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Wilec</title>
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/material-vendors.min.css" />
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/material.css" />
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css" />
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css" />
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/material-extended.css" />
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/material-colors.css" />
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/material-vertical-menu.css" />
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css" />
+    <!-- END: Custom CSS-->
+   
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body class="vertical-layout vertical-menu material-vertical-layout material-layout 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-red bg-accent-4 navbar-shadow">
+        <div class="navbar-wrapper">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav flex-row">
+                    <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+                    <li class="nav-item"><a class="navbar-brand" href="home.aspx">
+                        <img class="brand-logo" alt="Wirelec" src="../../../app-assets/images/logo/logo.jpg" />
+                        <h3 class="brand-text">Inventory Control</h3>
+                    </a></li>
+                    <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="material-icons mt-1">more_vert</i></a></li>
+                </ul>
+            </div>
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle" href="#"><i class="ft-menu"></i></a></li>
+                        <li class="nav-item nav-link-search"><a class="nav-link d-none d-lg-block" href="#"><i class="material-icons search-icon">search</i>
+                            <input class="round form-control search-box" type="text" placeholder="Search..."><a class="nav-link dropdown-toggle search-bar-toggle d-lg-none d-m-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">search</i></a>
+                            <div class="dropdown-menu arrow">
+                                <a class="dropdown-item">
+                                    <input class="round form-control" type="text" placeholder="Search Here"></a>
+                            </div>
+                        </a></li>
+                        <li class="nav-item d-none d-lg-block d-none"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="material-icons">notifications_none</i><span class="badge badge-pill badge-danger badge-up badge-glow"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                <!-- Notifications -->
+                                <li class="dropdown-menu-header">
+                                    <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span></h6>
+                                    <span class="notification-tag badge badge-danger float-right m-0"></span>
+                                </li>
+                                <li class="scrollable-container media-list w-100"><a href="javascript:void(0)"></a>
+                                </li>
+                                <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
+                            </ul>
+                            <!-- Messages -->
+                            <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="material-icons">mail_outline </i></a>
+                                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                    <li class="dropdown-menu-header">
+                                        <h6 class="dropdown-header m-0"><span class="grey darken-2">Messages</span></h6>
+                                        <span class="notification-tag badge badge-warning float-right m-0"></span>
+                                    </li>
+                                    <li class="scrollable-container media-list w-100"><a href="javascript:void(0)"></a></li>
+                                    <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
+                                </ul>
+                            </li>
+                        <!-- User Profile -->
+                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700">Employee</span><span class="avatar avatar-online"><img src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="app-email.html"><i class="material-icons">mail_outline</i> My Inbox</a><a class="dropdown-item" href="user-cards.html"><i class="material-icons">content_paste</i> Task</a><a class="dropdown-item"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="logout.aspx"><i class="material-icons">power_settings_new</i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BEGIN: Main Menu-->
+
+    <div class="main-menu material-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a href="home.aspx"><i class="material-icons">list_alt</i><span class="menu-title">Dashboard</span></a>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Stock Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="products.aspx"><i class="material-icons"></i><span>Products</span></a>
+                            <ul class="menu-content">
+                                <li><a class="menu-item" href="Productlist.aspx"><i class="material-icons"></i><span>Product Inventory</span></a>
+                                </li>
+                                <li><a class="menu-item" href="addProduct.aspx"><i class="material-icons"></i><span>Add Product</span></a>
+                                </li>
+                                <li><a class="menu-item" href="removeProduct.aspx"><i class="material-icons"></i><span>Remove Product</span></a>
+                                </li>
+                                <li><a class="menu-item" href="depletedStock.aspx"><i class="material-icons"></i><span>Depleted Stock</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class=" nav-item"><a href="#"><span class="menu-title">Warehouse Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="receivestock.aspx"><i class="material-icons"></i><span>Received Stock</span></a>
+                        </li>
+                        <li><a class="menu-item" href="inspectAllocate.aspx"><i class="material-icons"></i><span>Inspection and Allocation</span></a>
+                        </li>
+                        <li><a class="menu-item" href="dispatchlist.aspx"><i class="material-icons"></i><span>Dispatch</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="#"><span class="menu-title">StockTake Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="STprocess.aspx"><i class="material-icons"></i><span>Stock Take Status</span></a>
+                        </li>
+                        <li><a class="menu-item" href="viewStockTake.aspx"><i class="material-icons"></i><span>View Stock Take</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="material-icons">edit</i><span class="menu-title"> Admin </span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Employee Management</span></a>
+                            <ul class="menu-content">
+                                <li><a class="menu-item" href="addEmployee.aspx"><i class="material-icons"></i><span>Add Employee</span></a>
+                                </li>
+                                <li><a class="menu-item" href="removeEmployee.aspx"><i class="material-icons"></i><span>Remove Employee</span></a>
+                                </li>
+                                <li><a class="menu-item" href="ContactEmployee.aspx"><i class="material-icons"></i><span>Contact Employee</span></a>
+                                </li>
+                            </ul>
+                            <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Supplier Management</span></a>
+                                <ul class="menu-content">
+                                    <li><a class="menu-item" href="contactSupplier.aspx"><i class="material-icons"></i><span>Contact Supplier</span></a>
+
+                                    </li>
+                                </ul>
+                            </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="material-icons">show_chart</i><span class="menu-title"> Reports </span></a>
+                    <ul class="menu-content">
+
+                        <li><a class="menu-item" href="stockreport.aspx"><i class="material-icons"></i><span>Stock</span></a>
+                        </li>
+                        <li><a class="menu-item" href="damagesReport.aspx"><i class="material-icons"></i><span>Damages</span></a>
+                        </li>
+                        <li><a class="menu-item" href="invoicereport.aspx"><i class="material-icons"></i><span>Invoices</span></a>
+                        </li>
+                        <li><a class="menu-item" href="stocktakereport.aspx"><i class="material-icons"></i><span>Stock Take</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- END: Main Menu-->
+   
+    <a href="#"><i class="material-icons">show_chart</i><span class="menu-title"> Reports </span></a>
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+        <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2019 </span><span class="float-md-right d-none d-lg-block">Hand-crafted & Made with <i class="ft-heart pink"></i><span id="scroll-top"></span></span></p>
+    </footer>
+    <!-- BEGIN: Vendor JS-->
+    <script src="../../../app-assets/vendors/js/material-vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="../../../app-assets/vendors/js/charts/chart.min.js"></script>
+    <script src="../../../app-assets/vendors/js/charts/echarts/echarts.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="../../../app-assets/js/core/app-menu.js"></script>
+    <script src="../../../app-assets/js/core/app.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../../../app-assets/js/scripts/pages/material-app.js"></script>
+    <script src="../../../app-assets/js/scripts/pages/dashboard-crypto.js"></script>
+    <!-- END: Page JS-->
+    
+</body>
+</html>
