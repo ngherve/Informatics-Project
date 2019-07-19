@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\WCF</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/WirelecData.mdf">
+      <publishTime>05/11/2019 00:04:19</publishTime>
+    </File>
+    <File Include="App_Data/WirelecData_log.ldf">
+      <publishTime>05/11/2019 00:04:19</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/Google.Protobuf.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/MySql.Web.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>05/28/2019 10:18:45</publishTime>
+    </File>
+    <File Include="bin/WirelecWCFService.dll">
+      <publishTime>07/15/2019 12:53:32</publishTime>
+    </File>
+    <File Include="bin/WirelecWCFService.pdb">
+      <publishTime>07/15/2019 12:53:32</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>07/15/2019 12:53:35</publishTime>
+    </File>
+    <File Include="ProductService.svc">
+      <publishTime>05/28/2019 10:18:44</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>05/10/2019 15:45:01</publishTime>
+    </File>
+    <File Include="UserService.svc">
+      <publishTime>05/28/2019 10:18:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/11/2019 22:08:35</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

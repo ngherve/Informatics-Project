@@ -1,0 +1,90 @@
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csproj.CoreCompileInputs.cache
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.dll.config
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.pdb
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\BouncyCastle.Crypto.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\Google.Protobuf.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\MySql.Data.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\MySql.Web.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.Helpers.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.Razor.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Razor.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WebMatrix.Data.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WebMatrix.WebData.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\Google.Protobuf.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\MySql.Data.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\MySql.Web.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.Helpers.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.Razor.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Razor.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WebMatrix.Data.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\bin\WebMatrix.WebData.xml
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csproj.CopyComplete
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.dll
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.pdb
+C:\Users\Corine\OneDrive - University of Johannesburg\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csprojAssemblyReference.cache
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.dll.config
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.pdb
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\BouncyCastle.Crypto.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\Google.Protobuf.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\Microsoft.Web.Infrastructure.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\MySql.Data.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\MySql.Web.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.Helpers.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.Razor.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Deployment.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Razor.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WebMatrix.Data.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WebMatrix.WebData.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\Google.Protobuf.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\MySql.Data.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\MySql.Web.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.Helpers.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.Razor.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Deployment.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Razor.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WebMatrix.Data.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\bin\WebMatrix.WebData.xml
+F:\Project\team13\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csprojAssemblyReference.cache
+F:\Project\team13\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csproj.CoreCompileInputs.cache
+F:\Project\team13\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csproj.CopyComplete
+F:\Project\team13\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.dll
+F:\Project\team13\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.pdb
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.dll.config
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WirelecWCFService.pdb
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\BouncyCastle.Crypto.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\Google.Protobuf.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\MySql.Data.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\MySql.Web.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.Helpers.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.Razor.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Razor.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WebMatrix.Data.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WebMatrix.WebData.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\Google.Protobuf.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\MySql.Data.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\MySql.Web.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.Helpers.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.Razor.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\System.Web.WebPages.Razor.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WebMatrix.Data.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\bin\WebMatrix.WebData.xml
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csprojAssemblyReference.cache
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csproj.CoreCompileInputs.cache
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.csproj.CopyComplete
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.dll
+C:\Users\Dexter\Documents\WirelecWCFService\WirelecWCFService\obj\Release\WirelecWCFService.pdb
