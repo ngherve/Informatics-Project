@@ -27,18 +27,20 @@ namespace WirelecWCFService
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         bool LoginUser(string username, string password);
 
+           [OperationContract]
+            [WebGet(UriTemplate = "GetProducts")]
+            List<Products> GetProducts();
+/* 
         [OperationContract]
             [WebInvoke(Method = "POST", UriTemplate = "CreateProduct ", BodyStyle = WebMessageBodyStyle.WrappedRequest,
                RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
             string CreateProduct(Products product);
 
-            [OperationContract]
-            [WebGet(UriTemplate = "GetProducts")]
-            List<Products> GetProducts();
-
+ 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "DeleteProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string DeleteProduct();
+        */
         }
 }
