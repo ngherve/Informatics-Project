@@ -15,9 +15,6 @@ public class ServerRequests extends StringRequest {
     public ServerRequests(String name, String username, String  email, String password,
                           String telNum, String address, String gender, String dob, Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL+"Register.php", listener, null);
-
-        //super(Method.POST, "http://10.254.17.96:8082/UserService.svc/RegisterUser", listener, null);
-
         params = new HashMap<>();
         params.put("Name", name);
         params.put("Username", username);
@@ -27,24 +24,32 @@ public class ServerRequests extends StringRequest {
         params.put("Address", address);
         params.put("Gender", gender);
         params.put("DOB", dob);
-
     }
 
     //Login user Request
     public ServerRequests(String username, String password, Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL+"Login.php", listener, null);
-
         params = new HashMap<>();
         params.put("Username", username);
         params.put("Password", password);
+    }
 
+    //Query users Request
+    public ServerRequests(String user, Response.Listener<String> listener) {
+        super(Method.POST, REQUEST_URL+"QueryUsers.php", listener, null);
+        params = new HashMap<>();
+    }
+
+    //Query products Request
+    public ServerRequests(Response.Listener<String> listener) {
+        super(Method.POST, REQUEST_URL+"QueryProducts.php", listener, null);
+        params = new HashMap<>();
     }
 
     //update user request
     public ServerRequests(int id, String name, String username, String  email, String password,
                           String telNum, String address, String gender, String dob,  Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL+"Update.php", listener, null);
-
         params = new HashMap<>();
         params.put("UserID", String.valueOf(id));
         params.put("Name", name);
@@ -57,15 +62,22 @@ public class ServerRequests extends StringRequest {
         params.put("DOB", dob);
     }
 
-    //test webservice
-    public ServerRequests(Response.Listener<String> listener) {
-        super(Method.POST, "http://10.254.17.96:8082/UserService.svc/GetUsers", listener, null);
+    //Save Product request
+    public ServerRequests(String pname, String price, String image, String quantity, String suppname, String type, String warehouse, Response.Listener<String> listener) {
+        super(Method.POST, REQUEST_URL+"SaveProduct.php", listener, null);
+        params = new HashMap<>();
+        params.put("P_Name", pname);
+        params.put("P_Price", price);
+        params.put("P_Image", image);
+        params.put("P_Quantity", quantity);
+        params.put("Supplier_Name", suppname);
+        params.put("P_Type", type);
+        params.put("W_Name", warehouse);
     }
 
     @Override
     public Map<String, String> getParams() {
         return params;
     }
-
 
 }

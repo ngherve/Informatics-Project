@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class ReportsActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     /*private DrawerLayout mdrawer;
     private ActionBarDrawerToggle mToggle;*/
@@ -95,7 +95,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.profile:
-                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(ReportsActivity.this, ProfileActivity.class);
                 intent.putExtra("UserID", id);
                 intent.putExtra("Name", name);
                 intent.putExtra("Username", username);
@@ -111,21 +111,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.logoff:
-                Intent intent1 = new Intent(HomeActivity.this, LoginActivity.class);
+                Intent intent1 = new Intent(ReportsActivity.this, LoginActivity.class);
                 intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent1);
                 break;
             case R.id.scan_item:
-                startActivity(new Intent(HomeActivity.this, ScanItemsActivity.class));
+
                 break;
             case R.id.stock:
-                startActivity(new Intent(HomeActivity.this, StockActivity.class));
+                startActivity(new Intent(ReportsActivity.this, StockActivity.class));
                 break;
             case R.id.updateitems:
-                startActivity(new Intent(HomeActivity.this, EditItemActivity.class));
                 break;
             case R.id.viewreports:
-                startActivity(new Intent(HomeActivity.this, ReportsActivity.class));
                 break;
             case R.id.saveitem:
                 break;
@@ -138,7 +136,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Menu menu = menuItem.get;
         //MenuItem logt = menu.findItem(R.id.logout_menu);
         if(menuItem.getItemId() == R.id.logout_menu){
-            Intent intent2 = new Intent(HomeActivity.this, LoginActivity.class);
+            Intent intent2 = new Intent(ReportsActivity.this, LoginActivity.class);
             intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent2);
         } else if(menuItem.getItemId() == R.id.db){
