@@ -1,0 +1,12 @@
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\Wirelec WCF.dll.config
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\Wirelec WCF.dll
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\Wirelec WCF.pdb
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\MySql.Data.dll
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\Google.Protobuf.dll
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\BouncyCastle.Crypto.dll
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\bin\MySql.Data.xml
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\obj\Debug\Wirelec WCF.csprojAssemblyReference.cache
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\obj\Debug\Wirelec WCF.csproj.CoreCompileInputs.cache
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\obj\Debug\Wirelec WCF.csproj.CopyComplete
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\obj\Debug\Wirelec WCF.dll
+C:\Users\Sean\source\repos\Wirelec WCF\Wirelec WCF\obj\Debug\Wirelec WCF.pdb
