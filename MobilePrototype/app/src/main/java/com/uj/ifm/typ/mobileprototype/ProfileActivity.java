@@ -41,7 +41,7 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
         btnLogout = (Button) findViewById(R.id.btnback);
         btnLogout.setOnClickListener(this);
 
@@ -173,6 +173,8 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 break;
             case R.id.btnPhoto:
                 UpdatePicture();
+                break;
+            case R.id.updatedetails:
                 String name = eName.getText().toString();
                 String username = eUsername.getText().toString();
                 String email = eEmail.getText().toString();
@@ -204,6 +206,7 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 RequestQueue queue = Volley.newRequestQueue(ProfileActivity.this);
                 queue.add(request);
                 break;
+
         }
     }
 }

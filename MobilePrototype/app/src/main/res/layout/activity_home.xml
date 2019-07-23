@@ -55,7 +55,7 @@
         <GridLayout
 
                 android:columnCount="2"
-                android:rowCount="5"
+                android:rowCount="4"
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false"
                 android:layout_width="match_parent"
@@ -66,6 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:id="@+id/stock"
                     app:cardElevation="6dp"
                     app:cardCornerRadius="12dp"
                     app:cardBackgroundColor="@color/white"
@@ -126,6 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
+                    android:id="@+id/notifications"
                     android:layout_rowWeight="1"
                     app:cardElevation="6dp"
                     app:cardCornerRadius="12dp"
@@ -157,6 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:id="@+id/scan_item"
                     app:cardElevation="6dp"
                     app:cardCornerRadius="12dp"
                     app:cardBackgroundColor="@color/white"
@@ -187,36 +190,7 @@
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_margin="12dp">
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:padding="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                    <ImageView
-                            android:src="@drawable/date"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"/>
-                    <TextView
-                            android:text="Update Item"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
+                    android:id="@+id/viewreports"
                     app:cardElevation="6dp"
                     app:cardCornerRadius="12dp"
                     app:cardBackgroundColor="@color/white"
@@ -232,7 +206,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
                     <TextView
-                            android:text="Calendar"
+                            android:text="View Report"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
                             android:textSize="18sp"
@@ -242,13 +216,12 @@
 
             </android.support.v7.widget.CardView>
 
-
-
             <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:id="@+id/updateitems"
                     app:cardElevation="6dp"
                     app:cardCornerRadius="12dp"
                     app:cardBackgroundColor="@color/white"
@@ -264,7 +237,38 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
                     <TextView
-                            android:text="Delete Item"
+                            android:text="Edit Item"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#6f6f6f"
+                            android:textSize="18sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/saveitem"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="12dp">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <ImageView
+                            android:src="@drawable/date"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+                    <TextView
+                            android:text="Save Item"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
                             android:textSize="18sp"

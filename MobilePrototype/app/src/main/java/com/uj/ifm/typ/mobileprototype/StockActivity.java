@@ -2,26 +2,102 @@ package com.uj.ifm.typ.mobileprototype;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class StockActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-    Button btnRegister;
-    EditText eName, eDOB, eEmail, ePassword, eUsername, eAdress, ePhone, eGender;
+public class StockActivity extends AppCompatActivity {
+
+    private MenuItem menuItemSearch;
+    private MenuItem menuItemDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stock);
+        setContentView(R.layout.activity_listview);
+
+       // menuItemSearch = menu.findItem(R.id.action_search);
 
 
-        
+        Response.Listener<String> respList = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try{
+                    ArrayList<Product> products = new ArrayList<Product>();
+                    JSONArray jsonarray = new JSONArray(response);
+                    for(int i=0; i<jsonarray.length(); i++) {
+                        JSONObject jsonRes = jsonarray.getJSONObject(i);
+
+                        int P_ID = Integer.parseInt(jsonRes.getString("P_ID"));
+                        String P_Name = jsonRes.getString("P_Name");
+                        int P_Price = Integer.parseInt(jsonRes.getString("P_Price"));
+                        String P_Image = jsonRes.getString("P_Image");
+                        int P_Quantity = Integer.parseInt(jsonRes.getString("P_Quantity"));
+                        String Supplier_Name = jsonRes.getString("Supplier_Name");
+                        String P_Type = jsonRes.getString("P_Type");
+                        String W_Name = jsonRes.getString("W_Name");
+                        Product product = new Product(P_ID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name);
+
+                        products.add(product);
+                    }
+
+                    List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
+
+                    for (Product p : products) {
+                        System.out.println(p.toString());
+                        HashMap<String, String> hm = new HashMap<String, String>();
+                        hm.put("listview_title", p.getP_Name());
+                        hm.put("listview_discription", p.toString());
+                        hm.put("listview_image", Integer.toString(R.drawable.person));
+                        aList.add(hm);
+                    }
+
+                    String[] from = {"listview_image", "listview_title", "listview_discription"};
+                    int[] to = {R.id.listview_image, R.id.listview_item_title, R.id.listview_item_short_description};
+
+                    SimpleAdapter simpleAdapter = new SimpleAdapter(getBaseContext(), aList, R.layout.activity_stock, from, to);
+                    ListView androidListView = (ListView) findViewById(R.id.list_view);
+                    androidListView.setAdapter(simpleAdapter);
+                    androidListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        }
+                    });
+
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        ServerRequests loginReq = new ServerRequests(respList);
+        RequestQueue queue = Volley.newRequestQueue(StockActivity.this);
+        queue.add(loginReq);
+
+
+        menuItemDelete = (MenuItem)findViewById(R.id.action_delete);
+        menuItemDelete.setVisible(false);
+        menuItemDelete.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return false;
+            }
+        });
+
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }

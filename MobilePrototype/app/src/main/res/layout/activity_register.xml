@@ -11,11 +11,19 @@
         android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
                   android:orientation="vertical"
                   android:layout_width="match_parent"
                   android:padding="10dp"
                   android:layout_height="match_parent">
+        <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_margin="20dp"
+                android:text="Wirelec Registration"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30dp" />
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -125,5 +133,12 @@
                 android:id="@+id/loadingReg"
                 android:layout_marginTop="35dp"
                 android:visibility="gone"/>
+        <Button
+                android:id="@+id/btnback_regr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="backAction"
+                android:layout_marginTop="30dp"
+                android:text="BACK" />
     </LinearLayout>
 </ScrollView>
