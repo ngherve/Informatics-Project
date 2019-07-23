@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,10 +38,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btnRegister.setOnClickListener(this);
     }
 
-    public void backAction(View view){
-        super.onBackPressed();
-    }
-
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -52,6 +51,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 String gender = eGender.getText().toString();
                 String dob = eDOB.getText().toString();
 
+                //callWCFService(name, username, email, Password, telNumber, address, gender, dob);
+
+
+                //User registeredUser = new User(name, username, email, Password, telNumber, address, gender, dob);
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -70,10 +73,39 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(request);
                 break;
-            case R.id.btnback_regr:
-                //super.onBackPressed();
-                break;
         }
 
+    }
+
+    private void callWCFService(String name, String username, String  email, String password,
+                                String telNum, String address, String gender, String dob) {
+        String url = "http://10.254.17.96:8082/UserService.svc/RegisterUser";
+        //url += "RegisterUser"; // MyServiceMethod is a method name.
+        User requestModel = new User();
+        requestModel.Name = name;
+        requestModel.Username = username;
+        requestModel.Email = email;
+        requestModel.Password = password;
+        requestModel.Tel_Number = telNum;
+        requestModel.Address = address;
+        requestModel.Gender = gender;
+        requestModel.DOB = dob;
+
+        CustomWCFRequest<String> req = new CustomWCFRequest<String>(RegisterActivity.this);
+        req.execute(Request.Method.POST, url, String.class, requestModel, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // Here you got the response of webservice.
+                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                builder.setMessage(response.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // handle error
+                AlertDialog.Builder builderErr = new AlertDialog.Builder(RegisterActivity.this);
+                builderErr.setMessage(error.toString());
+            }
+        });
     }
 }

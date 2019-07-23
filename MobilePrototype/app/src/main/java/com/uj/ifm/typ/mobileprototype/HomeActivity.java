@@ -16,7 +16,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     /*private DrawerLayout mdrawer;
     private ActionBarDrawerToggle mToggle;*/
 
-    private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems, c_updateitems, c_delete_items ;
+    private CardView c_profile, c_logoff;
     String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
     int id;
     TextView prof, eml;
@@ -55,25 +55,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         c_logoff = (CardView) findViewById(R.id.logoff);
         c_logoff.setOnClickListener(this);
-
-        c_notifications = (CardView) findViewById(R.id.notifications);
-        c_notifications.setOnClickListener(this);
-
-        c_scanitems = (CardView) findViewById(R.id.scan_item);
-        c_scanitems.setOnClickListener(this);
-
-        c_stock = (CardView) findViewById(R.id.stock);
-        c_stock.setOnClickListener(this);
-
-        c_reports = (CardView) findViewById(R.id.viewreports);
-        c_reports.setOnClickListener(this);
-
-        c_updateitems = (CardView) findViewById(R.id.updateitems);
-        c_updateitems.setOnClickListener(this);
-
-        c_delete_items = (CardView) findViewById(R.id.saveitem);
-        c_delete_items.setOnClickListener(this);
-
         prof = (TextView) findViewById(R.id.nav_Profile_name);
         eml = (TextView) findViewById(R.id.nav_Profile_email);
 
@@ -115,20 +96,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent1);
                 break;
-            case R.id.scan_item:
-                startActivity(new Intent(HomeActivity.this, ScanItemsActivity.class));
-                break;
-            case R.id.stock:
-                startActivity(new Intent(HomeActivity.this, StockActivity.class));
-                break;
-            case R.id.updateitems:
-                startActivity(new Intent(HomeActivity.this, EditItemActivity.class));
-                break;
-            case R.id.viewreports:
-                startActivity(new Intent(HomeActivity.this, ReportsActivity.class));
-                break;
-            case R.id.saveitem:
-                break;
+
         }
     }
 
