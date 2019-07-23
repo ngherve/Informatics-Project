@@ -20,5 +20,9 @@ namespace WirelecWCFService
         [OperationContract]
         [WebGet(UriTemplate = "GetProducts")]
         List<Products> GetProducts();
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetProductbyID")]
+        Products GetProductbyID();
     }
 }

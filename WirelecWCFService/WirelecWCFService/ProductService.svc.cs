@@ -47,7 +47,35 @@ namespace WirelecWCFService
             return "Data Saved Successfully";
         }
 
-       
+        public Products GetProductbyID()
+        {
+            Products pro = null;
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = new MySqlCommand("GetProductbyID", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                
+                foreach (DataRow dr in dt.Rows)
+                {
+                    pro = new Products();
+                    pro.P_Name = dr["name"].ToString();
+                    pro.P_Price = Convert.ToInt32(dr["price"]);
+                    pro.P_Image = dr["image"].ToString();
+                    pro.P_Quantity = Convert.ToInt32(dr["quan"]);
+                    pro.Supplier_Name = dr["sname"].ToString();
+                    pro.P_Type = dr["type"].ToString();
+                    pro.W_ID = Convert.ToInt32(dr["wid"]);
+                  
+                }
+            }
+
+            return pro;
+        }
 
         List<Products> IProductService.GetProducts()
         {

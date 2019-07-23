@@ -121,18 +121,17 @@ namespace WirelecWCFService
         {
             try
             {
-                Products p = new Products(3,"Wire", 152, "ImageOfWire", 16, "Harry HarryMan", "Electrical", 2);
-                connection.Open();
+                //Products p = new Products("Wire", 152, "ImageOfWire", 16, "Harry HarryMan", "Electrical", 2);
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO PRODUCT(P_Name, P_Price,P_Image, P_Quantity,Supplier_Name, P_Type, W_ID) VALUES(px1,px2, px3, px4, px5, px6, px7)", connection);
-                cmd.Parameters.AddWithValue("px9", p.PID);
-                cmd.Parameters.AddWithValue("px1", p.P_Name);
-                cmd.Parameters.AddWithValue("px2", p.P_Price);
-                cmd.Parameters.AddWithValue("px3", p.P_Image);
-                cmd.Parameters.AddWithValue("px4", p.P_Quantity);
-                cmd.Parameters.AddWithValue("px6", p.Supplier_Name);
-                cmd.Parameters.AddWithValue("px7", p.P_Type);
-                cmd.Parameters.AddWithValue("px8", p.W_ID);
-                if (connection.State == System.Data.ConnectionState.Closed)
+               //cmd.Parameters.AddWithValue("px9", p.PID);
+                cmd.Parameters.AddWithValue("px1", product.P_Name);
+                cmd.Parameters.AddWithValue("px2", product.P_Price);
+                cmd.Parameters.AddWithValue("px3", product.P_Image);
+                cmd.Parameters.AddWithValue("px4", product.P_Quantity);
+                cmd.Parameters.AddWithValue("px6", product.Supplier_Name);
+                cmd.Parameters.AddWithValue("px7", product.P_Type);
+                cmd.Parameters.AddWithValue("px8", product.W_ID);
+                if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();
                 }
@@ -193,5 +192,26 @@ namespace WirelecWCFService
             return pros;
         }
 
+        public User GetUserbyID(int id)
+        {
+            User user = new User();
+
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM USER";
+            cmd.ExecuteNonQuery();
+            throw new NotImplementedException();
+        }
+
+        public string Update(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetUserbyID()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

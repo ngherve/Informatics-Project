@@ -18,9 +18,18 @@ namespace WirelecWCFService
         List<User> GetAllUsers();
 
         [OperationContract]
+        [WebGet(UriTemplate = "GetUserbyID")]
+        User GetUserbyID();
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "RegisterUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string RegisterUser(User user);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string Update(User user);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "LoginUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
@@ -30,7 +39,7 @@ namespace WirelecWCFService
            [OperationContract]
             [WebGet(UriTemplate = "GetProducts")]
             List<Products> GetProducts();
-/* 
+ 
         [OperationContract]
             [WebInvoke(Method = "POST", UriTemplate = "CreateProduct ", BodyStyle = WebMessageBodyStyle.WrappedRequest,
                RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
@@ -41,6 +50,6 @@ namespace WirelecWCFService
         [WebInvoke(Method = "POST", UriTemplate = "DeleteProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string DeleteProduct();
-        */
+       
         }
 }

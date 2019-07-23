@@ -8,7 +8,7 @@ namespace WirelecWCFService
 {
     public class Products
     {
-        private string v1;
+       /* private string v1;
         private int v2;
         private string v3;
         private int v4;
@@ -17,7 +17,7 @@ namespace WirelecWCFService
         private int v7;
         private int v;
         private string v8;
-        private int v8;
+        private int v13;
         private int v9;
         private string v10;
         private int v11;
@@ -38,10 +38,10 @@ namespace WirelecWCFService
             this.v7 = v7;
         }
 
-        public Products(int v, string v8, int v9, string v10, int v11, string v6, string v12, int v8)
+        public Products(int v, string v8, int v9, string v10, int v11, string v6, string v12, int v13)
         {
             this.v = v;
-            this.v8 = v8;
+            this.v13 = v13;
             this.v9 = v9;
             this.v10 = v10;
             this.v11 = v11;
@@ -49,9 +49,7 @@ namespace WirelecWCFService
             this.v12 = v12;
             this.v8 = v8;
         }
-
-        [DataMember]
-            public int PID { get; set; }
+        */
 			[DataMember]
             public string P_Name { get; set; }
             [DataMember]
