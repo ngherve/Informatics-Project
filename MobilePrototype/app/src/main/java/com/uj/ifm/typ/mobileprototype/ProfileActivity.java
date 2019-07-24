@@ -28,8 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileActivity<getSim> extends AppCompatActivity implements View.OnClickListener {
-    Button btnLogout;
-    Button btnEdit;
+    Button btnEdit, btngoback, btnsaving;
     EditText eName, eDOB, eEmail, ePassword, eUsername, eAdress, ePhone, eGender;
     String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
     int id;
@@ -41,9 +40,12 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btnLogout = (Button) findViewById(R.id.btnback);
-        btnLogout.setOnClickListener(this);
+        setContentView(R.layout.activity_profile);
+        btngoback = (Button) findViewById(R.id.btnback);
+        btngoback.setOnClickListener(this);
+
+        btnsaving = findViewById(R.id.updatedetails);
+        btnsaving.setOnClickListener(this);
 
         Intent intent = getIntent();
         id = intent.getIntExtra("UserID", -1);
@@ -173,6 +175,8 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 break;
             case R.id.btnPhoto:
                 UpdatePicture();
+                break;
+            case R.id.updatedetails:
                 String name = eName.getText().toString();
                 String username = eUsername.getText().toString();
                 String email = eEmail.getText().toString();
@@ -204,6 +208,7 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 RequestQueue queue = Volley.newRequestQueue(ProfileActivity.this);
                 queue.add(request);
                 break;
+
         }
     }
 }

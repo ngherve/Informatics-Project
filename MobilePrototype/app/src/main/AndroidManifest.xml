@@ -3,6 +3,8 @@
           package="com.uj.ifm.typ.mobileprototype">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
             android:allowBackup="true"
@@ -11,7 +13,32 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".StockActivity">
+        <activity android:name=".EditActivity" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".EditItemsActivity" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ScannerActivity">
+        </activity>
+        <activity android:name=".SaveItemActivity" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ScanItemsActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".StockActivity" android:theme="@style/AppTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".HomeActivity">
             <intent-filter>
