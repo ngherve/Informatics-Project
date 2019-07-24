@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using static WirelecWCFService.UserService;
 
 namespace WirelecWCFService
 {
@@ -18,8 +17,9 @@ namespace WirelecWCFService
         List<User> GetAllUsers();
 
         [OperationContract]
-        [WebGet(UriTemplate = "GetUserbyID")]
-        User GetUserbyID();
+        [WebInvoke(Method = "POST", UriTemplate = "GetUserbyID", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        User GetUserbyID(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "RegisterUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
@@ -27,29 +27,23 @@ namespace WirelecWCFService
         string RegisterUser(User user);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "UpdateUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
-            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string Update(User user);
-
-        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "LoginUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         bool LoginUser(string username, string password);
 
-           [OperationContract]
-            [WebGet(UriTemplate = "GetProducts")]
-            List<Products> GetProducts();
- 
         [OperationContract]
-            [WebInvoke(Method = "POST", UriTemplate = "CreateProduct ", BodyStyle = WebMessageBodyStyle.WrappedRequest,
-               RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-            string CreateProduct(Products product);
+        [WebInvoke(Method = "DELETE", UriTemplate = "DeleteUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string DeleteUser(int id);
 
- 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "DeleteProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
-           RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string DeleteProduct();
-       
-        }
+        [WebInvoke(Method = "POST", UriTemplate = "SearchUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        User SearchUser(string name);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", UriTemplate = "UpdateUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string UpdateUser(User user);
+    }
 }

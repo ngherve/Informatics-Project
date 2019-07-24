@@ -13,16 +13,32 @@ namespace WirelecWCFService
     public interface IProductService
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "CreateProduct ", BodyStyle = WebMessageBodyStyle.WrappedRequest,
-           RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string CreateProduct(Products product);
-
-        [OperationContract]
         [WebGet(UriTemplate = "GetProducts")]
-        List<Products> GetProducts();
+        List<Product> GetAllProducts();
 
         [OperationContract]
-        [WebGet(UriTemplate = "GetProductbyID")]
-        Products GetProductbyID();
+        [WebInvoke(Method = "POST", UriTemplate = "GetProductbyID", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        Product GetProductbyID(int id);
+
+        [OperationContract]
+        [WebInvoke(Method = "DELETE", UriTemplate = "DeleteProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string DeleteProduct(int id);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "SearchProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        Product SearchProduct(string name);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "AddProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string AddProduct(Product product);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", UriTemplate = "UpdateProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string UpdateProduct(Product product);
     }
 }

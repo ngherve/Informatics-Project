@@ -9,6 +9,8 @@ namespace WirelecWCFService
     public class User
     {
         [DataMember]
+        public int UserID { get; set; }
+        [DataMember]
         public string Name { get; set; }
         [DataMember]
         public string Username { get; set; }
@@ -24,5 +26,9 @@ namespace WirelecWCFService
         public string Gender { get; set; }
         [DataMember]
         public string DOB { get; set; }
+        [DataMember]
+        public string User_Type{ get; set; }
+        [DataMember]
+        public string pphoto { get; set; }
     }
 }

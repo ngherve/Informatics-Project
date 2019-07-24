@@ -1,0 +1,11 @@
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\bin\Wirelec WCF.dll.config
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\bin\Wirelec WCF.dll
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\bin\Wirelec WCF.pdb
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\bin\Google.Protobuf.dll
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\bin\BouncyCastle.Crypto.dll
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\bin\MySql.Data.xml
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\obj\Release\Wirelec WCF.csprojAssemblyReference.cache
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\obj\Release\Wirelec WCF.csproj.CoreCompileInputs.cache
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\obj\Release\Wirelec WCF.csproj.CopyComplete
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\obj\Release\Wirelec WCF.dll
+F:\PROJECT\GIT\team13\Wirelec WCF\Wirelec WCF\obj\Release\Wirelec WCF.pdb
