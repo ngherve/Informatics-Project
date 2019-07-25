@@ -11,7 +11,7 @@ namespace TYPPrototype
 {
 
 
-    public partial class AddProduct
+    public partial class addProduct
     {
     }
 }

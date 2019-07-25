@@ -1,22 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddEmployee.aspx.cs" Inherits="TYPPrototype.AddEmployee" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="addEmployee.aspx.cs" Inherits="TYPPrototype.addEmployee" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <!-- BEGIN: Content-->
+    <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
             <div class="content-header-light col-12">
                 <div class="row">
-                    <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="content-header-left col-md-9 col-12 mb-2">                           
                         <h3 class="content-header-title">Admin</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.aspx">Home</a>
+                                    <li class="breadcrumb-item"><a href="home.aspx">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">Add Employee</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Employee Information Form
+                                    <li class="breadcrumb-item active">Register Employee Form
                                     </li>
                                 </ol>
                             </div>
@@ -41,7 +41,7 @@
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-colored-form-control">Employee Data</h4>
+                                    <h4 class="card-title" id="basic-layout-colored-form-control">Add Employee</h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -61,13 +61,13 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput1">Fist Name</label>
-                                                            <input type="text" id="userinput1" class="form-control border-primary" placeholder="Name" name="name">
+                                                            <input type="text" runat="server" id="fname" class="form-control border-primary" placeholder="Name" name="name">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput2">Last Name</label>
-                                                            <input type="text" id="userinput2" class="form-control border-primary" placeholder="Company" name="company">
+                                                            <input type="text" runat="server" id="lname" class="form-control border-primary" placeholder="Company" name="company">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -75,7 +75,16 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Username</label>
-                                                            <input type="text" id="userinput3" class="form-control border-primary" placeholder="Username" name="username">
+                                                            <input type="text" runat="server" id="username" class="form-control border-primary" placeholder="Username" name="username">
+                                                        </div>
+                                                    </div> 
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userinput3">Password</label>
+                                                            <input type="text" runat="server" id="pass" class="form-control border-primary" placeholder="Password" name="Password">
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -84,22 +93,31 @@
 
                                                 <div class="form-group">
                                                     <label for="userinput5">Email</label>
-                                                    <input class="form-control border-primary" type="email" placeholder="email" id="userinput5">
+                                                    <input class="form-control border-primary" runat="server" type="email" placeholder="email" id="email">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="userinput6">ID Number</label>
-                                                    <input class="form-control border-primary" type="text" placeholder="id number" id="userinput6">
+                                                    <input class="form-control border-primary" runat="server" type="text" placeholder="id number" id="idnum">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label>Contact Number</label>
-                                                    <input class="form-control border-primary" id="userinput7" type="tel" placeholder="Contact Number">
+                                                    <input class="form-control border-primary" runat="server" id="telnum" type="tel" placeholder="Telephone Number">
                                                 </div>
 
                                                 <div class="form-group">
+                                                    <label for="userinput8">Gender</label>                 
+                                                    <input id="gender" class="form-control border-primary" runat="server" name="gender" placeholder="gender" >
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="userinput8">Address</label>
+                                                    <input id="address" class="form-control border-primary" runat="server" name="Address" placeholder="Address" >
+                                                </div>
+                                                <div class="form-group">
                                                     <label for="userinput8">Date Of Birth(DOB)</label>
-                                                    <textarea id="userinput8" rows="5" class="form-control border-primary" name="dob" placeholder="yyyy/mm/dd"></textarea>
+                                                    <input id="dob" class="form-control border-primary" runat="server" type="date" name="dob">
                                                 </div>
 
                                             </div>
@@ -111,7 +129,10 @@
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="la la-check-square-o"></i> Save
                                                 </button>
+                                                <asp:Button ID="btnSaveEmpl" onclick="btnSaveEmpl_Click" runat="server" Text="Save" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary"/>  
+
                                             </div>
+
                                         </form>
 
                                     </div>

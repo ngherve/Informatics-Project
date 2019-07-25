@@ -110,8 +110,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddEmployee.aspx" />
-    <Content Include="AddProduct.aspx" />
+    <Content Include="addEmployee.aspx" />
+    <Content Include="addProduct.aspx" />
     <Content Include="app-assets\css-rtl\bootstrap-extended.css" />
     <Content Include="app-assets\css-rtl\bootstrap-extended.min.css" />
     <Content Include="app-assets\css-rtl\bootstrap.css" />
@@ -6197,6 +6197,20 @@
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\ProductService\ProductService.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService1.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserService\UserService.disco" />
     <None Include="Connected Services\UserService\configuration91.svcinfo" />
     <None Include="Connected Services\UserService\configuration.svcinfo" />
@@ -6204,33 +6218,55 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="EditEmployee.aspx" />
-    <Content Include="EditProduct.aspx" />
-    <Content Include="Electrical.aspx" />
-    <Content Include="index.aspx" />
-    <Content Include="Industrial.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="ContactEmployee.aspx" />
+    <Content Include="contactSupplier.aspx" />
+    <Content Include="damagesReport.aspx" />
+    <Content Include="depletedStock.aspx" />
+    <Content Include="dispatchlist.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="inspectAllocate.aspx" />
+    <Content Include="invoicereport.aspx" />
+    <Content Include="LoginUser.aspx" />
     <Content Include="logout.aspx" />
-    <Content Include="Mechanical.aspx" />
-    <Content Include="ViewEmployees.aspx" />
-    <Content Include="ViewSuppliers.aspx" />
+    <Content Include="Productlist.aspx" />
+    <Content Include="receivestock.aspx" />
+    <Content Include="recover-password.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="removeEmployee.aspx" />
+    <Content Include="removeProduct.aspx" />
+    <Content Include="stockreport.aspx" />
+    <Content Include="stocktakereport.aspx" />
+    <Content Include="STprocess.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="viewStockTake.aspx" />
     <Content Include="Web.config" />
+    <None Include="Connected Services\UserService\UserService.wsdl" />
+    <None Include="Connected Services\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService1.wsdl" />
+    <None Include="Connected Services\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployee.aspx.cs">
-      <DependentUpon>AddEmployee.aspx</DependentUpon>
+    <Compile Include="addEmployee.aspx.cs">
+      <DependentUpon>addEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddEmployee.aspx.designer.cs">
-      <DependentUpon>AddEmployee.aspx</DependentUpon>
+    <Compile Include="addEmployee.aspx.designer.cs">
+      <DependentUpon>addEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddProduct.aspx.cs">
-      <DependentUpon>AddProduct.aspx</DependentUpon>
+    <Compile Include="addProduct.aspx.cs">
+      <DependentUpon>addProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddProduct.aspx.designer.cs">
-      <DependentUpon>AddProduct.aspx</DependentUpon>
+    <Compile Include="addProduct.aspx.designer.cs">
+      <DependentUpon>addProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ProductService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -6242,47 +6278,68 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="EditEmployee.aspx.cs">
-      <DependentUpon>EditEmployee.aspx</DependentUpon>
+    <Compile Include="ContactEmployee.aspx.cs">
+      <DependentUpon>ContactEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditEmployee.aspx.designer.cs">
-      <DependentUpon>EditEmployee.aspx</DependentUpon>
+    <Compile Include="ContactEmployee.aspx.designer.cs">
+      <DependentUpon>ContactEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditProduct.aspx.cs">
-      <DependentUpon>EditProduct.aspx</DependentUpon>
+    <Compile Include="contactSupplier.aspx.cs">
+      <DependentUpon>contactSupplier.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditProduct.aspx.designer.cs">
-      <DependentUpon>EditProduct.aspx</DependentUpon>
+    <Compile Include="contactSupplier.aspx.designer.cs">
+      <DependentUpon>contactSupplier.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Electrical.aspx.cs">
-      <DependentUpon>Electrical.aspx</DependentUpon>
+    <Compile Include="damagesReport.aspx.cs">
+      <DependentUpon>damagesReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Electrical.aspx.designer.cs">
-      <DependentUpon>Electrical.aspx</DependentUpon>
+    <Compile Include="damagesReport.aspx.designer.cs">
+      <DependentUpon>damagesReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="depletedStock.aspx.cs">
+      <DependentUpon>depletedStock.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="depletedStock.aspx.designer.cs">
+      <DependentUpon>depletedStock.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Industrial.aspx.cs">
-      <DependentUpon>Industrial.aspx</DependentUpon>
+    <Compile Include="dispatchlist.aspx.cs">
+      <DependentUpon>dispatchlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Industrial.aspx.designer.cs">
-      <DependentUpon>Industrial.aspx</DependentUpon>
+    <Compile Include="dispatchlist.aspx.designer.cs">
+      <DependentUpon>dispatchlist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inspectAllocate.aspx.cs">
+      <DependentUpon>inspectAllocate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inspectAllocate.aspx.designer.cs">
+      <DependentUpon>inspectAllocate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invoicereport.aspx.cs">
+      <DependentUpon>invoicereport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invoicereport.aspx.designer.cs">
+      <DependentUpon>invoicereport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginUser.aspx.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginUser.aspx.designer.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
@@ -6298,29 +6355,85 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Mechanical.aspx.cs">
-      <DependentUpon>Mechanical.aspx</DependentUpon>
+    <Compile Include="Productlist.aspx.cs">
+      <DependentUpon>Productlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mechanical.aspx.designer.cs">
-      <DependentUpon>Mechanical.aspx</DependentUpon>
+    <Compile Include="Productlist.aspx.designer.cs">
+      <DependentUpon>Productlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="receivestock.aspx.cs">
+      <DependentUpon>receivestock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="receivestock.aspx.designer.cs">
+      <DependentUpon>receivestock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recover-password.aspx.cs">
+      <DependentUpon>recover-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recover-password.aspx.designer.cs">
+      <DependentUpon>recover-password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="removeEmployee.aspx.cs">
+      <DependentUpon>removeEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="removeEmployee.aspx.designer.cs">
+      <DependentUpon>removeEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="removeProduct.aspx.cs">
+      <DependentUpon>removeProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="removeProduct.aspx.designer.cs">
+      <DependentUpon>removeProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Secrecy.cs" />
+    <Compile Include="stockreport.aspx.cs">
+      <DependentUpon>stockreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stockreport.aspx.designer.cs">
+      <DependentUpon>stockreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stocktakereport.aspx.cs">
+      <DependentUpon>stocktakereport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stocktakereport.aspx.designer.cs">
+      <DependentUpon>stocktakereport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STprocess.aspx.cs">
+      <DependentUpon>STprocess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STprocess.aspx.designer.cs">
+      <DependentUpon>STprocess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="ViewEmployees.aspx.cs">
-      <DependentUpon>ViewEmployees.aspx</DependentUpon>
+    <Compile Include="viewStockTake.aspx.cs">
+      <DependentUpon>viewStockTake.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewEmployees.aspx.designer.cs">
-      <DependentUpon>ViewEmployees.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ViewSuppliers.aspx.cs">
-      <DependentUpon>ViewSuppliers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSuppliers.aspx.designer.cs">
-      <DependentUpon>ViewSuppliers.aspx</DependentUpon>
+    <Compile Include="viewStockTake.aspx.designer.cs">
+      <DependentUpon>viewStockTake.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -6848,21 +6961,6 @@
     <Content Include="assets\scss\style-rtl.scss" />
     <Content Include="assets\scss\style.scss" />
     <Content Include="MasterPage.Master" />
-    <None Include="Connected Services\ProductService\ProductService.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserService\UserService.wsdl" />
-    <None Include="Connected Services\UserService\UserService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserService\UserService1.wsdl" />
-    <None Include="Connected Services\UserService\UserService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserService\UserService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

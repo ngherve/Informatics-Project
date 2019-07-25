@@ -44,7 +44,16 @@ namespace TYPPrototype.UserService {
         private string Tel_NumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string User_TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pphotoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -148,6 +157,32 @@ namespace TYPPrototype.UserService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string User_Type {
+            get {
+                return this.User_TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.User_TypeField, value) != true)) {
+                    this.User_TypeField = value;
+                    this.RaisePropertyChanged("User_Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Username {
             get {
                 return this.UsernameField;
@@ -156,6 +191,19 @@ namespace TYPPrototype.UserService {
                 if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
                     this.UsernameField = value;
                     this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pphoto {
+            get {
+                return this.pphotoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pphotoField, value) != true)) {
+                    this.pphotoField = value;
+                    this.RaisePropertyChanged("pphoto");
                 }
             }
         }
@@ -180,6 +228,12 @@ namespace TYPPrototype.UserService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllUsers", ReplyAction="http://tempuri.org/IUserService/GetAllUsersResponse")]
         System.Threading.Tasks.Task<TYPPrototype.UserService.User[]> GetAllUsersAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserbyID", ReplyAction="http://tempuri.org/IUserService/GetUserbyIDResponse")]
+        TYPPrototype.UserService.User GetUserbyID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserbyID", ReplyAction="http://tempuri.org/IUserService/GetUserbyIDResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.UserService.User> GetUserbyIDAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/RegisterUser", ReplyAction="http://tempuri.org/IUserService/RegisterUserResponse")]
         string RegisterUser(TYPPrototype.UserService.User user);
         
@@ -191,6 +245,24 @@ namespace TYPPrototype.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/LoginUser", ReplyAction="http://tempuri.org/IUserService/LoginUserResponse")]
         System.Threading.Tasks.Task<bool> LoginUserAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
+        string DeleteUser(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
+        System.Threading.Tasks.Task<string> DeleteUserAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SearchUser", ReplyAction="http://tempuri.org/IUserService/SearchUserResponse")]
+        TYPPrototype.UserService.User SearchUser(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SearchUser", ReplyAction="http://tempuri.org/IUserService/SearchUserResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.UserService.User> SearchUserAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
+        string UpdateUser(TYPPrototype.UserService.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
+        System.Threading.Tasks.Task<string> UpdateUserAsync(TYPPrototype.UserService.User user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -228,6 +300,14 @@ namespace TYPPrototype.UserService {
             return base.Channel.GetAllUsersAsync();
         }
         
+        public TYPPrototype.UserService.User GetUserbyID(int id) {
+            return base.Channel.GetUserbyID(id);
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.UserService.User> GetUserbyIDAsync(int id) {
+            return base.Channel.GetUserbyIDAsync(id);
+        }
+        
         public string RegisterUser(TYPPrototype.UserService.User user) {
             return base.Channel.RegisterUser(user);
         }
@@ -242,6 +322,30 @@ namespace TYPPrototype.UserService {
         
         public System.Threading.Tasks.Task<bool> LoginUserAsync(string username, string password) {
             return base.Channel.LoginUserAsync(username, password);
+        }
+        
+        public string DeleteUser(int id) {
+            return base.Channel.DeleteUser(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteUserAsync(int id) {
+            return base.Channel.DeleteUserAsync(id);
+        }
+        
+        public TYPPrototype.UserService.User SearchUser(string name) {
+            return base.Channel.SearchUser(name);
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.UserService.User> SearchUserAsync(string name) {
+            return base.Channel.SearchUserAsync(name);
+        }
+        
+        public string UpdateUser(TYPPrototype.UserService.User user) {
+            return base.Channel.UpdateUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateUserAsync(TYPPrototype.UserService.User user) {
+            return base.Channel.UpdateUserAsync(user);
         }
     }
 }
