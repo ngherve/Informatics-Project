@@ -46,6 +46,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     user = new User();
+                    user.UserID = Convert.ToInt32(dr["UserID"].ToString());
                     user.Name = dr["Name"].ToString();
                     user.Username = dr["Username"].ToString();
                     user.Email = dr["Email"].ToString();
@@ -54,6 +55,8 @@ namespace WirelecWCFService
                     user.Address = dr["Address"].ToString();
                     user.Gender = dr["Gender"].ToString();
                     user.DOB = dr["DOB"].ToString();
+                    user.User_Type = dr["User_Type"].ToString();
+                    user.pphoto = dr["pphoto"].ToString();
                     users.Add(user);
                 }
             }
@@ -78,6 +81,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     user = new User();
+                    user.UserID = Convert.ToInt32(dr["UserID"].ToString());
                     user.Name = dr["Name"].ToString();
                     user.Username = dr["Username"].ToString();
                     user.Email = dr["Email"].ToString();
@@ -87,7 +91,7 @@ namespace WirelecWCFService
                     user.Gender = dr["Gender"].ToString();
                     user.DOB = dr["DOB"].ToString();
                     user.User_Type = dr["User_Type"].ToString();
-
+                    user.pphoto = dr["pphoto"].ToString();
                 }
             }
 
@@ -136,7 +140,7 @@ namespace WirelecWCFService
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO USER(Name, Username, Email, Password, Tel_Number, Address, Gender, DOB,User_Type) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8,@a9)", connection);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO USER(Name, Username, Email, Password, Tel_Number, Address, Gender, DOB, User_Type, pphoto) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10)", connection);
                 cmd.Parameters.AddWithValue("@a1", user.Name);
                 cmd.Parameters.AddWithValue("@a2", user.Username);
                 cmd.Parameters.AddWithValue("@a3", user.Email);
@@ -146,6 +150,7 @@ namespace WirelecWCFService
                 cmd.Parameters.AddWithValue("@a7", user.Gender);
                 cmd.Parameters.AddWithValue("@a8", user.DOB);
                 cmd.Parameters.AddWithValue("@a9", user.User_Type);
+                cmd.Parameters.AddWithValue("@a10", user.pphoto);
                 if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();
@@ -180,6 +185,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     user = new User();
+                    user.UserID = Convert.ToInt32(dr["UserID"].ToString());a
                     user.Name = dr["Name"].ToString();
                     user.Username = dr["Username"].ToString();
                     user.Email = dr["Email"].ToString();
@@ -189,7 +195,7 @@ namespace WirelecWCFService
                     user.Gender = dr["Gender"].ToString();
                     user.DOB = dr["DOB"].ToString();
                     user.User_Type = dr["User_Type"].ToString();
-
+                    user.pphoto = dr["pphoto"].ToString();
                 }
             }
 

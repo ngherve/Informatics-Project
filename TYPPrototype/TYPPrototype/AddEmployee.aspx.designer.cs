@@ -13,22 +13,22 @@ namespace TYPPrototype {
     public partial class addEmployee {
         
         /// <summary>
-        /// fname control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fname;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText name;
         
         /// <summary>
-        /// lname control.
+        /// usertype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText lname;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText usertype;
         
         /// <summary>
         /// username control.
@@ -46,7 +46,7 @@ namespace TYPPrototype {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass;
         
         /// <summary>
         /// email control.
@@ -58,13 +58,13 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
         
         /// <summary>
-        /// idnum control.
+        /// pimage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText idnum;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile pimage;
         
         /// <summary>
         /// telnum control.
@@ -101,6 +101,15 @@ namespace TYPPrototype {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dob;
+        
+        /// <summary>
+        /// btnCancelEmp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelEmp;
         
         /// <summary>
         /// btnSaveEmpl control.

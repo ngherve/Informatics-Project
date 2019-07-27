@@ -4,36 +4,43 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using TYPPrototype.UserService;
 
 namespace TYPPrototype
 {
     public partial class addEmployee : System.Web.UI.Page
     {
-        UserService.UserServiceClient client;
+        UserServiceClient client;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            client = new UserService.UserServiceClient();
+            client = new UserServiceClient();
         }
 
         protected void btnSaveEmpl_Click(object sender, EventArgs e)
         {
-            
-            UserService.User user = new UserService.User
+
+            User user = new User
             {
-                Name = fname.Value + " " + lname.Value,
+                Name = name.Value,
                 Username = username.Value,
                 Email = email.Value,
                 Password = pass.Value,
                 Tel_Number = telnum.Value,
                 Address = address.Value,
                 Gender = gender.Value,
-                DOB = dob.Value
+                DOB = dob.Value,
+                User_Type = usertype.Value,
+                //pphoto = pimage.value
             };
             string result = client.RegisterUser(user);
 
             Response.Write("<script>alert('" + result + "')</script>");
+        }
+
+        protected void btnCancelEmp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
         }
     }
 }

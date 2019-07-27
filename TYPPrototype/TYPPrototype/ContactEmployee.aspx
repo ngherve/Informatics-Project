@@ -18,7 +18,7 @@
                                     <div class="bug-list-search">
                                         <div class="bug-list-search-content">
                                             <div class="sidebar-toggle d-block d-lg-none"><i class="ft-menu font-large-1"></i></div>
-                                            <form action="#" runat="server">
+                                            <form id="frm" runat="server">
                                                 <div class="position-relative">
                                                     <input type="search" id="search-contacts" class="form-control" placeholder="Search contacts...">
                                                     <div class="form-control-position">

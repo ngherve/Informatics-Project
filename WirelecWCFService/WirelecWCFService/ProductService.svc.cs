@@ -77,6 +77,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     pro = new Product();
+                    pro.P_ID = Convert.ToInt32(dr["P_ID"].ToString());
                     pro.P_Name = dr["P_Name"].ToString();
                     pro.P_Price = Convert.ToInt32(dr["P_Price"]);
                     pro.P_Image = dr["P_Image"].ToString();
@@ -109,6 +110,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     pro = new Product();
+                    pro.P_ID = Convert.ToInt32(dr["P_ID"].ToString());
                     pro.P_Name = dr["P_Name"].ToString();
                     pro.P_Price = Convert.ToInt32(dr["P_Price"]);
                     pro.P_Image = dr["P_Image"].ToString();
@@ -141,6 +143,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     pro = new Product();
+                    pro.P_ID = Convert.ToInt32(dr["P_ID"].ToString());
                     pro.P_Name = dr["P_Name"].ToString();
                     pro.P_Price = Convert.ToInt32(dr["P_Price"]);
                     pro.P_Image = dr["P_Image"].ToString();

@@ -62,6 +62,8 @@
                             </div>
                         </a></li>
                         <li class="nav-item d-none d-lg-block d-none"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
+                        <li class="dropdown nav-item mega-dropdown d-lg-block d-none"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Mega</a>
+
                     </ul>
 
                     <ul class="nav navbar-nav float-right">
@@ -117,8 +119,6 @@
                                 </li>
                                 <li><a class="menu-item" href="addProduct.aspx"><i class="material-icons"></i><span>Add Product</span></a>
                                 </li>
-                                <li><a class="menu-item" href="removeProduct.aspx"><i class="material-icons"></i><span>Remove Product</span></a>
-                                </li>
                                 <li><a class="menu-item" href="depletedStock.aspx"><i class="material-icons"></i><span>Depleted Stock</span></a>
                                 </li>
                             </ul>
@@ -127,7 +127,7 @@
                 </li>
 
 
-                <li class=" nav-item"><a href="#"><span class="menu-title">Warehouse Management</span></a>
+                <li class=" nav-item"><a href="#"><i class="material-icons">edit</i><span class="menu-title">Warehouse Management</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="receivestock.aspx"><i class="material-icons"></i><span>Received Stock</span></a>
                         </li>
@@ -138,7 +138,7 @@
                     </ul>
                 </li>
 
-                <li class=" nav-item"><a href="#"><span class="menu-title">StockTake Management</span></a>
+                <li class=" nav-item"><a href="#"><i class="material-icons">edit</i><span class="menu-title">StockTake Management</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="STprocess.aspx"><i class="material-icons"></i><span>Stock Take Status</span></a>
                         </li>
@@ -153,9 +153,8 @@
                             <ul class="menu-content">
                                 <li><a class="menu-item" href="addEmployee.aspx"><i class="material-icons"></i><span>Add Employee</span></a>
                                 </li>
-                                <li><a class="menu-item" href="removeEmployee.aspx"><i class="material-icons"></i><span>Remove Employee</span></a>
-                                </li>
-                                <li><a class="menu-item" href="ContactEmployee.aspx"><i class="material-icons"></i><span>Contact Employee</span></a>
+                               
+                                <li><a class="menu-item" href="ManageUsers.aspx"><i class="material-icons"></i><span>Manage Employee</span></a>
                                 </li>
                             </ul>
                             <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Supplier Management</span></a>

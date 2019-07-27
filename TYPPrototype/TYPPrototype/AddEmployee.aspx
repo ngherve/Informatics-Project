@@ -61,13 +61,13 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput1">Fist Name</label>
-                                                            <input type="text" runat="server" id="fname" class="form-control border-primary" placeholder="Name" name="name">
+                                                            <input type="text" runat="server" id="name" class="form-control border-primary" placeholder="Name" name="name">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="userinput2">Last Name</label>
-                                                            <input type="text" runat="server" id="lname" class="form-control border-primary" placeholder="Company" name="company">
+                                                            <label for="userinput2">User Type</label>
+                                                            <input type="text" runat="server" id="usertype" class="form-control border-primary" placeholder="User Type" name="company">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -84,7 +84,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Password</label>
-                                                            <input type="text" runat="server" id="pass" class="form-control border-primary" placeholder="Password" name="Password">
+                                                            <input type="password" runat="server" id="pass" class="form-control border-primary" placeholder="Password" name="Password">
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -97,8 +97,15 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="userinput6">ID Number</label>
-                                                    <input class="form-control border-primary" runat="server" type="text" placeholder="id number" id="idnum">
+                                                    <label for="userinput6">Profile Image</label>
+                                                    <input class="form-control border-primary" runat="server" type="file" placeholder="Image" id="pimage">
+                                                    <script type="text/javascript">
+                                                    function getFilePath(){
+                                                        $('input[type=file]').change(function () {
+                                                            console.log(this.files[0].mozFullPath);
+                                                        });
+                                                    }
+                                                    </script>
                                                 </div>
 
                                                 <div class="form-group">
@@ -123,14 +130,9 @@
                                             </div>
 
                                             <div class="form-actions text-right">
-                                                <button type="button" class="btn btn-warning mr-1">
-                                                    <i class="ft-x"></i> Cancel
-                                                </button>
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> Save
-                                                </button>
-                                                <asp:Button ID="btnSaveEmpl" onclick="btnSaveEmpl_Click" runat="server" Text="Save" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary"/>  
+                                                <asp:Button ID="btnCancelEmp" runat="server" Text="Cancel" BorderStyle="Solid" ToolTip="Submit" class="btn btn-warning mr-1" OnClick="btnCancelEmp_Click"/>  
 
+                                                <asp:Button ID="btnSaveEmpl" onclick="btnSaveEmpl_Click" runat="server" Text="Save" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary"/>  
                                             </div>
 
                                         </form>
