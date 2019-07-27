@@ -106,10 +106,16 @@
                                             </div>
 
                                             <div class="form-actions text-right">
+<<<<<<< HEAD
 
                                                 <asp:Button ID="btnCancelPro" runat="server" Text="Cancel" BorderStyle="Solid" ToolTip="Submit" class="btn btn-warning mr-1" OnClick="btnCancelPro_Click" />  
 
                                                 <asp:Button ID="svePro" OnClick="Savebtn_Click" runat="server" Text="Save" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary"/>  
+=======
+                                                <button type="button" class="btn btn-warning mr-1">
+                                                    <i class="ft-x"></i> Cancel</button>
+                                                &nbsp;&nbsp;&nbsp;<asp:Button ID="svePro" runat="server" OnClick="Savebtn_Click" Text="Save" />
+>>>>>>> 7ae961fe66454a29ccbb59167f1b3543f5e9a082
 
                                             </div>
 
@@ -126,4 +132,10 @@
         </div>
     </div>
     <!-- END: Content-->
+<<<<<<< HEAD
 </asp:Content>
+=======
+</asp:Content>
+
+
+>>>>>>> 7ae961fe66454a29ccbb59167f1b3543f5e9a082

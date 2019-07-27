@@ -14,6 +14,7 @@ namespace TYPPrototype
         {
             Pclient = new ProductService.ProductServiceClient();
         }
+<<<<<<< HEAD
 
         protected void Savebtn_Click(object sender, EventArgs e)
         {
@@ -36,6 +37,23 @@ namespace TYPPrototype
         protected void btnCancelPro_Click(object sender, EventArgs e)
         {
             Response.Redirect("home.aspx");
+=======
+
+        protected void Savebtn_Click(object sender, EventArgs e)
+        {
+            ProductService.Product Pro = new ProductService.Product
+            {
+                P_Name = Pname.Value,
+                P_Price = Int32.Parse(Pprice.Value),
+                P_Image = Pimage.Value,
+                P_Quantity = Int32.Parse(PQuant.Value),
+                P_Type = Ptype.Value,
+                P_Code = PCode.Value,
+                Supplier_Name = SName.Value,
+                W_Name = WName.Value
+            };
+            string result = Pclient.AddProduct(Pro);
+>>>>>>> 7ae961fe66454a29ccbb59167f1b3543f5e9a082
         }
     }
 }
