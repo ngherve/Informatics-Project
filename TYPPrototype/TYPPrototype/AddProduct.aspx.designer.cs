@@ -85,7 +85,6 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputText WName;
         
         /// <summary>
-<<<<<<< HEAD
         /// btnCancelPro control.
         /// </summary>
         /// <remarks>
@@ -95,8 +94,6 @@ namespace TYPPrototype {
         protected global::System.Web.UI.WebControls.Button btnCancelPro;
         
         /// <summary>
-=======
->>>>>>> 7ae961fe66454a29ccbb59167f1b3543f5e9a082
         /// svePro control.
         /// </summary>
         /// <remarks>
@@ -104,5 +101,6 @@ namespace TYPPrototype {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button svePro;
+        
     }
 }

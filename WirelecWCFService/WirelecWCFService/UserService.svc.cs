@@ -185,7 +185,7 @@ namespace WirelecWCFService
                 foreach (DataRow dr in dt.Rows)
                 {
                     user = new User();
-                    user.UserID = Convert.ToInt32(dr["UserID"].ToString());a
+                    user.UserID = Convert.ToInt32(dr["UserID"].ToString());
                     user.Name = dr["Name"].ToString();
                     user.Username = dr["Username"].ToString();
                     user.Email = dr["Email"].ToString();
