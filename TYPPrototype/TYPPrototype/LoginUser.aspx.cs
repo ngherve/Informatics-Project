@@ -26,8 +26,7 @@ namespace TYPPrototype
         {
             string usernam = username.Value;
             string Password = userpassword.Value;
-           
-            
+
             if (Session["Username"] == null)
             {
                 if(client.LoginUser(usernam, Password) == true)

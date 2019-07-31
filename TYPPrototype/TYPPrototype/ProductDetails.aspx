@@ -8,15 +8,15 @@
             <div class="content-header-light col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title">Admin</h3>
+                        <h3 class="content-header-title">Stock Management</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.aspx">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Add Employee</a>
+                                    <li class="breadcrumb-item"><a href="#">Products</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Register Employee Form
+                                    <li class="breadcrumb-item active">Product Details
                                     </li>
                                 </ol>
                             </div>

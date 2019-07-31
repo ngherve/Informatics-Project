@@ -14,9 +14,9 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.aspx">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Add Employee</a>
+                                    <li class="breadcrumb-item"><a href="#">Employee Management</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Register Employee Form
+                                    <li class="breadcrumb-item active">Add Employee
                                     </li>
                                 </ol>
                             </div>
