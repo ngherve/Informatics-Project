@@ -14,9 +14,9 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.aspx">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="ViewEmployees.aspx">View Products</a>
+                                    <li class="breadcrumb-item"><a href="ViewEmployees.aspx">Products</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Product Records
+                                    <li class="breadcrumb-item active">Product Inventory
                                     </li>
                                 </ol>
                             </div>

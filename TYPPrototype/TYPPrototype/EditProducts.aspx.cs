@@ -42,8 +42,13 @@ namespace TYPPrototype
             prod.P_Code = prodcode;
             prod.P_Image = pimage.Value;
             string resp = prodClient.UpdateProduct(prod);
-
             Response.Write("<script>alert('" + "Product " + resp + "')</script>");
+
+            if (resp.Equals("Data Updated Successfully"))
+            {
+                Response.Redirect("Productlist.aspx");
+            }
+            
 
         }
 

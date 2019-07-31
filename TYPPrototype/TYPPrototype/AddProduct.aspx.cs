@@ -36,6 +36,12 @@ namespace TYPPrototype
             string result = Pclient.AddProduct(Pro);
             Response.Write("<script>alert('" + result + "')</script>");
 
+            if (result.Equals("Product Added Successfully"))
+            {
+                Response.Redirect("Productlist.aspx");
+            }
+            
+
         }
     }
 }
