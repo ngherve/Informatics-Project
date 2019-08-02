@@ -218,6 +218,115 @@ namespace TYPPrototype.UserService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Notification", Namespace="http://schemas.datacontract.org/2004/07/WirelecWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Notification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string N_DatetimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string N_EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int N_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string N_Datetime {
+            get {
+                return this.N_DatetimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.N_DatetimeField, value) != true)) {
+                    this.N_DatetimeField = value;
+                    this.RaisePropertyChanged("N_Datetime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string N_Email {
+            get {
+                return this.N_EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.N_EmailField, value) != true)) {
+                    this.N_EmailField = value;
+                    this.RaisePropertyChanged("N_Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int N_ID {
+            get {
+                return this.N_IDField;
+            }
+            set {
+                if ((this.N_IDField.Equals(value) != true)) {
+                    this.N_IDField = value;
+                    this.RaisePropertyChanged("N_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserService.IUserService")]
     public interface IUserService {
@@ -228,17 +337,35 @@ namespace TYPPrototype.UserService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllUsers", ReplyAction="http://tempuri.org/IUserService/GetAllUsersResponse")]
         System.Threading.Tasks.Task<TYPPrototype.UserService.User[]> GetAllUsersAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetNotifications", ReplyAction="http://tempuri.org/IUserService/GetNotificationsResponse")]
+        TYPPrototype.UserService.Notification[] GetNotifications();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetNotifications", ReplyAction="http://tempuri.org/IUserService/GetNotificationsResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.UserService.Notification[]> GetNotificationsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserbyID", ReplyAction="http://tempuri.org/IUserService/GetUserbyIDResponse")]
         TYPPrototype.UserService.User GetUserbyID(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserbyID", ReplyAction="http://tempuri.org/IUserService/GetUserbyIDResponse")]
         System.Threading.Tasks.Task<TYPPrototype.UserService.User> GetUserbyIDAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetNotifByUser", ReplyAction="http://tempuri.org/IUserService/GetNotifByUserResponse")]
+        TYPPrototype.UserService.Notification[] GetNotifByUser(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetNotifByUser", ReplyAction="http://tempuri.org/IUserService/GetNotifByUserResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.UserService.Notification[]> GetNotifByUserAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/RegisterUser", ReplyAction="http://tempuri.org/IUserService/RegisterUserResponse")]
         string RegisterUser(TYPPrototype.UserService.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/RegisterUser", ReplyAction="http://tempuri.org/IUserService/RegisterUserResponse")]
         System.Threading.Tasks.Task<string> RegisterUserAsync(TYPPrototype.UserService.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SaveNotif", ReplyAction="http://tempuri.org/IUserService/SaveNotifResponse")]
+        string SaveNotif(TYPPrototype.UserService.Notification notif);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SaveNotif", ReplyAction="http://tempuri.org/IUserService/SaveNotifResponse")]
+        System.Threading.Tasks.Task<string> SaveNotifAsync(TYPPrototype.UserService.Notification notif);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/LoginUser", ReplyAction="http://tempuri.org/IUserService/LoginUserResponse")]
         bool LoginUser(string username, string password);
@@ -300,6 +427,14 @@ namespace TYPPrototype.UserService {
             return base.Channel.GetAllUsersAsync();
         }
         
+        public TYPPrototype.UserService.Notification[] GetNotifications() {
+            return base.Channel.GetNotifications();
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.UserService.Notification[]> GetNotificationsAsync() {
+            return base.Channel.GetNotificationsAsync();
+        }
+        
         public TYPPrototype.UserService.User GetUserbyID(int id) {
             return base.Channel.GetUserbyID(id);
         }
@@ -308,12 +443,28 @@ namespace TYPPrototype.UserService {
             return base.Channel.GetUserbyIDAsync(id);
         }
         
+        public TYPPrototype.UserService.Notification[] GetNotifByUser(int id) {
+            return base.Channel.GetNotifByUser(id);
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.UserService.Notification[]> GetNotifByUserAsync(int id) {
+            return base.Channel.GetNotifByUserAsync(id);
+        }
+        
         public string RegisterUser(TYPPrototype.UserService.User user) {
             return base.Channel.RegisterUser(user);
         }
         
         public System.Threading.Tasks.Task<string> RegisterUserAsync(TYPPrototype.UserService.User user) {
             return base.Channel.RegisterUserAsync(user);
+        }
+        
+        public string SaveNotif(TYPPrototype.UserService.Notification notif) {
+            return base.Channel.SaveNotif(notif);
+        }
+        
+        public System.Threading.Tasks.Task<string> SaveNotifAsync(TYPPrototype.UserService.Notification notif) {
+            return base.Channel.SaveNotifAsync(notif);
         }
         
         public bool LoginUser(string username, string password) {

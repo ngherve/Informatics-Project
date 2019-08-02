@@ -39,7 +39,7 @@
             <TextView
                     android:id="@+id/txtDashboard"
                     android:textSize="22sp"
-                    android:text="Dashboard"
+                    android:text="Stock Dashboard"
                     android:textColor="#FFFFFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -48,7 +48,8 @@
                     android:layout_marginTop="6dp"
                     android:layout_below="@id/txtDashboard"
                     android:textSize="14sp"
-                    android:text="12 items"
+                    android:id="@+id/numitems"
+                    android:text="Items in Stock: 5"
                     android:textColor="#52BAFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -56,6 +57,7 @@
             <ImageView
                     android:src="@drawable/person"
                     android:layout_alignParentRight="true"
+                    android:id="@+id/profilepic"
                     android:layout_width="62dp"
                     android:layout_height="62dp"/>
 

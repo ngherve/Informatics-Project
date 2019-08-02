@@ -69,12 +69,11 @@ public class ServerRequests extends StringRequest {
     }
 
     //Edit Product request
-    public ServerRequests(int x, int y, String pname, String price, String image, String quantity, String suppname, String type, String warehouse, String pcode, Response.Listener<String> listener) {
+    public ServerRequests(int x, int y, String pname, String price, String quantity, String suppname, String type, String warehouse, String pcode, Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL+"EditProduct.php", listener, null);
         params = new HashMap<>();
         params.put("P_Name", pname);
         params.put("P_Price", price);
-        params.put("P_Image", image);
         params.put("P_Quantity", quantity);
         params.put("Supplier_Name", suppname);
         params.put("P_Type", type);

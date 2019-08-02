@@ -15,8 +15,7 @@ public class ScanItemsActivity extends AppCompatActivity implements View.OnClick
     public static TextView resultView = null;
 
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
-    Button btnscan;
-    Button btnscan2;
+    Button btnscan, btnscan2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btnLogin;
     EditText edUsername, edPassword;
     TextView registerLink;
+    public static String usertype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,25 +58,45 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 String address = jsonRes.getString("Address");
                                 String gender = jsonRes.getString("Gender");
                                 String dob = jsonRes.getString("DOB");
-                                String user_type = jsonRes.getString("User_Type");
+                                usertype = jsonRes.getString("User_Type");
                                 String photo = jsonRes.getString("pphoto");
 
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                intent.putExtra("UserID", userID);
-                                intent.putExtra("Name", name);
-                                intent.putExtra("Username", username);
-                                intent.putExtra("Email", email);
-                                intent.putExtra("Password", pass);
-                                intent.putExtra("Tel_Number", telNumber);
-                                intent.putExtra("Address", address);
-                                intent.putExtra("Gender", gender);
-                                intent.putExtra("DOB", dob);
-                                intent.putExtra("User_Type", user_type);
-                                intent.putExtra("pphoto", photo);
-                                LoginActivity.this.startActivity(intent);
+                                if(usertype.equals("stock")) {
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    intent.putExtra("UserID", userID);
+                                    intent.putExtra("Name", name);
+                                    intent.putExtra("Username", username);
+                                    intent.putExtra("Email", email);
+                                    intent.putExtra("Password", pass);
+                                    intent.putExtra("Tel_Number", telNumber);
+                                    intent.putExtra("Address", address);
+                                    intent.putExtra("Gender", gender);
+                                    intent.putExtra("DOB", dob);
+                                    intent.putExtra("User_Type", usertype);
+                                    intent.putExtra("pphoto", photo);
+                                    LoginActivity.this.startActivity(intent);
+                                } else if(usertype.equals("warehouse")){
+                                    Intent intent = new Intent(LoginActivity.this, WarehouseHomeActivity.class);
+                                    intent.putExtra("UserID", userID);
+                                    intent.putExtra("Name", name);
+                                    intent.putExtra("Username", username);
+                                    intent.putExtra("Email", email);
+                                    intent.putExtra("Password", pass);
+                                    intent.putExtra("Tel_Number", telNumber);
+                                    intent.putExtra("Address", address);
+                                    intent.putExtra("Gender", gender);
+                                    intent.putExtra("DOB", dob);
+                                    intent.putExtra("User_Type", usertype);
+                                    intent.putExtra("pphoto", photo);
+                                    LoginActivity.this.startActivity(intent);
+                                } else{
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                    builder.setMessage("Login Failed: You have not been given permission by the Admin")
+                                            .setNegativeButton("Retry", null).create().show();
+                                }
                             } else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                builder.setMessage("Login Failed").setNegativeButton("Retry", null).create().show();
+                                builder.setMessage("Login Failed: Invalid Credentials").setNegativeButton("Retry", null).create().show();
                             }
 
                         }catch (JSONException e){

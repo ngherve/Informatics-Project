@@ -1,6 +1,7 @@
 package com.uj.ifm.typ.mobileprototype;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -47,6 +48,9 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
         btnsaving = findViewById(R.id.updatedetails);
         btnsaving.setOnClickListener(this);
 
+        //ImageView iv = (ImageView) findViewById(R.id.profile_image);
+
+
         Intent intent = getIntent();
         id = intent.getIntExtra("UserID", -1);
         name = intent.getStringExtra("Name");
@@ -61,6 +65,7 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
         photo = intent.getStringExtra("pphoto");
 
         profileimage = findViewById(R.id.profile_image);
+        new HomeActivity.GetImageFromURL(profileimage).execute(photo);
 
 
         btnEdit = (Button) findViewById(R.id.btnPhoto);
@@ -89,17 +94,25 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode ==1 && resultCode ==RESULT_OK && data !=null && data.getData() != null){
-            Uri filepath = data.getData();
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+        if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
+            if(requestCode ==0) {
+                Uri filepath = data.getData();
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                    profileimage.setImageBitmap(bitmap);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                UploadPicture(String.valueOf(id), getStringImage(bitmap));
+            } else if(requestCode==1){
+                Uri filepath = data.getData();
+                Bundle bundle = data.getExtras();
+                bitmap = (Bitmap) bundle.get("data");
                 profileimage.setImageBitmap(bitmap);
-
-            } catch (IOException e) {
-                e.printStackTrace();
+                UploadPicture(String.valueOf(id), getStringImage(bitmap));
             }
-
-            UploadPicture(String.valueOf(id), getStringImage(bitmap));
         }
     }
 
@@ -163,7 +176,7 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 0);
 
     }
 
@@ -174,7 +187,25 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 super.onBackPressed();
                 break;
             case R.id.btnPhoto:
-                UpdatePicture();
+                final String[] options = {"Camera", "Gallery", "Cancel"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setTitle("Please Choose an Option to add Image");
+                builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(options[which].equals("Camera")){
+                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            startActivityForResult(intent, 1);
+
+                        }else if(options[which].equals("Gallery")){
+                            UpdatePicture();
+                        } else if(options[which].equals("Cancel")){
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                builder.show();
+
                 break;
             case R.id.updatedetails:
                 String name = eName.getText().toString();

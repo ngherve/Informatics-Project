@@ -17,14 +17,28 @@ namespace WirelecWCFService
         List<User> GetAllUsers();
 
         [OperationContract]
+        [WebGet(UriTemplate = "GetNotifications")]
+        List<Notification> GetNotifications();
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetUserbyID", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         User GetUserbyID(int id);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetNotifByUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Notification> GetNotifByUser(int id);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "RegisterUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string RegisterUser(User user);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "SaveNotification", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+           RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string SaveNotif(Notification notif);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "LoginUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,

@@ -64,6 +64,65 @@ namespace WirelecWCFService
             return users;
         }
 
+        public List<Notification> GetNotifByUser(int id)
+        {
+            List<Notification> notifs = new List<Notification>();
+            connection.Open();//openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM Notification WHERE UserID = '" + id + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Notification notif = new Notification();
+                    notif.N_ID = Convert.ToInt32(dr["N_ID"].ToString());
+                    notif.UserID = Convert.ToInt32(dr["UserID"].ToString());
+                    notif.Message = dr["Message"].ToString();
+                    notif.N_Datetime = dr["N_Datetime"].ToString();
+                    notif.N_Email = dr["N_Email"].ToString();
+                    notifs.Add(notif);
+                }
+            }
+
+            return notifs;
+        }
+
+        public List<Notification> GetNotifications()
+        {
+            List<Notification> notifs = new List<Notification>();
+
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM Notification";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                Notification notif = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    notif = new Notification();
+                    notif.N_ID = Convert.ToInt32(dr["N_ID"].ToString());
+                    notif.UserID = Convert.ToInt32(dr["UserID"].ToString());
+                    notif.Message = dr["Message"].ToString();
+                    notif.N_Datetime = dr["N_Datetime"].ToString();
+                    notif.N_Email = dr["N_Email"].ToString();
+
+                    notifs.Add(notif);
+                }
+            }
+
+            return notifs;
+        }
+
         public User GetUserbyID(int id)
         {
             User user = null;
@@ -151,6 +210,33 @@ namespace WirelecWCFService
                 cmd.Parameters.AddWithValue("@a8", user.DOB);
                 cmd.Parameters.AddWithValue("@a9", user.User_Type);
                 cmd.Parameters.AddWithValue("@a10", user.pphoto);
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return "Data Saved Successfully";
+        }
+
+        public string SaveNotif(Notification notif)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Notification(UserID, Message, N_Datetime, N_Email) VALUES(@a1, @a2, @a3, @a4)", connection);
+                cmd.Parameters.AddWithValue("@a1", notif.UserID);
+                cmd.Parameters.AddWithValue("@a2", notif.Message);
+                cmd.Parameters.AddWithValue("@a3", notif.N_Datetime);
+                cmd.Parameters.AddWithValue("@a4", notif.N_Email);
+
                 if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();

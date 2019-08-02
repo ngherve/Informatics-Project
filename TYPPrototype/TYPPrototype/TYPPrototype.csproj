@@ -6197,6 +6197,9 @@
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserService\UserService.disco" />
     <None Include="Connected Services\UserService\configuration91.svcinfo" />
     <None Include="Connected Services\UserService\configuration.svcinfo" />
@@ -6238,6 +6241,7 @@
     <Content Include="gulp\gulp-tasks\uglify\min.js" />
     <Content Include="gulp\gulpfile.js" />
     <Content Include="ManageUsers.aspx" />
+    <Content Include="NotifyUser.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="src\js\core\app-menu.js" />
     <Content Include="src\js\core\app.js" />
@@ -7665,6 +7669,13 @@
     <Compile Include="ManageUsers.aspx.designer.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotifyUser.aspx.cs">
+      <DependentUpon>NotifyUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotifyUser.aspx.designer.cs">
+      <DependentUpon>NotifyUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8349,7 +8360,6 @@
     <WCFMetadataStorage Include="Connected Services\ProductService\" />
     <WCFMetadataStorage Include="Connected Services\UserService\" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

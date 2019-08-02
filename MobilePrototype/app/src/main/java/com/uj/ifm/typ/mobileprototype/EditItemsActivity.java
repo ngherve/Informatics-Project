@@ -126,9 +126,9 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
 
                 Intent intent = new Intent(EditItemsActivity.this, EditActivity.class);
                 intent.putExtra("P_Name", p.getP_Name());
-                intent.putExtra("P_Price", p.getP_Price());
+                intent.putExtra("P_Price", String.valueOf(p.getP_Price()));
                 intent.putExtra("P_Image", p.getP_Image());
-                intent.putExtra("P_Quantity", p.getP_Quantity());
+                intent.putExtra("P_Quantity", String.valueOf(p.getP_Quantity()));
                 intent.putExtra("Supplier_Name", p.getSupplier_Name());
                 intent.putExtra("P_Type", p.getP_Type());
                 intent.putExtra("W_Name", p.getW_Name());

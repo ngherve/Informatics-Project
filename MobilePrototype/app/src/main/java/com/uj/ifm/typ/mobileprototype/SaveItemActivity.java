@@ -1,6 +1,7 @@
 package com.uj.ifm.typ.mobileprototype;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -33,7 +34,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     private Bitmap bitmap;
     CircleImageView profileimage2;
     private String URL_Upload = "http://10.254.17.96:80/script/UploadProduct.php";
-    String id;
+    String id, image;
     private static final String TAG = ProfileActivity.class.getSimpleName();
     Button btnSave, btnUpoadImage;
     EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
@@ -65,7 +66,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = getIntent();
             epName.setText(intent.getStringExtra("P_Name"));
             eprice.setText(intent.getStringExtra("P_Price"));
-            intent.getStringExtra("P_Image");
+            image = intent.getStringExtra("P_Image");
             eQuant.setText(intent.getStringExtra("P_Quantity"));
             esuppname.setText(intent.getStringExtra("Supplier_Name"));
             ep_type.setText(intent.getStringExtra("P_Type"));
@@ -83,17 +84,26 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode ==1 && resultCode ==RESULT_OK && data !=null && data.getData() != null){
-            Uri filepath = data.getData();
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+
+        if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
+            if(requestCode ==0) {
+                Uri filepath = data.getData();
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                    profileimage2.setImageBitmap(bitmap);
+                    UploadPicture(String.valueOf(id), getStringImage(bitmap));
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            } else if(requestCode==1){
+                Uri filepath = data.getData();
+                Bundle bundle = data.getExtras();
+                bitmap = (Bitmap) bundle.get("data");
                 profileimage2.setImageBitmap(bitmap);
-
-            } catch (IOException e) {
-                e.printStackTrace();
+                UploadPicture(String.valueOf(id), getStringImage(bitmap));
             }
-
-            UploadPicture(String.valueOf(id), getStringImage(bitmap));
         }
     }
 
@@ -159,14 +169,13 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 0);
 
     }
 
     public void saveItem(){
         String pname = epName.getText().toString();
         String price = eprice.getText().toString();
-        String image = "My image";
         String quantity = eQuant.getText().toString();
         String suppname = esuppname.getText().toString();
         String type = ep_type.getText().toString();
@@ -205,7 +214,23 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.btnselectimage:
-                UpdatePicture();
+                final String[] options = {"Camera", "Gallery", "Cancel"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(SaveItemActivity.this);
+                builder.setTitle("Please Choose an Option to add Image");
+                builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(options[which].equals("Camera")){
+                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            startActivityForResult(intent, 1);
+                        }else if(options[which].equals("Gallery")){
+                            UpdatePicture();
+                        } else if(options[which].equals("Cancel")){
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                builder.show();
                 break;
         }
     }

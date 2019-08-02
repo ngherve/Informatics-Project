@@ -1,6 +1,7 @@
 package com.uj.ifm.typ.mobileprototype;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -30,12 +31,13 @@ import java.util.Map;
 public class EditActivity<getSim> extends AppCompatActivity implements View.OnClickListener {
 
     private Bitmap bitmap;
-    CircleImageView profileimage1;
+    private Intent intent;
+    private CircleImageView profileimage1;
     private String URL_Upload = "http://10.254.17.96:80/script/UploadProduct.php";
-    String id;
-    private static final String TAG = ProfileActivity.class.getSimpleName();
-    Button btnSave, btnImage;
-    EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
+    private String id, image;
+    private static final String TAG = EditActivity.class.getSimpleName();
+    private Button btnSave, btnImage;
+    private EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +62,9 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         profileimage1 = findViewById(R.id.edititem_image);
 
 
-        Intent intent = getIntent();
+        intent = getIntent();
         epName.setText(intent.getStringExtra("P_Name"));
         eprice.setText(intent.getStringExtra("P_Price"));
-        intent.getStringExtra("P_Image");
         eQuant.setText(intent.getStringExtra("P_Quantity"));
         esuppname.setText(intent.getStringExtra("Supplier_Name"));
         ep_type.setText(intent.getStringExtra("P_Type"));
@@ -79,17 +80,30 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode ==1 && resultCode ==RESULT_OK && data !=null && data.getData() != null){
-            Uri filepath = data.getData();
-            try {
+        if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
+            if(requestCode ==0) {
+                Uri filepath = data.getData();
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                    profileimage1.setImageBitmap(bitmap);
+                    UploadPicture(id, getStringImage(bitmap));
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            } else if(requestCode==1){
+                Uri filepath = data.getData();
+                try {
+                Bundle bundle = data.getExtras();
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
                 profileimage1.setImageBitmap(bitmap);
+                    UploadPicture(String.valueOf(id), getStringImage(bitmap));
 
-            } catch (IOException e) {
-                e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-
-            UploadPicture(String.valueOf(id), getStringImage(bitmap));
         }
     }
 
@@ -155,19 +169,19 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 0);
 
     }
 
     public void saveItem(){
         String pname = epName.getText().toString();
         String price = eprice.getText().toString();
-        String image = "My image";
         String quantity = eQuant.getText().toString();
         String suppname = esuppname.getText().toString();
         String type = ep_type.getText().toString();
         String warehouse = eW_name.getText().toString();
         String pcode = ePCode.getText().toString();
+
         id = pcode;
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -176,7 +190,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
                 try {
                     JSONObject jsonresp = new JSONObject(response);
                     AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
-                    builder.setMessage("Your Item has been Saved successfully !!!").setNegativeButton("OK", null).create().show();
+                    builder.setMessage("Your Item has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
 
                 } catch (JSONException ex) {
                     ex.printStackTrace();
@@ -184,7 +198,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
             }
         };
 
-        ServerRequests request = new ServerRequests(1,1, pname, price, image, quantity, suppname, type, warehouse, pcode, responseListener);
+        ServerRequests request = new ServerRequests(1,1, pname, price, quantity, suppname, type, warehouse, pcode, responseListener);
         RequestQueue queue = Volley.newRequestQueue(EditActivity.this);
         queue.add(request);
 
@@ -201,7 +215,25 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
                 break;
 
             case R.id.editbtnselectimage:
-                UpdatePicture();
+                final String[] options = {"Camera", "Gallery", "Cancel"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                builder.setTitle("Please Choose an Option to add Image");
+                builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(options[which].equals("Camera")){
+                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            startActivityForResult(intent, 1);
+
+                        }else if(options[which].equals("Gallery")){
+                            UpdatePicture();
+                        } else if(options[which].equals("Cancel")){
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                builder.show();
+
                 break;
         }
     }

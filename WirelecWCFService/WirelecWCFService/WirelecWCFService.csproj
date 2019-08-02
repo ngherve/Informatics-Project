@@ -114,11 +114,13 @@
   <ItemGroup>
     <Compile Include="IProductService.cs" />
     <Compile Include="IUserService.cs" />
+    <Compile Include="Notification.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductService.svc.cs">
       <DependentUpon>ProductService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secrecy.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserService.svc.cs">
       <DependentUpon>UserService.svc</DependentUpon>

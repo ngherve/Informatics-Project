@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="+QuUW8dAbK4xqufIu4kxAA8iKPY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="R1Lq2La7VuwzMTZ8UwEhTPIsIWE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="MetadataExchangeHttpBinding_IProductService">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="MetadataExchangeHttpBinding_IProductService" contract="ProductService.IProductService" bindingType="wsHttpBinding" address="http://localhost:50487/ProductService.svc/mex" bindingConfiguration="MetadataExchangeHttpBinding_IProductService">
+    <endpoint name="MetadataExchangeHttpBinding_IProductService" contract="ProductService.IProductService" bindingType="wsHttpBinding" address="http://localhost:8083/ProductService.svc/mex" bindingConfiguration="MetadataExchangeHttpBinding_IProductService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:50487/ProductService.svc/mex</serializedValue>
+          <serializedValue>http://localhost:8083/ProductService.svc/mex</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
