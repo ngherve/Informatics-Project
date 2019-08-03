@@ -14,6 +14,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +24,7 @@ public class NotifictionActivity extends AppCompatActivity implements  View.OnCl
     Button btnSend;
     EditText txtName, txtMessage;
     TextView txtResult;
+    String datetime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +35,15 @@ public class NotifictionActivity extends AppCompatActivity implements  View.OnCl
 
         txtName = (EditText)findViewById(R.id.notifyname);
         txtMessage = (EditText)findViewById(R.id.notmessage);
-        txtResult = (TextView) findViewById(R.id.notresults);
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+        datetime = dateformat.format(c.getTime());
     }
 
     public void backAction(View view) {
         super.onBackPressed();
     }
-
-    //private ArrayList<String> useremails = new ArrayList<>();
 
     public static int ReceiverID = 0;
     public static String name= "";
@@ -108,6 +112,9 @@ public class NotifictionActivity extends AppCompatActivity implements  View.OnCl
                         Map<String, String> params = new HashMap<>();
                         params.put("UserID", Integer.toString(ReceiverID));
                         params.put("Message", txtMessage.getText().toString());
+                        params.put("N_Datetime", datetime);
+                        params.put("N_Email", LoginActivity.email);
+
                         return params;
                     }
                 };

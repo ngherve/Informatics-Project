@@ -58,7 +58,7 @@ namespace TYPPrototype
                         "<div class='media'>" +
                         "<div class='media-left align-self-center'><i class='material-icons icon-bg-circle bg-cyan'>check_circle</i></div>" +
                         "<div class='media-body'>" +
-                        "<h6 class='media-heading'>" + n.Message + "from "+n.N_Email+"</h6><small>" +
+                        "<h6 class='media-heading'>" + n.Message + "<br /><i>"+n.N_Email+"</i></h6><small>" +
                         "<time class='media-meta text-muted' datetime='2015-06-11T18:29:20+08:00'>" + n.N_Datetime + "</time></small>" +
                         "</div></div></a></li>";
             }

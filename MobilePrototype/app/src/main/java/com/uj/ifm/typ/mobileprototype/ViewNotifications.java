@@ -2,6 +2,7 @@ package com.uj.ifm.typ.mobileprototype;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,20 +26,24 @@ public class ViewNotifications extends AppCompatActivity {
         setContentView(R.layout.activity_viewnot);
 
         txtMessage = (TextView) findViewById(R.id.txtmessage);
+        txtMessage.setText("");
+        txtMessage.setMovementMethod(new ScrollingMovementMethod());
         StringRequest strRequest = new StringRequest(Request.Method.POST, "http://10.254.17.96:80/script/ViewNotifications.php",
                 new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONArray jsonarray = new JSONArray(response);
                             String message = "";
                             for (int i = 0; i < jsonarray.length(); i++) {
-                                JSONObject jsonRes = jsonarray.getJSONObject(i);
-                                message += "- " + jsonRes.getString("Message") + " from user: " + jsonRes.getString("UserID") + "\n";
+                                final JSONObject jsonRes = jsonarray.getJSONObject(i);
+                                message = i+1+"- " + jsonRes.getString("Message") + "\n" +
+                                        jsonRes.getString("N_Email") + "\n" +
+                                        jsonRes.getString("N_Datetime") + "\n";
                             }
-
                             txtMessage.setText(message);
-
+                            txtMessage.setMovementMethod(new ScrollingMovementMethod());
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(ViewNotifications.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
@@ -54,10 +59,8 @@ public class ViewNotifications extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                if(LoginActivity.usertype.equals("warehouse"))
-                    params.put("UserID", String.valueOf(WarehouseHomeActivity.userIDw));
-                else if(LoginActivity.usertype.equals("stock"))
-                    params.put("UserID", String.valueOf(HomeActivity.userID));
+                params.put("UserID", String.valueOf(LoginActivity.userID));
+
                 return params;
             }
         };

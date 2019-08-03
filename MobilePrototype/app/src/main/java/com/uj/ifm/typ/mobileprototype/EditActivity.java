@@ -71,6 +71,9 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         eW_name.setText(intent.getStringExtra("W_Name"));
         ePCode.setText(intent.getStringExtra("P_Code"));
 
+
+        new HomeActivity.GetImageFromURL(profileimage1).execute(intent.getStringExtra("P_Image"));
+
     }
 
     public void backAction(View view) {

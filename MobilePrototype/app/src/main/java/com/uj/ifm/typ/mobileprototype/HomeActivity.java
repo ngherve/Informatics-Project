@@ -17,24 +17,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.android.volley.*;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
-
-    /*private DrawerLayout mdrawer;
-    private ActionBarDrawerToggle mToggle;*/
 
     public static int userID;
 
     private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems, c_updateitems, c_delete_items ;
-    String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
-    public static TextView profilename, profileemail, txtNumItems;
+    private String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
+    public static TextView profilename, profileemail, txtNumItems, txtNumNotif;
     int id;
-    TextView prof, eml;
-    DrawerLayout drw_layout;
-    NavigationView nav_view;
-    FragmentTransaction fragmentTransaction;
+    private TextView prof, eml;
+    private DrawerLayout drw_layout;
+    private NavigationView nav_view;
+    private FragmentTransaction fragmentTransaction;
 
     //Class for download IMAGE
     public static class GetImageFromURL extends AsyncTask<String, Void, Bitmap> {
@@ -80,7 +86,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         fragmentTransaction.commit();
         getSupportActionBar().setTitle("Home Fragment");
         nav_view = (NavigationView) findViewById(R.id.) */
-
+        countProduct();
+        countNotification();
         drw_layout = findViewById(R.id.nav_drawer);
         nav_view = findViewById(R.id.nav_menu);
         nav_view.setNavigationItemSelectedListener(this);
@@ -132,6 +139,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         profileemail = findViewById(R.id.nav_Profile_email);
         profileemail.setText(email);*/
 
+        txtNumNotif = findViewById(R.id.numNotif);
+
 
         prof = (TextView) findViewById(R.id.nav_Profile_name);
         eml = (TextView) findViewById(R.id.nav_Profile_email);
@@ -151,6 +160,70 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }*/
 
+    public void countNotification(){
+        StringRequest strRequest = new StringRequest(Request.Method.POST, "http://10.254.17.96:80/script/ViewNotifications.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray jsonarray = new JSONArray(response);
+                            String numNotifReport = "Notifications: " + String.valueOf(jsonarray.length());
+                            if(LoginActivity.usertype.equals("stock"))
+                                HomeActivity.txtNumNotif.setText(numNotifReport);
+                            if(LoginActivity.usertype.equals("warehouse"))
+                                WarehouseHomeActivity.txtNumNotif.setText(numNotifReport);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(HomeActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(HomeActivity.this, "Try Again! " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                if(LoginActivity.usertype.equals("warehouse"))
+                    params.put("UserID", String.valueOf(WarehouseHomeActivity.userIDw));
+                else if(LoginActivity.usertype.equals("stock"))
+                    params.put("UserID", String.valueOf(HomeActivity.userID));
+                return params;
+            }
+        };
+
+        RequestQueue reqQue = Volley.newRequestQueue(HomeActivity.this);
+        reqQue.add(strRequest);
+    }
+
+    public void countProduct(){
+        Response.Listener<String> respList = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try{
+                    ArrayList<Product> products = new ArrayList<Product>();
+                    JSONArray jsonarray = new JSONArray(response);
+                    String numItemReport = "Items in Stock: " + String.valueOf(jsonarray.length());
+                    if(LoginActivity.usertype.equals("stock"))
+                        HomeActivity.txtNumItems.setText(numItemReport);
+                    if(LoginActivity.usertype.equals("warehouse"))
+                        WarehouseHomeActivity.txtNumItems2.setText(numItemReport);
+
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        ServerRequests loginReq = new ServerRequests(respList);
+        RequestQueue queue = Volley.newRequestQueue(HomeActivity.this);
+        queue.add(loginReq);
+    }
 
 
     @Override

@@ -14,6 +14,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.android.volley.*;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class WarehouseHomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -21,7 +33,7 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
 
     private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems, c_updateitems, c_delete_items ;
     String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
-    public static TextView txtNumItems2;
+    public static TextView txtNumItems2, txtNumNotif;
     int id;
     TextView prof, eml;
     DrawerLayout drw_layout;
@@ -33,6 +45,9 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_warehouse_home);
+
+        countProduct();
+        countNotification();
 
         drw_layout = findViewById(R.id.nav_drawer1);
         nav_view = findViewById(R.id.nav_menu1);
@@ -71,6 +86,8 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
         c_reports.setOnClickListener(this);
 
         txtNumItems2 = findViewById(R.id.numitems2);
+        txtNumNotif = findViewById(R.id.numNotif1);
+
 
         prof = (TextView) findViewById(R.id.nav_Profile_name);
         eml = (TextView) findViewById(R.id.nav_Profile_email);
@@ -133,6 +150,101 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
                 builder.show();
                 break;
         }
+    }
+
+    public void countNotification(){
+        StringRequest strRequest = new StringRequest(Request.Method.POST, "http://10.254.17.96:80/script/ViewNotifications.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray jsonarray = new JSONArray(response);
+                            String numNotifReport = "Notifications: " + String.valueOf(jsonarray.length());
+                            if(LoginActivity.usertype.equals("stock"))
+                                HomeActivity.txtNumNotif.setText(numNotifReport);
+                            if(LoginActivity.usertype.equals("warehouse"))
+                                WarehouseHomeActivity.txtNumNotif.setText(numNotifReport);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(WarehouseHomeActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(WarehouseHomeActivity.this, "Try Again! " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                if(LoginActivity.usertype.equals("warehouse"))
+                    params.put("UserID", String.valueOf(WarehouseHomeActivity.userIDw));
+                else if(LoginActivity.usertype.equals("stock"))
+                    params.put("UserID", String.valueOf(HomeActivity.userID));
+                return params;
+            }
+        };
+
+        RequestQueue reqQue = Volley.newRequestQueue(WarehouseHomeActivity.this);
+        reqQue.add(strRequest);
+    }
+
+    public void countProduct(){
+        Response.Listener<String> respList = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try{
+                    ArrayList<Product> products = new ArrayList<Product>();
+                    JSONArray jsonarray = new JSONArray(response);
+                    String numItemReport = "Items in Stock: " + String.valueOf(jsonarray.length());
+                    if(LoginActivity.usertype.equals("stock"))
+                        HomeActivity.txtNumItems.setText(numItemReport);
+                    if(LoginActivity.usertype.equals("warehouse"))
+                        WarehouseHomeActivity.txtNumItems2.setText(numItemReport);
+
+                    for(int i=0; i<jsonarray.length(); i++) {
+                        JSONObject jsonRes = jsonarray.getJSONObject(i);
+                        int P_ID = Integer.parseInt(jsonRes.getString("P_ID"));
+                        String P_Name = jsonRes.getString("P_Name");
+                        int P_Price = Integer.parseInt(jsonRes.getString("P_Price"));
+                        String P_Image = jsonRes.getString("P_Image");
+                        int P_Quantity = Integer.parseInt(jsonRes.getString("P_Quantity"));
+                        String Supplier_Name = jsonRes.getString("Supplier_Name");
+                        String P_Type = jsonRes.getString("P_Type");
+                        String W_Name = jsonRes.getString("W_Name");
+                        String P_Code = jsonRes.getString("P_Code");
+                        Product product = new Product(P_ID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code);
+
+                        products.add(product);
+                    }
+
+                    List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
+
+                    for (Product p : products) {
+                        HashMap<String, String> hm = new HashMap<String, String>();
+                        hm.put("listview_title", p.getP_Name());
+                        hm.put("listview_discription", p.toString());
+                        //Bitmap bmp = getBitmapFromURL("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg");
+
+                        hm.put("listview_image", Integer.toString(R.drawable.nav_image));
+
+                        aList.add(hm);
+                    }
+
+
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        ServerRequests loginReq = new ServerRequests(respList);
+        RequestQueue queue = Volley.newRequestQueue(WarehouseHomeActivity.this);
+        queue.add(loginReq);
     }
 
 

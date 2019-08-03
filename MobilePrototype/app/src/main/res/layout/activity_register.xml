@@ -22,7 +22,7 @@
                 android:layout_gravity="center|top"
                 android:layout_margin="20dp"
                 android:text="Wirelec Registration"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="30dp" />
         <TextView
                 android:layout_width="match_parent"

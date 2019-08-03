@@ -20,6 +20,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText edUsername, edPassword;
     TextView registerLink;
     public static String usertype;
+    public static String email;
+    public static String name;
+    public static int userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +52,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             boolean success = jsonRes.getBoolean("success");
 
                             if(success){
-                                int userID = jsonRes.getInt("UserID");
-                                String name = jsonRes.getString("Name");
+                                userID = jsonRes.getInt("UserID");
+                                name = jsonRes.getString("Name");
                                 String username = jsonRes.getString("Username");
-                                String email = jsonRes.getString("Email");
+                                email = jsonRes.getString("Email");
                                 String pass = jsonRes.getString("Password");
                                 String telNumber = jsonRes.getString("Tel_Number");
                                 String address = jsonRes.getString("Address");

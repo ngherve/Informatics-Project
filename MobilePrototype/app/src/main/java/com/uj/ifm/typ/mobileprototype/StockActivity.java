@@ -18,7 +18,6 @@ import java.util.List;
 
 public class StockActivity extends AppCompatActivity {
 
-    //private static final int IO_BUFFER_SIZE = 4096;
     private MenuItem menuItemSearch;
     private MenuItem menuItemDelete;
     public static String numItemReport = "5";
@@ -88,23 +87,4 @@ public class StockActivity extends AppCompatActivity {
         queue.add(loginReq);
     }
 
-    /*public Bitmap getBitmapFromURL(String strurl){
-        URL url = null;
-        Bitmap bmp = null;
-        try {
-            url = new URL(strurl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream is = connection.getInputStream();
-            bmp = BitmapFactory.decodeStream(is);
-            return bmp;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-
-        return bmp;
-    }*/
 }
