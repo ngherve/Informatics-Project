@@ -19,6 +19,7 @@ namespace TYPPrototype
             }
             else
             {
+                
                 userClient = new UserServiceClient();
                 User[] users = userClient.GetAllUsers();
                 foreach(User u in users)
@@ -32,6 +33,8 @@ namespace TYPPrototype
                 User user = userClient.GetUserbyID(int.Parse(Session["UserID"].ToString()));
                 Session["UserEmail"] = user.Email;
                 Session["UserType"] = user.User_Type;
+
+                
 
                 EmployeeName.InnerHtml = user.Name.ToUpper();
                 empImage.InnerHtml = "<img src='" + user.pphoto + "' alt='avatar'><i></i>";

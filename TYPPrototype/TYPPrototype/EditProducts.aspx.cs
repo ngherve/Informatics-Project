@@ -14,6 +14,14 @@ namespace TYPPrototype
         string prodcode;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserType"].ToString() != "admin")
+            {
+                if (Session["UserType"].ToString() != "stock")
+                {
+                    Response.Redirect("home.aspx"); ;
+                }
+
+            }
             string code = Request.QueryString["ID"];
             prodClient = new ProductServiceClient();
             int id = int.Parse(code);

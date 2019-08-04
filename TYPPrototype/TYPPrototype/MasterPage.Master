@@ -59,11 +59,7 @@
                         <li class="dropdown nav-item mega-dropdown d-none d-lg-block"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Search</a>
                            
                         </li>
-                        <li class="nav-item nav-search"><a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
-                            <div class="search-input">
-                                <input class="input" type="text" placeholder="Search...">
-                            </div>
-                        </li>
+                        
                     </ul>
                     <ul class="nav navbar-nav float-right">
                         
@@ -106,7 +102,7 @@
 
     <!-- BEGIN: Main Menu-->
 
-    <div class="main-menu material-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
+    <div class="main-menu material-menu menu-fixed menu-light menu-accordion menu-shadow " data-scroll-to-active="true">
         <div class="user-profile">
             
         </div>
@@ -115,7 +111,8 @@
                 <li class=" nav-item"><a href="home.aspx"><i class="material-icons">list_alt</i><span class="menu-title">Dashboard</span></a>
                 </li>
 
-                <li class=" nav-item"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Stock Management</span></a>
+                
+                <li class="nav-item1" ><a href="#"><i class="material-icons">content_paste</i><span class="menu-title" >Stock Management</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="products.aspx"><i class="material-icons"></i><span>Products</span></a>
                             <ul class="menu-content">
@@ -123,14 +120,13 @@
                                 </li>
                                 <li><a class="menu-item" href="addProduct.aspx"><i class="material-icons"></i><span>Add Product</span></a>
                                 </li>
-                               
-                            </ul>
+                             </ul>
                         </li>
                     </ul>
                 </li>
 
 
-                <li class=" nav-item"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Warehouse</span></a>
+                <li "nav-item"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Warehouse</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="receivestock.aspx"><i class="material-icons"></i><span>Received Stock</span></a>  
                         </li>
@@ -142,18 +138,10 @@
                 </li>
 
 
-                 <li class=" nav-item"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Stocktake</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" href="WebUpgrade.aspx"><i class="material-icons"></i><span>View Stock Take</span></a>  
-                        </li>
-                         <li><a class="menu-item" href="STprocess.aspx"><i class="material-icons"></i><span>Stock Take Status</span></a>  
-                        </li>
-              
-                    </ul>
-                </li>
+                 
 
 
-                <li class=" nav-item"><a href="#"><i class="material-icons">edit</i><span class="menu-title"> Admin </span></a>
+                <li class="nav-item"><a href="#"><i id="AdminFunc2" runat="server" class="material-icons">edit</i><span class="menu-title" id="AdminFunc3" runat="server"> Admin </span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Employee Management</span></a>
                             <ul class="menu-content">
@@ -173,7 +161,7 @@
                     </ul>
                 </li>
 
-                <li class=" nav-item"><a href="#"><i class="material-icons">show_chart</i><span class="menu-title"> Reports </span></a>
+                <li class=" nav-item" ><a href="#"><i class="material-icons" >show_chart</i><span class="menu-title" id="AdminFunc1" runat="server"> Reports </span></a>
                     <ul class="menu-content">
 
                         <li><a class="menu-item" href="stockreport.aspx"><i class="material-icons"></i><span>Stock</span></a>

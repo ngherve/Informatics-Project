@@ -6187,17 +6187,28 @@
     <Content Include="assets\css\style-rtl.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\js\scripts.js" />
-    <None Include="Connected Services\ProductService\ProductService.disco" />
     <None Include="Connected Services\ProductService\configuration91.svcinfo" />
     <None Include="Connected Services\ProductService\configuration.svcinfo" />
+    <None Include="Connected Services\ProductService\ProductService2.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService21.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProductService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
+    <None Include="Connected Services\ProductService\ProductService1.disco" />
+    <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
+    <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\UserService\UserService.disco" />
@@ -7085,17 +7096,6 @@
     <Content Include="UpdateUser.aspx" />
     <Content Include="viewStockTake.aspx" />
     <Content Include="Web.config" />
-    <None Include="Connected Services\ProductService\ProductService.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProductService\ProductService1.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProductService\ProductService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

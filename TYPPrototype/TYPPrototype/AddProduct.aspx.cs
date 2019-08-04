@@ -12,6 +12,14 @@ namespace TYPPrototype
         ProductService.ProductServiceClient Pclient;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserType"].ToString() != "admin")
+            {
+                if (Session["UserType"].ToString() != "stock")
+                {
+                    Response.Redirect("home.aspx"); ;
+                }
+                
+            }
             Pclient = new ProductService.ProductServiceClient();
         }
 

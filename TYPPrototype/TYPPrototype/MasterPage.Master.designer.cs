@@ -58,6 +58,33 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuEdit;
         
         /// <summary>
+        /// AdminFunc2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminFunc2;
+        
+        /// <summary>
+        /// AdminFunc3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminFunc3;
+        
+        /// <summary>
+        /// AdminFunc1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminFunc1;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

@@ -14,6 +14,12 @@ namespace TYPPrototype
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["UserType"].ToString() != "admin")
+            {
+                Response.Redirect("home.aspx");
+            }
+
+                 
             client = new UserServiceClient();
         }
 
