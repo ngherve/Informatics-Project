@@ -34,7 +34,30 @@ namespace TYPPrototype
                 Session["UserEmail"] = user.Email;
                 Session["UserType"] = user.User_Type;
 
-                
+                if(Session["UserType"].ToString()!="admin")
+                {
+                        AdminFunc2.Visible = false;
+                        AdminFunc1.Visible= false;
+                        AdminM.Visible = false;
+                        AdminFunc1M.Visible = false;
+                }
+
+                if (Session["UserType"].ToString() != "admin")
+                {
+                    if (Session["UserType"].ToString() != "warehouse")
+                    {
+                        ware.Visible = false;
+                        WareM.Visible = false;
+                    }
+                }
+                if (Session["UserType"].ToString() != "admin")
+                {
+                    if (Session["UserType"].ToString() != "stock")
+                    {
+                        Prods.Visible = false;
+                        ProdM.Visible = false;
+                    }
+                }
 
                 EmployeeName.InnerHtml = user.Name.ToUpper();
                 empImage.InnerHtml = "<img src='" + user.pphoto + "' alt='avatar'><i></i>";

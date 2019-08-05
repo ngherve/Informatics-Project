@@ -112,8 +112,8 @@
                 </li>
 
                 
-                <li class="nav-item1" ><a href="#"><i class="material-icons">content_paste</i><span class="menu-title" >Stock Management</span></a>
-                    <ul class="menu-content">
+                <li class="nav-item1" id="Prods" runat="server" ><a href="#"><i class="material-icons">content_paste</i><span class="menu-title" >Stock Management</span></a>
+                    <ul class="menu-content" id="ProdM" runat="server">
                         <li><a class="menu-item" href="products.aspx"><i class="material-icons"></i><span>Products</span></a>
                             <ul class="menu-content">
                                 <li><a class="menu-item" href="Productlist.aspx"><i class="material-icons"></i><span>Product Inventory</span></a>
@@ -126,8 +126,8 @@
                 </li>
 
 
-                <li "nav-item"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Warehouse</span></a>
-                    <ul class="menu-content">
+                <li class="nav-item" id="ware" runat="server"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Warehouse</span></a>
+                    <ul class="menu-content" id="WareM" runat="server">
                         <li><a class="menu-item" href="receivestock.aspx"><i class="material-icons"></i><span>Received Stock</span></a>  
                         </li>
                          <li><a class="menu-item" href="inspectAllocate.aspx"><i class="material-icons"></i><span>Inspection and Allocation</span></a>  
@@ -138,11 +138,8 @@
                 </li>
 
 
-                 
-
-
-                <li class="nav-item"><a href="#"><i id="AdminFunc2" runat="server" class="material-icons">edit</i><span class="menu-title" id="AdminFunc3" runat="server"> Admin </span></a>
-                    <ul class="menu-content">
+                 <li class="nav-item" id="AdminFunc2" runat="server"><a href="#"><i class="material-icons">edit</i><span class="menu-title"> Admin </span></a>
+                    <ul class="menu-content" id="AdminM" runat="server">
                         <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Employee Management</span></a>
                             <ul class="menu-content">
                                 <li><a class="menu-item" href="addEmployee.aspx"><i class="material-icons"></i><span>Add Employee</span></a>
@@ -151,6 +148,7 @@
                                 <li><a class="menu-item" href="ManageUsers.aspx"><i class="material-icons"></i><span>Manage Employee</span></a>
                                 </li>
                             </ul>
+
                             <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Supplier Management</span></a>
                                 <ul class="menu-content">
                                     <li><a class="menu-item" href="contactSupplier.aspx"><i class="material-icons"></i><span>Contact Supplier</span></a>
@@ -161,8 +159,8 @@
                     </ul>
                 </li>
 
-                <li class=" nav-item" ><a href="#"><i class="material-icons" >show_chart</i><span class="menu-title" id="AdminFunc1" runat="server"> Reports </span></a>
-                    <ul class="menu-content">
+                <li class=" nav-item" id="AdminFunc1" runat="server" ><a href="#"><i class="material-icons" >show_chart</i><span class="menu-title" > Reports </span></a>
+                    <ul class="menu-content" id="AdminFunc1M" runat="server">
 
                         <li><a class="menu-item" href="stockreport.aspx"><i class="material-icons"></i><span>Stock</span></a>
                         </li>
