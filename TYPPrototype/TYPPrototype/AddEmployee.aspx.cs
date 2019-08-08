@@ -34,14 +34,14 @@ namespace TYPPrototype
                 Password = pass.Value,
                 Tel_Number = telnum.Value,
                 Address = address.Value,
-                Gender = gender.Value,
+                Gender = GenderList.SelectedItem.ToString(),
                 DOB = dob.Value,
-                User_Type = usertype.Value,
-                //pphoto = pimage.value
+                User_Type = Utype.SelectedItem.ToString(),
+                pphoto = "image.file"
             };
             string result = client.RegisterUser(user);
 
-            Response.Write("<script>alert('" + result + "')</script>");
+            Response.Redirect("ManageUsers.aspx");
         }
 
         protected void btnCancelEmp_Click(object sender, EventArgs e)

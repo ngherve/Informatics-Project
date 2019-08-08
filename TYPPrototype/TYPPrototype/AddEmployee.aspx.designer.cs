@@ -31,13 +31,13 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputText name;
         
         /// <summary>
-        /// usertype control.
+        /// Utype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText usertype;
+        protected global::System.Web.UI.WebControls.DropDownList Utype;
         
         /// <summary>
         /// username control.
@@ -85,13 +85,13 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl telnum;
         
         /// <summary>
-        /// gender control.
+        /// GenderList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText gender;
+        protected global::System.Web.UI.WebControls.DropDownList GenderList;
         
         /// <summary>
         /// address control.

@@ -53,14 +53,21 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="userinput1">Fist Name</label>
+                                                            <label for="userinput1">First Name</label>
                                                             <input type="text" runat="server" id="name" class="form-control border-primary" placeholder="Name" name="name">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput2">User Type</label>
-                                                            <input type="text" runat="server" id="usertype" class="form-control border-primary" placeholder="User Type" name="company">
+                                                            
+                                                            <asp:DropDownList ID="Utype" runat="server">
+                                                                <asp:ListItem Text="Stock" Value="stock"></asp:ListItem>
+                                                                <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>
+                                                                <asp:ListItem Text="Warehouse" Value="warehouse"></asp:ListItem>
+                                                                </asp:DropDownList>
+                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -108,7 +115,11 @@
 
                                                 <div class="form-group">
                                                     <label for="userinput8">Gender</label>                 
-                                                    <input id="gender" class="form-control border-primary" runat="server" name="gender" placeholder="gender" >
+                                                    <asp:DropDownList ID="GenderList" runat="server">
+                                                                <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                                                                <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                                                                <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
+                                                                </asp:DropDownList>
                                                 </div>
 
                                                 <div class="form-group">
