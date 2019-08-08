@@ -11,41 +11,113 @@ namespace TYPPrototype
     public partial class UpdateUser : System.Web.UI.Page
     {
         UserServiceClient userClient;
-        string usercode;
+
+        string n;
+        string un;
+        string em ;
+        string tn ;
+        string add ;
+        string gen ;
+        string pp ;
+
+        User u;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["UserType"].ToString()!="admin")
+            {
+                uTyp.Visible = false;
+            }
             string code = Request.QueryString["ID"];
             userClient = new UserServiceClient();
             int id = int.Parse(code);
-            User u = userClient.GetUserbyID(id);
-            usercode = Convert.ToString(u.UserID);
-            ename.Value = u.Name;
-            eusername.Value = u.Username;
-            eemail.Value = u.Email;
-            epassword.Value = u.Password;
-            etelnumber.Value = u.Tel_Number;
-            eaddress.Value = u.Address;
-            egender.Value = u.Gender;
-            edob.Value = u.DOB;
-            eusertype.Value = u.User_Type;
-            //pimage.Value = p.P_Image;
+            u = userClient.GetUserbyID(id);
+             
+
+
 
         }
         
         protected void btnEditEmployee_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.Name = ename.Value;
-            user.Username = eusername.Value;
-            user.Email = eemail.Value;
-            user.Password = epassword.Value;
-            user.Tel_Number = etelnumber.Value;
-            user.Address = eaddress.Value;
-            user.Gender = egender.Value;
-            user.DOB = edob.Value;
-            string resp = userClient.UpdateUser(user);
 
-            Response.Write("<script>alert('" + resp + "')</script>");
+            if(ename.Value.Equals(""))
+            {
+                n = u.Name;
+            }else
+            {
+                n = ename.Value;
+
+            }
+            if (eusername.Value.Equals(""))
+            {
+                un = u.Username;
+            }
+            else
+            {
+                un = eusername.Value;
+            }
+            if (eemail.Value.Equals(""))
+            {
+                em = u.Email;
+            }
+            else
+            {
+                em = eemail.Value;
+            }
+            if (etelnumber.Value.Equals(""))
+            {
+                tn = u.Tel_Number;
+            }
+            else
+            {
+                tn = etelnumber.Value;
+            }
+            if (eaddress.Value.Equals(""))
+            {
+                add = u.Address;
+            }
+            else
+            {
+                add = eaddress.Value;
+            }
+            if (egender.Value.Equals(""))
+            {
+                gen = u.Gender;
+            }
+            else
+            {
+                gen = egender.Value;
+            }
+
+                
+             
+             
+             
+             
+             pp =u.pphoto;
+
+            u.Name = n;
+            u.Username = un;
+            u.Email = em;
+            u.Tel_Number = tn;
+            u.Address = add;
+            u.Gender = gen;
+            u.pphoto = pp;
+
+            if (Session["UserType"].ToString() != "admin")
+            {
+                string cVal = u.User_Type;
+                u.User_Type = cVal;
+            }
+            else
+            {
+                u.User_Type = Utype.SelectedValue;
+            }
+            
+            string resp = userClient.UpdateUser(u);
+
+            
+            Response.Redirect("ManageUsers.aspx");
         }
 
         protected void btnCancelEdEmp_Click(object sender, EventArgs e)

@@ -40,15 +40,6 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl eemail;
         
         /// <summary>
-        /// epassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText epassword;
-        
-        /// <summary>
         /// etelnumber control.
         /// </summary>
         /// <remarks>
@@ -76,31 +67,22 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputText egender;
         
         /// <summary>
-        /// edob control.
+        /// uTyp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText edob;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl uTyp;
         
         /// <summary>
-        /// eusertype control.
+        /// Utype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText eusertype;
-        
-        /// <summary>
-        /// epimage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile epimage;
+        protected global::System.Web.UI.WebControls.DropDownList Utype;
         
         /// <summary>
         /// btnCancelEdEmp control.

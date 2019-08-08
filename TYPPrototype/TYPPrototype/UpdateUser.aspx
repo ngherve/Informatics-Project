@@ -80,14 +80,6 @@
                                                     </div> 
                                                 </div>
 
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="userinput3">Password</label>
-                                                            <input type="text" runat="server" id="epassword" class="form-control border-primary" placeholder="Password" name="password">
-                                                        </div>
-                                                    </div> 
-                                                </div>
 
                                                 <h4 class="form-section"><i class="ft-mail"></i> Employee Additional Information</h4>
 
@@ -105,27 +97,19 @@
                                                     <label>Gender</label>
                                                     <input class="form-control border-primary" runat="server" id="egender" type="text" placeholder="Gender">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Date of Birth</label>
-                                                    <input class="form-control border-primary" runat="server" id="edob" type="text" placeholder="DOB">
-                                                </div>
+                                                
 
-                                                <div class="form-group">
+                                                <div class="form-group" id="uTyp" runat="server">
                                                     <label>User Type</label>
-                                                    <input class="form-control border-primary" runat="server" id="eusertype" type="text" placeholder="User Type">
+                                                    
+                                                    <asp:DropDownList ID="Utype" runat="server">
+                                                                <asp:ListItem Text="Stock" Value="stock"></asp:ListItem>
+                                                                <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>
+                                                                <asp:ListItem Text="Warehouse" Value="warehouse"></asp:ListItem>
+                                                                </asp:DropDownList>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="userinput8">Profile Image</label>                 
-                                                    <input type="file" id="epimage" class="form-control border-primary" runat="server" name="image" placeholder="Product Image" >
-                                                    <script type="text/javascript">
-                                                    function getFilePath(){
-                                                        $('input[type=file]').change(function () {
-                                                            console.log(this.files[0].mozFullPath);
-                                                        });
-                                                    }
-                                                    </script>  
-                                                </div>
+                                             
 
                                             </div>
 
