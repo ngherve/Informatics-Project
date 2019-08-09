@@ -36,10 +36,10 @@ namespace TYPPrototype
                 P_Price = Int32.Parse(Pprice.Value),
                 P_Image = Pimage.Value,
                 P_Quantity = Int32.Parse(PQuant.Value),
-                P_Type = Ptype.Value,
+                P_Type = Pty.SelectedValue,
                 P_Code = PCode.Value,
-                Supplier_Name = SName.Value,
-                W_Name = WName.Value
+                Supplier_Name = Sn.SelectedValue,
+                W_Name = WH.SelectedValue
             };
             string result = Pclient.AddProduct(Pro);
             Response.Write("<script>alert('" + result + "')</script>");

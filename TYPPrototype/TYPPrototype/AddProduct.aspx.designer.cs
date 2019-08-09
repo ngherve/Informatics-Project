@@ -22,13 +22,13 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Pname;
         
         /// <summary>
-        /// Ptype control.
+        /// Pty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Ptype;
+        protected global::System.Web.UI.WebControls.DropDownList Pty;
         
         /// <summary>
         /// Pprice control.
@@ -67,22 +67,22 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Pimage;
         
         /// <summary>
-        /// SName control.
+        /// Sn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText SName;
+        protected global::System.Web.UI.WebControls.DropDownList Sn;
         
         /// <summary>
-        /// WName control.
+        /// WH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText WName;
+        protected global::System.Web.UI.WebControls.DropDownList WH;
         
         /// <summary>
         /// btnCancelPro control.
@@ -101,6 +101,5 @@ namespace TYPPrototype {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button svePro;
-        
     }
 }

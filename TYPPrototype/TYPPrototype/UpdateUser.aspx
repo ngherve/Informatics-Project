@@ -95,7 +95,12 @@
 
                                                 <div class="form-group">
                                                     <label>Gender</label>
-                                                    <input class="form-control border-primary" runat="server" id="egender" type="text" placeholder="Gender">
+                                                    
+                                                    <asp:DropDownList ID="gnd" runat="server">
+                                                                <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                                                                <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+                                                                <asp:ListItem Text="Other" Value="Other"></asp:ListItem>
+                                                                </asp:DropDownList>
                                                 </div>
                                                 
 

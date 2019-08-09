@@ -40,22 +40,22 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl pquantity;
         
         /// <summary>
-        /// suppname control.
+        /// sname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText suppname;
+        protected global::System.Web.UI.WebControls.DropDownList sname;
         
         /// <summary>
-        /// wname control.
+        /// WH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText wname;
+        protected global::System.Web.UI.WebControls.DropDownList WH;
         
         /// <summary>
         /// pcode control.

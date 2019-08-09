@@ -80,14 +80,7 @@ namespace TYPPrototype
             {
                 add = eaddress.Value;
             }
-            if (egender.Value.Equals(""))
-            {
-                gen = u.Gender;
-            }
-            else
-            {
-                gen = egender.Value;
-            }
+            
 
                 
              
@@ -101,7 +94,7 @@ namespace TYPPrototype
             u.Email = em;
             u.Tel_Number = tn;
             u.Address = add;
-            u.Gender = gen;
+            u.Gender = gnd.SelectedValue;
             u.pphoto = pp;
 
             if (Session["UserType"].ToString() != "admin")

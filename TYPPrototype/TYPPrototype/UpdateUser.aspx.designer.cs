@@ -58,13 +58,13 @@ namespace TYPPrototype {
         protected global::System.Web.UI.HtmlControls.HtmlInputText eaddress;
         
         /// <summary>
-        /// egender control.
+        /// gnd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText egender;
+        protected global::System.Web.UI.WebControls.DropDownList gnd;
         
         /// <summary>
         /// uTyp control.

@@ -53,7 +53,12 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             Product<label for="userinput2"> Type</label> :&nbsp;
-                                                            <input type="text" runat="server" id="Ptype" class="form-control border-primary" placeholder="Company" name="company">
+                                                            
+                                                            <asp:DropDownList ID="Pty" runat="server">
+                                                                <asp:ListItem Text="Electrical" Value="Electrical"></asp:ListItem>
+                                                                <asp:ListItem Text="Mechanical" Value="Mechanical"></asp:ListItem>
+                                                                <asp:ListItem Text="Industrial" Value="Industrial"></asp:ListItem>
+                                                                </asp:DropDownList>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -85,12 +90,22 @@
 
                                                 <div class="form-group">
                                                     <label for="userinput5">Supplier Name:</label>
-                                                    <input class="form-control border-primary" runat="server" type="text" placeholder="Schnieder Electric" id="SName">
-                                                </div>
+                                                    
+                                               <asp:DropDownList ID="Sn" runat="server">
+                                                                <asp:ListItem Text="Schneider Electric" Value="Schneider Electric"></asp:ListItem>
+                                                                <asp:ListItem Text="Hewlett" Value="Hewlett"></asp:ListItem>
+                                                                <asp:ListItem Text="Mondelez" Value="Mondalez"></asp:ListItem>
+                                                                </asp:DropDownList>
+                                                    </div>
 
                                                 <div class="form-group">
                                                     Warehouse Name:
-                                                    <input class="form-control border-primary" runat="server" type="text" placeholder="WearHouse 2" id="WName">
+                                                    
+                                                    <asp:DropDownList ID="WH" runat="server">
+                                                                <asp:ListItem Text="Warehouse1" Value="Warehouse1"></asp:ListItem>
+                                                                <asp:ListItem Text="Warehouse2" Value="Warehouse2"></asp:ListItem>
+                                                                <asp:ListItem Text="Warehouse3" Value="Warehouse3"></asp:ListItem>
+                                                                </asp:DropDownList>
                                                 </div>
 
                                                 <div class="form-group">

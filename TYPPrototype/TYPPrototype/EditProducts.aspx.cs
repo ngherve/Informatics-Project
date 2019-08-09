@@ -30,8 +30,8 @@ namespace TYPPrototype
             pname.Value = p.P_Name;
             pprice.Value = Convert.ToString(p.P_Price);
             ptype.Value = p.P_Type;
-            suppname.Value = p.Supplier_Name;
-            wname.Value = p.W_Name;
+           // suppname.Value = p.Supplier_Name;
+            //wname.Value = p.W_Name;
             pquantity.Value = Convert.ToString(p.P_Quantity);
             pcode.Value = p.P_Code;
             //pimage.Value = p.P_Image;
@@ -44,8 +44,8 @@ namespace TYPPrototype
             prod.P_Name = pname.Value;
             prod.P_Price = Convert.ToInt32(pprice.Value);
             prod.P_Type = ptype.Value;
-            prod.Supplier_Name = suppname.Value;
-            prod.W_Name = wname.Value;
+            prod.Supplier_Name = sname.SelectedValue;
+            prod.W_Name = WH.SelectedValue;
             prod.P_Quantity = Convert.ToInt32(pquantity.Value);
             prod.P_Code = prodcode;
             prod.P_Image = pimage.Value;
