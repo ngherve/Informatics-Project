@@ -13,6 +13,8 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +25,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static String email;
     public static String name;
     public static int userID;
+    public static String photo;
+    private SessionManager sm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         registerLink.setOnClickListener(this);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
+        FirebaseInstanceId.getInstance().getToken();
+
+        sm = new SessionManager(this);
     }
 
     @Override
@@ -62,7 +71,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 String gender = jsonRes.getString("Gender");
                                 String dob = jsonRes.getString("DOB");
                                 usertype = jsonRes.getString("User_Type");
-                                String photo = jsonRes.getString("pphoto");
+                                photo = jsonRes.getString("pphoto");
+
+                                sm.createSession(name, email, String.valueOf(userID));
 
                                 if(usertype.equals("stock")) {
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);

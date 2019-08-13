@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ServerRequests extends StringRequest {
 
-    private static final String REQUEST_URL = "http://10.254.17.96:80/script/";
+    public static final String REQUEST_URL = "http://10.254.17.96:80/script/";
     private Map<String, String> params;
 
     //Register user Request

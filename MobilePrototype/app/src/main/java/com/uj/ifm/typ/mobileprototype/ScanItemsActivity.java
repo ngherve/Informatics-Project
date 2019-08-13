@@ -14,8 +14,8 @@ public class ScanItemsActivity extends AppCompatActivity implements View.OnClick
      */
     public static TextView resultView = null;
 
-    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
-    Button btnscan, btnscan2;
+    Button btnscan;
+    public static boolean issearch2 = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,6 @@ public class ScanItemsActivity extends AppCompatActivity implements View.OnClick
         btnscan = (Button) findViewById(R.id.scanner);
         btnscan.setOnClickListener(this);
 
-        btnscan2 = (Button) findViewById(R.id.scanner2);
-        btnscan2.setOnClickListener(this);
 
     }
 
@@ -40,11 +38,13 @@ public class ScanItemsActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.scanner:
-                startActivity(new Intent(getApplicationContext(), ScannerActivity.class));
-                break;
-            case R.id.scanner2:
-                startActivity(new Intent(getApplicationContext(), ScannerActivity.class));
 
+                if(HomeActivity.isSearch==true && ScanItemsActivity.issearch2 == true) {
+                    startActivity(new Intent(getApplicationContext(), ScannerSearchActivity.class));
+                    ScanItemsActivity.issearch2 = true;
+                }
+                else
+                    startActivity(new Intent(getApplicationContext(), ScannerActivity.class));
                 break;
         }
     }

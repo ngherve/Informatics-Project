@@ -19,6 +19,10 @@ namespace TYPPrototype
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["Username"] != null)
+            {
+                Response.Redirect("home.aspx");
+            }
             client = new UserService.UserServiceClient();
             prodClient = new ProductService.ProductServiceClient();
         }
@@ -40,9 +44,6 @@ namespace TYPPrototype
                     error.InnerHtml = "Error: Invalid Credentials";
                     Session["Username"] = null;
                 }
-            }else if (Session["Username"].Equals(usernam))
-            {
-                Response.Write("<script>alert('" + "You are Already Logged In" + "')</script>");
             }
         }
     }

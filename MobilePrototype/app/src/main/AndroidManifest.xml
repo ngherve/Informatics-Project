@@ -1,31 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.uj.ifm.typ.mobileprototype">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/ic_launcherbg"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
+            android:hardwareAccelerated="false"
+            android:largeHeap="true"
+            android:networkSecurityConfig="@xml/network_security_config"
             android:supportsRtl="true"
             android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".ViewNotifications"
-                  android:theme="@style/AppTheme">
-            <intent-filter>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
-        </activity>
+        </service>
+
+        <service android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
         <activity android:name=".NotifictionActivity"
                   android:theme="@style/AppTheme">
             <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".ViewNotifications"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ViewInvoices"
+                  android:theme="@style/AppTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ScannerSearchActivity">
+
+        </activity>
+        <activity
+                android:name=".DispatchActivity"
+                android:theme="@style/AppTheme">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -41,14 +82,14 @@
         </activity>
         <activity
                 android:name=".EditActivity"
-                android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+                android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
                 android:name=".EditItemsActivity"
-                android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+                android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
@@ -57,12 +98,13 @@
         </activity>
         <activity
                 android:name=".SaveItemActivity"
-                android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+                android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ScanItemsActivity">
+        <activity android:name=".ScanItemsActivity"
+                  android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
@@ -93,7 +135,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity
+                android:name=".LoginActivity"
+                android:allowBackup="true"
+                android:icon="@mipmap/ic_launcherbg"
+                android:label="@string/app_name"
+                android:roundIcon="@mipmap/ic_launcher_round"
+                android:supportsRtl="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

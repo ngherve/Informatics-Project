@@ -6,10 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -23,30 +20,31 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     public static int userID;
 
     private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems, c_updateitems, c_delete_items ;
-    private String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
-    public static TextView profilename, profileemail, txtNumItems, txtNumNotif;
-    int id;
-    private TextView prof, eml;
-    private DrawerLayout drw_layout;
-    private NavigationView nav_view;
-    private FragmentTransaction fragmentTransaction;
+    private String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo;
+    public static TextView txtNumItems, txtNumNotif;
+    private int id;
+    TextView prof, eml;
+    public static boolean isSearch = false;
+    private SessionManager sm;
+
 
     //Class for download IMAGE
     public static class GetImageFromURL extends AsyncTask<String, Void, Bitmap> {
         ImageView imgV;
         Bitmap bitmap;
-
 
         public GetImageFromURL(ImageView imgV){
             this.imgV = imgV;
@@ -71,39 +69,47 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             imgV.setImageBitmap(bitmap);
         }
     }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+
+        if(item.getItemId() == R.id.logout_menu){
+            sm.logout();
+            Intent intent2 = new Intent(HomeActivity.this, LoginActivity.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent2);
+        } else if(item.getItemId() == R.id.db){
+            Intent intent2 = new Intent(HomeActivity.this, HomeActivity.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent2);
+        } else if(item.getItemId() == R.id.search){
+            HomeActivity.isSearch = true;
+            //ScanItemsActivity.issearch2=true;
+            Intent intent2 = new Intent(HomeActivity.this, ScanItemsActivity.class);
+            startActivity(intent2);
+        }
+        else {
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        /*mdrawer = (DrawerLayout) findViewById(R.id.nav_drawer);
-        mToggle = new ActionBarDrawerToggle(this, mdrawer, R.string.open , R.string.close);
-        mdrawer.addDrawerListener(mToggle);
-        mToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
-        /*fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.main_container, new HomeFragment());
-        fragmentTransaction.commit();
-        getSupportActionBar().setTitle("Home Fragment");
-        nav_view = (NavigationView) findViewById(R.id.) */
+        sm = new SessionManager(this);
+        sm.checkLogin();
+        HashMap<String, String> user = sm.getUserDetail();
+        String mName = user.get(SessionManager.NAME);
+        String mEmail = user.get(SessionManager.EMAIL);
+
+        refreshPage();
         countProduct();
-        countNotification();
-        drw_layout = findViewById(R.id.nav_drawer);
-        nav_view = findViewById(R.id.nav_menu);
-        nav_view.setNavigationItemSelectedListener(this);
 
-        Intent intent = getIntent();
-        id = intent.getIntExtra("UserID", -1);
-        name = intent.getStringExtra("Name");
-        username = intent.getStringExtra("Username");
-        email = intent.getStringExtra("Email");
-        pass = intent.getStringExtra("Password");
-        Tel = intent.getStringExtra("Tel_Number");
-        Address = intent.getStringExtra("Address");
-        gender = intent.getStringExtra("Gender");
-        DOB = intent.getStringExtra("DOB");
-        user_type = intent.getStringExtra("User_Type");
-        photo = intent.getStringExtra("pphoto");
         userID = id;
 
         c_profile = (CardView) findViewById(R.id.profile);
@@ -131,47 +137,89 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         c_delete_items.setOnClickListener(this);
 
         txtNumItems = findViewById(R.id.numitems);
-        //txtNumItems.setText(StockActivity.numItemReport);
-
-        /*profilename = findViewById(R.id.nav_Profile_name);
-        profilename.setText(username);
-
-        profileemail = findViewById(R.id.nav_Profile_email);
-        profileemail.setText(email);*/
 
         txtNumNotif = findViewById(R.id.numNotif);
-
 
         prof = (TextView) findViewById(R.id.nav_Profile_name);
         eml = (TextView) findViewById(R.id.nav_Profile_email);
 
-        /*prof.setText(name);
-        eml.setText(email);*/
-        ImageView iv = (ImageView)findViewById(R.id.profilepic);
+        countNotification();
 
-        new GetImageFromURL(iv).execute(photo);
+        NavigationView navigationView = findViewById(R.id.nav_menu);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.nav_Profile_name);
+        navUsername.setText(LoginActivity.name);
+        TextView navEmail = (TextView) headerView.findViewById(R.id.nav_Profile_email);
+        navEmail.setText(LoginActivity.email);
+        ImageView navprofimage = (ImageView) headerView.findViewById(R.id.profilemenuimage);
+        new HomeActivity.GetImageFromURL(navprofimage).execute(LoginActivity.photo);
+
     }
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if(mToggle.onOptionsItemSelected(item)){
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
+    public void refreshPage(){
+        StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "QueryUserByID.php",
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonRes = new JSONObject(response);
+
+                            id = jsonRes.getInt("UserID");
+                            name = jsonRes.getString("Name");
+                            username = jsonRes.getString("Username");
+                            email = jsonRes.getString("Email");
+                            pass = jsonRes.getString("Password");
+                            Tel = jsonRes.getString("Tel_Number");
+                            Address = jsonRes.getString("Address");
+                            gender = jsonRes.getString("Gender");
+                            DOB = jsonRes.getString("DOB");
+                            user_type = jsonRes.getString("User_Type");
+                            photo = jsonRes.getString("pphoto");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(HomeActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(HomeActivity.this, "Try Again! " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("UserID", String.valueOf(LoginActivity.userID));
+
+                return params;
+            }
+        };
+
+
+        RequestQueue reqQue = Volley.newRequestQueue(HomeActivity.this);
+        reqQue.add(strRequest);
+    }
 
     public void countNotification(){
-        StringRequest strRequest = new StringRequest(Request.Method.POST, "http://10.254.17.96:80/script/ViewNotifications.php",
+        StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "ViewNotifications.php",
                 new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONArray jsonarray = new JSONArray(response);
-                            String numNotifReport = "Notifications: " + String.valueOf(jsonarray.length());
-                            if(LoginActivity.usertype.equals("stock"))
-                                HomeActivity.txtNumNotif.setText(numNotifReport);
-                            if(LoginActivity.usertype.equals("warehouse"))
-                                WarehouseHomeActivity.txtNumNotif.setText(numNotifReport);
+                            HomeActivity.txtNumNotif.setText("Notifications: " + jsonarray.length());
+                            String message = "";
+                            for (int i = 0; i < jsonarray.length(); i++) {
+                                final JSONObject jsonRes = jsonarray.getJSONObject(i);
+                                message += i+1+"- " + jsonRes.getString("Message") + "\n" +
+                                        jsonRes.getString("N_Email") + "\n" +
+                                        jsonRes.getString("N_Datetime") + "\n";
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -188,10 +236,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                if(LoginActivity.usertype.equals("warehouse"))
-                    params.put("UserID", String.valueOf(WarehouseHomeActivity.userIDw));
-                else if(LoginActivity.usertype.equals("stock"))
-                    params.put("UserID", String.valueOf(HomeActivity.userID));
+                params.put("UserID", String.valueOf(LoginActivity.userID));
                 return params;
             }
         };
@@ -230,6 +275,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.profile:
+                refreshPage();
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 intent.putExtra("UserID", id);
                 intent.putExtra("Name", name);
@@ -246,6 +292,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.logoff:
+                sm.logout();
                 Intent intent1 = new Intent(HomeActivity.this, LoginActivity.class);
                 intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent1);
@@ -260,10 +307,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(HomeActivity.this, EditItemsActivity.class));
                 break;
             case R.id.viewreports:
-                //startActivity(new Intent(HomeActivity.this, ReportsActivity.class));
+                startActivity(new Intent(HomeActivity.this, ViewInvoices.class));
                 break;
             case R.id.notifications:
-                //startActivity(new Intent(HomeActivity.this, NotifyActivity.class));
                 final String[] options = {"Notify User", "View Notifications", "Cancel"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
                 builder.setTitle("Please Choose an Option");
@@ -286,23 +332,5 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(HomeActivity.this, SaveItemActivity.class));
                 break;
         }
-    }
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        //Menu menu = menuItem.get;
-        //MenuItem logt = menu.findItem(R.id.logout_menu);
-        if(menuItem.getItemId() == R.id.logout_menu){
-            Intent intent2 = new Intent(HomeActivity.this, LoginActivity.class);
-            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent2);
-        } else if(menuItem.getItemId() == R.id.db){
-            super.onBackPressed();
-        }
-        else {
-            return super.onOptionsItemSelected(menuItem);
-        }
-        return true;
     }
 }

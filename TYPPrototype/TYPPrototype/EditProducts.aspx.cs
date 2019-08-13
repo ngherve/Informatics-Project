@@ -30,7 +30,7 @@ namespace TYPPrototype
             pname.Value = p.P_Name;
             pprice.Value = Convert.ToString(p.P_Price);
             ptype.Value = p.P_Type;
-           // suppname.Value = p.Supplier_Name;
+            //suppname.Value = p.Supplier_Name;
             //wname.Value = p.W_Name;
             pquantity.Value = Convert.ToString(p.P_Quantity);
             pcode.Value = p.P_Code;

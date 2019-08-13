@@ -29,13 +29,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileActivity<getSim> extends AppCompatActivity implements View.OnClickListener {
-    Button btnEdit, btngoback, btnsaving;
-    EditText eName, eDOB, eEmail, ePassword, eUsername, eAdress, ePhone, eGender;
-    String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
+    private Button btnEdit, btngoback, btnsaving;
+    private EditText eName, eDOB, eEmail, ePassword, eUsername, eAdress, ePhone, eGender;
+    private String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
     int id;
     private Bitmap bitmap;
-    CircleImageView profileimage;
-    private String URL_Upload = "http://10.254.17.96:80/script/Upload.php";
+    private CircleImageView profileimage;
+    private String URL_Upload = ServerRequests.REQUEST_URL + "Upload.php";
     private static final String TAG = ProfileActivity.class.getSimpleName();
 
     @Override
@@ -47,9 +47,6 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
 
         btnsaving = findViewById(R.id.updatedetails);
         btnsaving.setOnClickListener(this);
-
-        //ImageView iv = (ImageView) findViewById(R.id.profile_image);
-
 
         Intent intent = getIntent();
         id = intent.getIntExtra("UserID", -1);
@@ -208,13 +205,14 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
 
                 break;
             case R.id.updatedetails:
-                String name = eName.getText().toString();
-                String username = eUsername.getText().toString();
-                String email = eEmail.getText().toString();
+
+                String name1 = eName.getText().toString();
+                String username1 = eUsername.getText().toString();
+                String email1 = eEmail.getText().toString();
                 String Password = ePassword.getText().toString();
                 String telNumber = ePhone.getText().toString();
                 String address = eAdress.getText().toString();
-                String gender = eGender.getText().toString();
+                String gender1 = eGender.getText().toString();
                 String dob = eDOB.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -235,9 +233,10 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                     }
                 };
 
-                ServerRequests request = new ServerRequests(id, name, username, email, Password, telNumber, address, gender, dob, responseListener);
+                ServerRequests request = new ServerRequests(id, name1, username1, email1, Password, telNumber, address, gender1, dob, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(ProfileActivity.this);
                 queue.add(request);
+
                 break;
 
         }

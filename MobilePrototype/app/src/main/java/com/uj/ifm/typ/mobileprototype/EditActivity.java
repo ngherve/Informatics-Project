@@ -33,7 +33,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
     private Bitmap bitmap;
     private Intent intent;
     private CircleImageView profileimage1;
-    private String URL_Upload = "http://10.254.17.96:80/script/UploadProduct.php";
+    private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
     private String id, image;
     private static final String TAG = EditActivity.class.getSimpleName();
     private Button btnSave, btnImage;
@@ -69,10 +69,11 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         esuppname.setText(intent.getStringExtra("Supplier_Name"));
         ep_type.setText(intent.getStringExtra("P_Type"));
         eW_name.setText(intent.getStringExtra("W_Name"));
-        ePCode.setText(intent.getStringExtra("P_Code"));
-
+        id =intent.getStringExtra("P_Code");
+        ePCode.setText(id);
 
         new HomeActivity.GetImageFromURL(profileimage1).execute(intent.getStringExtra("P_Image"));
+
 
     }
 
@@ -101,7 +102,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
                 Bundle bundle = data.getExtras();
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
                 profileimage1.setImageBitmap(bitmap);
-                    UploadPicture(String.valueOf(id), getStringImage(bitmap));
+                    UploadPicture(id, getStringImage(bitmap));
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -167,8 +168,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
 
     public void UpdatePicture(){
         //creating a file chooser
-        String pcode = ePCode.getText().toString();
-        id = pcode;
+
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);

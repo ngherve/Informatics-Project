@@ -14,7 +14,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent">
+            android:background="@drawable/bgapps">
 
     <LinearLayout
             android:orientation="vertical"
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"/>
 
             <ImageView
-                    android:src="@drawable/person"
+                    android:src="@mipmap/ic_launcherbg"
                     android:layout_alignParentRight="true"
                     android:id="@+id/profilepic"
                     android:layout_width="62dp"
@@ -218,7 +218,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
                     <TextView
-                            android:text="View Report"
+                            android:text="Stock Invoice"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
                             android:textSize="18sp"
@@ -327,14 +327,16 @@
 
     </ScrollView>
 
+
     <android.support.design.widget.NavigationView
             app:headerLayout="@layout/header"
             android:id="@+id/nav_menu"
             android:layout_width="wrap_content"
-            android:background="@color/white"
             app:itemTextColor="@color/darkgray"
             app:itemIconTint="@color/darkgray"
+            android:background="@color/colorPrimary"
             app:menu="@menu/drawermenu"
+            android:fitsSystemWindows="true"
             android:layout_gravity="start"
             android:layout_height="match_parent">
 

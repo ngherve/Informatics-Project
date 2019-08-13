@@ -9,26 +9,36 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
+import android.widget.Toast;
+import com.android.volley.*;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
 public class EditQuantActivity<getSim> extends AppCompatActivity implements View.OnClickListener {
 
     private Bitmap bitmap;
-    private String URL_Upload = "http://10.254.17.96:80/script/UploadProduct.php";
+    private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
     private Button btnSave, btnImage;
     private String image, id;
     private EditText epName, eprice, eQuant, esuppname, ep_type, eW_name, ePCode, newQuant;
     private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code;
-
+    private String datetime, newQuanttity =  null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_quant);
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+        datetime = dateformat.format(c.getTime());
 
         newQuant = (EditText) findViewById(R.id.editetstQuantity2);
         epName = (EditText) findViewById(R.id.editetpName1);
@@ -81,29 +91,70 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
     }
 
     public void saveItem(){
-        String newQuanttity = newQuant.getText().toString();
+        newQuanttity = newQuant.getText().toString();
+        if(!newQuanttity.equals("\\s") || newQuanttity!=null ) {
+            int totalQuent = Integer.parseInt(P_Quantity) + Integer.parseInt(newQuanttity);
+            id = P_Code;
 
-        int totalQuent = Integer.parseInt(P_Quantity) + Integer.parseInt(newQuanttity);
-        id = P_Code;
-
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonresp = new JSONObject(response);
-                    AlertDialog.Builder builder = new AlertDialog.Builder(EditQuantActivity.this);
-                    builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
-
-                } catch (JSONException ex) {
-                    ex.printStackTrace();
+            Response.Listener<String> responseListener = new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject jsonresp = new JSONObject(response);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(EditQuantActivity.this);
+                        builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
+                        saveInvoice();
+                    } catch (JSONException ex) {
+                        ex.printStackTrace();
+                    }
                 }
+            };
+
+            ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, responseListener);
+            RequestQueue queue = Volley.newRequestQueue(EditQuantActivity.this);
+            queue.add(request);
+        } else{
+            AlertDialog.Builder builder = new AlertDialog.Builder(EditQuantActivity.this);
+            builder.setMessage("Please enter the quantity !!!").setNegativeButton("Retry", null).create().show();
+        }
+
+    }
+
+    public void saveInvoice(){
+        StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "SaveInvoice.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonRes = new JSONObject(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(EditQuantActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(EditQuantActivity.this, "Try Again! " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("P_Code", P_Code);
+                params.put("Quantity", newQuanttity);
+                params.put("Total_Price", Integer.toString(Integer.parseInt(newQuanttity)*Integer.parseInt(P_Price)));
+                params.put("C_ID", "1");
+                params.put("INV_Date", datetime);
+                params.put("UserID", Integer.toString(LoginActivity.userID));
+
+                return params;
             }
         };
 
-        ServerRequests request = new ServerRequests(1,1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(EditQuantActivity.this);
-        queue.add(request);
-
+        RequestQueue reqQue = Volley.newRequestQueue(EditQuantActivity.this);
+        reqQue.add(strRequest);
     }
 
     @Override

@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -31,14 +29,12 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
 
     public static int userIDw;
 
-    private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems, c_updateitems, c_delete_items ;
-    String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo, message;
+    private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems ;
+    private String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo;
     public static TextView txtNumItems2, txtNumNotif;
     int id;
     TextView prof, eml;
-    DrawerLayout drw_layout;
-    NavigationView nav_view;
-    FragmentTransaction fragmentTransaction;
+    private SessionManager sm;
 
 
     @Override
@@ -46,25 +42,10 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_warehouse_home);
 
-        countProduct();
-        countNotification();
+        sm = new SessionManager(this);
+        sm.checkLogin();
 
-        drw_layout = findViewById(R.id.nav_drawer1);
-        nav_view = findViewById(R.id.nav_menu1);
-        nav_view.setNavigationItemSelectedListener(this);
-
-        Intent intent = getIntent();
-        id = intent.getIntExtra("UserID", -1);
-        name = intent.getStringExtra("Name");
-        username = intent.getStringExtra("Username");
-        email = intent.getStringExtra("Email");
-        pass = intent.getStringExtra("Password");
-        Tel = intent.getStringExtra("Tel_Number");
-        Address = intent.getStringExtra("Address");
-        gender = intent.getStringExtra("Gender");
-        DOB = intent.getStringExtra("DOB");
-        user_type = intent.getStringExtra("User_Type");
-        photo = intent.getStringExtra("pphoto");
+        refreshPage();
         userIDw = id;
 
         c_profile = (CardView) findViewById(R.id.profile1);
@@ -88,18 +69,75 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
         txtNumItems2 = findViewById(R.id.numitems2);
         txtNumNotif = findViewById(R.id.numNotif1);
 
-
         prof = (TextView) findViewById(R.id.nav_Profile_name);
         eml = (TextView) findViewById(R.id.nav_Profile_email);
 
-        ImageView iv = (ImageView) findViewById(R.id.profilepic1);
-        new HomeActivity.GetImageFromURL(iv).execute(photo);
+        countProduct();
+        countNotification();
+
+        NavigationView navigationView = findViewById(R.id.nav_menu1);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.nav_Profile_name);
+        navUsername.setText(LoginActivity.name);
+        TextView navEmail = (TextView) headerView.findViewById(R.id.nav_Profile_email);
+        navEmail.setText(LoginActivity.email);
+        ImageView navprofimage = (ImageView) headerView.findViewById(R.id.profilemenuimage);
+        new HomeActivity.GetImageFromURL(navprofimage).execute(LoginActivity.photo);
+    }
+
+    public void refreshPage(){
+        StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "QueryUserByID.php",
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonRes = new JSONObject(response);
+
+                            id = jsonRes.getInt("UserID");
+                            name = jsonRes.getString("Name");
+                            username = jsonRes.getString("Username");
+                            email = jsonRes.getString("Email");
+                            pass = jsonRes.getString("Password");
+                            Tel = jsonRes.getString("Tel_Number");
+                            Address = jsonRes.getString("Address");
+                            gender = jsonRes.getString("Gender");
+                            DOB = jsonRes.getString("DOB");
+                            user_type = jsonRes.getString("User_Type");
+                            photo = jsonRes.getString("pphoto");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(WarehouseHomeActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(WarehouseHomeActivity.this, "Try Again! " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("UserID", String.valueOf(LoginActivity.userID));
+
+                return params;
+            }
+        };
+
+
+        RequestQueue reqQue = Volley.newRequestQueue(WarehouseHomeActivity.this);
+        reqQue.add(strRequest);
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.profile1:
+                refreshPage();
                 Intent intent = new Intent(WarehouseHomeActivity.this, ProfileActivity.class);
                 intent.putExtra("UserID", id);
                 intent.putExtra("Name", name);
@@ -128,7 +166,7 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
                 break;
 
             case R.id.viewreports1:
-                //startActivity(new Intent(HomeActivity.this, ReportsActivity.class));
+                startActivity(new Intent(WarehouseHomeActivity.this, ViewInvoices.class));
                 break;
             case R.id.notifications1:
                 final String[] options = {"Notify User", "View Notifications", "Cancel"};
@@ -153,18 +191,14 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
     }
 
     public void countNotification(){
-        StringRequest strRequest = new StringRequest(Request.Method.POST, "http://10.254.17.96:80/script/ViewNotifications.php",
+        StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "ViewNotifications.php",
                 new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONArray jsonarray = new JSONArray(response);
-                            String numNotifReport = "Notifications: " + String.valueOf(jsonarray.length());
-                            if(LoginActivity.usertype.equals("stock"))
-                                HomeActivity.txtNumNotif.setText(numNotifReport);
-                            if(LoginActivity.usertype.equals("warehouse"))
-                                WarehouseHomeActivity.txtNumNotif.setText(numNotifReport);
-
+                            WarehouseHomeActivity.txtNumNotif.setText("Notifications: " + jsonarray.length());
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(WarehouseHomeActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
@@ -180,10 +214,7 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                if(LoginActivity.usertype.equals("warehouse"))
-                    params.put("UserID", String.valueOf(WarehouseHomeActivity.userIDw));
-                else if(LoginActivity.usertype.equals("stock"))
-                    params.put("UserID", String.valueOf(HomeActivity.userID));
+                params.put("UserID", String.valueOf(LoginActivity.userID));
                 return params;
             }
         };
@@ -257,7 +288,12 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
             intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent2);
         } else if(menuItem.getItemId() == R.id.db){
-            super.onBackPressed();
+            Intent intent2 = new Intent(WarehouseHomeActivity.this, HomeActivity.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent2);
+        } else if(menuItem.getItemId() == R.id.search){
+            Intent intent2 = new Intent(WarehouseHomeActivity.this, ScannerSearchActivity.class);
+            startActivity(intent2);
         }
         else {
             return super.onOptionsItemSelected(menuItem);

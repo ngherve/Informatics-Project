@@ -33,7 +33,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
 
     private Bitmap bitmap;
     CircleImageView profileimage2;
-    private String URL_Upload = "http://10.254.17.96:80/script/UploadProduct.php";
+    private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
     String id, image;
     private static final String TAG = ProfileActivity.class.getSimpleName();
     Button btnSave, btnUpoadImage;
@@ -80,6 +80,8 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     public void backAction(View view) {
         super.onBackPressed();
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

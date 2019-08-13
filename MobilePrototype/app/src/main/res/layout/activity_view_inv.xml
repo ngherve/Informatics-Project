@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="#ffffff"
+                  android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_margin="20dp"
+                android:text="View Invoices below"
+                android:textColor="#000000"
+                android:textSize="30dp" />
+
+        <TextView
+                android:id="@+id/txtinvoices"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:typeface="serif"
+                android:textStyle="bold"
+                android:scrollbars="vertical"
+                android:minLines="13"
+                android:inputType="textMultiLine"
+                android:text="No Invoice Available"
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                android:textSize="25dp" />
+
+
+        <Button
+                android:onClick="backAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="BACK"
+                android:textSize="18dp">
+        </Button>
+
+    </LinearLayout>
+</ScrollView>

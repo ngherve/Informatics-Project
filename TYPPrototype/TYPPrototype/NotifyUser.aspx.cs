@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -42,6 +44,25 @@ namespace TYPPrototype
                 };
                 string sendNot = client.SaveNotif(not);
                 Response.Write("<script>alert('Your Notification has been sent Successfully to " + us.Name + "')</script>");
+
+                //string result = DownloadString("http://...")
+
+                //string postData = "var1=1&var2=2&var3=3";
+                // Prepare web request...
+                //HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(
+                //                    "https://localhost/script/send_push.php");
+                //myRequest.Method = "POST";
+                //var resp = (HttpWebResponse)myRequest.GetResponse();
+
+                //var result = new StreamReader(resp.GetResponseStream()).ReadToEnd();
+                //var dgurl = "DGURL", user = "DGUSER", pass = "DGPASS";
+                var url = string.Format("http://localhost/script/send_push.php");
+                using (var webClient = new WebClient())
+                {
+                    var response = webClient.DownloadString(url);
+                    Console.WriteLine(response);
+                }
+                //Response.Redirect("https://localhost/script/send_push.php");
             }
             else
             {

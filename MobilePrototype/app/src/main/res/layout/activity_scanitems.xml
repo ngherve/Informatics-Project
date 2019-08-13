@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingTop="50dp"
+        android:layout_height="match_parent"
+        tools:context=".ScanItemsActivity" >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:id="@+id/container"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="#ffffff"
-              android:orientation="vertical"
-              tools:context=".ScanItemsActivity" >
+              android:orientation="vertical">
 
     <TextView
             android:id="@+id/textView1"
@@ -25,20 +35,11 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="QR Code"
+            android:text="QR/BAR Code"
             android:textSize="18dp" >
     </Button>
 
-    <Button
-            android:id="@+id/scanner2"
-            android:layout_width="250dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="Bar Code"
-            android:textSize="18dp" >
-    </Button>
+
 
     <TextView
             android:id="@+id/textView2"
@@ -48,7 +49,15 @@
             android:textAlignment="center"
             android:layout_margin="20dp"
             android:text="Scan Results"
+            android:minLines="4"
             android:textColor="#808080"
             android:textSize="30dp" />
-
+    <Button
+            android:id="@+id/editbtnback_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:onClick="backAction"
+            android:text="BACK" />
 </LinearLayout>
+</ScrollView>

@@ -14,6 +14,7 @@ import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import org.json.JSONException;
 import org.json.JSONObject;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import java.util.StringTokenizer;
 
@@ -34,9 +35,16 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
     public void handleResult(Result result) {
         qrResult = result.getText();
-        ScanItemsActivity.resultView.setText(qrResult);
 
         if (Build.VERSION.SDK_INT >= 26) {
             vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
@@ -45,7 +53,6 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         }
 
         StringTokenizer st = new StringTokenizer(qrResult, "\n");
-        ScanItemsActivity.resultView.setText("Items Successfully saved!!! :" + qrResult);
 
         if(st.countTokens()==8)
         {
@@ -57,16 +64,18 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
             P_Type = st.nextToken();
             W_Name = st.nextToken();
             P_Code = st.nextToken();
-            //System.out.println(P_Price + " " + P_Quantity);
 
             Response.Listener<String> respList1 = new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    try{
+                    try {
                         JSONObject jsonRes = new JSONObject(response);
                         boolean success = jsonRes.getBoolean("success");
 
-                        if(success && LoginActivity.usertype.equals("stock")){
+                        ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
+                                P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
+                                " Type: " + P_Type + " Warehouse: " + W_Name);
+                        if (success && LoginActivity.usertype.equals("stock")) {
                             ScanItemsActivity.resultView.setText("Item: " + P_Name + " Code: " + P_Code + " already exists in stock!!!");
 
                             P_Name = jsonRes.getString("P_Name");
@@ -89,12 +98,31 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             intent.putExtra("P_Code", P_Code);
                             ScannerActivity.this.startActivity(intent);
 
-                        } else if(success && LoginActivity.usertype.equals("warehouse")){
+                        } else if (success && LoginActivity.usertype.equals("warehouse")) {
+                            P_Name = jsonRes.getString("P_Name");
+                            P_Price = String.valueOf(jsonRes.getInt("P_Price"));
+                            P_Image = jsonRes.getString("P_Image");
+                            P_Quantity = String.valueOf(jsonRes.getInt("P_Quantity"));
+                            Supplier_Name = jsonRes.getString("Supplier_Name");
+                            P_Type = jsonRes.getString("P_Type");
+                            W_Name = jsonRes.getString("W_Name");
+                            P_Code = jsonRes.getString("P_Code");
                             ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                     P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
                                     " Type: " + P_Type + " Warehouse: " + W_Name);
 
-                        } else if(success==false && LoginActivity.usertype.equals("stock")){
+                            Intent intent = new Intent(ScannerActivity.this, DispatchActivity.class);
+                            intent.putExtra("P_Name", P_Name);
+                            intent.putExtra("P_Price", P_Price);
+                            intent.putExtra("P_Image", P_Image);
+                            intent.putExtra("P_Quantity", P_Quantity);
+                            intent.putExtra("Supplier_Name", Supplier_Name);
+                            intent.putExtra("P_Type", P_Type);
+                            intent.putExtra("W_Name", W_Name);
+                            intent.putExtra("P_Code", P_Code);
+                            ScannerActivity.this.startActivity(intent);
+
+                        } else if (success == false && LoginActivity.usertype.equals("stock")) {
                             Intent intent = new Intent(ScannerActivity.this, SaveItemActivity.class);
                             intent.putExtra("P_Name", P_Name);
                             intent.putExtra("P_Price", P_Price);
@@ -106,7 +134,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             intent.putExtra("P_Code", P_Code);
                             ScannerActivity.this.startActivity(intent);
                         }
-                    }catch (JSONException e){
+                    }catch(JSONException e){
                         e.printStackTrace();
                     }
                 }
@@ -115,13 +143,13 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
             ServerRequests loginReq1 = new ServerRequests(P_Code, respList1);
             RequestQueue queue1 = Volley.newRequestQueue(ScannerActivity.this);
             queue1.add(loginReq1);
-
             super.onBackPressed();
         }
         else{
             AlertDialog.Builder builder = new AlertDialog.Builder(ScannerActivity.this);
             builder.setMessage("Invalid Product Format!!").setNegativeButton("Retry", null).create().show();
             startActivity(new Intent(ScannerActivity.this, ScannerActivity.class));
+            super.onBackPressed();
         }
     }
 

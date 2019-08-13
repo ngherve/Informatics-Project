@@ -32,7 +32,7 @@
             android:layout_gravity="center"
             android:textSize="20dp" />
 
-    <EditText
+    <Spinner
             android:id="@+id/etitem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,6 +72,17 @@
             android:layout_margin="10dp"
             android:gravity="center"
             android:text="EDIT ITEM"
+            android:textSize="18dp" >
+    </Button>
+
+    <Button
+            android:id="@+id/btnsearchscan"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="Search by Scan"
             android:textSize="18dp" >
     </Button>
 

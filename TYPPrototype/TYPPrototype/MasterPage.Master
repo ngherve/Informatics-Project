@@ -38,6 +38,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="vertical-layout vertical-menu material-vertical-layout material-layout 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
+    <%--<meta http-equiv="refresh" content="5" >--%>
+
     <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-red bg-accent-4 navbar-shadow">
         <div class="navbar-wrapper">
             <div class="navbar-header">
