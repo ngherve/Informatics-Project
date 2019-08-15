@@ -5,10 +5,10 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
-            <div class="content-header-light col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title" runat="server" id="AdminFunction">Admin</h3>
+                        <h3 class="content-header-title white" runat="server" id="AdminFunction">Admin</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
@@ -22,7 +22,11 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="content-header-right col-md-3 col-12">
+                        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+                          
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +64,6 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput2">User Type</label>
-                                                            
                                                             <asp:DropDownList ID="Utype" runat="server">
                                                                 <asp:ListItem Text="Stock" Value="stock"></asp:ListItem>
                                                                 <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>

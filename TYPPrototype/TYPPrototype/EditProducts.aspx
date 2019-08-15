@@ -4,42 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- BEGIN: Content-->
     <div class="app-content content">
-
-        <!-- BEGIN: Content--
         <div class="content-header row">
-            <div class="content-header-light col-12">
-                <div class="row">
-                    <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title">Product</h3>
-                        <div class="row breadcrumbs-top">
-                            <div class="breadcrumb-wrapper col-12">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="home.aspx">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#">Edit Product</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Edit Product Form
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-header-right col-md-3 col-12">
-                        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register.aspx"> Edit</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- BEGIN: Content-->
-
-        <div class="content-header row">
-            <div class="content-header-dark bg-img col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">
                         <h3 class="content-header-title white">Shops</h3>
@@ -56,10 +22,7 @@
                     </div>
                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register-with-bg-image.html"> Register</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -116,12 +79,18 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Supplier Name</label>
-                                                            
+                                                            <select id="userinput3" name="Supplier" class="form-control">
+                                                                <option value="none" selected="" disabled="">Supplier Name</option>
+                                                                <option value="Hewlett">Hewlett</option>
+                                                                <option value="Modelez">Modelez</option>
+                                                            </select>
+
+                                                         <!--   
                                                             <asp:DropDownList ID="sname" runat="server">
                                                                 <asp:ListItem Text="Schneider Electric" Value="Schneider Electric"></asp:ListItem>
                                                                 <asp:ListItem Text="Hewlett" Value="Hewlett"></asp:ListItem>
                                                                 <asp:ListItem Text="Modelez" Value="Modelez"></asp:ListItem>
-                                                                </asp:DropDownList>
+                                                                </asp:DropDownList>  -->
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -130,12 +99,19 @@
 
                                                 <div class="form-group">
                                                     <label for="userinput5">Warehouse Name</label>
+                                                    <select id="userinput5" name="Warehouse" class="form-control">
+                                                                <option value="none" selected="" disabled="">Warehouse</option>
+                                                                <option value="Warehouse 1">Warehouse 1</option>
+                                                                <option value="Warehouse 2">Warehouse 2</option>
+                                                                <option value="Warehouse 3">Warehouse 3</option>
+                                                            </select>
                                                     
-                                                <asp:DropDownList ID="WH" runat="server">
+                                               <!-- <asp:DropDownList ID="WH" runat="server">
                                                                 <asp:ListItem Text="Warehouse1" Value="Warehouse1"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse2" Value="Warehouse2"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse3" Value="Warehouse3"></asp:ListItem>
                                                                 </asp:DropDownList>
+                                                   -->
                                                 </div>
 
                                                 <div class="form-group">

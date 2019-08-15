@@ -5,10 +5,10 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
-            <div class="content-header-light col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title">Employee</h3>
+                        <h3 class="content-header-title white">Employee</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
@@ -24,10 +24,7 @@
                     </div>
                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register.aspx"> Edit</a>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
