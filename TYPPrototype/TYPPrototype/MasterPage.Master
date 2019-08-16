@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
+    <!-- Task CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/material-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/icheck/icheck.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/icheck/custom.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/ui/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/selects/select2.min.css">
+    <!-- Task CSS
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/material-vendors.min.css" />
     <!-- END: Vendor CSS-->
@@ -40,7 +50,7 @@
 <body class="vertical-layout vertical-menu material-vertical-layout material-layout 2-columns   fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <%--<meta http-equiv="refresh" content="5" >--%>
 
-    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-blue bg-darken-2 navbar-shadow">
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light bg-blue bg-darken-3 navbar-shadow">
         <div class="navbar-wrapper">
             <div class="navbar-header">
                 <ul class="nav navbar-nav flex-row">
@@ -130,9 +140,9 @@
 
                 <li class="nav-item" id="ware" runat="server"><a href="#"><i class="material-icons">content_paste</i><span class="menu-title">Warehouse</span></a>
                     <ul class="menu-content" id="WareM" runat="server">
-                        <li><a class="menu-item" href="receivestock.aspx"><i class="material-icons"></i><span>Received Stock</span></a>  
+                        <li><a class="menu-item" href="Tasks.aspx"><i class="material-icons"></i><span>Tasks</span></a>  
                         </li>
-                         <li><a class="menu-item" href="inspectAllocate.aspx"><i class="material-icons"></i><span>Inspection and Allocation</span></a>  
+                         <li><a class="menu-item" href="TaskSummary.aspx"><i class="material-icons"></i><span>Task Summary</span></a>  
                         </li>
                          <li><a class="menu-item" href="dispatchlist.aspx"><i class="material-icons"></i><span>Dispatch</span></a>  
                         </li>

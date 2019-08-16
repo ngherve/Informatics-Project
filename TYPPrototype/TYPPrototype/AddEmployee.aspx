@@ -22,9 +22,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-header-right col-md-3 col-12">
+                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                          
                         </div>
                     </div>
                 </div>
@@ -51,7 +50,7 @@
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body">                                      
-                                        <form class="form">
+                                        <div class="form">
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="la la-eye"></i> Employee Information</h4>
                                                 <div class="row">
@@ -64,6 +63,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput2">User Type</label>
+                                                            
                                                             <asp:DropDownList ID="Utype" runat="server">
                                                                 <asp:ListItem Text="Stock" Value="stock"></asp:ListItem>
                                                                 <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>
@@ -142,7 +142,7 @@
                                                 <asp:Button ID="btnSaveEmpl" onclick="btnSaveEmpl_Click" runat="server" Text="Save" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary"/>  
                                             </div>
 
-                                        </form>
+                                        </div>
 
                                     </div>
                                 </div>

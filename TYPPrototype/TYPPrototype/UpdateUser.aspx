@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body">                                      
-                                        <form class="form">
+                                        <div class="form">
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="la la-eye"></i> Employee Information</h4>
                                                 <div class="row">
@@ -122,7 +122,7 @@
 
                                             </div>
 
-                                        </form>
+                                        </div>
 
                                     </div>
                                 </div>
