@@ -6221,6 +6221,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="dashboard.aspx" />
     <Content Include="dash\js\main.js" />
     <Content Include="dash\js\main.min.js" />
     <Content Include="dash\js\map-custom.js" />
@@ -7154,6 +7155,8 @@
     <Content Include="src\js\scripts\ui\scrollable.js" />
     <Content Include="Tasks.aspx" />
     <Content Include="TaskSummary.aspx" />
+    <Content Include="Tester.aspx" />
+    <Content Include="ToDo.aspx" />
     <Content Include="UpdateStock.aspx" />
     <Content Include="home.aspx" />
     <Content Include="LoginUser.aspx" />
@@ -7676,6 +7679,7 @@
     <Content Include="src\scss\plugins\ui\jqueryui.scss" />
     <Content Include="src\scss\plugins\ui\shapes.scss" />
     <Content Include="src\scss\plugins\ui\_breakpoints.scss" />
+    <Content Include="SecondMaster.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addEmployee.aspx.cs">
@@ -7701,6 +7705,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteProduct.aspx.cs">
       <DependentUpon>DeleteProduct.aspx</DependentUpon>
@@ -7744,6 +7755,13 @@
     <Compile Include="ProductDetails.aspx.designer.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SecondMaster.Master.cs">
+      <DependentUpon>SecondMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecondMaster.Master.designer.cs">
+      <DependentUpon>SecondMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="Tasks.aspx.cs">
       <DependentUpon>Tasks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7757,6 +7775,20 @@
     </Compile>
     <Compile Include="TaskSummary.aspx.designer.cs">
       <DependentUpon>TaskSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tester.aspx.cs">
+      <DependentUpon>Tester.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tester.aspx.designer.cs">
+      <DependentUpon>Tester.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ToDo.aspx.cs">
+      <DependentUpon>ToDo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToDo.aspx.designer.cs">
+      <DependentUpon>ToDo.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateStock.aspx.cs">
       <DependentUpon>UpdateStock.aspx</DependentUpon>

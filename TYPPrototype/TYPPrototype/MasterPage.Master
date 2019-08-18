@@ -12,16 +12,38 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
+    <!-- ************************************************************************************************** -->
     <!-- Task CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/material-vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/icheck/icheck.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/icheck/custom.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/ui/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/selects/select2.min.css">
-    <!-- Task CSS
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/material-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/icheck/icheck.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/icheck/custom.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/ui/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/selects/select2.min.css">
+
+    <!-- Task CSS -->
+    <!-- ************************************************************************************************** -->
+
+    <!-- ************************************************************************************************** -->
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/material-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/weather-icons/climacons.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/fonts/meteocons/style.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/morris.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/chartist.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/chartist-plugin-tooltip.css">
+
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/material-vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/fonts/simple-line-icons/style.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/timeline.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- Dashboard CSS -->
+    <!-- ************************************************************************************************** -->
+
+    <!-- ************************************************************************************************** -->
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/material-vendors.min.css" />
     <!-- END: Vendor CSS-->
@@ -36,12 +58,13 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/material-vertical-menu.css" />
+
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!-- END: Custom CSS-->
-   
+   <!-- ************************************************************************************************** -->
 
     <asp:ContentPlaceHolder ID="head" runat="server">
 
@@ -55,7 +78,7 @@
             <div class="navbar-header">
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                    <li class="nav-item"><a class="navbar-brand" href="home.aspx">
+                    <li class="nav-item"><a class="navbar-brand" href="dashboard.aspx">
                         <img class="brand-logo" alt="Wirelec" src="app-assets/images/logo/logo.jpg" />
                         <h3 class="brand-text">Inventory Control</h3>
                     </a></li>
@@ -120,7 +143,7 @@
         </div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a href="home.aspx"><i class="material-icons">list_alt</i><span class="menu-title">Dashboard</span></a>
+                <li class=" nav-item"><a href="dashboard.aspx"><i class="material-icons">list_alt</i><span class="menu-title">Dashboard</span></a>
                 </li>
 
                 
@@ -144,7 +167,7 @@
                         </li>
                          <li><a class="menu-item" href="TaskSummary.aspx"><i class="material-icons"></i><span>Task Summary</span></a>  
                         </li>
-                         <li><a class="menu-item" href="dispatchlist.aspx"><i class="material-icons"></i><span>Dispatch</span></a>  
+                         <li><a class="menu-item" href="ToDo.aspx"><i class="material-icons"></i><span>ToDo List</span></a>  
                         </li>
                     </ul>
                 </li>
@@ -209,24 +232,6 @@
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2019 Inventory Control, Inc. All Rights Reserved</span><span class="float-md-right d-none d-lg-block">Wilec <i class="ft-heart pink"></i><span id="scroll-top"></span></span></p>
     </footer>
-    <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/material-vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="app-assets/vendors/js/charts/chart.min.js"></script>
-    <script src="app-assets/vendors/js/charts/echarts/echarts.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="app-assets/js/core/app-menu.js"></script>
-    <script src="app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/pages/material-app.js"></script>
-    <script src="app-assets/js/scripts/pages/dashboard-crypto.js"></script>
-    <!-- END: Page JS-->
-    
+ 
 </body>
 </html>
