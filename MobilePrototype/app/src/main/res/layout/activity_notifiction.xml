@@ -76,9 +76,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:text="SEND MESSAGE"
-                android:textSize="18dp" >
-        </Button>
-
+                android:textSize="18dp" />
 
         <Button
                 android:onClick="backAction"

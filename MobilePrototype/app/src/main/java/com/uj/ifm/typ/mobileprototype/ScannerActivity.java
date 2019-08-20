@@ -72,11 +72,11 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                         JSONObject jsonRes = new JSONObject(response);
                         boolean success = jsonRes.getBoolean("success");
 
-                        ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
-                                P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                                " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location);
+                        //ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
+                         //       P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
+                          //      " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location);
                         if (success && LoginActivity.usertype.equals("stock")) {
-                            ScanItemsActivity.resultView.setText("Item: " + P_Name + " Code: " + P_Code + " already exists in stock!!!");
+                           // ScanItemsActivity.resultView.setText("Item: " + P_Name + " Code: " + P_Code + " already exists in stock!!!");
 
                             P_Name = jsonRes.getString("P_Name");
                             P_Price = String.valueOf(jsonRes.getInt("P_Price"));

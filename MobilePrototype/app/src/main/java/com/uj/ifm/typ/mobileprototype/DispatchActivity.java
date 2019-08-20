@@ -29,7 +29,7 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
     private String image, id;
     private EditText epName, eprice, eQuant, esuppname, ep_type, eW_name, ePCode, newQuant, binLoc;
     private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code, bin_location;
-    private String datetime, newQuanttity;
+    private String datetime, newQuanttity=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,31 +97,35 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
 
     public void saveItem(){
         newQuanttity = newQuant.getText().toString();
-
-        int totalQuent = Integer.parseInt(P_Quantity) - Integer.parseInt(newQuanttity);
-        id = P_Code;
-        if(totalQuent >= 0) {
-            Response.Listener<String> responseListener = new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONObject jsonresp = new JSONObject(response);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
-                        builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
-                        saveInvoice();
-                    } catch (JSONException ex) {
-                        ex.printStackTrace();
+        if(!newQuanttity.equals("\\s") && newQuanttity!=null && !newQuanttity.equals("")) {
+            int totalQuent = Integer.parseInt(P_Quantity) - Integer.parseInt(newQuanttity);
+            id = P_Code;
+            if (totalQuent >= 0) {
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonresp = new JSONObject(response);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
+                            builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
+                            saveInvoice();
+                        } catch (JSONException ex) {
+                            ex.printStackTrace();
+                        }
                     }
-                }
-            };
+                };
 
-            ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, bin_location, responseListener);
-            RequestQueue queue = Volley.newRequestQueue(DispatchActivity.this);
-            queue.add(request);
-        } else{
+                ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, bin_location, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(DispatchActivity.this);
+                queue.add(request);
+            } else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
+                builder.setMessage("Sorry, the quantity entered is more than the available stock !!!").setNegativeButton("Retry", null).create().show();
+
+            }
+        }else {
             AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
-            builder.setMessage("Sorry, the quantity entered is more than the available stock !!!").setNegativeButton("Retry", null).create().show();
-
+            builder.setMessage("Please enter the quantity !!!").setNegativeButton("Retry", null).create().show();
         }
     }
 

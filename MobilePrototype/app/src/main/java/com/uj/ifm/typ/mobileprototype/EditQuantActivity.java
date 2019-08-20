@@ -97,7 +97,7 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
 
     public void saveItem(){
         newQuanttity = newQuant.getText().toString();
-        if(!newQuanttity.equals("\\s") || newQuanttity!=null ) {
+        if(!newQuanttity.equals("\\s") && newQuanttity!=null && !newQuanttity.equals("")) {
             int totalQuent = Integer.parseInt(P_Quantity) + Integer.parseInt(newQuanttity);
             id = P_Code;
 

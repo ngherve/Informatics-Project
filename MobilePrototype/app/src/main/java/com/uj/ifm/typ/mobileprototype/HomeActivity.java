@@ -89,6 +89,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             //ScanItemsActivity.issearch2=true;
             Intent intent2 = new Intent(HomeActivity.this, ScanItemsActivity.class);
             startActivity(intent2);
+        } else if(item.getItemId() == R.id.activities){
+            Intent intent2 = new Intent(HomeActivity.this, TaskActivity.class);
+            startActivity(intent2);
         }
         else {
             return super.onOptionsItemSelected(item);

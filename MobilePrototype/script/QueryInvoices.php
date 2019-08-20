@@ -5,7 +5,7 @@
 	mysqli_stmt_execute($statement);
 
 	mysqli_stmt_store_result($statement);
-	mysqli_stmt_bind_result($statement, $INV_ID, $P_Code, $Quantity, $Total_Price, $C_ID, $INV_Date, $UserID);
+	mysqli_stmt_bind_result($statement, $INV_ID, $P_Code, $Quantity, $Total_Price, $C_ID, $INV_Date, $UserID, $Inv_Type);
 	
 	$inv = array();
 	
@@ -19,7 +19,7 @@
 		$temp["C_ID"] = $C_ID;
 		$temp["INV_Date"] = $INV_Date;
 		$temp["UserID"] = $UserID;
-		$temp["Inv_Type"] = $Inv_Type;]
+		$temp["Inv_Type"] = $Inv_Type;
 		
 		
 		array_push($inv, $temp);
