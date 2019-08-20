@@ -27,8 +27,8 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
     private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
     private Button btnSave, btnImage;
     private String image, id;
-    private EditText epName, eprice, eQuant, esuppname, ep_type, eW_name, ePCode, newQuant;
-    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code;
+    private EditText epName, eprice, eQuant, esuppname, ep_type, eW_name, ePCode, newQuant, binLoc;
+    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code, bin_location;
     private String datetime, newQuanttity =  null;
 
     @Override
@@ -48,6 +48,7 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
         ep_type = (EditText) findViewById(R.id.editetp_type1);
         eW_name = (EditText) findViewById(R.id.editetwarehouse1);
         ePCode = (EditText) findViewById(R.id.editetpcode1);
+        binLoc = (EditText) findViewById(R.id.binloc);
 
         btnSave = (Button) findViewById(R.id.editbtnSaveItem1);
         btnSave.setOnClickListener(this);
@@ -60,6 +61,7 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
         P_Type = intent.getStringExtra("P_Type");
         W_Name = intent.getStringExtra("W_Name");
         P_Code = intent.getStringExtra("P_Code");
+        bin_location = intent.getStringExtra("bin_location");
 
         epName.setText(P_Name);
         eprice.setText(P_Price);
@@ -69,6 +71,7 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
         ep_type.setText(P_Type);
         eW_name.setText(W_Name);
         ePCode.setText(P_Code);
+        binLoc.setText(bin_location);
 
         epName.setEnabled(false);
         epName.setInputType(InputType.TYPE_NULL);
@@ -84,6 +87,8 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
         eW_name.setInputType(InputType.TYPE_NULL);
         ePCode.setEnabled(false);
         ePCode.setInputType(InputType.TYPE_NULL);
+        binLoc.setEnabled(false);
+        binLoc.setInputType(InputType.TYPE_NULL);
     }
 
     public void backAction(View view) {
@@ -110,7 +115,7 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
                 }
             };
 
-            ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, responseListener);
+            ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, bin_location, responseListener);
             RequestQueue queue = Volley.newRequestQueue(EditQuantActivity.this);
             queue.add(request);
         } else{
@@ -148,6 +153,7 @@ public class EditQuantActivity<getSim> extends AppCompatActivity implements View
                 params.put("C_ID", "1");
                 params.put("INV_Date", datetime);
                 params.put("UserID", Integer.toString(LoginActivity.userID));
+                params.put("Inv_Type", "incoming");
 
                 return params;
             }

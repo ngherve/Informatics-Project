@@ -41,7 +41,9 @@ public class ViewInvoices extends AppCompatActivity {
                                             "Quantity: " + jsonRes.getInt("Quantity") + "\t" +
                                             "Tot Price: R" + jsonRes.getInt("Total_Price") + "\t" +
                                             "User: " + jsonRes.getString("UserID") + "\t" +
-                                            "Date: " + jsonRes.getString("INV_Date") + "\n";
+                                            "Date: " + jsonRes.getString("INV_Date") + "\n"+
+                                            "Invoice Type: " + jsonRes.getString("Inv_Type") + "\n";
+
                                 }
                             }
                             txtInvoice.setText(message);

@@ -182,11 +182,13 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                                 String P_Type = jsonRes.getString("P_Type");
                                 String W_Name = jsonRes.getString("W_Name");
                                 String P_Code = jsonRes.getString("P_Code");
-                                p = new Product(userID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code);
+                                String bin_location = jsonRes.getString("bin_location");
+                                p = new Product(userID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code, bin_location);
 
                                 String formatted = userID+": Name: "+P_Name+"" +
                                         " Price: "+P_Price+"\nQuantity: "+P_Quantity+" Supplier Name: " + Supplier_Name
-                                        +"\nType: "+P_Type+" Warehouse: "+W_Name+"\nCode: " + P_Code+" ImageURL: "+ P_Image;
+                                        +"\nType: "+P_Type+" Warehouse: "+W_Name+"\nCode: " + P_Code+" ImageURL: "+ P_Image
+                                        + "\nLocation: " + bin_location;
                                 txtresult.setText(formatted);
                             } else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(EditItemsActivity.this);
@@ -214,6 +216,7 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                     intent.putExtra("P_Type", p.getP_Type());
                     intent.putExtra("W_Name", p.getW_Name());
                     intent.putExtra("P_Code", p.getP_Code());
+                    intent.putExtra("bin_location", p.getBin_location());
                     EditItemsActivity.this.startActivity(intent);
                 }else{
                     AlertDialog.Builder builder2 = new AlertDialog.Builder(EditItemsActivity.this);

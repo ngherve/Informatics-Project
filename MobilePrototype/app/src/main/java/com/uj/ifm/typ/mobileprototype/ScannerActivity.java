@@ -21,7 +21,7 @@ import java.util.StringTokenizer;
 public class ScannerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     public String qrResult;
-    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code;
+    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code, bin_location;
 
     ZXingScannerView scannerview;
     Vibrator vibrator;
@@ -74,7 +74,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
                         ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                 P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                                " Type: " + P_Type + " Warehouse: " + W_Name);
+                                " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location);
                         if (success && LoginActivity.usertype.equals("stock")) {
                             ScanItemsActivity.resultView.setText("Item: " + P_Name + " Code: " + P_Code + " already exists in stock!!!");
 
@@ -86,6 +86,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             P_Type = jsonRes.getString("P_Type");
                             W_Name = jsonRes.getString("W_Name");
                             P_Code = jsonRes.getString("P_Code");
+                            bin_location = jsonRes.getString("bin_location");
 
                             Intent intent = new Intent(ScannerActivity.this, EditQuantActivity.class);
                             intent.putExtra("P_Name", P_Name);
@@ -96,6 +97,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             intent.putExtra("P_Type", P_Type);
                             intent.putExtra("W_Name", W_Name);
                             intent.putExtra("P_Code", P_Code);
+                            intent.putExtra("bin_location", bin_location);
                             ScannerActivity.this.startActivity(intent);
 
                         } else if (success && LoginActivity.usertype.equals("warehouse")) {
@@ -107,9 +109,10 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             P_Type = jsonRes.getString("P_Type");
                             W_Name = jsonRes.getString("W_Name");
                             P_Code = jsonRes.getString("P_Code");
+                            bin_location = jsonRes.getString("bin_location");
                             ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                     P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                                    " Type: " + P_Type + " Warehouse: " + W_Name);
+                                    " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location);
 
                             Intent intent = new Intent(ScannerActivity.this, DispatchActivity.class);
                             intent.putExtra("P_Name", P_Name);
@@ -120,6 +123,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             intent.putExtra("P_Type", P_Type);
                             intent.putExtra("W_Name", W_Name);
                             intent.putExtra("P_Code", P_Code);
+                            intent.putExtra("bin_location", bin_location);
                             ScannerActivity.this.startActivity(intent);
 
                         } else if (success == false && LoginActivity.usertype.equals("stock")) {
@@ -132,6 +136,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             intent.putExtra("P_Type", P_Type);
                             intent.putExtra("W_Name", W_Name);
                             intent.putExtra("P_Code", P_Code);
+                            intent.putExtra("bin_location", bin_location);
                             ScannerActivity.this.startActivity(intent);
                         }
                     }catch(JSONException e){

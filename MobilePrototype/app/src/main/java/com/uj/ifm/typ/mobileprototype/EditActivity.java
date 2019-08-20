@@ -37,7 +37,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
     private String id, image;
     private static final String TAG = EditActivity.class.getSimpleName();
     private Button btnSave, btnImage;
-    private EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
+    private EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode, etBinLoc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         ep_type = (EditText) findViewById(R.id.editetp_type);
         eW_name = (EditText) findViewById(R.id.editetwarehouse);
         ePCode = (EditText) findViewById(R.id.editetpcode);
+        etBinLoc = (EditText) findViewById(R.id.editetbinloc);
 
         btnSave = (Button) findViewById(R.id.editbtnSaveItem);
         btnSave.setOnClickListener(this);
@@ -71,6 +72,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         eW_name.setText(intent.getStringExtra("W_Name"));
         id =intent.getStringExtra("P_Code");
         ePCode.setText(id);
+        etBinLoc.setText(intent.getStringExtra("bin_location"));
 
         new HomeActivity.GetImageFromURL(profileimage1).execute(intent.getStringExtra("P_Image"));
 
@@ -184,6 +186,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
         String type = ep_type.getText().toString();
         String warehouse = eW_name.getText().toString();
         String pcode = ePCode.getText().toString();
+        String bin_location = etBinLoc.getText().toString();
 
         id = pcode;
 
@@ -201,7 +204,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
             }
         };
 
-        ServerRequests request = new ServerRequests(1,1, pname, price, quantity, suppname, type, warehouse, pcode, responseListener);
+        ServerRequests request = new ServerRequests(1,1, pname, price, quantity, suppname, type, warehouse, pcode, bin_location, responseListener);
         RequestQueue queue = Volley.newRequestQueue(EditActivity.this);
         queue.add(request);
 

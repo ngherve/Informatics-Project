@@ -20,7 +20,7 @@ import java.util.StringTokenizer;
 public class ScannerSearchActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     public String qrResult;
-    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code;
+    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code, bin_location;
 
     public static String result;
 
@@ -82,13 +82,13 @@ public class ScannerSearchActivity extends AppCompatActivity implements ZXingSca
                                 P_Code = jsonRes.getString("P_Code");
                                 ScannerSearchActivity.result = "Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                         P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                                        " Type: " + P_Type + " Warehouse: " + W_Name;
+                                        " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location;
                                 ScanItemsActivity.resultView.append(ScannerSearchActivity.result);
 
                             } else {
                                 ScannerSearchActivity.result = "Item Does not exit in stock!!!\n:" + "Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                         P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                                        " Type: " + P_Type + " Warehouse: " + W_Name;
+                                        " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location;
                                 ScanItemsActivity.resultView.setText(ScannerSearchActivity.result);
 
                             }

@@ -51,7 +51,8 @@ public class StockActivity extends AppCompatActivity {
                         String P_Type = jsonRes.getString("P_Type");
                         String W_Name = jsonRes.getString("W_Name");
                         String P_Code = jsonRes.getString("P_Code");
-                        Product product = new Product(P_ID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code);
+                        String bin_location = jsonRes.getString("bin_location");
+                        Product product = new Product(P_ID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code, bin_location);
 
                         products.add(product);
                     }
