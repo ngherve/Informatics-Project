@@ -7,7 +7,7 @@
             <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">
-                        <h3 class="content-header-title white">Project Bugs</h3>
+                        <h3 class="content-header-title white">Warehouse Management</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">

@@ -6194,6 +6194,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Bins.aspx" />
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -6327,9 +6328,11 @@
     <Content Include="gulp\gulp-tasks\sass\watch.js" />
     <Content Include="gulp\gulp-tasks\uglify\min.js" />
     <Content Include="gulp\gulpfile.js" />
+    <Content Include="Location.aspx" />
     <Content Include="ManageUsers.aspx" />
     <Content Include="NotifyUser.aspx" />
     <Content Include="ProductDetails.aspx" />
+    <Content Include="ProductsReport.aspx" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="src\js\core\app-menu.js" />
     <Content Include="src\js\core\app.js" />
@@ -7696,6 +7699,13 @@
     <Compile Include="addProduct.aspx.designer.cs">
       <DependentUpon>addProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Bins.aspx.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bins.aspx.designer.cs">
+      <DependentUpon>Bins.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProductService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7734,6 +7744,13 @@
     <Compile Include="EditProducts.aspx.designer.cs">
       <DependentUpon>EditProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Location.aspx.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Location.aspx.designer.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageUsers.aspx.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7754,6 +7771,13 @@
     </Compile>
     <Compile Include="ProductDetails.aspx.designer.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsReport.aspx.cs">
+      <DependentUpon>ProductsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductsReport.aspx.designer.cs">
+      <DependentUpon>ProductsReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="SecondMaster.Master.cs">
       <DependentUpon>SecondMaster.Master</DependentUpon>

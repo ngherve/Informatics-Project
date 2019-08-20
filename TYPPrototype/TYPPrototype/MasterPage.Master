@@ -58,7 +58,7 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/material-vertical-menu.css" />
-
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/material-palette-gradient.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -155,6 +155,8 @@
                                 </li>
                                 <li><a class="menu-item" href="addProduct.aspx"><i class="material-icons"></i><span>Add Product</span></a>
                                 </li>
+                                <li><a class="menu-item" href="Location.aspx"><i class="material-icons"></i><span>Location</span></a>
+                                </li>
                              </ul>
                         </li>
                     </ul>
@@ -197,7 +199,7 @@
                 <li class=" nav-item" id="AdminFunc1" runat="server" ><a href="#"><i class="material-icons" >show_chart</i><span class="menu-title" > Reports </span></a>
                     <ul class="menu-content" id="AdminFunc1M" runat="server">
 
-                        <li><a class="menu-item" href="stockreport.aspx"><i class="material-icons"></i><span>Stock</span></a>
+                        <li><a class="menu-item" href="ProductsReport.aspx"><i class="material-icons"></i><span>Products Report</span></a>
                         </li>
                         <li><a class="menu-item" href="invoicereport.aspx"><i class="material-icons"></i><span>Invoices</span></a>
                         </li>
