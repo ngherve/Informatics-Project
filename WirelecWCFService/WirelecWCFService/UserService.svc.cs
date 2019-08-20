@@ -17,6 +17,36 @@ namespace WirelecWCFService
            "persistsecurityinfo = True; database =Wirelecdatabase; SslMode = none; Convert Zero Datetime=True";
         private MySqlConnection connection = new MySqlConnection(mycon);
 
+        public string CreateTask(Task task)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Task(Task_ID, UserID, TaskContent, Start_Date, End_Date, Status, T_Type) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7)", connection);
+                cmd.Parameters.AddWithValue("@a1", task.Task_ID);
+                cmd.Parameters.AddWithValue("@a2", task.UserID);
+                cmd.Parameters.AddWithValue("@a3", task.TaskContent);
+                cmd.Parameters.AddWithValue("@a4", task.Start_Date);
+                cmd.Parameters.AddWithValue("@a5", task.End_Date);
+                cmd.Parameters.AddWithValue("@a6", task.Status);
+                cmd.Parameters.AddWithValue("@a7", task.T_Type);
+
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return "Data Saved Successfully";
+        }
+
         public string DeleteUser(int id)
         {
             connection.Open();//openning the connection
@@ -121,6 +151,39 @@ namespace WirelecWCFService
             }
 
             return notifs;
+        }
+
+        public List<Task> GetTasks()
+        {
+            List<Task> tasks = new List<Task>();
+
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM Task";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                Task task = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    task = new Task();
+                    task.Task_ID = Convert.ToInt32(dr["Task_ID"].ToString());
+                    task.UserID = Convert.ToInt32(dr["UserID"].ToString());
+                    task.TaskContent = dr["TaskContent"].ToString();
+                    task.Start_Date = dr["Start_Date"].ToString();
+                    task.End_Date = dr["End_Date"].ToString();
+                    task.Status = dr["Status"].ToString();
+                    task.T_Type = dr["T_Type"].ToString();
+
+                    tasks.Add(task);
+                }
+            }
+
+            return tasks;
         }
 
         public User GetUserbyID(int id)

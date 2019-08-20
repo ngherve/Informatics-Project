@@ -112,6 +112,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Invoice.cs" />
     <Compile Include="IProductService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Notification.cs" />
@@ -121,6 +122,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secrecy.cs" />
+    <Compile Include="Task.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserService.svc.cs">
       <DependentUpon>UserService.svc</DependentUpon>
