@@ -13,18 +13,35 @@ namespace TYPPrototype
     public partial class NotifyUser : System.Web.UI.Page
     {
         UserServiceClient client;
+        User us = null;
+        User[] users = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new UserServiceClient();
+            users = client.GetAllUsers();
+            if (IsPostBack)
+            {
+                List<ListItem> items = new List<ListItem>();
+                foreach (User u in users)
+                {
+                    ListItem li = new ListItem(u.Email, u.Email, true);
+                    li.Text = u.Email;
+                    li.Value = u.Email;
+                    items.Add(li);
+                }
+                notimail.DataSource = items;
+                notimail.DataBind();
+
+                //notimail.SelectedValue = "2";
+            }
         }
 
         protected void btnNotEmpl_Click(object sender, EventArgs e)
         {
-            string email = notemail.Value;
+            string email = notimail.SelectedValue;
             string message = notmessag.Value;
-            User us = null;
-            User[] users = client.GetAllUsers();
+
             foreach (User u in users)
             {
                 if (u.Email.Equals(email))

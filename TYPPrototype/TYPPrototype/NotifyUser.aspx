@@ -56,8 +56,9 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput1">Email</label>
-                                                            <input class="form-control border-primary" runat="server" type="email" placeholder="email" id="notemail">
-                                                            
+                                                            <asp:DropDownList class="form-control border-primary" runat="server" ID="notimail">
+                                                                
+                                                            </asp:DropDownList>
                                                         </div>
                                                     </div>
                                                 </div>                                                                                        
