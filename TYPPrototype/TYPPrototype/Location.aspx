@@ -47,7 +47,7 @@
                                             <i class="la la-star-half-o"></i>
                                         </div>
                                         <img src="../../../app-assets/images/elements/apple-watch.png" alt="apple-watch" width="250px" class="img-fluid p-2">
-                                        <button type="button" class="btn btn-success btn-block btn-glow text-uppercase p-1">View</button>
+                                       <asp:Button ID="btnView2" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1"   />
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                             <i class="la la-star-half-o"></i>
                                         </div>
                                         <img src="../../../app-assets/images/elements/samsung-gear.png" alt="apple-watch" width="250px" class="img-fluid p-2">
-                                        <button type="button" class="btn btn-success btn-block btn-glow text-uppercase p-1">View</button>
+                                        <asp:Button ID="btnView3" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1"   />
                                     </div>
                                 </div>
                             </div>

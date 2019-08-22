@@ -13,6 +13,15 @@ namespace TYPPrototype {
     public partial class Location {
         
         /// <summary>
+        /// btnView2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnView2;
+        
+        /// <summary>
         /// btnView1 control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,14 @@ namespace TYPPrototype {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnView1;
+        
+        /// <summary>
+        /// btnView3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnView3;
     }
 }
