@@ -120,6 +120,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp" />
 
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bin Location" />
+
+            <EditText
+                    android:id="@+id/editetbinloc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp" />
+
             <Button
                     android:id="@+id/editbtnSaveItem"
                     android:layout_width="match_parent"

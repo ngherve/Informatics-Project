@@ -23,8 +23,8 @@ public class NotifictionActivity extends AppCompatActivity{
     Spinner txtName;
     String datetime;
 
-    public static int ReceiverID = 0;
-    public static String name= "";
+    private int ReceiverID = 0;
+    private String name= "";
     String email = "";
 
     ArrayList<String> emails = new ArrayList<>();

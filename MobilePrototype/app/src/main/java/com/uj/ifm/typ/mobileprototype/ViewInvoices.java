@@ -34,14 +34,18 @@ public class ViewInvoices extends AppCompatActivity {
                         try {
                             JSONArray jsonarray = new JSONArray(response);
                             String message = "";
+                            int count = 0;
                             for (int i = 0; i < jsonarray.length(); i++) {
                                 JSONObject jsonRes = jsonarray.getJSONObject(i);
                                 if(String.valueOf(jsonRes.getInt("UserID")).equals(String.valueOf(LoginActivity.userID))) {
-                                    message += i + 1 + "- " + jsonRes.getString("P_Code") + "\t" +
+                                    count++;
+                                    message += count + "- " + jsonRes.getString("P_Code") + "\t" +
                                             "Quantity: " + jsonRes.getInt("Quantity") + "\t" +
                                             "Tot Price: R" + jsonRes.getInt("Total_Price") + "\t" +
                                             "User: " + jsonRes.getString("UserID") + "\t" +
-                                            "Date: " + jsonRes.getString("INV_Date") + "\n";
+                                            "Date: " + jsonRes.getString("INV_Date") + "\n"+
+                                            "Invoice Type: " + jsonRes.getString("Inv_Type") + "\n";
+
                                 }
                             }
                             txtInvoice.setText(message);

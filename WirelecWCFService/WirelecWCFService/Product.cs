@@ -26,6 +26,8 @@ namespace WirelecWCFService
         public string W_Name { get; set; }
         [DataMember]
         public string P_Code { get; set; }
+        [DataMember]
+        public string bin_location { get; set; }
 
     }
 }

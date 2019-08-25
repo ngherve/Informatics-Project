@@ -36,7 +36,7 @@
 		}
 	}
 	mysqli_close($conn);
-	$message = array("message" => " Good day this is a message from the ADMIN:-");
+	$message = array("message" => " Good day this is a Notification from the ADMIN:-");
 	$message_status = send_notification($tokens, $message);
 	echo $message_status;
  ?>

@@ -18,5 +18,6 @@
 	echo json_encode($notif);
 	
 	mysqli_stmt_close($statement);
+	mysqli_close($con);
 	
 ?> 

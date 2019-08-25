@@ -1,5 +1,6 @@
 package com.uj.ifm.typ.mobileprototype;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -8,16 +9,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import org.json.JSONException;
-import org.json.JSONObject;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
+import org.json.JSONException;
+import org.json.JSONObject;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
+import pub.devrel.easypermissions.PermissionRequest;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final int RC_CAMERA_AND_LOCATION = 3;
+    private static final String TAG = "";
     Button btnLogin;
     EditText edUsername, edPassword;
     TextView registerLink;
@@ -27,6 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static int userID;
     public static String photo;
     private SessionManager sm;
+
+    String[] perms = {Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +53,52 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         FirebaseInstanceId.getInstance().getToken();
 
         sm = new SessionManager(this);
+
+        EasyPermissions.requestPermissions(
+                new PermissionRequest.Builder(this, RC_CAMERA_AND_LOCATION, perms)
+                        .setRationale(R.string.camera_and_location_rationale)
+                        .setPositiveButtonText(R.string.rationale_ask_ok)
+                        .setNegativeButtonText(R.string.rationale_ask_cancel)
+                        .setTheme(R.style.my_fancy_style)
+                        .build());
     }
+
+    /*@Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+
+        // (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
+        // This will display a dialog directing them to enable the permission in app settings.
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            new AppSettingsDialog.Builder(this).build().show();
+        }
+    }*/
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
+            // Do something after user returned from app settings screen, like showing a Toast.
+            Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+
 
     @Override
     public void onClick(View v) {

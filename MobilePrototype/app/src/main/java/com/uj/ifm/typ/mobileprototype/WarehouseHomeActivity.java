@@ -22,7 +22,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class WarehouseHomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -237,36 +236,6 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
                     if(LoginActivity.usertype.equals("warehouse"))
                         WarehouseHomeActivity.txtNumItems2.setText(numItemReport);
 
-                    for(int i=0; i<jsonarray.length(); i++) {
-                        JSONObject jsonRes = jsonarray.getJSONObject(i);
-                        int P_ID = Integer.parseInt(jsonRes.getString("P_ID"));
-                        String P_Name = jsonRes.getString("P_Name");
-                        int P_Price = Integer.parseInt(jsonRes.getString("P_Price"));
-                        String P_Image = jsonRes.getString("P_Image");
-                        int P_Quantity = Integer.parseInt(jsonRes.getString("P_Quantity"));
-                        String Supplier_Name = jsonRes.getString("Supplier_Name");
-                        String P_Type = jsonRes.getString("P_Type");
-                        String W_Name = jsonRes.getString("W_Name");
-                        String P_Code = jsonRes.getString("P_Code");
-                        Product product = new Product(P_ID, P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code);
-
-                        products.add(product);
-                    }
-
-                    List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
-
-                    for (Product p : products) {
-                        HashMap<String, String> hm = new HashMap<String, String>();
-                        hm.put("listview_title", p.getP_Name());
-                        hm.put("listview_discription", p.toString());
-                        //Bitmap bmp = getBitmapFromURL("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg");
-
-                        hm.put("listview_image", Integer.toString(R.drawable.nav_image));
-
-                        aList.add(hm);
-                    }
-
-
                 }catch (JSONException e){
                     e.printStackTrace();
                 }
@@ -293,6 +262,9 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
             startActivity(intent2);
         } else if(menuItem.getItemId() == R.id.search){
             Intent intent2 = new Intent(WarehouseHomeActivity.this, ScannerSearchActivity.class);
+            startActivity(intent2);
+        } else if(menuItem.getItemId() == R.id.activities){
+            Intent intent2 = new Intent(WarehouseHomeActivity.this, TaskActivity.class);
             startActivity(intent2);
         }
         else {

@@ -69,7 +69,7 @@ public class ServerRequests extends StringRequest {
     }
 
     //Edit Product request
-    public ServerRequests(int x, int y, String pname, String price, String quantity, String suppname, String type, String warehouse, String pcode, Response.Listener<String> listener) {
+    public ServerRequests(int x, int y, String pname, String price, String quantity, String suppname, String type, String warehouse, String pcode, String bin_location, Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL+"EditProduct.php", listener, null);
         params = new HashMap<>();
         params.put("P_Name", pname);
@@ -79,10 +79,11 @@ public class ServerRequests extends StringRequest {
         params.put("P_Type", type);
         params.put("W_Name", warehouse);
         params.put("P_Code", pcode);
+        params.put("bin_location", bin_location);
     }
 
     //Save Product request
-    public ServerRequests(String x, String pname, String price, String image, String quantity, String suppname, String type, String warehouse, String pcode, Response.Listener<String> listener) {
+    public ServerRequests(String x, String pname, String price, String image, String quantity, String suppname, String type, String warehouse, String pcode, String bin_location, Response.Listener<String> listener) {
         super(Method.POST, REQUEST_URL+"SaveProduct.php", listener, null);
         params = new HashMap<>();
         params.put("P_Name", pname);
@@ -93,6 +94,7 @@ public class ServerRequests extends StringRequest {
         params.put("P_Type", type);
         params.put("W_Name", warehouse);
         params.put("P_Code", pcode);
+        params.put("bin_location", bin_location);
     }
 
     //Query Product by code

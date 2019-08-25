@@ -79,18 +79,14 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Supplier Name</label>
-                                                            <select id="userinput3" name="Supplier" class="form-control">
-                                                                <option value="none" selected="" disabled="">Supplier Name</option>
-                                                                <option value="Hewlett">Hewlett</option>
-                                                                <option value="Modelez">Modelez</option>
-                                                            </select>
+                                                          
 
-                                                         <!--   
+                                                          
                                                             <asp:DropDownList ID="sname" runat="server">
                                                                 <asp:ListItem Text="Schneider Electric" Value="Schneider Electric"></asp:ListItem>
                                                                 <asp:ListItem Text="Hewlett" Value="Hewlett"></asp:ListItem>
                                                                 <asp:ListItem Text="Modelez" Value="Modelez"></asp:ListItem>
-                                                                </asp:DropDownList>  -->
+                                                                </asp:DropDownList>  
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -99,19 +95,14 @@
 
                                                 <div class="form-group">
                                                     <label for="userinput5">Warehouse Name</label>
-                                                    <select id="userinput5" name="Warehouse" class="form-control">
-                                                                <option value="none" selected="" disabled="">Warehouse</option>
-                                                                <option value="Warehouse 1">Warehouse 1</option>
-                                                                <option value="Warehouse 2">Warehouse 2</option>
-                                                                <option value="Warehouse 3">Warehouse 3</option>
-                                                            </select>
                                                     
-                                               <!-- <asp:DropDownList ID="WH" runat="server">
+                                                    
+                                               <asp:DropDownList ID="WH" runat="server">
                                                                 <asp:ListItem Text="Warehouse1" Value="Warehouse1"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse2" Value="Warehouse2"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse3" Value="Warehouse3"></asp:ListItem>
                                                                 </asp:DropDownList>
-                                                   -->
+                                                   
                                                 </div>
 
                                                 <div class="form-group">

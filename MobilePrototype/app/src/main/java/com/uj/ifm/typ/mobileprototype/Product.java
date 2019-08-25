@@ -83,8 +83,17 @@ public class Product {
     private String P_Type;
     private String W_Name;
     private String P_Code;
+    private String Bin_location;
 
-    public Product(int p_id, String p_name, int p_price, String p_image, int p_quantity, String supplier_name, String p_type, String w_name, String p_code){
+    public String getBin_location() {
+        return Bin_location;
+    }
+
+    public void setBin_location(String bin_location) {
+        Bin_location = bin_location;
+    }
+
+    public Product(int p_id, String p_name, int p_price, String p_image, int p_quantity, String supplier_name, String p_type, String w_name, String p_code, String bin_location){
 
         P_ID = p_id;
         P_Name = p_name;
@@ -95,6 +104,7 @@ public class Product {
         P_Type = p_type;
         W_Name = w_name;
         P_Code = p_code;
+        Bin_location = bin_location;
     }
 
     @Override

@@ -9,6 +9,8 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:background="#ffffff"
+                  android:paddingRight="10dp"
+                  android:paddingLeft="10dp"
                   android:orientation="vertical">
 
         <TextView
@@ -28,7 +30,7 @@
                 android:typeface="serif"
                 android:textStyle="bold"
                 android:scrollbars="vertical"
-                android:minLines="13"
+                android:minLines="10"
                 android:inputType="textMultiLine"
                 android:text="No Invoice Available"
                 android:textColor="#000000"

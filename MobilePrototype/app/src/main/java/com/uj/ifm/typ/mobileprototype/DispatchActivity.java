@@ -27,9 +27,9 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
     private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
     private Button btnSave, btnImage;
     private String image, id;
-    private EditText epName, eprice, eQuant, esuppname, ep_type, eW_name, ePCode, newQuant;
-    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code;
-    private String datetime, newQuanttity;
+    private EditText epName, eprice, eQuant, esuppname, ep_type, eW_name, ePCode, newQuant, binLoc;
+    private String P_Name, P_Price, P_Image, P_Quantity, P_Type, Supplier_Name, W_Name, P_Code, bin_location;
+    private String datetime, newQuanttity=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
         ep_type = (EditText) findViewById(R.id.editetp_type11);
         eW_name = (EditText) findViewById(R.id.editetwarehouse11);
         ePCode = (EditText) findViewById(R.id.editetpcode11);
+        binLoc = (EditText) findViewById(R.id.binloc2);
 
         btnSave = (Button) findViewById(R.id.editbtnSaveItem11);
         btnSave.setOnClickListener(this);
@@ -60,6 +61,7 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
         P_Type = intent.getStringExtra("P_Type");
         W_Name = intent.getStringExtra("W_Name");
         P_Code = intent.getStringExtra("P_Code");
+        bin_location = intent.getStringExtra("bin_location");
 
         epName.setText(P_Name);
         eprice.setText(P_Price);
@@ -69,6 +71,7 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
         ep_type.setText(P_Type);
         eW_name.setText(W_Name);
         ePCode.setText(P_Code);
+        binLoc.setText(bin_location);
 
         epName.setEnabled(false);
         epName.setInputType(InputType.TYPE_NULL);
@@ -84,6 +87,8 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
         eW_name.setInputType(InputType.TYPE_NULL);
         ePCode.setEnabled(false);
         ePCode.setInputType(InputType.TYPE_NULL);
+        binLoc.setEnabled(false);
+        binLoc.setInputType(InputType.TYPE_NULL);
     }
 
     public void backAction(View view) {
@@ -92,31 +97,35 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
 
     public void saveItem(){
         newQuanttity = newQuant.getText().toString();
-
-        int totalQuent = Integer.parseInt(P_Quantity) - Integer.parseInt(newQuanttity);
-        id = P_Code;
-        if(totalQuent >= 0) {
-            Response.Listener<String> responseListener = new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONObject jsonresp = new JSONObject(response);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
-                        builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
-                        saveInvoice();
-                    } catch (JSONException ex) {
-                        ex.printStackTrace();
+        if(!newQuanttity.equals("\\s") && newQuanttity!=null && !newQuanttity.equals("")) {
+            int totalQuent = Integer.parseInt(P_Quantity) - Integer.parseInt(newQuanttity);
+            id = P_Code;
+            if (totalQuent >= 0) {
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonresp = new JSONObject(response);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
+                            builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
+                            saveInvoice();
+                        } catch (JSONException ex) {
+                            ex.printStackTrace();
+                        }
                     }
-                }
-            };
+                };
 
-            ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, responseListener);
-            RequestQueue queue = Volley.newRequestQueue(DispatchActivity.this);
-            queue.add(request);
-        } else{
+                ServerRequests request = new ServerRequests(1, 1, P_Name, P_Price, Integer.toString(totalQuent), Supplier_Name, P_Type, W_Name, P_Code, bin_location, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(DispatchActivity.this);
+                queue.add(request);
+            } else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
+                builder.setMessage("Sorry, the quantity entered is more than the available stock !!!").setNegativeButton("Retry", null).create().show();
+
+            }
+        }else {
             AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
-            builder.setMessage("Sorry, the quantity entered is more than the available stock !!!").setNegativeButton("Retry", null).create().show();
-
+            builder.setMessage("Please enter the quantity !!!").setNegativeButton("Retry", null).create().show();
         }
     }
 
@@ -148,6 +157,7 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
                 params.put("C_ID", "1");
                 params.put("INV_Date", datetime);
                 params.put("UserID", Integer.toString(LoginActivity.userID));
+                params.put("Inv_Type", "dispatch");
 
                 return params;
             }

@@ -11,9 +11,11 @@
 		$P_Type = $_POST["P_Type"];
 		$W_Name = $_POST["W_Name"];
 		$P_Code = $_POST["P_Code"];
+		$bin_location = $_POST["bin_location"];
 	
 		$sql = "UPDATE Product SET P_Name='$P_Name', P_Price='$P_Price', P_Quantity='$P_Quantity', 
-				Supplier_Name='$Supplier_Name', P_Type='$P_Type', W_Name='$W_Name' WHERE P_Code='$P_Code' ";
+				Supplier_Name='$Supplier_Name', P_Type='$P_Type', W_Name='$W_Name', bin_location='$bin_location' 
+				WHERE P_Code='$P_Code' ";
 
 		if(mysqli_query($conn, $sql)) {
 
