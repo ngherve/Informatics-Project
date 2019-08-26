@@ -5,14 +5,14 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
-            <div class="content-header-light col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">
-                        <h3 class="content-header-title">Products</h3>
+                        <h3 class="content-header-title white">Products</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.aspx">Home</a>
+                                    <li class="breadcrumb-item"><a href="dashboard.aspx">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="ViewEmployees.aspx">Products</a>
                                     </li>
@@ -20,6 +20,12 @@
                                     </li>
                                 </ol>
                             </div>
+                        </div>
+                    </div>
+                     <div class="content-header-right col-md-3 col-12">
+                        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+                            
+                           
                         </div>
                     </div>
                 </div>

@@ -4,49 +4,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- BEGIN: Content-->
     <div class="app-content content">
-
-        <!-- BEGIN: Content--
         <div class="content-header row">
-            <div class="content-header-light col-12">
-                <div class="row">
-                    <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title">Product</h3>
-                        <div class="row breadcrumbs-top">
-                            <div class="breadcrumb-wrapper col-12">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="home.aspx">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#">Edit Product</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Edit Product Form
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-header-right col-md-3 col-12">
-                        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register.aspx"> Edit</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- BEGIN: Content-->
-
-        <div class="content-header row">
-            <div class="content-header-dark bg-img col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">
                         <h3 class="content-header-title white">Shops</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    <li class="breadcrumb-item"><a href="dashboard.aspx">Home</a>
                                     </li>
                                     <li class="breadcrumb-item active">Shop
                                     </li>
@@ -56,10 +22,7 @@
                     </div>
                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register-with-bg-image.html"> Register</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -99,7 +62,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput2">Price</label>
-                                                            <input type="number" runat="server" id="pprice" class="form-control border-primary" placeholder="Price" name="price">
+                                                            <input type="number" runat="server" id="pprice" class="form-control border-primary" placeholder="Price" name="company">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -107,7 +70,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Quantity</label>
-                                                            <input type="number" runat="server" id="pquantity" class="form-control border-primary" placeholder="100" name="quantity">
+                                                            <input type="number" runat="server" id="pquantity" class="form-control border-primary" placeholder="Username" name="username">
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -116,12 +79,14 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Supplier Name</label>
-                                                            
-                                                            <asp:DropDownList ID="sname" runat="server" class="form-control border-primary">
+                                                          
+
+                                                          
+                                                            <asp:DropDownList ID="sname" runat="server">
                                                                 <asp:ListItem Text="Schneider Electric" Value="Schneider Electric"></asp:ListItem>
                                                                 <asp:ListItem Text="Hewlett" Value="Hewlett"></asp:ListItem>
                                                                 <asp:ListItem Text="Modelez" Value="Modelez"></asp:ListItem>
-                                                                </asp:DropDownList>
+                                                                </asp:DropDownList>  
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -131,23 +96,23 @@
                                                 <div class="form-group">
                                                     <label for="userinput5">Warehouse Name</label>
                                                     
-                                                <asp:DropDownList ID="WH" runat="server" class="form-control border-primary">
+                                                    
+                                               <asp:DropDownList ID="WH" runat="server">
                                                                 <asp:ListItem Text="Warehouse1" Value="Warehouse1"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse2" Value="Warehouse2"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse3" Value="Warehouse3"></asp:ListItem>
                                                                 </asp:DropDownList>
+                                                   
                                                 </div>
 
-                                                
+                                                <div class="form-group">
+                                                    <label for="userinput6">Product Code</label>
+                                                    <input class="form-control border-primary" runat="server" type="text" placeholder="Code" id="pcode">
+                                                </div>
 
                                                 <div class="form-group">
                                                     <label>Product Type</label>
-                                                    
-                                                    <asp:DropDownList ID="ptype" runat="server" class="form-control border-primary">
-                                                                <asp:ListItem Text="Electrical" Value="Electrical"></asp:ListItem>
-                                                                <asp:ListItem Text="Mechanical" Value="Mechanical"></asp:ListItem>
-                                                                <asp:ListItem Text="Industrial" Value="Industrial"></asp:ListItem>
-                                                                </asp:DropDownList>
+                                                    <input class="form-control border-primary" runat="server" id="ptype" type="text" placeholder="Product Type">
                                                 </div>
 
                                                 <div class="form-group">
