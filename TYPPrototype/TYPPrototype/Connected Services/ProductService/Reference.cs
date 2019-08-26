@@ -49,6 +49,9 @@ namespace TYPPrototype.ProductService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string W_NameField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string bin_locationField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -176,6 +179,176 @@ namespace TYPPrototype.ProductService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string bin_location {
+            get {
+                return this.bin_locationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.bin_locationField, value) != true)) {
+                    this.bin_locationField = value;
+                    this.RaisePropertyChanged("bin_location");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Invoice", Namespace="http://schemas.datacontract.org/2004/07/WirelecWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int C_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string INV_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int INV_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Inv_TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string P_CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Total_PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int C_ID {
+            get {
+                return this.C_IDField;
+            }
+            set {
+                if ((this.C_IDField.Equals(value) != true)) {
+                    this.C_IDField = value;
+                    this.RaisePropertyChanged("C_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string INV_Date {
+            get {
+                return this.INV_DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.INV_DateField, value) != true)) {
+                    this.INV_DateField = value;
+                    this.RaisePropertyChanged("INV_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int INV_ID {
+            get {
+                return this.INV_IDField;
+            }
+            set {
+                if ((this.INV_IDField.Equals(value) != true)) {
+                    this.INV_IDField = value;
+                    this.RaisePropertyChanged("INV_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Inv_Type {
+            get {
+                return this.Inv_TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Inv_TypeField, value) != true)) {
+                    this.Inv_TypeField = value;
+                    this.RaisePropertyChanged("Inv_Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string P_Code {
+            get {
+                return this.P_CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.P_CodeField, value) != true)) {
+                    this.P_CodeField = value;
+                    this.RaisePropertyChanged("P_Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Total_Price {
+            get {
+                return this.Total_PriceField;
+            }
+            set {
+                if ((this.Total_PriceField.Equals(value) != true)) {
+                    this.Total_PriceField = value;
+                    this.RaisePropertyChanged("Total_Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -195,6 +368,12 @@ namespace TYPPrototype.ProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
         System.Threading.Tasks.Task<TYPPrototype.ProductService.Product[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetInvoices", ReplyAction="http://tempuri.org/IProductService/GetInvoicesResponse")]
+        TYPPrototype.ProductService.Invoice[] GetInvoices();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetInvoices", ReplyAction="http://tempuri.org/IProductService/GetInvoicesResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.ProductService.Invoice[]> GetInvoicesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductbyID", ReplyAction="http://tempuri.org/IProductService/GetProductbyIDResponse")]
         TYPPrototype.ProductService.Product GetProductbyID(int id);
@@ -260,6 +439,14 @@ namespace TYPPrototype.ProductService {
         
         public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product[]> GetAllProductsAsync() {
             return base.Channel.GetAllProductsAsync();
+        }
+        
+        public TYPPrototype.ProductService.Invoice[] GetInvoices() {
+            return base.Channel.GetInvoices();
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Invoice[]> GetInvoicesAsync() {
+            return base.Channel.GetInvoicesAsync();
         }
         
         public TYPPrototype.ProductService.Product GetProductbyID(int id) {
