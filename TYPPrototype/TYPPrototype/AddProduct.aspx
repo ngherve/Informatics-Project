@@ -6,14 +6,14 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
-            <div class="content-header-light col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title">Stock Management</h3>
+                        <h3 class="content-header-title white">Stock Management</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="home.aspx">Home</a>
+                                    <li class="breadcrumb-item"><a href="dashboard.aspx">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">Products</a></li>
                                     <li class="breadcrumb-item active">Add Product

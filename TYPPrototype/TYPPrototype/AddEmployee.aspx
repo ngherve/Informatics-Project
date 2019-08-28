@@ -5,14 +5,14 @@
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
-            <div class="content-header-light col-12">
+            <div class="content-header-dark col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">                           
-                        <h3 class="content-header-title" runat="server" id="AdminFunction">Admin</h3>
+                        <h3 class="content-header-title white" runat="server" id="AdminFunction">Admin</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="home.aspx">Home</a>
+                                    <li class="breadcrumb-item"><a href="dashboard.aspx">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">Employee Management</a>
                                     </li>
@@ -22,7 +22,10 @@
                             </div>
                         </div>
                     </div>
-                    
+                     <div class="content-header-right col-md-3 col-12">
+                        <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,7 +50,7 @@
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body">                                      
-                                        <form class="form">
+                                        <div class="form">
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="la la-eye"></i> Employee Information</h4>
                                                 <div class="row">
@@ -139,7 +142,7 @@
                                                 <asp:Button ID="btnSaveEmpl" onclick="btnSaveEmpl_Click" runat="server" Text="Save" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary"/>  
                                             </div>
 
-                                        </form>
+                                        </div>
 
                                     </div>
                                 </div>

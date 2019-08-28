@@ -21,7 +21,7 @@ namespace TYPPrototype
         {
             if(Session["Username"] != null)
             {
-                Response.Redirect("home.aspx");
+                Response.Redirect("dashboard.aspx");
             }
             client = new UserService.UserServiceClient();
             prodClient = new ProductService.ProductServiceClient();
@@ -37,7 +37,7 @@ namespace TYPPrototype
                 if(client.LoginUser(usernam, Password) == true)
                 {
                     Session["Username"] = usernam;
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("dashboard.aspx");
                 }
                 else
                 {
