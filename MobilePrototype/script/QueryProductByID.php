@@ -10,7 +10,7 @@
 	mysqli_stmt_execute($statement);
 
 	mysqli_stmt_store_result($statement);
-	mysqli_stmt_bind_result($statement,$P_ID, $P_Name, $P_Price, $P_Image, $P_Quantity, $Supplier_Name, $P_Type, $W_Name, $P_Code, $bin_location);
+	mysqli_stmt_bind_result($statement,$P_ID, $P_Name, $P_Price, $P_Image, $P_Quantity, $Supplier_Name, $P_Type, $W_Name, $P_Code);
 	
 	$response = array();
 	$response["success"] = false;
@@ -26,7 +26,6 @@
 		$response["P_Type"] = $P_Type;
 		$response["W_Name"] = $W_Name;
 		$response["P_Code"] = $P_Code;
-		$response["bin_location"] = $bin_location;
 	}
 	
 	echo json_encode($response);

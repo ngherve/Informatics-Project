@@ -12,13 +12,12 @@
 		$P_Type = $_POST["P_Type"];
 		$W_Name = $_POST["W_Name"];
 		$P_Code = $_POST["P_Code"];
-		$bin_location = $_POST["bin_location"];
 	}
 
 	
-	$statement = mysqli_prepare($con, "INSERT INTO Product (P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code, bin_location) 
-									   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ");
-	mysqli_stmt_bind_param($statement, "sssssssss", $P_Name, $P_Price, $P_Image, $P_Quantity, $Supplier_Name, $P_Type, $W_Name, $P_Code, $bin_location);
+	$statement = mysqli_prepare($con, "INSERT INTO Product (P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code) 
+									   VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
+	mysqli_stmt_bind_param($statement, "ssssssss", $P_Name, $P_Price, $P_Image, $P_Quantity, $Supplier_Name, $P_Type, $W_Name, $P_Code);
 	mysqli_stmt_execute($statement);
 		
 	$response = array();

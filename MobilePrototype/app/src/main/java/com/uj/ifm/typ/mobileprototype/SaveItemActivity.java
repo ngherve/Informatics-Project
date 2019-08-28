@@ -34,7 +34,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     String id, image;
     private static final String TAG = ProfileActivity.class.getSimpleName();
     Button btnSave, btnUpoadImage;
-    EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode, ebinLoc;
+    EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
     private String datetime;
     Spinner binlocation;
     ArrayList<String> bins = new ArrayList<>();
@@ -54,8 +54,8 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
         eW_name = (EditText) findViewById(R.id.etwarehouse);
         ePCode = (EditText) findViewById(R.id.etpcode);
 
-        binlocation = (Spinner) findViewById(R.id.etbinloc);
-        for(int i=1;i<10;i++) {
+        binlocation = (Spinner) findViewById(R.id.etbinlocs);
+        for(int i=0;i<10;i++) {
             bins.add("bin0"+i);
         }
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(SaveItemActivity.this,
@@ -94,9 +94,9 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
             esuppname.setText(intent.getStringExtra("Supplier_Name"));
             ep_type.setText(intent.getStringExtra("P_Type"));
             eW_name.setText(intent.getStringExtra("W_Name"));
-            ePCode.setText(intent.getStringExtra("P_Code"));
-            ebinLoc.setText(intent.getStringExtra("bin_location"));
-            StringTokenizer st = new StringTokenizer(ScanItemsActivity.resultView.getText().toString(), "\n");
+            ePCode.setText(intent.getStringExtra("P_Code"));/*
+            StringTokenizer st = new StringTokenizer(intent.getStringExtra("bin_location"));
+            binlocation.setSelection(Integer.parseInt(st.nextToken()));*/
             ScanItemsActivity.resultView.setText(ScanItemsActivity.resultView.getText().toString());
         }
 
@@ -212,7 +212,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
         String type = ep_type.getText().toString();
         String warehouse = eW_name.getText().toString();
         String pcode = ePCode.getText().toString();
-        String binloc = ebinLoc.getText().toString();
+        String binloc = binlocation.getSelectedItem().toString();
         id = pcode;
 
         StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "SaveInvoice.php",
@@ -260,7 +260,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
         String type = ep_type.getText().toString();
         String warehouse = eW_name.getText().toString();
         String pcode = ePCode.getText().toString();
-        String binloc = ebinLoc.getText().toString();
+        String binloc = binlocation.getSelectedItem().toString();
         id = pcode;
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
