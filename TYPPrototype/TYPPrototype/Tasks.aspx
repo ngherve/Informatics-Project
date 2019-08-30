@@ -533,30 +533,4 @@
     <!-- ************************************************************************************************** -->
     <!-- Task -->
 
-     <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/material-vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="app-assets/vendors/js/tables/jquery.dataTables.min.js"></script>
-    <script src="app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
-    <script src="app-assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js"></script>
-    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
-    <script src="app-assets/js/core/libraries/jquery_ui/jquery-ui.min.js"></script>
-    <script src="app-assets/js/scripts/ui/jquery-ui/date-pickers.js"></script>
-    <script src="app-assets/vendors/js/forms/select/select2.min.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="app-assets/js/core/app-menu.js"></script>
-    <script src="app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/pages/material-app.js"></script>
-    <script src="app-assets/js/scripts/pages/project-task-list.js"></script>
-    <!-- END: Page JS-->
-    <!--Task -->
-    <!-- ************************************************************************************************** -->
 </asp:Content>

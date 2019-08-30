@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="app-content content">
+    <div class="app-content content">
         <div class="content-header row">
             <div class="content-header-dark col-12">
                 <div class="row">
@@ -23,7 +23,6 @@
                     </div>
                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            
                         </div>
                     </div>
                 </div>
@@ -39,14 +38,14 @@
                                     <h4 class="card-title">All Bugs</h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
                                     <div class="heading-elements">
-                                        <button class="btn btn-primary btn-sm"><i class="ft-plus white"></i> Submit Bug</button>
+                                        <button class="btn btn-primary btn-sm"><i class="ft-plus white"></i>Submit Bug</button>
                                         <span class="dropdown">
                                             <button id="btnSearchDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-warning btn-sm dropdown-toggle dropdown-menu-right"><i class="ft-download white"></i></button>
                                             <span aria-labelledby="btnSearchDrop1" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                <a href="#" class="dropdown-item"><i class="la la-calendar"></i> Due Date</a>
-                                                <a href="#" class="dropdown-item"><i class="la la-random"></i> Priority </a>
-                                                <a href="#" class="dropdown-item"><i class="la la-bar-chart"></i> Progress</a>
-                                                <a href="#" class="dropdown-item"><i class="la la-user"></i> Assign to</a>
+                                                <a href="#" class="dropdown-item"><i class="la la-calendar"></i>Due Date</a>
+                                                <a href="#" class="dropdown-item"><i class="la la-random"></i>Priority </a>
+                                                <a href="#" class="dropdown-item"><i class="la la-bar-chart"></i>Progress</a>
+                                                <a href="#" class="dropdown-item"><i class="la la-user"></i>Assign to</a>
                                             </span>
                                         </span>
                                         <button class="btn btn-success btn-sm"><i class="ft-settings white"></i></button>
@@ -84,11 +83,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -110,11 +109,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop3" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -136,11 +135,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop4" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -162,11 +161,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop5" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop5" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -188,11 +187,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop6" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop6" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -214,11 +213,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop7" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop7" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -240,11 +239,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop8" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop8" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -266,11 +265,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop9" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop9" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -292,11 +291,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop10" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop10" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -318,11 +317,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop11" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop11" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -344,11 +343,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop12" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop12" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -370,11 +369,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop13" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop13" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -396,11 +395,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop14" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop14" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -422,11 +421,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop15" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop15" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -448,11 +447,11 @@
                                                             <span class="dropdown">
                                                                 <button id="btnSearchDrop16" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info dropdown-toggle"><i class="la la-cog"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop16" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i> Open Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Edit Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i> Complete Bug</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Assign to</a>
-                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i> Delete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-eye"></i>Open Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-edit-2"></i>Edit Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-check"></i>Complete Bug</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i>Assign to</a>
+                                                                    <a href="#" class="dropdown-item"><i class="ft-trash"></i>Delete Bug</a>
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -477,90 +476,59 @@
                 </div>
             </div>
         </div>
-        
-          <div class="sidebar-detached sidebar-left">
-                <div class="sidebar">
-                    <div class="bug-list-sidebar-content">
-                        <!-- Predefined Views -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Predefined Views</h4>
-                                <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <ul class="list-inline mb-0">
-                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
-                                    </ul>
+
+        <div class="sidebar-detached sidebar-left">
+            <div class="sidebar">
+                <div class="bug-list-sidebar-content">
+                    <!-- Predefined Views -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Predefined Views</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- bug-list search -->
+                        <div class="card-content collapse show">
+                            <div class="card-body border-top-blue-grey border-top-lighten-5">
+                                <div class="bug-list-search">
+                                    <div class="bug-list-search-content">
+                                        <form action="#">
+                                            <div class="position-relative">
+                                                <input type="search" class="form-control" placeholder="Search project bugs...">
+                                                <div class="form-control-position">
+                                                    <i class="ft-search text-size-base text-muted"></i>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- bug-list search -->
-                            <div class="card-content collapse show">
-                                <div class="card-body border-top-blue-grey border-top-lighten-5">
-                                    <div class="bug-list-search">
-                                        <div class="bug-list-search-content">
-                                            <form action="#">
-                                                <div class="position-relative">
-                                                    <input type="search" class="form-control" placeholder="Search project bugs...">
-                                                    <div class="form-control-position">
-                                                        <i class="ft-search text-size-base text-muted"></i>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /bug-list search -->
+                            <!-- /bug-list search -->
 
-                                <!-- bug-list view -->
-                                <div class="card-body ">
-                                    <div class="list-group">
-                                        <a href="#" class="list-group-item active">All Bugs</a>
-                                        <a href="#" class="list-group-item list-group-item-action">All Open</a>
-                                        <a href="#" class="list-group-item list-group-item-action">All Closed</a>
-                                        <a href="#" class="list-group-item list-group-item-action">My Open</a>
-                                        <a href="#" class="list-group-item list-group-item-action">My Closed</a>
-                                        <a href="#" class="list-group-item list-group-item-action">Overdue Bugs</a>
-                                        <a href="#" class="list-group-item list-group-item-action disabled">Created Today</a>
-                                        <a href="#" class="list-group-item list-group-item-action">Bugs I Follow</a>
-                                    </div>
+                            <!-- bug-list view -->
+                            <div class="card-body ">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item active">All Bugs</a>
+                                    <a href="#" class="list-group-item list-group-item-action">All Open</a>
+                                    <a href="#" class="list-group-item list-group-item-action">All Closed</a>
+                                    <a href="#" class="list-group-item list-group-item-action">My Open</a>
+                                    <a href="#" class="list-group-item list-group-item-action">My Closed</a>
+                                    <a href="#" class="list-group-item list-group-item-action">Overdue Bugs</a>
+                                    <a href="#" class="list-group-item list-group-item-action disabled">Created Today</a>
+                                    <a href="#" class="list-group-item list-group-item-action">Bugs I Follow</a>
                                 </div>
                             </div>
                         </div>
-                        <!--/ Predefined Views -->
                     </div>
-                  </div>
+                    <!--/ Predefined Views -->
                 </div>
+            </div>
+        </div>
     </div>
-   
-
-    
-    <!-- ************************************************************************************************** -->
-    <!-- Task -->
-
-     <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/material-vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="app-assets/vendors/js/tables/jquery.dataTables.min.js"></script>
-    <script src="app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
-    <script src="app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
-    <script src="app-assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js"></script>
-    <script src="app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
-    <script src="app-assets/js/core/libraries/jquery_ui/jquery-ui.min.js"></script>
-    <script src="app-assets/js/scripts/ui/jquery-ui/date-pickers.js"></script>
-    <script src="app-assets/vendors/js/forms/select/select2.min.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="app-assets/js/core/app-menu.js"></script>
-    <script src="app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/pages/material-app.js"></script>
-    <script src="app-assets/js/scripts/pages/project-task-list.js"></script>
-    <!-- END: Page JS-->
-    <!--Task -->
-    <!-- ************************************************************************************************** -->
+       <!-- ************************************************************************************************** -->
 </asp:Content>

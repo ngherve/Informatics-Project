@@ -20,21 +20,17 @@ namespace TYPPrototype
         {
             client = new UserServiceClient();
             users = client.GetAllUsers();
-            if (IsPostBack)
+           
+            List<ListItem> items = new List<ListItem>();
+            foreach (User u in users)
             {
-                List<ListItem> items = new List<ListItem>();
-                foreach (User u in users)
-                {
-                    ListItem li = new ListItem(u.Email, u.Email, true);
-                    li.Text = u.Email;
-                    li.Value = u.Email;
-                    items.Add(li);
-                }
-                notimail.DataSource = items;
-                notimail.DataBind();
-
-                //notimail.SelectedValue = "2";
+                ListItem li = new ListItem(u.Email, u.Email, true);
+                li.Text = u.Email;
+                li.Value = u.Email;
+                items.Add(li);
             }
+            notimail.DataSource = items;
+            notimail.DataBind();
         }
 
         protected void btnNotEmpl_Click(object sender, EventArgs e)
@@ -89,7 +85,7 @@ namespace TYPPrototype
 
         protected void btnCancelNot_Click(object sender, EventArgs e)
         {
-            Response.Redirect("home.aspx");
+            Response.Redirect("dashboard.aspx");
         }
     }
 }

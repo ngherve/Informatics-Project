@@ -98,23 +98,4 @@
         </div>
     </div>
 
-      <!-- BEGIN: Vendor JS-->
-    <script src="../../../app-assets/vendors/js/material-vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="../../../app-assets/vendors/js/charts/echarts/echarts.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="../../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../../app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="../../../app-assets/js/scripts/pages/material-app.js"></script>
-    <script src="../../../app-assets/js/scripts/cards/card-ecommerce.js"></script>
-    <!-- END: Page JS-->
-
-
 </asp:Content>
