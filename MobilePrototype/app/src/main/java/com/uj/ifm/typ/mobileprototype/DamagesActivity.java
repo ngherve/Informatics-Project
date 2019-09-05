@@ -162,7 +162,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("P_Code", id);
-                params.put("Quantity", P_Quantity);
+                params.put("Quantity", edQuan.getText().toString());
                 params.put("Total_Price", Integer.toString(Integer.parseInt(P_Quantity)*Integer.parseInt(P_Price)));
                 params.put("C_ID", "1");
                 params.put("INV_Date", datetime);
