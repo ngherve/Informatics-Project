@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import de.hdodenhof.circleimageview.CircleImageView;
 import org.json.JSONException;
 import org.json.JSONObject;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -89,6 +90,15 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
@@ -105,10 +115,15 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 UploadPicture(String.valueOf(id), getStringImage(bitmap));
             } else if(requestCode==1){
                 Uri filepath = data.getData();
-                Bundle bundle = data.getExtras();
-                bitmap = (Bitmap) bundle.get("data");
-                profileimage.setImageBitmap(bitmap);
-                UploadPicture(String.valueOf(id), getStringImage(bitmap));
+                try {
+                    Bundle bundle = data.getExtras();
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                    profileimage.setImageBitmap(bitmap);
+                    UploadPicture(String.valueOf(id), getStringImage(bitmap));
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -181,7 +196,9 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btnback:
-                super.onBackPressed();
+                Intent intent2 = new Intent(ProfileActivity.this, HomeActivity.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
                 break;
             case R.id.btnPhoto:
                 final String[] options = {"Camera", "Gallery", "Cancel"};

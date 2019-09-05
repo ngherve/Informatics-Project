@@ -138,6 +138,13 @@
                     android:text="Save Item" />
 
             <Button
+                    android:id="@+id/btnreport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Report Damage" />
+
+            <Button
                     android:id="@+id/btnback_save"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

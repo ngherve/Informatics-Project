@@ -63,21 +63,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         .build());
     }
 
-    /*@Override
-    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
-
-    }
-
-    @Override
-    public void onPermissionsDenied(int requestCode, List<String> perms) {
-        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
-
-        // (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
-        // This will display a dialog directing them to enable the permission in app settings.
-        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
-            new AppSettingsDialog.Builder(this).build().show();
-        }
-    }*/
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

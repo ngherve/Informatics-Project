@@ -18,6 +18,7 @@ import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import de.hdodenhof.circleimageview.CircleImageView;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +34,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
     String id, image;
     private static final String TAG = ProfileActivity.class.getSimpleName();
-    Button btnSave, btnUpoadImage;
+    Button btnSave, btnUpoadImage, btnReport;
     EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
     private String datetime;
     Spinner binlocation;
@@ -78,6 +79,9 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
 
         btnSave = (Button) findViewById(R.id.btnSaveItem);
         btnSave.setOnClickListener(this);
+
+        btnReport = (Button) findViewById(R.id.btnreport);
+        btnReport.setOnClickListener(this);
 
         btnUpoadImage = findViewById(R.id.btnselectimage);
         btnUpoadImage.setOnClickListener(this);
@@ -268,9 +272,6 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
             public void onResponse(String response) {
                 try {
                     JSONObject jsonresp = new JSONObject(response);
-                    AlertDialog.Builder builder = new AlertDialog.Builder(SaveItemActivity.this);
-                    builder.setMessage("Your Item has been Saved successfully !!!").setNegativeButton("OK", null).create().show();
-                    saveInvoice();
                 } catch (JSONException ex) {
                     ex.printStackTrace();
                 }
@@ -290,14 +291,82 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                 super.onBackPressed();
                 break;
             case R.id.btnSaveItem:
-                saveItem();
+                Response.Listener<String> respList = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONArray jsonarray = new JSONArray(response);
+                            boolean isfound = false;
+                            for(int i=0; i<jsonarray.length(); i++) {
+                                JSONObject jsonRes = jsonarray.getJSONObject(i);
+                                if(ePCode.getText().toString().equals(jsonRes.getString("P_Code"))){
+                                    isfound = true;
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(SaveItemActivity.this);
+                                    builder.setMessage("You have already saved this item!!!").setNegativeButton("OK", null).create().show();
+                                }
+                            }
+                            if(isfound==false){
+                                saveItem();
+                                saveInvoice();
+                                Toast.makeText(SaveItemActivity.this, "Item Successfully Saved", Toast.LENGTH_LONG).show();
+                                SaveItemActivity.super.onBackPressed();
+                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                ServerRequests loginReq = new ServerRequests(respList);
+                RequestQueue queue = Volley.newRequestQueue(SaveItemActivity.this);
+                queue.add(loginReq);
+                break;
+            case R.id.btnreport:
+                Response.Listener<String> respList1 = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONArray jsonarray = new JSONArray(response);
+                            boolean isfound = false;
+                            for(int i=0; i<jsonarray.length(); i++) {
+                                JSONObject jsonRes = jsonarray.getJSONObject(i);
+                                if(ePCode.getText().toString().equals(jsonRes.getString("P_Code"))){
+                                    isfound = true;
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(SaveItemActivity.this);
+                                    builder.setMessage("You have already saved this item!!!").setNegativeButton("OK", null).create().show();
+                                }
+                            }
+                            if(isfound==false){
+                                saveItem();
+                                Intent intent = new Intent(SaveItemActivity.this, DamagesActivity.class);
+                                intent.putExtra("P_Name", epName.getText().toString());
+                                intent.putExtra("P_Price", eprice.getText().toString());
+                                intent.putExtra("P_Image", "image");
+                                intent.putExtra("P_Quantity", eQuant.getText().toString());
+                                intent.putExtra("Supplier_Name", esuppname.getText().toString());
+                                intent.putExtra("P_Type", ep_type.getText().toString());
+                                intent.putExtra("W_Name", eW_name.getText().toString());
+                                intent.putExtra("P_Code", ePCode.getText().toString());
+                                intent.putExtra("bin_location", binlocation.getSelectedItem().toString());
+                                SaveItemActivity.this.startActivity(intent);
+                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                ServerRequests loginReq1 = new ServerRequests(respList1);
+                RequestQueue queue1 = Volley.newRequestQueue(SaveItemActivity.this);
+                queue1.add(loginReq1);
+
                 break;
 
             case R.id.btnselectimage:
                 final String[] options = {"Camera", "Gallery", "Cancel"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(SaveItemActivity.this);
-                builder.setTitle("Please Choose an Option to add Image");
-                builder.setItems(options, new DialogInterface.OnClickListener() {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(SaveItemActivity.this);
+                builder1.setTitle("Please Choose an Option to add Image");
+                builder1.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if(options[which].equals("Camera")){
@@ -310,7 +379,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                         }
                     }
                 });
-                builder.show();
+                builder1.show();
                 break;
         }
     }

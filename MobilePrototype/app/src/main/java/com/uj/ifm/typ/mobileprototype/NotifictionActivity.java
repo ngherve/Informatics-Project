@@ -23,7 +23,7 @@ public class NotifictionActivity extends AppCompatActivity{
     Spinner txtName;
     String datetime;
 
-    private int ReceiverID = 0;
+    private int ReceiverID = 2;
     private String name= "";
     String email = "";
 
@@ -47,6 +47,10 @@ public class NotifictionActivity extends AppCompatActivity{
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                email = txtName.getSelectedItem().toString();
+                StringTokenizer st = new StringTokenizer(email, " ");
+                email = st.nextToken();
+                GetUsers(email);
             }
 
             @Override
@@ -59,16 +63,18 @@ public class NotifictionActivity extends AppCompatActivity{
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email = txtName.getSelectedItem().toString();
-                StringTokenizer st = new StringTokenizer(email);
-                email = st.nextToken();
+                //email = txtName.getSelectedItem().toString();
+                //StringTokenizer st = new StringTokenizer(email, " ");
+                //email = st.nextToken();
+                //GetUsers(email);
+
+                String id = Integer.toString(ReceiverID);
 
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
                 datetime = dateformat.format(c.getTime());
 
-                GetUsers();
-                senmes();
+                senmes(id);
 
             }
         });
@@ -113,7 +119,7 @@ public class NotifictionActivity extends AppCompatActivity{
         super.onBackPressed();
     }
 
-    public void GetUsers(){
+    public void GetUsers(final String email){
         StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "QueryUsers.php",
                 new Response.Listener<String>() {
                     @Override
@@ -152,7 +158,7 @@ public class NotifictionActivity extends AppCompatActivity{
 
     }
 
-    public void senmes(){
+    public void senmes(final String id){
         StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "SendNotification.php",
                 new Response.Listener<String>() {
                     @Override
@@ -178,7 +184,7 @@ public class NotifictionActivity extends AppCompatActivity{
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("UserID", Integer.toString(ReceiverID));
+                params.put("UserID", id);
                 params.put("Message", txtMessage.getText().toString());
                 params.put("N_Datetime", datetime);
                 params.put("N_Email", LoginActivity.email);

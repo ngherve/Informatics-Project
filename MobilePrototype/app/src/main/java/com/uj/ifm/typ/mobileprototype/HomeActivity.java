@@ -172,8 +172,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
                             id = jsonRes.getInt("UserID");
                             name = jsonRes.getString("Name");
+                            LoginActivity.name = jsonRes.getString("Name");
                             username = jsonRes.getString("Username");
                             email = jsonRes.getString("Email");
+                            LoginActivity.email = jsonRes.getString("Email");
                             pass = jsonRes.getString("Password");
                             Tel = jsonRes.getString("Tel_Number");
                             Address = jsonRes.getString("Address");

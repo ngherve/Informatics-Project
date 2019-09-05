@@ -135,6 +135,8 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                                         txtresult.setText("Item Deleted Successfully!!! : " + results);
                                         code = eItem.getSelectedItem().toString();
                                         products.remove(code);
+                                        Toast.makeText(EditItemsActivity.this, "Item Deleted Successfully!!! !", Toast.LENGTH_LONG).show();
+
                                     } else{
                                         AlertDialog.Builder builder = new AlertDialog.Builder(EditItemsActivity.this);
                                         builder.setMessage("Product Not Found!!").setNegativeButton("Retry", null).create().show();

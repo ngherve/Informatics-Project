@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import de.hdodenhof.circleimageview.CircleImageView;
 import org.json.JSONException;
 import org.json.JSONObject;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -79,10 +80,6 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
 
     }
 
-    public void backAction(View view) {
-        super.onBackPressed();
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -112,6 +109,15 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
             }
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
 
     private String getStringImage(Bitmap bitmap) {
         ByteArrayOutputStream byteAoutStream = new ByteArrayOutputStream();
@@ -214,7 +220,9 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.editbtnback_save:
-                super.onBackPressed();
+                Intent intent2 = new Intent(EditActivity.this, HomeActivity.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
                 break;
             case R.id.editbtnSaveItem:
                 saveItem();
