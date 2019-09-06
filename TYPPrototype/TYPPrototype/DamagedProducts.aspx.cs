@@ -33,7 +33,7 @@ namespace TYPPrototype
                 display += "<div class='card'>";
                 display += "<div class='text-center'>";
                 display += "<div class='card-body'>";
-                display += "<img src ='" + prod.P_Photo + "' class='rounded-circle  height-150' alt='Card image'>";
+                display += "<img src ='" + prod.P_Photo + "' class='rounded-circle  width-150 height-150' alt='Card image'>";
                 display += "</div>";
                 display += "<div class='card-body'>";
                 display += "<h4 class='card-title'>" + prod.DateDamaged + "</h4>";
@@ -45,8 +45,6 @@ namespace TYPPrototype
                 //display += "<h6 class='text-center'>" + " Supplier: " + prod.Supplier_Name + "</h6>";
                 display += "</div>";
                 display += "<div class='card-body'>";
-                display += "<a href=EditProducts.aspx?ID=" + prod.P_ID + " class='btn btn-danger mr-1'><i class='la la-plus'></i> Edit</a>";
-                display += "<a href=DeleteProduct.aspx?ID=" + prod.P_ID + " class='btn btn-primary mr-1'><i class='ft-user'></i> Remove</a>";
                 display += "</div>";
                 display += "</div>";
                 display += "</div>";

@@ -17,6 +17,10 @@ namespace WirelecWCFService
         List<Product> GetAllProducts();
 
         [OperationContract]
+        [WebGet(UriTemplate = "GetInvoices")]
+        List<Invoice> GetAllInvoices();
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetProductbyID", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Product GetProductbyID(int id);

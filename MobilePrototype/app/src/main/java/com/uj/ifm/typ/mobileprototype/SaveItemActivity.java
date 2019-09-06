@@ -106,7 +106,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
 
 
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         datetime = dateformat.format(c.getTime());
     }
 
@@ -303,11 +303,13 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                                     isfound = true;
                                     AlertDialog.Builder builder = new AlertDialog.Builder(SaveItemActivity.this);
                                     builder.setMessage("You have already saved this item!!!").setNegativeButton("OK", null).create().show();
+                                    Toast.makeText(SaveItemActivity.this, "You have already saved this item!!!", Toast.LENGTH_LONG).show();
                                 }
                             }
                             if(isfound==false){
                                 saveItem();
                                 saveInvoice();
+                                UpdatePicture();
                                 Toast.makeText(SaveItemActivity.this, "Item Successfully Saved", Toast.LENGTH_LONG).show();
                                 SaveItemActivity.super.onBackPressed();
                             }

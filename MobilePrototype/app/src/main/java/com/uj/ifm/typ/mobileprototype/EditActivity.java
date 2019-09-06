@@ -203,6 +203,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
                     JSONObject jsonresp = new JSONObject(response);
                     AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
                     builder.setMessage("Your Item has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
+                    Toast.makeText(EditActivity.this, "Item Updated Successfully!!! !", Toast.LENGTH_LONG).show();
 
                 } catch (JSONException ex) {
                     ex.printStackTrace();

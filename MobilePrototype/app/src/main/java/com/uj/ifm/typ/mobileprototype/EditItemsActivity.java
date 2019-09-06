@@ -192,6 +192,8 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                                         +"\nType: "+P_Type+" Warehouse: "+W_Name+"\nCode: " + P_Code+" ImageURL: "+ P_Image
                                         + "\nLocation: " + bin_location;
                                 txtresult.setText(formatted);
+                                Toast.makeText(EditItemsActivity.this, "Item Found!! !", Toast.LENGTH_LONG).show();
+
                             } else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(EditItemsActivity.this);
                                 builder.setMessage("Product Not Found!!").setNegativeButton("Retry", null).create().show();

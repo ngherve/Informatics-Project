@@ -71,7 +71,7 @@ public class NotifictionActivity extends AppCompatActivity{
                 String id = Integer.toString(ReceiverID);
 
                 Calendar c = Calendar.getInstance();
-                SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+                SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 datetime = dateformat.format(c.getTime());
 
                 senmes(id);
@@ -169,6 +169,7 @@ public class NotifictionActivity extends AppCompatActivity{
                             builder.setMessage("Your Message has been successfully sent to "  + name)
                                     .setNegativeButton("Ok", null).create().show();
 
+                            Toast.makeText(NotifictionActivity.this, "Your Message has been successfully sent to "  + name, Toast.LENGTH_LONG).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(NotifictionActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();

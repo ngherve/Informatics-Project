@@ -25,10 +25,13 @@ namespace TYPPrototype
                 List<ListItem> items = new List<ListItem>();
                 foreach (User u in users)
                 {
-                    ListItem li = new ListItem(u.Email, u.Email, true);
-                    li.Text = u.Email;
-                    li.Value = u.Email;
-                    items.Add(li);
+                    if (!u.User_Type.Equals("admin"))
+                    {
+                        ListItem li = new ListItem(u.Email, u.Email, true);
+                        li.Text = u.Email;
+                        li.Value = u.Email;
+                        items.Add(li);
+                    }
                 }
                 notimail.DataSource = items;
                 notimail.DataBind();

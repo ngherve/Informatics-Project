@@ -34,7 +34,7 @@
         </service>
 
         <activity
-                android:name=".TaskActivity"
+                android:name=".DamagesActivity"
                 android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -42,7 +42,7 @@
         </activity>
 
         <activity
-                android:name=".DamagesActivity"
+                android:name=".TaskActivity"
                 android:theme="@style/AppTheme">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>

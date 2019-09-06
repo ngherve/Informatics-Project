@@ -37,7 +37,7 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
         setContentView(R.layout.activity_dispatch);
 
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         datetime = dateformat.format(c.getTime());
 
         newQuant = (EditText) findViewById(R.id.editetstQuantity21);
@@ -109,6 +109,16 @@ public class DispatchActivity<getSim> extends AppCompatActivity implements View.
                             AlertDialog.Builder builder = new AlertDialog.Builder(DispatchActivity.this);
                             builder.setMessage("The Quantity has been Updated successfully !!!").setNegativeButton("OK", null).create().show();
                             saveInvoice();
+                            Toast.makeText(DispatchActivity.this, "Item successfully Dispatched(:- Task Completed!!", Toast.LENGTH_SHORT).show();
+
+                            Intent intent2 = new Intent(DispatchActivity.this, HomeActivity.class);
+                            if(LoginActivity.usertype.equals("stock"))
+                                intent2 = new Intent(DispatchActivity.this, HomeActivity.class);
+                            else if (LoginActivity.usertype.equals("warehouse"))
+                                intent2 = new Intent(DispatchActivity.this, WarehouseHomeActivity.class);
+
+                            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent2);
                         } catch (JSONException ex) {
                             ex.printStackTrace();
                         }

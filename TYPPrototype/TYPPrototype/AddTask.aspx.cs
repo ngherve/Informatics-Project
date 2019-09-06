@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -24,10 +25,13 @@ namespace TYPPrototype
                 List<ListItem> items = new List<ListItem>();
                 foreach (User u in users)
                 {
-                    ListItem li = new ListItem();
-                    li.Text = u.UserID + " " + u.Name.ToString();
-                    li.Value = u.UserID + " " + u.Name.ToString();
-                    items.Add(li);
+                    if (!u.User_Type.Equals("admin"))
+                    {
+                        ListItem li = new ListItem();
+                        li.Text = u.UserID + " " + u.Name.ToString();
+                        li.Value = u.UserID + " " + u.Name.ToString();
+                        items.Add(li);
+                    }
                 }
                 Towner.DataSource = items;
                 Towner.DataBind();
@@ -55,6 +59,15 @@ namespace TYPPrototype
             };
 
             string result = client.CreateTask(task);
+            if (!client.GetUserbyID(task.UserID).User_Type.Equals("admin"))
+            {
+                var url = string.Format("http://localhost/script/send_push.php");
+                using (var webClient = new WebClient())
+                {
+                    var response = webClient.DownloadString(url);
+                    Console.WriteLine(response);
+                }
+            }
             Response.Redirect("Tasks.aspx");
 
         }

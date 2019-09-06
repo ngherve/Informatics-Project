@@ -200,7 +200,7 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 if(LoginActivity.usertype.equals("stock"))
                     intent2 = new Intent(ProfileActivity.this, HomeActivity.class);
                 else if (LoginActivity.usertype.equals("warehouse"))
-                    intent2 = new Intent(ProfileActivity.this, HomeActivity.class);
+                    intent2 = new Intent(ProfileActivity.this, WarehouseHomeActivity.class);
 
                 intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent2);

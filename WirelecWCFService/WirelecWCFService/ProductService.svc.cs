@@ -86,6 +86,39 @@ namespace WirelecWCFService
             return "Product Successfully Deleted";
         }
 
+        public List<Invoice> GetAllInvoices()
+        {
+            List<Invoice> invoices = new List<Invoice>();
+
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM PRODUCT";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                Invoice pro = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    pro = new Invoice();
+                    pro.INV_ID = Convert.ToInt32(dr["INV_ID"].ToString());
+                    pro.P_Code = dr["P_Code"].ToString();
+                    pro.Quantity = Convert.ToInt32(dr["Quantity"].ToString());
+                    pro.Total_Price = Convert.ToInt32(dr["Total_Price"].ToString());
+                    pro.C_ID = Convert.ToInt32(dr["C_ID"].ToString());
+                    pro.INV_Date = dr["INV_Date"].ToString();
+                    pro.UserID = Convert.ToInt32(dr["UserID"].ToString());
+                    pro.Inv_Type = dr["Inv_Type"].ToString();
+                    invoices.Add(pro);
+                }
+            }
+
+            return invoices;
+        }
+
         public List<Product> GetAllProducts()
         {
             List<Product> products = new List<Product>();

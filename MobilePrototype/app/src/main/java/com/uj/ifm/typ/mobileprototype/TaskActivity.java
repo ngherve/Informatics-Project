@@ -32,7 +32,7 @@ public class TaskActivity extends AppCompatActivity {
         spSelectTask = (Spinner) findViewById(R.id.spselecttask);
         edViewTasks = (TextView) findViewById(R.id.txtTasks);
         btnInitTask = (Button) findViewById(R.id.btnInitiateTask);
-        txtresult = (TextView) findViewById(R.id.txtTaskResult);
+        //txtresult = (TextView) findViewById(R.id.txtTaskResult);
 
         tasks = new ArrayList<>();
         tasks.add("Select a Task");
@@ -56,6 +56,7 @@ public class TaskActivity extends AppCompatActivity {
                                     message += count + "- Task "+ jsonRes.getString("Task_ID") +": " + jsonRes.getString("TaskContent") + "\n" +
                                             "Task Type: " + jsonRes.getString("T_Type") + "\n" +
                                             "Status: " + status + "\n" +
+                                            "Priority: " + jsonRes.getString("Priority") + "\n" +
                                             "Issue Date: " + jsonRes.getString("Start_Date") + "\n";
                                     tasks.add(jsonRes.getString("Task_ID") + " (" + jsonRes.getString("TaskContent") + ")");
                                 }
@@ -109,11 +110,11 @@ public class TaskActivity extends AppCompatActivity {
                     task = st.nextToken();
 
                     Calendar c = Calendar.getInstance();
-                    SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+                    SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     datetime = dateformat.format(c.getTime());
 
                     startActivity(new Intent(getApplicationContext(), ScannerActivity.class));
-                    txtresult.setText("Task successfully Completed");
+                    //txtresult.setText("Task successfully Completed");
 
                     DoTask();
                 } else {

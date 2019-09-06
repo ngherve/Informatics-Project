@@ -69,17 +69,6 @@
                 android:text="Initiate Task"
                 android:textSize="18dp" />
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:hint="Task Result"
-                android:id="@+id/txtTaskResult"
-                android:layout_margin="20dp"
-                android:layout_gravity="center"
-                android:textColor="#000000"
-                android:textSize="30dp" />
-
         <Button
                 android:onClick="backAction"
                 android:layout_width="match_parent"

@@ -154,6 +154,8 @@
                                 </li>
                                 <li><a class="menu-item" href="Location.aspx"><i class="material-icons"></i><span>Location</span></a>
                                 </li>
+                                <li><a class="menu-item" href="DamagedProducts.aspx"><i class="material-icons"></i><span>Damaged Products</span></a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
