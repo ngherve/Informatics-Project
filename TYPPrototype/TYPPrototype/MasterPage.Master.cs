@@ -63,7 +63,7 @@ namespace TYPPrototype
                 empImage.InnerHtml = "<img src='" + user.pphoto + "' alt='avatar'><i></i>";
 
                 menuEdit.InnerHtml = "<a class='dropdown-item' href=UpdateUser.aspx?ID=" + user.UserID + "><i class='ft-user'></i> Edit Profile</a>" +
-                                "<a class='dropdown-item' href='user-cards.html'><i class='ft-check-square'></i> Tasks</a>" +
+                                "<a class='dropdown-item' href='Tasks.aspx'><i class='ft-check-square'></i> Tasks</a>" +
                                 "<div class='dropdown-divider'></div><a class='dropdown-item' href='logout.aspx'><i class='ft-power'></i> Logout</a>";
                 viewNotification();
             }

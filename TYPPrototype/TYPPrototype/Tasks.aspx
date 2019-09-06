@@ -52,6 +52,7 @@
                                                     <th><input type="checkbox" class="input-chk-all"></th>
                                                     <th>Task</th>
                                                     <th>Start Date</th>
+                                                    <th>Priority</th>
                                                     <th>Status</th>
                                                     <th>Owner</th>
                                                     <th>Actions</th>
@@ -68,6 +69,7 @@
                                                     <th><input type="checkbox" class="input-chk"></th>
                                                     <th>Task</th>
                                                     <th>Start Date</th>
+                                                    <th>Priority</th>
                                                     <th>Progress</th>
                                                     <th>Owner</th>
                                                     <th>Actions</th>

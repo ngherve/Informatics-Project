@@ -24,9 +24,9 @@ namespace TYPPrototype
                 List<ListItem> items = new List<ListItem>();
                 foreach (User u in users)
                 {
-                    ListItem li = new ListItem(u.UserID.ToString(), u.UserID.ToString(), true);
-                    li.Text = u.UserID.ToString();
-                    li.Value = u.UserID.ToString();
+                    ListItem li = new ListItem();
+                    li.Text = u.UserID + " " + u.Name.ToString();
+                    li.Value = u.UserID + " " + u.Name.ToString();
                     items.Add(li);
                 }
                 Towner.DataSource = items;
@@ -37,6 +37,7 @@ namespace TYPPrototype
         protected void btnAddTask_Click(object sender, EventArgs e)
         {
             owner = Towner.SelectedValue.ToString();
+            owner = owner.Split(' ')[0];
             DateTime currenttime = DateTime.Now;
 
 
