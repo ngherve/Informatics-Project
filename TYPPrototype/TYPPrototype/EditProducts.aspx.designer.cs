@@ -58,13 +58,22 @@ namespace TYPPrototype {
         protected global::System.Web.UI.WebControls.DropDownList WH;
         
         /// <summary>
-        /// ptype control.
+        /// pcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ptype;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pcode;
+        
+        /// <summary>
+        /// ptypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ptypes;
         
         /// <summary>
         /// pimage control.

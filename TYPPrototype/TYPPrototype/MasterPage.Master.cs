@@ -15,7 +15,7 @@ namespace TYPPrototype
         {
             if (Session["Username"] == null)
             {
-                //Response.Redirect("home.aspx");
+                Response.Redirect("LoginUser.aspx");
             }
             else
             {

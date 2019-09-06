@@ -12,7 +12,7 @@ namespace TYPPrototype
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("LoginUser.aspx");
+            Response.Redirect("home.aspx");
         }
     }
 }

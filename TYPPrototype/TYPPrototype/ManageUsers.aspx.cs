@@ -36,7 +36,7 @@ namespace TYPPrototype
                         + "<h6 class='text-center'>" + " User Type: " + user.User_Type + "</h6>"
                         + "</div>"
                         + "<div class='card-body'>"
-                        + "<a href=UpdateUser.aspx?ID=" + user.UserID + " class='btn btn-danger mr-1'><i class='la la-plus'></i> Edit</a>"
+                        + "<a href=UpdateUser.aspx?ID=" + user.UserID + " class='btn btn-danger mr-1' onclick='return confirm('Are you sure?')'><i class='la la-plus'></i> Edit</a>"
                         + "<a href=DeleteUser.aspx?ID=" + user.UserID + " class='btn btn-primary mr-1'><i class='ft-user'></i> Remove</a>"
                         + "</div>"
                         + "</div>"

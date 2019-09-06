@@ -82,7 +82,7 @@
                                                           
 
                                                           
-                                                            <asp:DropDownList ID="sname" runat="server">
+                                                            <asp:DropDownList ID="sname" runat="server" class="form-control border-primary">
                                                                 <asp:ListItem Text="Schneider Electric" Value="Schneider Electric"></asp:ListItem>
                                                                 <asp:ListItem Text="Hewlett" Value="Hewlett"></asp:ListItem>
                                                                 <asp:ListItem Text="Modelez" Value="Modelez"></asp:ListItem>
@@ -97,7 +97,7 @@
                                                     <label for="userinput5">Warehouse Name</label>
                                                     
                                                     
-                                               <asp:DropDownList ID="WH" runat="server">
+                                               <asp:DropDownList ID="WH" runat="server" class="form-control border-primary">
                                                                 <asp:ListItem Text="Warehouse1" Value="Warehouse1"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse2" Value="Warehouse2"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse3" Value="Warehouse3"></asp:ListItem>
@@ -112,7 +112,11 @@
 
                                                 <div class="form-group">
                                                     <label>Product Type</label>
-                                                    <input class="form-control border-primary" runat="server" id="ptype" type="text" placeholder="Product Type">
+                                                    <asp:DropDownList ID="ptypes" runat="server" class="form-control border-primary">
+                                                                <asp:ListItem Text="Mechanical" Value="Mechanical"></asp:ListItem>
+                                                                <asp:ListItem Text="Industrial" Value="Industrial"></asp:ListItem>
+                                                                <asp:ListItem Text="Electrical" Value="Electrical"></asp:ListItem>
+                                                                </asp:DropDownList>
                                                 </div>
 
                                                 <div class="form-group">

@@ -40,7 +40,7 @@
                 pointSize: 5
             };
  
-            var pieChart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            var pieChart = new google.visualization.BarChart(document.getElementById('chart_div'));
             pieChart.draw(data, options);
         }
     </script>

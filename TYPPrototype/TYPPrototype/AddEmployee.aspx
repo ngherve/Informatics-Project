@@ -64,7 +64,7 @@
                                                         <div class="form-group">
                                                             <label for="userinput2">User Type</label>
                                                             
-                                                            <asp:DropDownList ID="Utype" runat="server">
+                                                            <asp:DropDownList ID="Utype" runat="server" class="form-control border-primary">
                                                                 <asp:ListItem Text="Stock" Value="stock"></asp:ListItem>
                                                                 <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>
                                                                 <asp:ListItem Text="Warehouse" Value="warehouse"></asp:ListItem>
@@ -118,7 +118,7 @@
 
                                                 <div class="form-group">
                                                     <label for="userinput8">Gender</label>                 
-                                                    <asp:DropDownList ID="GenderList" runat="server">
+                                                    <asp:DropDownList ID="GenderList" runat="server" class="form-control border-primary">
                                                                 <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
                                                                 <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
                                                                 <asp:ListItem Text="Other" Value="Other"></asp:ListItem>

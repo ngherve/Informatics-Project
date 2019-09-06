@@ -11,8 +11,7 @@ namespace TYPPrototype
     public partial class EditProducts : System.Web.UI.Page
     {
         ProductServiceClient prodClient;
-        string prodcode;
-        Product p;
+        private Product p = null;
         Product prod;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +35,7 @@ namespace TYPPrototype
             prod.Supplier_Name = p.Supplier_Name;
             prod.W_Name = p.W_Name;
             prod.P_Quantity = p.P_Quantity;
-            prod.P_Code = prodcode;
+            prod.P_Code = code;
             prod.P_Image = p.P_Image;
             
             
@@ -76,7 +75,7 @@ namespace TYPPrototype
             }
 
            
-                p.P_Type = ptype.SelectedValue;
+                p.P_Type = ptypes.SelectedValue;
             
 
             
