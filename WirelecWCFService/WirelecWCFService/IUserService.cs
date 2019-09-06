@@ -60,6 +60,11 @@ namespace WirelecWCFService
         string DeleteUser(int id);
 
         [OperationContract]
+        [WebInvoke(Method = "DELETE", UriTemplate = "DeleteTask", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string DeleteTask(int id);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SearchUser", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         User SearchUser(string name);

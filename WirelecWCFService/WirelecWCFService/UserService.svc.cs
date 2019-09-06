@@ -48,6 +48,17 @@ namespace WirelecWCFService
             return "Data Saved Successfully";
         }
 
+        public string DeleteTask(int id)
+        {
+            connection.Open();//openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "DELETE FROM TASK WHERE Task_ID = '" + id + "'";
+            cmd.ExecuteNonQuery();
+
+            return "Task Successfully Deleted";
+        }
+
         public string DeleteUser(int id)
         {
             connection.Open();//openning the connection
@@ -177,6 +188,7 @@ namespace WirelecWCFService
                     task.TaskContent = dr["TaskContent"].ToString();
                     task.Start_Date = dr["Start_Date"].ToString();
                     task.End_Date = dr["End_Date"].ToString();
+                    task.Priority = dr["Priority"].ToString();
                     task.Status = dr["Status"].ToString();
                     task.T_Type = dr["T_Type"].ToString();
 

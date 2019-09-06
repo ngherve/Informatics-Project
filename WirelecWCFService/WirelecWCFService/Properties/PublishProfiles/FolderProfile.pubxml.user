@@ -52,13 +52,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2019 14:17:09</publishTime>
     </File>
     <File Include="bin/WirelecWCFService.dll">
-      <publishTime>09/06/2019 14:37:24</publishTime>
+      <publishTime>09/06/2019 15:32:04</publishTime>
     </File>
     <File Include="bin/WirelecWCFService.pdb">
-      <publishTime>09/06/2019 14:37:24</publishTime>
+      <publishTime>09/06/2019 15:32:04</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/06/2019 14:42:58</publishTime>
+      <publishTime>09/06/2019 15:35:38</publishTime>
     </File>
     <File Include="ProductService.svc">
       <publishTime>09/06/2019 14:17:07</publishTime>
