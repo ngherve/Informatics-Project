@@ -68,6 +68,12 @@
   <wsdl:message name="IUserService_DeleteUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_DeleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_DeleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskResponse" />
+  </wsdl:message>
   <wsdl:message name="IUserService_SearchUser_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchUser" />
   </wsdl:message>
@@ -120,6 +126,10 @@
     <wsdl:operation name="DeleteUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/DeleteUser" message="tns:IUserService_DeleteUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/DeleteUserResponse" message="tns:IUserService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/DeleteTask" message="tns:IUserService_DeleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/DeleteTaskResponse" message="tns:IUserService_DeleteTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SearchUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SearchUser" message="tns:IUserService_SearchUser_InputMessage" />

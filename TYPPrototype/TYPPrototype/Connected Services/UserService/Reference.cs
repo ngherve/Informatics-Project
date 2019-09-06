@@ -548,6 +548,12 @@ namespace TYPPrototype.UserService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
         System.Threading.Tasks.Task<string> DeleteUserAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteTask", ReplyAction="http://tempuri.org/IUserService/DeleteTaskResponse")]
+        string DeleteTask(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteTask", ReplyAction="http://tempuri.org/IUserService/DeleteTaskResponse")]
+        System.Threading.Tasks.Task<string> DeleteTaskAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SearchUser", ReplyAction="http://tempuri.org/IUserService/SearchUserResponse")]
         TYPPrototype.UserService.User SearchUser(string name);
         
@@ -666,6 +672,14 @@ namespace TYPPrototype.UserService {
         
         public System.Threading.Tasks.Task<string> DeleteUserAsync(int id) {
             return base.Channel.DeleteUserAsync(id);
+        }
+        
+        public string DeleteTask(int id) {
+            return base.Channel.DeleteTask(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteTaskAsync(int id) {
+            return base.Channel.DeleteTaskAsync(id);
         }
         
         public TYPPrototype.UserService.User SearchUser(string name) {

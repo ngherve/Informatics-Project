@@ -6310,6 +6310,7 @@
     <Content Include="dash\vendor\slick\slick.min.js" />
     <Content Include="dash\vendor\sweetalert\sweetalert.min.js" />
     <Content Include="DeleteProduct.aspx" />
+    <Content Include="DeleteTask.aspx" />
     <Content Include="DeleteUser.aspx" />
     <Content Include="depletedStock.aspx" />
     <Content Include="dispatchlist.aspx" />
@@ -8345,6 +8346,13 @@
     </Compile>
     <Compile Include="DeleteProduct.aspx.designer.cs">
       <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteTask.aspx.cs">
+      <DependentUpon>DeleteTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteTask.aspx.designer.cs">
+      <DependentUpon>DeleteTask.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteUser.aspx.cs">
       <DependentUpon>DeleteUser.aspx</DependentUpon>

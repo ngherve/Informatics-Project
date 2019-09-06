@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="damagesReport.aspx.cs" Inherits="TYPPrototype.damagesReport" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="app-content content">
         <div class="content-header row">
             <div class="content-header-light col-12">
@@ -22,8 +24,10 @@
                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
                             <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="component-alerts.html"> Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="register-with-bg-image.html"> Register</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="component-alerts.html">Alerts</a><a class="dropdown-item" href="material-component-cards.html"> Cards</a><a class="dropdown-item" href="component-progress.html"> Progress</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="register-with-bg-image.html">Register</a>
                             </div>
                         </div>
                     </div>
@@ -58,12 +62,10 @@
                             </div>
                         </div>
                     </div>
-  </section>
+                </section>
                 <!-- // Bar charts section end -->
             </div>
         </div>
     </div>
     <!-- END: Content-->
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>

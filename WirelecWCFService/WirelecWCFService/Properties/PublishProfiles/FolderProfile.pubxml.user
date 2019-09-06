@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2019 15:32:04</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/06/2019 15:35:38</publishTime>
+      <publishTime>09/06/2019 15:37:44</publishTime>
     </File>
     <File Include="ProductService.svc">
       <publishTime>09/06/2019 14:17:07</publishTime>

@@ -58,9 +58,9 @@
                                                         <div class="form-group">
                                                             <label for="userinput1">Task Type</label>
                                                             <asp:DropDownList class="form-control border-primary" runat="server" ID="ttype">
-                                                                 <asp:ListItem Text="Incoming" Value="Incoming"></asp:ListItem>
-                                                                <asp:ListItem Text="Outgoing" Value="Outgoing"></asp:ListItem>
-                                                                <asp:ListItem Text="Allocation" Value="Allocation"></asp:ListItem>
+                                                                 <asp:ListItem Text="Incoming" Value="incoming"></asp:ListItem>
+                                                                <asp:ListItem Text="Dispatch" Value="dispatch"></asp:ListItem>
+                                                                <asp:ListItem Text="Allocation" Value="allocation"></asp:ListItem>
                                                             </asp:DropDownList>
                                                         </div>
                                                     </div>
@@ -83,7 +83,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="userinput3">Task Owner</label>
-                                                            <asp:DropDownList class="form-control border-primary" runat="server" ID="Towner">
+                                                            <asp:DropDownList class="form-control border-primary" runat="server" ID="Towner" AutoPostBack="True" OnSelectedIndexChanged="Towner_SelectedIndexChanged">
                                                                  
                                                             </asp:DropDownList>
                                                         </div>

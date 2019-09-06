@@ -12,40 +12,45 @@ namespace TYPPrototype
     {
         UserService.UserServiceClient client;
         User[] users = null;
+        string owner = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new UserServiceClient();
             users = client.GetAllUsers();
 
-            List<ListItem> items = new List<ListItem>();
-            foreach (User u in users)
+            if (!IsPostBack)
             {
-                ListItem li = new ListItem(u.UserID.ToString(), u.UserID.ToString(), true);
-                li.Text = u.UserID.ToString();
-                li.Value = u.UserID.ToString();
-                items.Add(li);
+               
+                List<ListItem> items = new List<ListItem>();
+                foreach (User u in users)
+                {
+                    ListItem li = new ListItem(u.UserID.ToString(), u.UserID.ToString(), true);
+                    li.Text = u.UserID.ToString();
+                    li.Value = u.UserID.ToString();
+                    items.Add(li);
+                }
+                Towner.DataSource = items;
+                Towner.DataBind();
             }
-            Towner.DataSource = items;
-            Towner.DataBind();
         }
 
         protected void btnAddTask_Click(object sender, EventArgs e)
         {
-            string owner = Towner.SelectedValue.ToString();
+            owner = Towner.SelectedValue.ToString();
             DateTime currenttime = DateTime.Now;
 
 
             Task task = new Task
             {
                 //UserID = Int32.Parse(Towner.SelectedValue),
-                UserID = 3,
-                TaskContent = "Outgoing Cable Ties",
-                Start_Date = "2019/08/23",
-                End_Date = "2019/08/24",
+                UserID = int.Parse(owner),
+                TaskContent = Tdesc.Value,
+                Start_Date = currenttime.ToString(),
+                End_Date = "",
                 //Priority = prty.SelectedItem.ToString(),
-                Priority = "High",
-                Status = "Pending",
-                T_Type = "Outgoing"
+                Priority = prty.SelectedValue,
+                Status = "pending",
+                T_Type = ttype.SelectedValue
             };
 
             string result = client.CreateTask(task);
@@ -56,6 +61,11 @@ namespace TYPPrototype
         protected void btnCancelTask_Click(object sender, EventArgs e)
         {
             Response.Redirect("Tasks.aspx");
+        }
+
+        protected void Towner_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            owner = Towner.SelectedValue;
         }
     }
 }

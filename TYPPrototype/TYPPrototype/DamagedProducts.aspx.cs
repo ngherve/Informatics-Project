@@ -33,7 +33,7 @@ namespace TYPPrototype
                 display += "<div class='card'>";
                 display += "<div class='text-center'>";
                 display += "<div class='card-body'>";
-                display += "<img src ='http://10.254.17.96:80/script/profile_image/prod" + prod.P_Photo + ".jpeg' class='rounded-circle  height-150' alt='Card image'>";
+                display += "<img src ='" + prod.P_Photo + "' class='rounded-circle  height-150' alt='Card image'>";
                 display += "</div>";
                 display += "<div class='card-body'>";
                 display += "<h4 class='card-title'>" + prod.DateDamaged + "</h4>";
