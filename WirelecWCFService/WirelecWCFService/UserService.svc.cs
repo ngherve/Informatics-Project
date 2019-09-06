@@ -21,14 +21,15 @@ namespace WirelecWCFService
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Task(Task_ID, UserID, TaskContent, Start_Date, End_Date, Status, T_Type) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7)", connection);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Task(Task_ID, UserID, TaskContent, Start_Date, End_Date,Priority, Status, T_Type) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7,@a8)", connection);
                 cmd.Parameters.AddWithValue("@a1", task.Task_ID);
                 cmd.Parameters.AddWithValue("@a2", task.UserID);
                 cmd.Parameters.AddWithValue("@a3", task.TaskContent);
                 cmd.Parameters.AddWithValue("@a4", task.Start_Date);
                 cmd.Parameters.AddWithValue("@a5", task.End_Date);
-                cmd.Parameters.AddWithValue("@a6", task.Status);
-                cmd.Parameters.AddWithValue("@a7", task.T_Type);
+                cmd.Parameters.AddWithValue("@a6", task.Priority);
+                cmd.Parameters.AddWithValue("@a7", task.Status);
+                cmd.Parameters.AddWithValue("@a8", task.T_Type);
 
                 if (connection.State == ConnectionState.Closed)
                 {
@@ -353,11 +354,11 @@ namespace WirelecWCFService
 
         public string UpdateUser(User user)
         {
-            
+
             connection.Open();//openning the connection
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
-            cmd.CommandText = "UPDATE USER SET Name = '" + user.Name + "',Username= '" + user.Username + 
+            cmd.CommandText = "UPDATE USER SET Name = '" + user.Name + "',Username= '" + user.Username +
                 "', Email ='" + user.Email + "',Password ='" + user.Password + "',Tel_Number ='" + user.Tel_Number
                 + "', Address='" + user.Address + "',Gender ='" + user.Gender + "',DOB = '" + user.DOB
                 + "',User_Type='" + user.User_Type + "',pphoto='" + user.pphoto + "'WHERE user.UserID = '" + user.UserID + "'";

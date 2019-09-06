@@ -17,7 +17,25 @@
       <xs:element minOccurs="0" name="P_Type" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Supplier_Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="W_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bin_location" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Damaged">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateDamaged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="P_Photo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Damaged" nillable="true" type="tns:Damaged" />
+  <xs:complexType name="ArrayOfDamaged">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Damaged" nillable="true" type="tns:Damaged" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDamaged" nillable="true" type="tns:ArrayOfDamaged" />
 </xs:schema>

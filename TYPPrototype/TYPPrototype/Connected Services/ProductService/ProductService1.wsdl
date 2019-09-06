@@ -32,6 +32,12 @@
   <wsdl:message name="IProductService_SearchProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_AddDamagedProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDamagedProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddDamagedProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDamagedProductResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductService_AddProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:AddProduct" />
   </wsdl:message>
@@ -43,6 +49,12 @@
   </wsdl:message>
   <wsdl:message name="IProductService_UpdateProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetDamagedProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamagedProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetDamagedProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamagedProductsResponse" />
   </wsdl:message>
   <wsdl:portType name="IProductService">
     <wsdl:operation name="GetAllProducts">
@@ -61,6 +73,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/SearchProduct" message="tns:IProductService_SearchProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/SearchProductResponse" message="tns:IProductService_SearchProduct_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddDamagedProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddDamagedProduct" message="tns:IProductService_AddDamagedProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddDamagedProductResponse" message="tns:IProductService_AddDamagedProduct_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductResponse" message="tns:IProductService_AddProduct_OutputMessage" />
@@ -68,6 +84,10 @@
     <wsdl:operation name="UpdateProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProduct" message="tns:IProductService_UpdateProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductResponse" message="tns:IProductService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDamagedProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetDamagedProducts" message="tns:IProductService_GetDamagedProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetDamagedProductsResponse" message="tns:IProductService_GetDamagedProducts_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="ProductService">

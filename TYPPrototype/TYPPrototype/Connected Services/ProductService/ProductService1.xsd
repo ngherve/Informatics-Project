@@ -55,10 +55,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddDamagedProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="d" nillable="true" type="q4:Damaged" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDamagedProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddDamagedProductResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="product" nillable="true" type="q4:Product" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="product" nillable="true" type="q5:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -72,7 +86,7 @@
   <xs:element name="UpdateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="product" nillable="true" type="q5:Product" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="product" nillable="true" type="q6:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -80,6 +94,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="UpdateProductResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDamagedProducts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDamagedProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetDamagedProductsResult" nillable="true" type="q7:ArrayOfDamaged" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

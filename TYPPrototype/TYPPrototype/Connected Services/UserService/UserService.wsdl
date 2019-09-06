@@ -20,6 +20,12 @@
   <wsdl:message name="IUserService_GetNotifications_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetNotificationsResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_GetTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasks" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksResponse" />
+  </wsdl:message>
   <wsdl:message name="IUserService_GetUserbyID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUserbyID" />
   </wsdl:message>
@@ -43,6 +49,12 @@
   </wsdl:message>
   <wsdl:message name="IUserService_SaveNotif_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveNotifResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_CreateTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTask" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_CreateTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTaskResponse" />
   </wsdl:message>
   <wsdl:message name="IUserService_LoginUser_InputMessage">
     <wsdl:part name="parameters" element="tns:LoginUser" />
@@ -77,6 +89,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetNotifications" message="tns:IUserService_GetNotifications_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetNotificationsResponse" message="tns:IUserService_GetNotifications_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetTasks" message="tns:IUserService_GetTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetTasksResponse" message="tns:IUserService_GetTasks_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetUserbyID">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserbyID" message="tns:IUserService_GetUserbyID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserbyIDResponse" message="tns:IUserService_GetUserbyID_OutputMessage" />
@@ -92,6 +108,10 @@
     <wsdl:operation name="SaveNotif">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SaveNotif" message="tns:IUserService_SaveNotif_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/SaveNotifResponse" message="tns:IUserService_SaveNotif_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/CreateTask" message="tns:IUserService_CreateTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/CreateTaskResponse" message="tns:IUserService_CreateTask_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="LoginUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/LoginUser" message="tns:IUserService_LoginUser_InputMessage" />

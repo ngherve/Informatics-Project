@@ -25,6 +25,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetTasks">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetTasksResult" nillable="true" type="q3:ArrayOfTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetUserbyID">
     <xs:complexType>
       <xs:sequence>
@@ -35,7 +47,7 @@
   <xs:element name="GetUserbyIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetUserbyIDResult" nillable="true" type="q3:User" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetUserbyIDResult" nillable="true" type="q4:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,14 +61,14 @@
   <xs:element name="GetNotifByUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetNotifByUserResult" nillable="true" type="q4:ArrayOfNotification" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetNotifByUserResult" nillable="true" type="q5:ArrayOfNotification" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegisterUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="user" nillable="true" type="q5:User" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="user" nillable="true" type="q6:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -70,7 +82,7 @@
   <xs:element name="SaveNotif">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="notif" nillable="true" type="q6:Notification" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="notif" nillable="true" type="q7:Notification" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -78,6 +90,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="SaveNotifResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="task" nillable="true" type="q8:Task" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateTaskResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -120,14 +146,14 @@
   <xs:element name="SearchUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="SearchUserResult" nillable="true" type="q7:User" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="SearchUserResult" nillable="true" type="q9:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="user" nillable="true" type="q8:User" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="user" nillable="true" type="q10:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

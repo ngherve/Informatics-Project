@@ -19,6 +19,8 @@ namespace WirelecWCFService
         [DataMember]
         public string End_Date { get; set; }
         [DataMember]
+        public string Priority { get; set; }
+        [DataMember]
         public string Status { get; set; }
         [DataMember]
         public string T_Type { get; set; }

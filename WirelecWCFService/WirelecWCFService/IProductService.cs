@@ -17,10 +17,6 @@ namespace WirelecWCFService
         List<Product> GetAllProducts();
 
         [OperationContract]
-        [WebGet(UriTemplate = "GetInvoices")]
-        List<Invoice> GetInvoices();
-
-        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetProductbyID", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Product GetProductbyID(int id);
@@ -38,11 +34,20 @@ namespace WirelecWCFService
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "AddProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+
+        string AddDamagedProduct(Damaged d);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", UriTemplate = "AddDamagedProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string AddProduct(Product product);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "UpdateProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         string UpdateProduct(Product product);
+        [OperationContract]
+        [WebGet(UriTemplate = "GetDamagedProducts")]
+        List<Damaged> GetDamagedProducts();
     }
 }

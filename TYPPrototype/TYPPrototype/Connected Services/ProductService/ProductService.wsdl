@@ -48,6 +48,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddDamagedProduct">
+      <soap12:operation soapAction="http://tempuri.org/IProductService/AddDamagedProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddProduct">
       <soap12:operation soapAction="http://tempuri.org/IProductService/AddProduct" style="document" />
       <wsdl:input>
@@ -59,6 +68,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateProduct">
       <soap12:operation soapAction="http://tempuri.org/IProductService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDamagedProducts">
+      <soap12:operation soapAction="http://tempuri.org/IProductService/GetDamagedProducts" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

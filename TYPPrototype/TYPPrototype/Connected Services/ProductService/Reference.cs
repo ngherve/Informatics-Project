@@ -49,6 +49,9 @@ namespace TYPPrototype.ProductService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string W_NameField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string bin_locationField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -176,6 +179,144 @@ namespace TYPPrototype.ProductService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string bin_location {
+            get {
+                return this.bin_locationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.bin_locationField, value) != true)) {
+                    this.bin_locationField = value;
+                    this.RaisePropertyChanged("bin_location");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Damaged", Namespace="http://schemas.datacontract.org/2004/07/WirelecWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Damaged : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int D_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateDamagedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int P_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string P_PhotoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int D_ID {
+            get {
+                return this.D_IDField;
+            }
+            set {
+                if ((this.D_IDField.Equals(value) != true)) {
+                    this.D_IDField = value;
+                    this.RaisePropertyChanged("D_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DateDamaged {
+            get {
+                return this.DateDamagedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateDamagedField, value) != true)) {
+                    this.DateDamagedField = value;
+                    this.RaisePropertyChanged("DateDamaged");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int P_ID {
+            get {
+                return this.P_IDField;
+            }
+            set {
+                if ((this.P_IDField.Equals(value) != true)) {
+                    this.P_IDField = value;
+                    this.RaisePropertyChanged("P_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string P_Photo {
+            get {
+                return this.P_PhotoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.P_PhotoField, value) != true)) {
+                    this.P_PhotoField = value;
+                    this.RaisePropertyChanged("P_Photo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -214,6 +355,12 @@ namespace TYPPrototype.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/SearchProduct", ReplyAction="http://tempuri.org/IProductService/SearchProductResponse")]
         System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> SearchProductAsync(string name);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddDamagedProduct", ReplyAction="http://tempuri.org/IProductService/AddDamagedProductResponse")]
+        string AddDamagedProduct(TYPPrototype.ProductService.Damaged d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddDamagedProduct", ReplyAction="http://tempuri.org/IProductService/AddDamagedProductResponse")]
+        System.Threading.Tasks.Task<string> AddDamagedProductAsync(TYPPrototype.ProductService.Damaged d);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
         string AddProduct(TYPPrototype.ProductService.Product product);
         
@@ -225,6 +372,12 @@ namespace TYPPrototype.ProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
         System.Threading.Tasks.Task<string> UpdateProductAsync(TYPPrototype.ProductService.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetDamagedProducts", ReplyAction="http://tempuri.org/IProductService/GetDamagedProductsResponse")]
+        TYPPrototype.ProductService.Damaged[] GetDamagedProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetDamagedProducts", ReplyAction="http://tempuri.org/IProductService/GetDamagedProductsResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.ProductService.Damaged[]> GetDamagedProductsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -286,6 +439,14 @@ namespace TYPPrototype.ProductService {
             return base.Channel.SearchProductAsync(name);
         }
         
+        public string AddDamagedProduct(TYPPrototype.ProductService.Damaged d) {
+            return base.Channel.AddDamagedProduct(d);
+        }
+        
+        public System.Threading.Tasks.Task<string> AddDamagedProductAsync(TYPPrototype.ProductService.Damaged d) {
+            return base.Channel.AddDamagedProductAsync(d);
+        }
+        
         public string AddProduct(TYPPrototype.ProductService.Product product) {
             return base.Channel.AddProduct(product);
         }
@@ -300,6 +461,14 @@ namespace TYPPrototype.ProductService {
         
         public System.Threading.Tasks.Task<string> UpdateProductAsync(TYPPrototype.ProductService.Product product) {
             return base.Channel.UpdateProductAsync(product);
+        }
+        
+        public TYPPrototype.ProductService.Damaged[] GetDamagedProducts() {
+            return base.Channel.GetDamagedProducts();
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Damaged[]> GetDamagedProductsAsync() {
+            return base.Channel.GetDamagedProductsAsync();
         }
     }
 }

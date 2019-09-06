@@ -30,6 +30,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap12:operation soapAction="http://tempuri.org/IUserService/GetTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetUserbyID">
       <soap12:operation soapAction="http://tempuri.org/IUserService/GetUserbyID" style="document" />
       <wsdl:input>
@@ -59,6 +68,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveNotif">
       <soap12:operation soapAction="http://tempuri.org/IUserService/SaveNotif" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTask">
+      <soap12:operation soapAction="http://tempuri.org/IUserService/CreateTask" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

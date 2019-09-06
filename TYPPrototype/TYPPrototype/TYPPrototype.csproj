@@ -112,6 +112,7 @@
   <ItemGroup>
     <Content Include="addEmployee.aspx" />
     <Content Include="addProduct.aspx" />
+    <Content Include="AddTask.aspx" />
     <Content Include="app-assets\css-rtl\bootstrap-extended.css" />
     <Content Include="app-assets\css-rtl\bootstrap-extended.min.css" />
     <Content Include="app-assets\css-rtl\bootstrap.css" />
@@ -6187,6 +6188,7 @@
     <Content Include="assets\css\style-rtl.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\js\scripts.js" />
+    <Content Include="Bins.aspx" />
     <None Include="Connected Services\ProductService\ProductService.disco" />
     <None Include="Connected Services\ProductService\configuration91.svcinfo" />
     <None Include="Connected Services\ProductService\configuration.svcinfo" />
@@ -6194,7 +6196,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Bins.aspx" />
+    <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UserService\TYPPrototype.UserService.Task.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -6209,10 +6216,10 @@
     <None Include="Connected Services\ProductService\ProductService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Damaged.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\UserService\UserService.disco" />
@@ -6224,6 +6231,7 @@
     </None>
     <Content Include="ContactEmployee.aspx" />
     <Content Include="contactSupplier.aspx" />
+    <Content Include="DamagedProducts.aspx" />
     <Content Include="damagesReport.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="dash\js\main.js" />
@@ -7630,17 +7638,6 @@
     <Content Include="UpdateUser.aspx" />
     <Content Include="viewStockTake.aspx" />
     <Content Include="Web.config" />
-    <None Include="Connected Services\UserService\UserService.wsdl" />
-    <None Include="Connected Services\UserService\UserService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserService\UserService1.wsdl" />
-    <None Include="Connected Services\UserService\UserService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\UserService\UserService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Gym\css1\includes\config.json" />
     <Content Include="Gym\fonts\elegant-font\html-css\fonts\ElegantIcons.eot" />
     <Content Include="Gym\fonts\elegant-font\html-css\fonts\ElegantIcons.ttf" />
@@ -7771,6 +7768,17 @@
     <Content Include="dash\vendor\slick\slick-theme.scss" />
     <Content Include="dash\vendor\slick\slick.less" />
     <Content Include="dash\vendor\slick\slick.scss" />
+    <None Include="Connected Services\UserService\UserService.wsdl" />
+    <None Include="Connected Services\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService1.wsdl" />
+    <None Include="Connected Services\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="src\scss\bootstrap-extended.scss" />
     <Content Include="src\scss\bootstrap-extended\.sass-cache\b161be96449978188ab92f1e37bbeda94f2952ce\buttons.scssc" />
@@ -8272,6 +8280,13 @@
     <Compile Include="addProduct.aspx.designer.cs">
       <DependentUpon>addProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddTask.aspx.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTask.aspx.designer.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Bins.aspx.cs">
       <DependentUpon>Bins.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8302,6 +8317,13 @@
     </Compile>
     <Compile Include="contactSupplier.aspx.designer.cs">
       <DependentUpon>contactSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DamagedProducts.aspx.cs">
+      <DependentUpon>DamagedProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DamagedProducts.aspx.designer.cs">
+      <DependentUpon>DamagedProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="damagesReport.aspx.cs">
       <DependentUpon>damagesReport.aspx</DependentUpon>

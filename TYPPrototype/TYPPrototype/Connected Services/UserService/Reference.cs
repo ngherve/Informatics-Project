@@ -327,6 +327,163 @@ namespace TYPPrototype.UserService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Task", Namespace="http://schemas.datacontract.org/2004/07/WirelecWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Task : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string End_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Start_DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string T_TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TaskContentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Task_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string End_Date {
+            get {
+                return this.End_DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.End_DateField, value) != true)) {
+                    this.End_DateField = value;
+                    this.RaisePropertyChanged("End_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Start_Date {
+            get {
+                return this.Start_DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Start_DateField, value) != true)) {
+                    this.Start_DateField = value;
+                    this.RaisePropertyChanged("Start_Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string T_Type {
+            get {
+                return this.T_TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.T_TypeField, value) != true)) {
+                    this.T_TypeField = value;
+                    this.RaisePropertyChanged("T_Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TaskContent {
+            get {
+                return this.TaskContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TaskContentField, value) != true)) {
+                    this.TaskContentField = value;
+                    this.RaisePropertyChanged("TaskContent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Task_ID {
+            get {
+                return this.Task_IDField;
+            }
+            set {
+                if ((this.Task_IDField.Equals(value) != true)) {
+                    this.Task_IDField = value;
+                    this.RaisePropertyChanged("Task_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserService.IUserService")]
     public interface IUserService {
@@ -342,6 +499,12 @@ namespace TYPPrototype.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetNotifications", ReplyAction="http://tempuri.org/IUserService/GetNotificationsResponse")]
         System.Threading.Tasks.Task<TYPPrototype.UserService.Notification[]> GetNotificationsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetTasks", ReplyAction="http://tempuri.org/IUserService/GetTasksResponse")]
+        TYPPrototype.UserService.Task[] GetTasks();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetTasks", ReplyAction="http://tempuri.org/IUserService/GetTasksResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.UserService.Task[]> GetTasksAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserbyID", ReplyAction="http://tempuri.org/IUserService/GetUserbyIDResponse")]
         TYPPrototype.UserService.User GetUserbyID(int id);
@@ -366,6 +529,12 @@ namespace TYPPrototype.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/SaveNotif", ReplyAction="http://tempuri.org/IUserService/SaveNotifResponse")]
         System.Threading.Tasks.Task<string> SaveNotifAsync(TYPPrototype.UserService.Notification notif);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/CreateTask", ReplyAction="http://tempuri.org/IUserService/CreateTaskResponse")]
+        string CreateTask(TYPPrototype.UserService.Task task);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/CreateTask", ReplyAction="http://tempuri.org/IUserService/CreateTaskResponse")]
+        System.Threading.Tasks.Task<string> CreateTaskAsync(TYPPrototype.UserService.Task task);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/LoginUser", ReplyAction="http://tempuri.org/IUserService/LoginUserResponse")]
         bool LoginUser(string username, string password);
@@ -435,6 +604,14 @@ namespace TYPPrototype.UserService {
             return base.Channel.GetNotificationsAsync();
         }
         
+        public TYPPrototype.UserService.Task[] GetTasks() {
+            return base.Channel.GetTasks();
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.UserService.Task[]> GetTasksAsync() {
+            return base.Channel.GetTasksAsync();
+        }
+        
         public TYPPrototype.UserService.User GetUserbyID(int id) {
             return base.Channel.GetUserbyID(id);
         }
@@ -465,6 +642,14 @@ namespace TYPPrototype.UserService {
         
         public System.Threading.Tasks.Task<string> SaveNotifAsync(TYPPrototype.UserService.Notification notif) {
             return base.Channel.SaveNotifAsync(notif);
+        }
+        
+        public string CreateTask(TYPPrototype.UserService.Task task) {
+            return base.Channel.CreateTask(task);
+        }
+        
+        public System.Threading.Tasks.Task<string> CreateTaskAsync(TYPPrototype.UserService.Task task) {
+            return base.Channel.CreateTaskAsync(task);
         }
         
         public bool LoginUser(string username, string password) {
