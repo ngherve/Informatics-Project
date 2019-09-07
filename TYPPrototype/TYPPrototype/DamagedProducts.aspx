@@ -27,8 +27,22 @@
                 </div>
             </div>
         </div>
+        <div class="content-wrapper">
 
-        <div runat="server" id="prodlist">
+
+            <div class="content-body">
+                <!-- User Profile Cards -->
+                <section runat="server" id="prodlist1" class="row mt-2">
+                    <div class="col-12">
+                        <h4 class="text-uppercase">Product Records</h4>
+                    </div>
+
+                </section>
+
+                <!--/ User Profile Cards -->
+
+            </div>
         </div>
+
     </div>
 </asp:Content>  

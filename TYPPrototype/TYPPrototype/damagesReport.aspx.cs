@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TYPPrototype.ProductService;
 
 namespace TYPPrototype
 {
@@ -11,7 +14,35 @@ namespace TYPPrototype
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GetChartData();
+        }
 
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static object[] GetChartData()
+        {
+            ProductServiceClient prodService;
+            Damaged[] products;
+            prodService = new ProductServiceClient();
+
+            products = prodService.GetDamagedProducts();
+            List<Damaged> data = new List<Damaged>();
+            data = products.ToList();
+
+            var chartData = new object[products.Count() + 1];
+            chartData[0] = new object[]{
+                    "Date of Damage",
+                    "Quantity in stock",
+                    "product id"
+                };
+            int j = 0;
+            foreach (var i in data)
+            {
+                j++;
+                chartData[j] = new object[] { i.DateDamaged, i.Quantity, i.P_ID };
+            }
+
+            return chartData;
         }
     }
 }

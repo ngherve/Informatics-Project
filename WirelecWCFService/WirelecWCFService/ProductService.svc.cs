@@ -21,7 +21,7 @@ namespace WirelecWCFService
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO DAMAGES( DateDamaged, P_ID,P_Photo, Quantity, Description) VALUES(@a1, @a2, @a3, @a4,@a5)", connection);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO DAMAGED( DateDamaged, P_ID,P_Photo, Quantity, Description) VALUES(@a1, @a2, @a3, @a4,@a5)", connection);
                 cmd.Parameters.AddWithValue("@a1", d.DateDamaged);
                 cmd.Parameters.AddWithValue("@a2", d.P_ID);
                 cmd.Parameters.AddWithValue("@a3", d.P_Photo);
@@ -160,7 +160,7 @@ namespace WirelecWCFService
             connection.Open(); //openning the connection
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
-            cmd.CommandText = "SELECT * FROM DAMAGE";
+            cmd.CommandText = "SELECT * FROM DAMAGED";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);

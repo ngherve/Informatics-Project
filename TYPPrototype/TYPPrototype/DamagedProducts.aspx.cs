@@ -51,7 +51,7 @@ namespace TYPPrototype
                 display += "</div>";
             }
 
-            prodlist.InnerHtml = display;
+            prodlist1.InnerHtml = display;
 
 
         }

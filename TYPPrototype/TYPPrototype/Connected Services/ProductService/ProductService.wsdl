@@ -21,6 +21,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllInvoices">
+      <soap12:operation soapAction="http://tempuri.org/IProductService/GetAllInvoices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetProductbyID">
       <soap12:operation soapAction="http://tempuri.org/IProductService/GetProductbyID" style="document" />
       <wsdl:input>

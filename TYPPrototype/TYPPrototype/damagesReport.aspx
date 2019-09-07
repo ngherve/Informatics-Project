@@ -1,5 +1,50 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="damagesReport.aspx.cs" Inherits="TYPPrototype.damagesReport" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+     <%-- Here We need to write some js code for load google chart with database data --%>
+    <script src="Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ 
+    <script>
+        var chartData; // globar variable for hold chart data
+        google.load("visualization", "1", { packages: ["corechart"] });
+ 
+        // Here We will fill chartData
+ 
+        $(document).ready(function () {
+           
+            $.ajax({
+                url: "damagesReport.aspx/GetChartData",
+                data: "",
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; chartset=utf-8",
+                success: function (data) {
+                    chartData = data.d;
+                },
+                error: function () {
+                    alert("Error loading data! Please try again.");
+                }
+            }).done(function () {
+                // after complete loading data
+                google.setOnLoadCallback(drawChart);
+                drawChart();
+            });
+        });
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(chartData);
+ 
+            var options = {
+                title: "Stock Damages",
+                pointSize: 5
+            };
+ 
+            var pieChart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            pieChart.draw(data, options);
+        }
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="app-content content">
@@ -34,6 +79,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="content-wrapper">
             <div class="content-body">
                 <!-- Bar charts section start -->
@@ -55,9 +101,9 @@
                                     </div>
                                 </div>
                                 <div class="card-content collapse show">
-                                    <div class="card-body">
-                                        <canvas id="bar-chart" height="400"></canvas>
-                                    </div>
+                                   <div id="chart_div" style="width:950px;height:500px">
+                                       <%-- Here Chart Will Load --%>
+                                   </div>
                                 </div>
                             </div>
                         </div>

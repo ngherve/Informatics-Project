@@ -21,6 +21,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="C_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="INV_Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INV_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Inv_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Total_Price" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
   <xs:complexType name="Damaged">
     <xs:sequence>
       <xs:element minOccurs="0" name="D_ID" type="xs:int" />
