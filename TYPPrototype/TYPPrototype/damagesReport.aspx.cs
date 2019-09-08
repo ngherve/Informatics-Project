@@ -23,26 +23,38 @@ namespace TYPPrototype
         {
             ProductServiceClient prodService;
             Damaged[] products;
+            Product[] product;
+            object[] retChartData = null; 
             prodService = new ProductServiceClient();
 
             products = prodService.GetDamagedProducts();
             List<Damaged> data = new List<Damaged>();
             data = products.ToList();
-
-            var chartData = new object[products.Count() + 1];
-            chartData[0] = new object[]{
-                    "Date of Damage",
-                    "Quantity in stock",
-                    "product id"
-                };
-            int j = 0;
-            foreach (var i in data)
+            int x = 0;
+            product = prodService.GetAllProducts();
+            foreach (Product p in product)
             {
-                j++;
-                chartData[j] = new object[] { i.DateDamaged, i.Quantity, i.P_ID };
-            }
 
-            return chartData;
+                if (p.P_ID.Equals(products[x].P_ID))
+                {
+
+                    var chartData = new object[products.Count() + 1];
+                    chartData[0] = new object[]{
+                    "Date of Damage",
+                    "Amount Damaged",
+                    "Quantity in Stock"
+                };
+                    int j = 0;
+                    foreach (var i in data)
+                    {
+                        j++;
+                        chartData[j] = new object[] { p.P_Name + "(" + i.DateDamaged + ")", i.Quantity, p.P_Quantity };
+                    }
+                    retChartData = chartData;
+                }
+             
+            }
+            return retChartData;
         }
     }
 }

@@ -40,7 +40,7 @@
                 pointSize: 5
             };
  
-            var pieChart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            var pieChart = new google.visualization.ComboChart(document.getElementById('chart_div'));
             pieChart.draw(data, options);
         }
     </script>
@@ -76,9 +76,8 @@
         <div id="chart_div" style="width:1100px;height:500px">
             <%-- Here Chart Will Load --%>
         </div>
+        <h4 class="card-title" id="suggestion" runat="server"></h4>
     </div>
-    <!-- END: Content-->
-
-    
+    <!-- END: Content-->  
 
 </asp:Content>

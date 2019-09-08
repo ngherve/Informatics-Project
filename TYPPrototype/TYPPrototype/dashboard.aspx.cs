@@ -14,19 +14,33 @@ namespace TYPPrototype
     {
 
         UserServiceClient userClient;
+        ProductServiceClient prodClient;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             userClient = new UserServiceClient();
+            prodClient = new ProductServiceClient();
 
-            List<Product> DamagedProds = new List<Product>();
-            //foreach (Damaged prod in Dproducts)
+            tasks.InnerHtml = userClient.GetTasks().Length.ToString();
+            users.InnerHtml = userClient.GetAllUsers().Length.ToString();
+
+            int incomingcount = 0;
+            int outgoingcount = 0;
+            Invoice[] invs = prodClient.GetAllInvoices();
+            foreach (Invoice inv in invs)
             {
-                Product p;
-                //p = prodService.GetProductbyID(prod.P_ID);
-                //DamagedProds.Add(p);
+                if (inv.Inv_Type.Equals("incoming"))
+                {
+                    incomingcount += inv.Quantity;
+                } else if (inv.Inv_Type.Equals("dispatch"))
+                {
+                    outgoingcount += inv.Quantity;
+                }
             }
+
+            incoming.InnerHtml = incomingcount.ToString();
+            outgoing.InnerHtml = outgoingcount.ToString();
         }
     }
 }

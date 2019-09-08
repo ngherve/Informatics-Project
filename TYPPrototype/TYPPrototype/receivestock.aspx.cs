@@ -15,6 +15,28 @@ namespace TYPPrototype
         protected void Page_Load(object sender, EventArgs e)
         {
             GetChartData();
+            getData();
+        }
+        private void getData()
+        {
+            ProductServiceClient prodService;
+            Product[] products;
+            prodService = new ProductServiceClient();
+
+            products = prodService.GetAllProducts();
+            List<Product> data = new List<Product>();
+            data = products.ToList();
+           
+            string lowstock = "The following items are low in stock;\n ";
+            foreach (var i in data)
+            {
+                if (i.P_Quantity < 30)
+                {
+                    lowstock += i.P_Name + "(" + i.P_Code + ")\n";
+                }
+            }
+            lowstock += "Suggestion: Order new Stock!!!";
+            suggestion.InnerHtml = lowstock;
         }
 
         [WebMethod]
@@ -32,15 +54,16 @@ namespace TYPPrototype
             var chartData = new object[products.Count() + 1];
             chartData[0] = new object[]{
                     "Product Name",
-                    "Quantity in stock"
+                    "Quantity in stock",
+                    "Ideal Quantity"
                 };
             int j = 0;
             foreach (var i in data)
             {
                 j++;
-                chartData[j] = new object[] { i.P_Name, i.P_Quantity };
+                chartData[j] = new object[] { i.P_Name, i.P_Quantity, 30 };
+                
             }
-
             return chartData;
         }
     }

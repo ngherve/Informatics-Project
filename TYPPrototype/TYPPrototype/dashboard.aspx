@@ -15,7 +15,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="info">43</h3>
+                                            <h3 class="info" id ="outgoing" runat="server">43</h3>
                                             <h6>Outgoing Products</h6>
                                         </div>
                                         <div>
@@ -35,7 +35,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="warning">43</h3>
+                                            <h3 class="warning" id ="tasks" runat="server">43</h3>
                                             <h6>Total Tasks</h6>
                                         </div>
                                         <div>
@@ -55,7 +55,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="success">146</h3>
+                                            <h3 class="success" id ="incoming" runat="server">146</h3>
                                             <h6>Incoming Products</h6>
                                         </div>
                                         <div>
@@ -75,7 +75,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="success">5</h3>
+                                            <h3 class="success" id ="users" runat="server">5</h3>
                                             <h6>Active Users</h6>
                                         </div>
                                         <div>

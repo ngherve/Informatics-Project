@@ -166,10 +166,7 @@
                     <ul class="menu-content" id="WareM" runat="server">
                         <li><a class="menu-item" href="Tasks.aspx"><i class="material-icons"></i><span>Tasks</span></a>
                         </li>
-                        <li><a class="menu-item" href="TaskSummary.aspx"><i class="material-icons"></i><span>Task Summary</span></a>
-                        </li>
-                        <li><a class="menu-item" href="ToDo.aspx"><i class="material-icons"></i><span>ToDo List</span></a>
-                        </li>
+                        
                     </ul>
                 </li>
 
@@ -197,14 +194,15 @@
 
                 <li class=" nav-item" id="AdminFunc1" runat="server"><a href="#"><i class="material-icons">show_chart</i><span class="menu-title"> Reports </span></a>
                     <ul class="menu-content" id="AdminFunc1M" runat="server">
-
                         <li><a class="menu-item" href="receivestock.aspx"><i class="material-icons"></i><span>Current Stock Report</span></a>
                         </li>
-                        <li><a class="menu-item" href="ProductsReport.aspx"><i class="material-icons"></i><span>Products Report</span></a>
+                        <li><a class="menu-item" href="EmployeeReport.aspx"><i class="material-icons"></i><span>Employee(Tasks) Report</span></a>
                         </li>
-                        <li><a class="menu-item" href="invoicereport.aspx"><i class="material-icons"></i><span>Invoices</span></a>
+                        <li><a class="menu-item" href="DamagesReport.aspx"><i class="material-icons"></i><span>Damage Report</span></a>
                         </li>
-
+                         <li><a class="menu-item" href="InvoiceReports.aspx"><i class="material-icons"></i><span>Invoice Report</span></a>
+                        </li>
+                       
                     </ul>
                 </li>
             </ul>

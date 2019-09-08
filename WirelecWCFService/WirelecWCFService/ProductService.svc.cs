@@ -93,7 +93,7 @@ namespace WirelecWCFService
             connection.Open(); //openning the connection
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
-            cmd.CommandText = "SELECT * FROM PRODUCT";
+            cmd.CommandText = "SELECT * FROM INVOICE";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);

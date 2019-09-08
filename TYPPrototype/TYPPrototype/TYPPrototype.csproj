@@ -6318,6 +6318,7 @@
     <Content Include="depletedStock.aspx" />
     <Content Include="dispatchlist.aspx" />
     <Content Include="EditProducts.aspx" />
+    <Content Include="EmployeeReport.aspx" />
     <Content Include="gulp\gulp-tasks\autoprefixer\css.js" />
     <Content Include="gulp\gulp-tasks\autoprefixer\css_rtl.js" />
     <Content Include="gulp\gulp-tasks\clean\css.js" />
@@ -6793,7 +6794,7 @@
     <Content Include="Gym\vendor\sweetalert\sweetalert.min.js" />
     <Content Include="home.aspx" />
     <Content Include="inspectAllocate.aspx" />
-    <Content Include="invoicereport.aspx" />
+    <Content Include="InvoiceReports.aspx" />
     <Content Include="Location.aspx" />
     <Content Include="LoginUser.aspx" />
     <Content Include="logout.aspx" />
@@ -8385,6 +8386,13 @@
     <Compile Include="EditProducts.aspx.designer.cs">
       <DependentUpon>EditProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeReport.aspx.cs">
+      <DependentUpon>EmployeeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeReport.aspx.designer.cs">
+      <DependentUpon>EmployeeReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8399,12 +8407,12 @@
     <Compile Include="inspectAllocate.aspx.designer.cs">
       <DependentUpon>inspectAllocate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="invoicereport.aspx.cs">
-      <DependentUpon>invoicereport.aspx</DependentUpon>
+    <Compile Include="InvoiceReports.aspx.cs">
+      <DependentUpon>InvoiceReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="invoicereport.aspx.designer.cs">
-      <DependentUpon>invoicereport.aspx</DependentUpon>
+    <Compile Include="InvoiceReports.aspx.designer.cs">
+      <DependentUpon>InvoiceReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Location.aspx.cs">
       <DependentUpon>Location.aspx</DependentUpon>
