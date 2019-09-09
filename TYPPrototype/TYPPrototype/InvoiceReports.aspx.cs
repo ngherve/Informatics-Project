@@ -40,7 +40,7 @@ namespace TYPPrototype
             foreach (var i in data)
             {
                 j++;
-                chartData[j] = new object[] { "Type: " + i.Inv_Type +"("+ i.P_Code+")", i.Quantity, i.Total_Price};
+                chartData[j] = new object[] { "Type: " + i.Inv_Type +"("+ i.P_ID+")", i.Quantity, i.Total_Price};
             }
 
             return chartData;

@@ -224,7 +224,7 @@ namespace TYPPrototype.ProductService {
         private string Inv_TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string P_CodeField;
+        private int P_IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int QuantityField;
@@ -298,14 +298,14 @@ namespace TYPPrototype.ProductService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string P_Code {
+        public int P_ID {
             get {
-                return this.P_CodeField;
+                return this.P_IDField;
             }
             set {
-                if ((object.ReferenceEquals(this.P_CodeField, value) != true)) {
-                    this.P_CodeField = value;
-                    this.RaisePropertyChanged("P_Code");
+                if ((this.P_IDField.Equals(value) != true)) {
+                    this.P_IDField = value;
+                    this.RaisePropertyChanged("P_ID");
                 }
             }
         }

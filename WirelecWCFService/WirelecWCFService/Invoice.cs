@@ -11,7 +11,7 @@ namespace WirelecWCFService
         [DataMember]
         public int INV_ID { get; set; }
         [DataMember]
-        public string P_Code { get; set; }
+        public int P_ID { get; set; }
         [DataMember]
         public int Quantity { get; set; }
         [DataMember]

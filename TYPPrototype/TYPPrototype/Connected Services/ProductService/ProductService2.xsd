@@ -33,7 +33,7 @@
       <xs:element minOccurs="0" name="INV_Date" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="INV_ID" type="xs:int" />
       <xs:element minOccurs="0" name="Inv_Type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="P_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_ID" type="xs:int" />
       <xs:element minOccurs="0" name="Quantity" type="xs:int" />
       <xs:element minOccurs="0" name="Total_Price" type="xs:int" />
       <xs:element minOccurs="0" name="UserID" type="xs:int" />

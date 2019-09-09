@@ -105,7 +105,7 @@ namespace WirelecWCFService
                 {
                     pro = new Invoice();
                     pro.INV_ID = Convert.ToInt32(dr["INV_ID"].ToString());
-                    pro.P_Code = dr["P_Code"].ToString();
+                    pro.P_ID = Convert.ToInt32(dr["P_ID"].ToString());
                     pro.Quantity = Convert.ToInt32(dr["Quantity"].ToString());
                     pro.Total_Price = Convert.ToInt32(dr["Total_Price"].ToString());
                     pro.C_ID = Convert.ToInt32(dr["C_ID"].ToString());

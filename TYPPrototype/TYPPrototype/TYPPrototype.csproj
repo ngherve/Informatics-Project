@@ -6219,10 +6219,10 @@
     <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Damaged.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Invoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Invoice.datasource">
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\UserService\UserService.disco" />
@@ -7639,6 +7639,7 @@
     <Content Include="test.aspx" />
     <Content Include="Tester.aspx" />
     <Content Include="ToDo.aspx" />
+    <Content Include="Transaction.aspx" />
     <Content Include="UpdateStock.aspx" />
     <Content Include="UpdateUser.aspx" />
     <Content Include="viewStockTake.aspx" />
@@ -8576,6 +8577,13 @@
     </Compile>
     <Compile Include="ToDo.aspx.designer.cs">
       <DependentUpon>ToDo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.aspx.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transaction.aspx.designer.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateStock.aspx.cs">
       <DependentUpon>UpdateStock.aspx</DependentUpon>

@@ -166,7 +166,8 @@
                     <ul class="menu-content" id="WareM" runat="server">
                         <li><a class="menu-item" href="Tasks.aspx"><i class="material-icons"></i><span>Tasks</span></a>
                         </li>
-                        
+                        <li><a class="menu-item" href="Transaction.aspx"><i class="material-icons"></i><span>Transactions</span></a>
+                        </li>
                     </ul>
                 </li>
 
