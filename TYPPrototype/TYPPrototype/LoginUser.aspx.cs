@@ -29,7 +29,7 @@ namespace TYPPrototype
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string usernam = username.Value;
-            string Password = userpassword.Value;
+            string Password = Secrecy.HashPassword(userpassword.Value);
             
 
             if (Session["Username"] == null)
