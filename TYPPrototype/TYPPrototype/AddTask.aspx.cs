@@ -6,23 +6,28 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TYPPrototype.UserService;
+using TYPPrototype.ProductService;
 
 namespace TYPPrototype
 {
     public partial class AddTask : System.Web.UI.Page
     {
         UserService.UserServiceClient client;
+        ProductService.ProductServiceClient pClient;
         User[] users = null;
+        Product[] products = null;
         string owner = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new UserServiceClient();
+            pClient = new ProductServiceClient();
             users = client.GetAllUsers();
-
+            products = pClient.GetAllProducts();
             if (!IsPostBack)
             {
                
                 List<ListItem> items = new List<ListItem>();
+                List<ListItem> prods = new List<ListItem>();
                 foreach (User u in users)
                 {
                     if (!u.User_Type.Equals("admin"))
@@ -35,6 +40,15 @@ namespace TYPPrototype
                 }
                 Towner.DataSource = items;
                 Towner.DataBind();
+                foreach(Product p in products)
+                {
+                    ListItem x = new ListItem();
+                    x.Text = p.P_Name +" " +"Current Quantity="+" "+p.P_Quantity.ToString();
+                    x.Value = p.P_Code.ToString();
+                    prods.Add(x);
+                }
+                ProList.DataSource = prods;
+                ProList.DataBind();
             }
         }
 
@@ -43,13 +57,13 @@ namespace TYPPrototype
             owner = Towner.SelectedValue.ToString();
             owner = owner.Split(' ')[0];
             DateTime currenttime = DateTime.Now;
-
+            string selec = (ttype.SelectedValue+" "+"Amount"+" "+ Quantity.Value + " " + ProList.SelectedValue);
 
             Task task = new Task
             {
                 //UserID = Int32.Parse(Towner.SelectedValue),
                 UserID = int.Parse(owner),
-                TaskContent = Tdesc.Value,
+                TaskContent = selec,
                 Start_Date = currenttime.ToString(),
                 End_Date = "",
                 //Priority = prty.SelectedItem.ToString(),

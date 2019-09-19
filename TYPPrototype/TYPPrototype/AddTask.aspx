@@ -89,16 +89,30 @@
                                                         </div>
                                                     </div>
                                                 </div>  
-
+                                                 <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userinput4">Product List</label>
+                                                            <asp:DropDownList class="form-control border-primary" runat="server" ID="ProList" AutoPostBack="True" OnSelectedIndexChanged="Towner_SelectedIndexChanged">
+                                                                 
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                    </div>
+                                                </div> 
                                             </div>
 
-                                            <h4 class="form-section"><i class="ft-mail"></i> Text Message Below</h4>
+                                              <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="userinput2">Quantity</label>
+                                                            <input id="Quantity" runat="server" type="number" />
+                                                        </div>
+                                                    </div>
+                                                </div> 
 
 
-                                            <div class="form-group">
-                                                <label for="userinput4">Task Description</label>
-                                                <textarea rows="5" class="form-control border-primary" placeholder="Message" style="border:inset 4px red" cols="50" id="Tdesc" runat="server"></textarea>                                                        
-                                            </div>
+                                            
+
 
                                             <div class="form-actions text-right">
                                                 <asp:Button ID="btnCancelTask" runat="server" Text="Cancel" BorderStyle="Solid" ToolTip="Submit" class="btn btn-warning mr-1" OnClick="btnCancelTask_Click" />  

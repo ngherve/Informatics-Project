@@ -31,7 +31,7 @@ namespace TYPPrototype
                 Name = name.Value,
                 Username = username.Value,
                 Email = email.Value,
-                Password = pass.Value,
+                Password = Secrecy.HashPassword(pass.Value),
                 Tel_Number = telnum.Value,
                 Address = address.Value,
                 Gender = GenderList.SelectedItem.ToString(),

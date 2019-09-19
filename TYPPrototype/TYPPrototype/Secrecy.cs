@@ -19,6 +19,7 @@ namespace TYPPrototype
             {
                 hashedPassword += byteArray[i].ToString("x2");
             }
+            hashedPassword.Substring(0, 30);
             return hashedPassword;
         }
     }
