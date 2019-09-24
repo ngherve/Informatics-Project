@@ -15,7 +15,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="info" id ="outgoing" runat="server">43</h3>
+                                            <h3 class="info" id ="outgoing" runat="server"></h3>
                                             <h6>Outgoing Products</h6>
                                         </div>
                                         <div>
@@ -35,7 +35,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="warning" id ="tasks" runat="server">43</h3>
+                                            <h3 class="warning" id ="tasks" runat="server"></h3>
                                             <h6>Total Tasks</h6>
                                         </div>
                                         <div>
@@ -55,7 +55,7 @@
                                 <div class="card-body">
                                     <div class="media d-flex">
                                         <div class="media-body text-left">
-                                            <h3 class="success" id ="incoming" runat="server">146</h3>
+                                            <h3 class="success" id ="incoming" runat="server"></h3>
                                             <h6>Incoming Products</h6>
                                         </div>
                                         <div>
@@ -121,7 +121,7 @@
                     <div class="col-xl-4 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">New Orders</h4>
+                                <h4 class="card-title">Recent Orders</h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -137,70 +137,14 @@
                                                 <tr>
                                                     <th class="border-top-0">Product</th>
                                                     <th class="border-top-0">Dispatcher</th>
-                                                    <th class="border-top-0">Total</th>
+                                                    <th class="border-top-0">Total(R)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="text-truncate">Plugs</td>
-                                                    <td class="text-truncate p-1">
-                                                        <ul class="list-unstyled users-list m-0">
-                                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe" class="avatar avatar-sm pull-up">
-                                                                <img class="media-object rounded-circle" src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="Avatar">
-                                                            </li>
-                                                           
-                                                        </ul>
-                                                    </td>
-                                                    <td class="text-truncate">R8999</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-truncate">Black Tape</td>
-                                                    <td class="text-truncate p-1">
-                                                        <ul class="list-unstyled users-list m-0">
-                                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Alice Scott" class="avatar avatar-sm pull-up">
-                                                                <img class="media-object rounded-circle" src="../../../app-assets/images/portrait/small/avatar-s-16.png" alt="Avatar">
-                                                            </li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                    <td class="text-truncate">R5550</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-truncate">Metal Poles</td>
-                                                    <td class="text-truncate p-1">
-                                                        <ul class="list-unstyled users-list m-0">
-                                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Christine Ramos" class="avatar avatar-sm pull-up">
-                                                                <img class="media-object rounded-circle" src="../../../app-assets/images/portrait/small/avatar-s-11.png" alt="Avatar">
-                                                            </li>
-                                                            
-                                                        </ul>
-                                                    </td>
-                                                    <td class="text-truncate">R9000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-truncate">Glass</td>
-                                                    <td class="text-truncate p-1">
-                                                        <ul class="list-unstyled users-list m-0">
-                                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Ryan Schneider" class="avatar avatar-sm pull-up">
-                                                                <img class="media-object rounded-circle" src="../../../app-assets/images/portrait/small/avatar-s-14.png" alt="Avatar">
-                                                            </li>
-                                                          >
-                                                        </ul>
-                                                    </td>
-                                                    <td class="text-truncate">R7500</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-truncate">Wires A02</td>
-                                                    <td class="text-truncate p-1">
-                                                        <ul class="list-unstyled users-list m-0">
-                                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons" class="avatar avatar-sm pull-up">
-                                                                <img class="media-object rounded-circle" src="../../../app-assets/images/portrait/small/avatar-s-8.png" alt="Avatar">
-                                                            </li>
-                                                          
-                                                        </ul>
-                                                    </td>
-                                                    <td class="text-truncate">R8500</td>
-                                                </tr>
+                                                <section id ="ordertable" runat="server">
+
+                                               </section>
+                                              
                                             </tbody>
                                         </table>
                                     </div>
