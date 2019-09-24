@@ -13,30 +13,48 @@ namespace TYPPrototype {
     public partial class Location {
         
         /// <summary>
-        /// btnView2 control.
+        /// btnMech control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnView2;
+        protected global::System.Web.UI.WebControls.Button btnMech;
         
         /// <summary>
-        /// btnView1 control.
+        /// btnsec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnView1;
+        protected global::System.Web.UI.WebControls.Button btnsec;
         
         /// <summary>
-        /// btnView3 control.
+        /// btnInd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnView3;
+        protected global::System.Web.UI.WebControls.Button btnInd;
+        
+        /// <summary>
+        /// btnElec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnElec;
+        
+        /// <summary>
+        /// prodware control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodware;
     }
 }

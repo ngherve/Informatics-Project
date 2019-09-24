@@ -4,29 +4,36 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TYPPrototype.ProductService;
 
 namespace TYPPrototype
 {
     public partial class Location : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnView1_Click(object sender, EventArgs e)
+        protected void btnMech_Click(object sender, EventArgs e)
         {
             Response.Redirect("Bins.aspx");
         }
 
-        protected void btnView2_Click(object sender, EventArgs e)
+        protected void btnInd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Bins.aspx");
+            Response.Redirect("Warehouse2.aspx");
         }
 
-        protected void btnView3_Click(object sender, EventArgs e)
+        protected void btnElec_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Bins.aspx");
+            Response.Redirect("Warehouse3.aspx");
+        }
+
+        protected void btnsec_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Warehouse1.aspx");
         }
     }
 }

@@ -6205,26 +6205,6 @@
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ProductService\ProductService.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProductService\ProductService1.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProductService\ProductService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Damaged.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Invoice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\UserService\UserService.disco" />
     <None Include="Connected Services\UserService\configuration91.svcinfo" />
     <None Include="Connected Services\UserService\configuration.svcinfo" />
@@ -7642,6 +7622,9 @@
     <Content Include="UpdateStock.aspx" />
     <Content Include="UpdateUser.aspx" />
     <Content Include="viewStockTake.aspx" />
+    <Content Include="Warehouse1.aspx" />
+    <Content Include="Warehouse2.aspx" />
+    <Content Include="Warehouse3.aspx" />
     <Content Include="Web.config" />
     <Content Include="Gym\css1\includes\config.json" />
     <Content Include="Gym\fonts\elegant-font\html-css\fonts\ElegantIcons.eot" />
@@ -7773,6 +7756,26 @@
     <Content Include="dash\vendor\slick\slick-theme.scss" />
     <Content Include="dash\vendor\slick\slick.less" />
     <Content Include="dash\vendor\slick\slick.scss" />
+    <None Include="Connected Services\ProductService\ProductService.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService1.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Damaged.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Invoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserService\UserService.wsdl" />
     <None Include="Connected Services\UserService\UserService.xsd">
       <SubType>Designer</SubType>
@@ -8597,6 +8600,27 @@
     </Compile>
     <Compile Include="viewStockTake.aspx.designer.cs">
       <DependentUpon>viewStockTake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse1.aspx.cs">
+      <DependentUpon>Warehouse1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse1.aspx.designer.cs">
+      <DependentUpon>Warehouse1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse2.aspx.cs">
+      <DependentUpon>Warehouse2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse2.aspx.designer.cs">
+      <DependentUpon>Warehouse2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse3.aspx.cs">
+      <DependentUpon>Warehouse3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse3.aspx.designer.cs">
+      <DependentUpon>Warehouse3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

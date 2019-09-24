@@ -39,15 +39,9 @@
                                     <div class="card-body text-center">
                                         <p class="text-uppercase">Warehouse 1</p>
                                         <h3 class="text-uppercase">Mechanical Products</h3>
-                                        <div class="rating">
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star-half-o"></i>
-                                        </div>
-                                        <img src="../../../app-assets/images/elements/apple-watch.png" alt="apple-watch" width="250px" class="img-fluid p-2">
-                                       <asp:Button ID="btnView2" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1"   />
+                                        <img src="../../../app-assets/images/elements/Mechanical.png" alt="apple-watch" width="250px" class="img-fluid p-2">
+                                      <!-- <asp:Button ID="btnMech" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1" OnClick="btnMech_Click"/> -->
+                                        <asp:Button ID="btnsec" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1" OnClick="btnsec_Click"  />
                                     </div>
                                 </div>
                             </div>
@@ -58,17 +52,11 @@
                                     <div class="card-body text-center">
                                         <p class="text-uppercase">Warehouse 2</p>
                                         <h3 class="text-uppercase">Industrial Products</h3>
-                                        <div class="rating">
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star-half-o"></i>
-                                        </div>
-                                        <img src="../../../app-assets/images/elements/fitbit-watch.png" alt="apple-watch" width="250px" class="img-fluid p-2">
+                                      
+                                        <img src="../../../app-assets/images/elements/tape.jpg" alt="apple-watch" width="250px" class="img-fluid p-2">
             
 
-                                         <asp:Button ID="btnView1" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1" OnClick="btnView1_Click"  />  
+                                         <asp:Button ID="btnInd" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1" OnClick="btnInd_Click"   />  
 
                                     </div>
                                 </div>
@@ -80,20 +68,25 @@
                                     <div class="card-body text-center">
                                         <p class="text-uppercase">Warehouse 3</p>
                                         <h3 class="text-uppercase">Electrical Products</h3>
-                                        <div class="rating">
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star-half-o"></i>
-                                        </div>
-                                        <img src="../../../app-assets/images/elements/samsung-gear.png" alt="apple-watch" width="250px" class="img-fluid p-2">
-                                        <asp:Button ID="btnView3" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1"   />
+                                       
+                                        <img src="../../../app-assets/images/elements/wires.jpg" alt="apple-watch" width="250px" class="img-fluid p-2">
+                                        <asp:Button ID="btnElec" runat="server" Text="View" BorderStyle="Solid" ToolTip="Submit" class="btn btn-success btn-block btn-glow text-uppercase p-1" OnClick="btnElec_Click"   />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>            
+                      
+                <!-- User Profile Cards -->
+                <section  runat="server" id="prodware" class="row mt-2">
+                    <div class="col-12">
+                        <h4 class="text-uppercase">Product Records</h4>
+                    </div>
+
+                </section>
+                
+                <!--/ User Profile Cards -->
+
+            </div>            
             </div>
         </div>
     </div>
