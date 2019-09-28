@@ -26,6 +26,12 @@
   <wsdl:message name="IProductService_GetProductbyID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductbyIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsbyWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsbyWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsbyWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsbyWarehouseResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductService_DeleteProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProduct" />
   </wsdl:message>
@@ -74,6 +80,10 @@
     <wsdl:operation name="GetProductbyID">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductbyID" message="tns:IProductService_GetProductbyID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductbyIDResponse" message="tns:IProductService_GetProductbyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsbyWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductsbyWarehouse" message="tns:IProductService_GetProductsbyWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsbyWarehouseResponse" message="tns:IProductService_GetProductsbyWarehouse_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />

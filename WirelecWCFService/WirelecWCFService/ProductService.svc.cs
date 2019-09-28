@@ -48,7 +48,7 @@ namespace WirelecWCFService
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO PRODUCT( P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8)", connection);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO PRODUCT( P_Name, P_Price, P_Image, P_Quantity, Supplier_Name, P_Type, W_Name, P_Code, bin_location) VALUES(@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8,@a9)", connection);
                 cmd.Parameters.AddWithValue("@a1", product.P_Name);
                 cmd.Parameters.AddWithValue("@a2", product.P_Price);
                 cmd.Parameters.AddWithValue("@a3", product.P_Image);
@@ -57,6 +57,7 @@ namespace WirelecWCFService
                 cmd.Parameters.AddWithValue("@a6", product.P_Type);
                 cmd.Parameters.AddWithValue("@a7", product.W_Name);
                 cmd.Parameters.AddWithValue("@a8", product.P_Code);
+                cmd.Parameters.AddWithValue("@a9", product.bin_location);
 
                 if (connection.State == ConnectionState.Closed)
                 {
@@ -146,6 +147,7 @@ namespace WirelecWCFService
                     pro.P_Type = dr["P_Type"].ToString();
                     pro.W_Name = dr["W_Name"].ToString();
                     pro.P_Code = dr["P_Code"].ToString();
+                    pro.bin_location = dr["bin_location"].ToString();
                     products.Add(pro);
                 }
             }
@@ -211,11 +213,82 @@ namespace WirelecWCFService
                     pro.P_Type = dr["P_Type"].ToString();
                     pro.W_Name = dr["W_Name"].ToString();
                     pro.P_Code = dr["P_Code"].ToString();
+                    pro.bin_location = dr["bin_location"].ToString();
 
                 }
             }
 
             return pro;
+        }
+
+        public Product GetProductbyWarehouse(string warehouse)
+        {
+            Product pro = null;
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.W_Name = '" + warehouse + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    pro = new Product();
+                    pro.P_ID = Convert.ToInt32(dr["P_ID"].ToString());
+                    pro.P_Name = dr["P_Name"].ToString();
+                    pro.P_Price = Convert.ToInt32(dr["P_Price"]);
+                    pro.P_Image = dr["P_Image"].ToString();
+                    pro.P_Quantity = Convert.ToInt32(dr["P_Quantity"]);
+                    pro.Supplier_Name = dr["Supplier_Name"].ToString();
+                    pro.P_Type = dr["P_Type"].ToString();
+                    pro.W_Name = dr["W_Name"].ToString();
+                    pro.P_Code = dr["P_Code"].ToString();
+                    pro.bin_location = dr["bin_location"].ToString();
+
+
+                }
+            }
+
+            return pro;
+        }
+
+        public List<Product> GetProductsbyWarehouse(string warehouse)
+        {
+            List<Product> products = new List<Product>();
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.W_Name = '" + warehouse + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                Product pro = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    pro = new Product();
+                    pro.P_ID = Convert.ToInt32(dr["P_ID"].ToString());
+                    pro.P_Name = dr["P_Name"].ToString();
+                    pro.P_Price = Convert.ToInt32(dr["P_Price"]);
+                    pro.P_Image = dr["P_Image"].ToString();
+                    pro.P_Quantity = Convert.ToInt32(dr["P_Quantity"]);
+                    pro.Supplier_Name = dr["Supplier_Name"].ToString();
+                    pro.P_Type = dr["P_Type"].ToString();
+                    pro.W_Name = dr["W_Name"].ToString();
+                    pro.P_Code = dr["P_Code"].ToString();
+                    pro.bin_location = dr["bin_location"].ToString();
+                    products.Add(pro);
+
+                }
+            }
+
+            return products;
         }
 
         public Product SearchProduct(string name)

@@ -506,6 +506,12 @@ namespace TYPPrototype.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductbyID", ReplyAction="http://tempuri.org/IProductService/GetProductbyIDResponse")]
         System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> GetProductbyIDAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsbyWarehouse", ReplyAction="http://tempuri.org/IProductService/GetProductsbyWarehouseResponse")]
+        TYPPrototype.ProductService.Product[] GetProductsbyWarehouse(string warehouse);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsbyWarehouse", ReplyAction="http://tempuri.org/IProductService/GetProductsbyWarehouseResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.ProductService.Product[]> GetProductsbyWarehouseAsync(string warehouse);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         string DeleteProduct(int id);
         
@@ -592,6 +598,14 @@ namespace TYPPrototype.ProductService {
         
         public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> GetProductbyIDAsync(int id) {
             return base.Channel.GetProductbyIDAsync(id);
+        }
+        
+        public TYPPrototype.ProductService.Product[] GetProductsbyWarehouse(string warehouse) {
+            return base.Channel.GetProductsbyWarehouse(warehouse);
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product[]> GetProductsbyWarehouseAsync(string warehouse) {
+            return base.Channel.GetProductsbyWarehouseAsync(warehouse);
         }
         
         public string DeleteProduct(int id) {

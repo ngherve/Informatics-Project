@@ -39,6 +39,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetProductsbyWarehouse">
+      <soap12:operation soapAction="http://tempuri.org/IProductService/GetProductsbyWarehouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteProduct">
       <soap12:operation soapAction="http://tempuri.org/IProductService/DeleteProduct" style="document" />
       <wsdl:input>

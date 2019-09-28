@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6658dbfd-1a65-4438-8d37-a2a49447a4a3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6658dbfd-1a65-4438-8d37-a2a49447a4a3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap"> 
+
+
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +25,14 @@
     <MetadataSource Address="http://localhost:50487/UserService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+
     <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="275d75c7-44df-42d4-acf3-868f20e101d9" SourceId="1" SourceUrl="http://localhost:50487/UserService.svc?xsd=xsd2" />
     <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="7791b050-45b6-440e-b867-bbbbdc4d0b5f" SourceId="1" SourceUrl="http://localhost:50487/UserService.svc?xsd=xsd1" />
     <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="227a14f8-2842-4446-a866-31f94d5ec729" SourceId="1" SourceUrl="http://localhost:50487/UserService.svc?wsdl=wsdl0" />
     <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="e874bb21-d2d7-4455-af71-aa8bbbdae7ee" SourceId="1" SourceUrl="http://localhost:50487/UserService.svc?xsd=xsd0" />
     <MetadataFile FileName="UserService1.wsdl" MetadataType="Wsdl" ID="898111cb-64de-4222-a69c-ce7f32623cec" SourceId="1" SourceUrl="http://localhost:50487/UserService.svc?wsdl" />
     <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="7a45ae86-b8b7-42ac-b243-efb87787bcb1" SourceId="1" SourceUrl="http://localhost:50487/UserService.svc?disco" />
+
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
