@@ -39,6 +39,27 @@ namespace TYPPrototype
                 }
             }
 
+            string display = " ";
+
+            Invoice[] invoices = prodClient.GetInvoicebyType("dispatch");
+            foreach(Invoice inv in invoices)
+            {
+                Product pro = prodClient.SearchProduct(inv.P_Code);
+                User u = userClient.GetUserbyID(inv.UserID);
+                display += "<tr>"
+                        + "<td class='text-truncate'>"+pro.P_Name +" "+inv.P_Code +"</td>"
+                        + "<td class='text-truncate p-1'>"
+                        + "<ul class='list-unstyled users-list m-0'>"
+                        + "<li data-toggle='tooltip' data-popup='tooltip-custom' data-original-title='"+u.Name+"' class='avatar avatar-sm pull-up'>"
+                        + "<img class='" + u.pphoto + "' alt='Avatar'> "
+                        + "</li>"
+                        + "</ul>"
+                        + "</td>"
+                        + "<td class='text-truncate'>"+inv.Total_Price+"</td> "
+                        + "</tr>"
+                        ;
+            }
+            ordertable.InnerHtml = display;
             incoming.InnerHtml = incomingcount.ToString();
             outgoing.InnerHtml = outgoingcount.ToString();
         }

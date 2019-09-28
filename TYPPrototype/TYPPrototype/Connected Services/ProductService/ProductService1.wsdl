@@ -20,6 +20,12 @@
   <wsdl:message name="IProductService_GetAllInvoices_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllInvoicesResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetInvoicebyType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicebyType" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetInvoicebyType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicebyTypeResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductService_GetProductbyID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductbyID" />
   </wsdl:message>
@@ -76,6 +82,10 @@
     <wsdl:operation name="GetAllInvoices">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllInvoices" message="tns:IProductService_GetAllInvoices_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllInvoicesResponse" message="tns:IProductService_GetAllInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicebyType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetInvoicebyType" message="tns:IProductService_GetInvoicebyType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetInvoicebyTypeResponse" message="tns:IProductService_GetInvoicebyType_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductbyID">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductbyID" message="tns:IProductService_GetProductbyID_InputMessage" />

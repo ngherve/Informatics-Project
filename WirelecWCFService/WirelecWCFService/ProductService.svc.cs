@@ -187,6 +187,39 @@ namespace WirelecWCFService
             return products;
         }
 
+        public List<Invoice> GetInvoicebyType(string type)
+        {
+            List<Invoice> invoices = new List<Invoice>();
+
+            connection.Open(); //openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "SELECT * FROM INVOICE WHERE invoice.Inv_Type = '" + type + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                Invoice pro = null;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    pro = new Invoice();
+                    pro.INV_ID = Convert.ToInt32(dr["INV_ID"].ToString());
+                    pro.P_Code = dr["P_Code"].ToString();
+                    pro.Quantity = Convert.ToInt32(dr["Quantity"].ToString());
+                    pro.Total_Price = Convert.ToInt32(dr["Total_Price"].ToString());
+                    pro.C_ID = Convert.ToInt32(dr["C_ID"].ToString());
+                    pro.INV_Date = dr["INV_Date"].ToString();
+                    pro.UserID = Convert.ToInt32(dr["UserID"].ToString());
+                    pro.Inv_Type = dr["Inv_Type"].ToString();
+                    invoices.Add(pro);
+                }
+            }
+
+            return invoices;
+        }
+
         public Product GetProductbyID(int id)
         {
             Product pro = null;
@@ -220,6 +253,7 @@ namespace WirelecWCFService
 
             return pro;
         }
+
 
         public Product GetProductbyWarehouse(string warehouse)
         {
@@ -291,13 +325,15 @@ namespace WirelecWCFService
             return products;
         }
 
-        public Product SearchProduct(string name)
+
+        public Product SearchProduct(string code)
+
         {
             Product pro = null;
             connection.Open();//openning the connection
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
-            cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.P_Name LIKE CONCAT( '" + name + "')";
+            cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.P_Code LIKE CONCAT( '" + code + "')";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -317,6 +353,7 @@ namespace WirelecWCFService
                     pro.P_Type = dr["P_Type"].ToString();
                     pro.W_Name = dr["W_Name"].ToString();
                     pro.P_Code = dr["P_Code"].ToString();
+                    pro.bin_location = dr["bin_location"].ToString();
 
                 }
             }
