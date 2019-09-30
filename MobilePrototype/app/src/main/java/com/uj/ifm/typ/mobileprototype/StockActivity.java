@@ -66,6 +66,8 @@ public class StockActivity extends AppCompatActivity {
                         //Bitmap bmp = getBitmapFromURL("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg");
 
                         hm.put("listview_image", Integer.toString(R.drawable.nav_image));
+                        //ImageView navprofimage = findViewById(R.id.listview_image);
+                        //new HomeActivity.GetImageFromURL(navprofimage).execute(p.getP_Image());
 
                         aList.add(hm);
                     }

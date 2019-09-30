@@ -218,7 +218,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
                     <TextView
-                            android:text="Stock Invoice"
+                            android:text="Stock Logs"
                             android:layout_marginTop="12dp"
                             android:textColor="#6f6f6f"
                             android:textSize="18sp"

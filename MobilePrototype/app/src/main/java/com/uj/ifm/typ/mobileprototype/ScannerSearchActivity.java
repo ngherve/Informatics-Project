@@ -70,7 +70,7 @@ public class ScannerSearchActivity extends AppCompatActivity implements ZXingSca
 
 
                             if (success) {
-                                ScanItemsActivity.resultView.setText("Item: " + P_Name + " Code: " + P_Code + " already exists in stock!!!\n");
+                                //ScanItemsActivity.resultView.setText("Item: " + P_Name + " Code: " + P_Code + " already exists in stock!!!\n");
 
                                 P_Name = jsonRes.getString("P_Name");
                                 P_Price = String.valueOf(jsonRes.getInt("P_Price"));
@@ -80,16 +80,17 @@ public class ScannerSearchActivity extends AppCompatActivity implements ZXingSca
                                 P_Type = jsonRes.getString("P_Type");
                                 W_Name = jsonRes.getString("W_Name");
                                 P_Code = jsonRes.getString("P_Code");
+                                bin_location = jsonRes.getString("bin_location");
                                 ScannerSearchActivity.result = "Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                         P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
                                         " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location;
-                                ScanItemsActivity.resultView.append(ScannerSearchActivity.result);
+                                //ScanItemsActivity.resultView.append(ScannerSearchActivity.result);
 
                             } else {
                                 ScannerSearchActivity.result = "Item Does not exit in stock!!!\n:" + "Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                         P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
                                         " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location;
-                                ScanItemsActivity.resultView.setText(ScannerSearchActivity.result);
+                                //ScanItemsActivity.resultView.setText(ScannerSearchActivity.result);
 
                             }
                             if(EditItemsActivity.isEdit==true) {

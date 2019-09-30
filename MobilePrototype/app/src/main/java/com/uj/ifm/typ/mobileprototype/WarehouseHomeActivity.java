@@ -257,7 +257,8 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
             intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent2);
         } else if(menuItem.getItemId() == R.id.db){
-            Intent intent2 = new Intent(WarehouseHomeActivity.this, HomeActivity.class);
+            Intent intent2 = new Intent(WarehouseHomeActivity.this, WarehouseHomeActivity
+                    .class);
             intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent2);
         } else if(menuItem.getItemId() == R.id.search){

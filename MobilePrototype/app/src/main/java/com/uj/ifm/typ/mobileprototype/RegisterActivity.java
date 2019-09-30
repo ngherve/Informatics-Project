@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 String name = eName.getText().toString();
                 String username = eUsername.getText().toString();
                 String email = eEmail.getText().toString();
-                String Password = ePassword.getText().toString();
+                String Password = Secrecy.HashPassword(ePassword.getText().toString());
                 String telNumber = ePhone.getText().toString();
                 String address = eAdress.getText().toString();
                 String gender = eGender.getText().toString();

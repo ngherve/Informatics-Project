@@ -23,6 +23,7 @@ public class TaskActivity extends AppCompatActivity {
     private Button btnInitTask;
     private TextView edViewTasks, txtresult;
     private ArrayList<String> tasks;
+    public static boolean resultView = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +113,8 @@ public class TaskActivity extends AppCompatActivity {
                     Calendar c = Calendar.getInstance();
                     SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                     datetime = dateformat.format(c.getTime());
+
+                    TaskActivity.resultView = true;
 
                     startActivity(new Intent(getApplicationContext(), ScannerActivity.class));
                     //txtresult.setText("Task successfully Completed");

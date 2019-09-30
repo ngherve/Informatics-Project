@@ -13,6 +13,8 @@
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-    <style name="my_fancy_style">fancy style</style>
-
+    <style name="my_fancy_style">fancy style</style>7
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 </resources>

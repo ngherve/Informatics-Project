@@ -110,9 +110,9 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                             W_Name = jsonRes.getString("W_Name");
                             P_Code = jsonRes.getString("P_Code");
                             bin_location = jsonRes.getString("bin_location");
-                            ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
-                                    P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                                    " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location);
+                            //ScanItemsActivity.resultView.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
+                             //       P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
+                             //       " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location);
 
                             Intent intent = new Intent(ScannerActivity.this, DispatchActivity.class);
                             intent.putExtra("P_Name", P_Name);

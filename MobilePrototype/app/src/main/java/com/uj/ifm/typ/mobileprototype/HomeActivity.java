@@ -93,6 +93,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent2 = new Intent(HomeActivity.this, TaskActivity.class);
             startActivity(intent2);
         }
+        else if(item.getItemId() == R.id.event){
+            Intent intent2 = new Intent(HomeActivity.this, DamagesActivity.class);
+            startActivity(intent2);
+        }
         else {
             return super.onOptionsItemSelected(item);
         }

@@ -5,9 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
@@ -38,6 +40,9 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
     private CircleImageView profileimage;
     private String URL_Upload = ServerRequests.REQUEST_URL + "Upload.php";
     private static final String TAG = ProfileActivity.class.getSimpleName();
+
+    private static final int CAMERA_REQUEST = 1888;
+    private static final int MY_CAMERA_PERMISSION_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,12 +112,11 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
                     profileimage.setImageBitmap(bitmap);
-
+                    UploadPicture(String.valueOf(id), getStringImage(bitmap));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                UploadPicture(String.valueOf(id), getStringImage(bitmap));
             } else if(requestCode==1){
                 Uri filepath = data.getData();
                 try {
@@ -210,12 +214,12 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
                 AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
                 builder.setTitle("Please Choose an Option to add Image");
                 builder.setItems(options, new DialogInterface.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.M)
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if(options[which].equals("Camera")){
                             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                             startActivityForResult(intent, 1);
-
                         }else if(options[which].equals("Gallery")){
                             UpdatePicture();
                         } else if(options[which].equals("Cancel")){

@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         String username = edUsername.getText().toString();
-        String Password = edPassword.getText().toString();
+        String Password = Secrecy.HashPassword(edPassword.getText().toString());
 
         switch(v.getId()){
             case R.id.btnLogin:

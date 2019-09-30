@@ -80,6 +80,10 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
 
     }
 
+    public void backAction(View view) {
+        super.onBackPressed();
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -98,9 +102,9 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
             } else if(requestCode==1){
                 Uri filepath = data.getData();
                 try {
-                Bundle bundle = data.getExtras();
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
-                profileimage1.setImageBitmap(bitmap);
+                    Bundle bundle = data.getExtras();
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                    profileimage1.setImageBitmap(bitmap);
                     UploadPicture(id, getStringImage(bitmap));
 
                 } catch (IOException e) {
@@ -237,6 +241,7 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if(options[which].equals("Camera")){
+
                             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                             startActivityForResult(intent, 1);
 

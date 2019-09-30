@@ -70,20 +70,22 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
         report = findViewById(R.id.btnReportDamage);
         report.setOnClickListener(this);
 
-        Intent intent = getIntent();
-        P_Name = (intent.getStringExtra("P_Name"));
-        P_Price = (intent.getStringExtra("P_Price"));
-        String image = intent.getStringExtra("P_Image");
-        P_Quantity = (intent.getStringExtra("P_Quantity"));
-        Supplier_Name = (intent.getStringExtra("Supplier_Name"));
-        P_Type = (intent.getStringExtra("P_Type"));
-        W_Name = (intent.getStringExtra("W_Name"));
-        P_Code = (intent.getStringExtra("P_Code"));
-        loc = intent.getStringExtra("bin_location");
-        id = P_Code;
-        txtinfo.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
-                P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
-                " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + loc);
+        if(SaveItemActivity.isnewDamages) {
+            Intent intent = getIntent();
+            P_Name = (intent.getStringExtra("P_Name"));
+            P_Price = (intent.getStringExtra("P_Price"));
+            String image = intent.getStringExtra("P_Image");
+            P_Quantity = (intent.getStringExtra("P_Quantity"));
+            Supplier_Name = (intent.getStringExtra("Supplier_Name"));
+            P_Type = (intent.getStringExtra("P_Type"));
+            W_Name = (intent.getStringExtra("W_Name"));
+            P_Code = (intent.getStringExtra("P_Code"));
+            loc = intent.getStringExtra("bin_location");
+            id = P_Code;
+            txtinfo.setText("Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
+                    P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
+                    " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + loc);
+        }
         GetProdID();
     }
 
@@ -98,7 +100,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
     private void saveDamages(){
 
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateformat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss aa");
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         datetime = dateformat.format(c.getTime());
 
 

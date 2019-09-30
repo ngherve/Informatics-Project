@@ -32,13 +32,15 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     private Bitmap bitmap;
     CircleImageView profileimage2;
     private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
-    String id, image;
+    String id, image=" ";
     private static final String TAG = ProfileActivity.class.getSimpleName();
     Button btnSave, btnUpoadImage, btnReport;
     EditText epName, eprice, ep_Image, eQuant, esuppname, ep_type, eW_name, ePCode;
     private String datetime;
     Spinner binlocation;
     ArrayList<String> bins = new ArrayList<>();
+    public static boolean isnewDamages = false;
+
 
 
     @Override
@@ -89,7 +91,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
         profileimage2 = findViewById(R.id.item_image);
 
 
-        if((ScanItemsActivity.resultView !=null)) {
+        if((ScanItemsActivity.resultView !=null) || (TaskActivity.resultView)){
             Intent intent = getIntent();
             epName.setText(intent.getStringExtra("P_Name"));
             eprice.setText(intent.getStringExtra("P_Price"));
@@ -101,7 +103,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
             ePCode.setText(intent.getStringExtra("P_Code"));/*
             StringTokenizer st = new StringTokenizer(intent.getStringExtra("bin_location"));
             binlocation.setSelection(Integer.parseInt(st.nextToken()));*/
-            ScanItemsActivity.resultView.setText(ScanItemsActivity.resultView.getText().toString());
+            //ScanItemsActivity.resultView.setText(ScanItemsActivity.resultView.getText().toString());
         }
 
 
@@ -113,8 +115,6 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     public void backAction(View view) {
         super.onBackPressed();
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -309,9 +309,10 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                             if(isfound==false){
                                 saveItem();
                                 saveInvoice();
-                                UpdatePicture();
                                 Toast.makeText(SaveItemActivity.this, "Item Successfully Saved", Toast.LENGTH_LONG).show();
-                                SaveItemActivity.super.onBackPressed();
+                                Intent intent2 = new Intent(SaveItemActivity.this, HomeActivity.class);
+                                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent2);
                             }
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -324,6 +325,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                 queue.add(loginReq);
                 break;
             case R.id.btnreport:
+                SaveItemActivity.isnewDamages = true;
                 Response.Listener<String> respList1 = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
