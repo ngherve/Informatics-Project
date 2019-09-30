@@ -13,13 +13,13 @@ namespace TYPPrototype
             {
                 Response.Redirect("dashboard.aspx");
             }
-            usrclient = new UserServiceClient();
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string usernam = username.Value;
             string Password = Secrecy.HashPassword(userpassword.Value);
-            
+
+            usrclient = new UserServiceClient();
 
             if (Session["Username"] == null)
             {
