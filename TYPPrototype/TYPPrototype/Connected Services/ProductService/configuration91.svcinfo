@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="2kSob/uUeeGLYJ8yRR8tcfbxNyU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="MB3hI4ot9/U1mJwGj2Dgj3w5xAg=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="wsHttpBinding" name="MetadataExchangeHttpBinding_IProductService">
+    <bindingConfiguration bindingType="wsHttpBinding" name="MetadataExchangeHttpBinding_IProductService1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>MetadataExchangeHttpBinding_IProductService</serializedValue>
+          <serializedValue>MetadataExchangeHttpBinding_IProductService1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -127,7 +127,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="MetadataExchangeHttpBinding_IProductService" contract="ProductService.IProductService" bindingType="wsHttpBinding" address="http://10.254.17.96:8083/ProductService.svc/mex" bindingConfiguration="MetadataExchangeHttpBinding_IProductService">
+    <endpoint name="MetadataExchangeHttpBinding_IProductService1" contract="ProductService.IProductService" bindingType="wsHttpBinding" address="http://10.254.17.96:8083/ProductService.svc/mex" bindingConfiguration="MetadataExchangeHttpBinding_IProductService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://10.254.17.96:8083/ProductService.svc/mex</serializedValue>
@@ -139,7 +139,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>MetadataExchangeHttpBinding_IProductService</serializedValue>
+          <serializedValue>MetadataExchangeHttpBinding_IProductService1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>ProductService.IProductService</serializedValue>
@@ -202,7 +202,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>MetadataExchangeHttpBinding_IProductService</serializedValue>
+          <serializedValue>MetadataExchangeHttpBinding_IProductService1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

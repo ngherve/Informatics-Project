@@ -17,7 +17,7 @@ namespace TYPPrototype
             string hashedPassword = "";
             for (int i = 0; i < byteArray.Length; i++)
             {
-                //hashedPassword += byteArray[i].ToString("x2");
+                hashedPassword += byteArray[i].ToString("x2");
             }
             hashedPassword.Substring(0, 30);
             return hashedPassword;

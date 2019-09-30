@@ -21,9 +21,19 @@ namespace WirelecWCFService
         List<Invoice> GetAllInvoices();
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetInvoicebyType", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Invoice> GetInvoicebyType(string type);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetProductbyID", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Product GetProductbyID(int id);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetProductsbyWarehouse", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Product> GetProductsbyWarehouse(string warehouse);
 
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "DeleteProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
@@ -33,7 +43,7 @@ namespace WirelecWCFService
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SearchProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Product SearchProduct(string name);
+        Product SearchProduct(string code);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "AddProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,

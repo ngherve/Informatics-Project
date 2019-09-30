@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using TYPPrototype.UserService;
 
 namespace TYPPrototype
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
-        UserServiceClient userClient;
+        private UserServiceClient userClient;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Username"] == null)
             {
-                /*Response.Redirect("LoginUser.aspx");
+                Response.Redirect("LoginUser.aspx");
             }
             else
             {
@@ -65,7 +60,7 @@ namespace TYPPrototype
                 menuEdit.InnerHtml = "<a class='dropdown-item' href=UpdateUser.aspx?ID=" + user.UserID + "><i class='ft-user'></i> Edit Profile</a>" +
                                 "<a class='dropdown-item' href='Tasks.aspx'><i class='ft-check-square'></i> Tasks</a>" +
                                 "<div class='dropdown-divider'></div><a class='dropdown-item' href='logout.aspx'><i class='ft-power'></i> Logout</a>";
-                viewNotification();*/
+                viewNotification();
             }
         }
 

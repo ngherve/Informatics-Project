@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using MySql.Data.MySqlClient;
-using System.Net;
-using System.Web.Script.Serialization;
-using System.Text;
+using TYPPrototype.UserService;
 
 namespace TYPPrototype
 {
     public partial class LoginUser : System.Web.UI.Page
     {
-        UserService.UserServiceClient client;
-        ProductService.ProductServiceClient prodClient;
+        UserServiceClient usrclient;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,8 +13,7 @@ namespace TYPPrototype
             {
                 Response.Redirect("dashboard.aspx");
             }
-            client = new UserService.UserServiceClient();
-            prodClient = new ProductService.ProductServiceClient();
+            usrclient = new UserServiceClient();
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -34,7 +23,7 @@ namespace TYPPrototype
 
             if (Session["Username"] == null)
             {
-                if(client.LoginUser(usernam, Password) == true)
+                if(usrclient.LoginUser(usernam, Password) == true)
                 {
                     Session["Username"] = usernam;
                     Response.Redirect("dashboard.aspx");

@@ -7639,9 +7639,13 @@
     <Content Include="test.aspx" />
     <Content Include="Tester.aspx" />
     <Content Include="ToDo.aspx" />
+    <Content Include="Transactions.aspx" />
     <Content Include="UpdateStock.aspx" />
     <Content Include="UpdateUser.aspx" />
     <Content Include="viewStockTake.aspx" />
+    <Content Include="Warehouse1.aspx" />
+    <Content Include="Warehouse2.aspx" />
+    <Content Include="Warehouse3.aspx" />
     <Content Include="Web.config" />
     <Content Include="Gym\css1\includes\config.json" />
     <Content Include="Gym\fonts\elegant-font\html-css\fonts\ElegantIcons.eot" />
@@ -8577,6 +8581,13 @@
     <Compile Include="ToDo.aspx.designer.cs">
       <DependentUpon>ToDo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateStock.aspx.cs">
       <DependentUpon>UpdateStock.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -8597,6 +8608,27 @@
     </Compile>
     <Compile Include="viewStockTake.aspx.designer.cs">
       <DependentUpon>viewStockTake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse1.aspx.cs">
+      <DependentUpon>Warehouse1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse1.aspx.designer.cs">
+      <DependentUpon>Warehouse1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse2.aspx.cs">
+      <DependentUpon>Warehouse2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse2.aspx.designer.cs">
+      <DependentUpon>Warehouse2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse3.aspx.cs">
+      <DependentUpon>Warehouse3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse3.aspx.designer.cs">
+      <DependentUpon>Warehouse3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

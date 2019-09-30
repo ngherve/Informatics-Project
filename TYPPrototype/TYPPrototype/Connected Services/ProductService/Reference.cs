@@ -500,11 +500,23 @@ namespace TYPPrototype.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllInvoices", ReplyAction="http://tempuri.org/IProductService/GetAllInvoicesResponse")]
         System.Threading.Tasks.Task<TYPPrototype.ProductService.Invoice[]> GetAllInvoicesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetInvoicebyType", ReplyAction="http://tempuri.org/IProductService/GetInvoicebyTypeResponse")]
+        TYPPrototype.ProductService.Invoice[] GetInvoicebyType(string type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetInvoicebyType", ReplyAction="http://tempuri.org/IProductService/GetInvoicebyTypeResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.ProductService.Invoice[]> GetInvoicebyTypeAsync(string type);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductbyID", ReplyAction="http://tempuri.org/IProductService/GetProductbyIDResponse")]
         TYPPrototype.ProductService.Product GetProductbyID(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductbyID", ReplyAction="http://tempuri.org/IProductService/GetProductbyIDResponse")]
         System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> GetProductbyIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsbyWarehouse", ReplyAction="http://tempuri.org/IProductService/GetProductsbyWarehouseResponse")]
+        TYPPrototype.ProductService.Product[] GetProductsbyWarehouse(string warehouse);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsbyWarehouse", ReplyAction="http://tempuri.org/IProductService/GetProductsbyWarehouseResponse")]
+        System.Threading.Tasks.Task<TYPPrototype.ProductService.Product[]> GetProductsbyWarehouseAsync(string warehouse);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         string DeleteProduct(int id);
@@ -513,10 +525,10 @@ namespace TYPPrototype.ProductService {
         System.Threading.Tasks.Task<string> DeleteProductAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/SearchProduct", ReplyAction="http://tempuri.org/IProductService/SearchProductResponse")]
-        TYPPrototype.ProductService.Product SearchProduct(string name);
+        TYPPrototype.ProductService.Product SearchProduct(string code);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/SearchProduct", ReplyAction="http://tempuri.org/IProductService/SearchProductResponse")]
-        System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> SearchProductAsync(string name);
+        System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> SearchProductAsync(string code);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddDamagedProduct", ReplyAction="http://tempuri.org/IProductService/AddDamagedProductResponse")]
         string AddDamagedProduct(TYPPrototype.ProductService.Damaged d);
@@ -586,12 +598,28 @@ namespace TYPPrototype.ProductService {
             return base.Channel.GetAllInvoicesAsync();
         }
         
+        public TYPPrototype.ProductService.Invoice[] GetInvoicebyType(string type) {
+            return base.Channel.GetInvoicebyType(type);
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Invoice[]> GetInvoicebyTypeAsync(string type) {
+            return base.Channel.GetInvoicebyTypeAsync(type);
+        }
+        
         public TYPPrototype.ProductService.Product GetProductbyID(int id) {
             return base.Channel.GetProductbyID(id);
         }
         
         public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> GetProductbyIDAsync(int id) {
             return base.Channel.GetProductbyIDAsync(id);
+        }
+        
+        public TYPPrototype.ProductService.Product[] GetProductsbyWarehouse(string warehouse) {
+            return base.Channel.GetProductsbyWarehouse(warehouse);
+        }
+        
+        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product[]> GetProductsbyWarehouseAsync(string warehouse) {
+            return base.Channel.GetProductsbyWarehouseAsync(warehouse);
         }
         
         public string DeleteProduct(int id) {
@@ -602,12 +630,12 @@ namespace TYPPrototype.ProductService {
             return base.Channel.DeleteProductAsync(id);
         }
         
-        public TYPPrototype.ProductService.Product SearchProduct(string name) {
-            return base.Channel.SearchProduct(name);
+        public TYPPrototype.ProductService.Product SearchProduct(string code) {
+            return base.Channel.SearchProduct(code);
         }
         
-        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> SearchProductAsync(string name) {
-            return base.Channel.SearchProductAsync(name);
+        public System.Threading.Tasks.Task<TYPPrototype.ProductService.Product> SearchProductAsync(string code) {
+            return base.Channel.SearchProductAsync(code);
         }
         
         public string AddDamagedProduct(TYPPrototype.ProductService.Damaged d) {
