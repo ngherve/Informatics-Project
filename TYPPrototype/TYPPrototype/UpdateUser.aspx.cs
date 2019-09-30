@@ -17,7 +17,7 @@ namespace TYPPrototype
         string em ;
         string tn ;
         string add ;
-        string gen ;
+        
         string pp ;
 
         User u;

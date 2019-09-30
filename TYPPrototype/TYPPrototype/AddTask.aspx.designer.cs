@@ -40,13 +40,22 @@ namespace TYPPrototype {
         protected global::System.Web.UI.WebControls.DropDownList Towner;
         
         /// <summary>
-        /// Tdesc control.
+        /// ProList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Tdesc;
+        protected global::System.Web.UI.WebControls.DropDownList ProList;
+        
+        /// <summary>
+        /// Quantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Quantity;
         
         /// <summary>
         /// btnCancelTask control.
