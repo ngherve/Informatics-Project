@@ -13,10 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -29,9 +26,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class DamagesActivity extends AppCompatActivity implements View.OnClickListener {
@@ -56,6 +51,9 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
     private String P_Photo = "";
     private EditText edQuan;
     private String datetime = "";
+    private Spinner spSelectProd;
+    private ArrayList<String> tasks;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +67,38 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
         takpic.setOnClickListener(this);
         report = findViewById(R.id.btnReportDamage);
         report.setOnClickListener(this);
+        spSelectProd = (Spinner) findViewById(R.id.spselecttask);
+
+        tasks = new ArrayList<>();
+
+        Response.Listener<String> respList = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try{
+                    ArrayList<Product> products = new ArrayList<Product>();
+                    JSONArray jsonarray = new JSONArray(response);
+
+                    for(int i=0; i<jsonarray.length(); i++) {
+                        JSONObject jsonRes = jsonarray.getJSONObject(i);
+
+                        String P_Nam = jsonRes.getString("P_Name");
+                        String P_Cod = jsonRes.getString("P_Code");
+                        String bin_locatio = jsonRes.getString("bin_location");
+                        tasks.add(P_Nam+"("+P_Cod+")-"+bin_locatio);
+
+                    }
+
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        ServerRequests loginReq = new ServerRequests(respList);
+        RequestQueue queue = Volley.newRequestQueue(DamagesActivity.this);
+        queue.add(loginReq);
+
 
         if(SaveItemActivity.isnewDamages) {
             Intent intent = getIntent();
@@ -87,6 +117,22 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                     " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + loc);
         }
         GetProdID();
+
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(DamagesActivity.this,
+                android.R.layout.simple_list_item_1, tasks);
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spSelectProd.setAdapter(myAdapter);
+        spSelectProd.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     @Override

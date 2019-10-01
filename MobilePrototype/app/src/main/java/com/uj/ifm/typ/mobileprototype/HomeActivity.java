@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private CardView c_profile, c_logoff, c_stock, c_notifications, c_reports, c_scanitems, c_updateitems, c_delete_items ;
     private String name, username, pass, email, gender, Address, user_type, DOB, Tel, photo;
-    public static TextView txtNumItems, txtNumNotif;
+    public static TextView txtNumItems, txtNumNotif, txtTasks;
     private int id;
     TextView prof, eml;
     public static boolean isSearch = false;
@@ -116,6 +116,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         refreshPage();
         countProduct();
+        countTasks();
 
         userID = id;
 
@@ -146,6 +147,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         txtNumItems = findViewById(R.id.numitems);
 
         txtNumNotif = findViewById(R.id.numNotif);
+
+        txtTasks = findViewById(R.id.numtasks);
 
         prof = (TextView) findViewById(R.id.nav_Profile_name);
         eml = (TextView) findViewById(R.id.nav_Profile_email);
@@ -222,13 +225,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         try {
                             JSONArray jsonarray = new JSONArray(response);
                             HomeActivity.txtNumNotif.setText("Notifications: " + jsonarray.length());
-                            String message = "";
-                            for (int i = 0; i < jsonarray.length(); i++) {
-                                final JSONObject jsonRes = jsonarray.getJSONObject(i);
-                                message += i+1+"- " + jsonRes.getString("Message") + "\n" +
-                                        jsonRes.getString("N_Email") + "\n" +
-                                        jsonRes.getString("N_Datetime") + "\n";
-                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -246,6 +242,50 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("UserID", String.valueOf(LoginActivity.userID));
+                return params;
+            }
+        };
+
+        RequestQueue reqQue = Volley.newRequestQueue(HomeActivity.this);
+        reqQue.add(strRequest);
+    }
+
+    public void countTasks(){
+        StringRequest strRequest = new StringRequest(Request.Method.POST, ServerRequests.REQUEST_URL + "GetTasks.php",
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray jsonarray = new JSONArray(response);
+
+                            String message = "";
+                            int count = 0;
+                            for (int i = 0; i < jsonarray.length(); i++) {
+                                final JSONObject jsonRes = jsonarray.getJSONObject(i);
+                                String uID = jsonRes.getString("UserID");
+                                String status = jsonRes.getString("Status");
+                                if(uID.equals(String.valueOf(LoginActivity.userID)) && !status.equals("done")) {
+                                    count++;
+                                }
+                            }
+                            HomeActivity.txtTasks.setText("Task: "+count);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(HomeActivity.this, "Try Again" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(HomeActivity.this, "Try Again! " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
                 return params;
             }
         };
