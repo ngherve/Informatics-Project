@@ -1,5 +1,6 @@
 package com.uj.ifm.typ.mobileprototype;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -116,7 +117,9 @@ public class NotifictionActivity extends AppCompatActivity{
 
 
     public void backAction(View view) {
-        super.onBackPressed();
+        Intent intent2 = new Intent(NotifictionActivity.this, HomeActivity.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent2);
     }
 
     public void GetUsers(final String email){

@@ -81,7 +81,9 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
     }
 
     public void backAction(View view) {
-        super.onBackPressed();
+        Intent intent2 = new Intent(EditActivity.this, HomeActivity.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent2);
     }
 
     @Override
@@ -231,6 +233,9 @@ public class EditActivity<getSim> extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.editbtnSaveItem:
                 saveItem();
+                Intent intent3 = new Intent(EditActivity.this, HomeActivity.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent3);
                 break;
 
             case R.id.editbtnselectimage:

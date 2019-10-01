@@ -67,9 +67,10 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
         takpic.setOnClickListener(this);
         report = findViewById(R.id.btnReportDamage);
         report.setOnClickListener(this);
-        spSelectProd = (Spinner) findViewById(R.id.spselecttask);
+        spSelectProd = (Spinner) findViewById(R.id.spselectprodt);
 
         tasks = new ArrayList<>();
+        tasks.add("Select Product");
 
         Response.Listener<String> respList = new Response.Listener<String>() {
             @Override
@@ -85,7 +86,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                         String P_Nam = jsonRes.getString("P_Name");
                         String P_Cod = jsonRes.getString("P_Code");
                         String bin_locatio = jsonRes.getString("bin_location");
-                        tasks.add(P_Nam+"("+P_Cod+")-"+bin_locatio);
+                        tasks.add(P_Cod+" ("+P_Nam+")-"+bin_locatio);
 
                     }
 
@@ -99,6 +100,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
         RequestQueue queue = Volley.newRequestQueue(DamagesActivity.this);
         queue.add(loginReq);
 
+        //P_Code = spSelectProd.getSelectedItem().toString();
 
         if(SaveItemActivity.isnewDamages) {
             Intent intent = getIntent();
@@ -255,6 +257,12 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
+            if(!SaveItemActivity.isnewDamages) {
+                P_Code = spSelectProd.getSelectedItem().toString();
+                StringTokenizer st = new StringTokenizer(P_Code);
+                P_Code = st.nextToken();
+                id = P_Code;
+            }
             if(requestCode ==0) {
                 Uri filepath = data.getData();
                 try {
@@ -351,6 +359,15 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnReportDamage:
+
+                if(!spSelectProd.getSelectedItem().toString().equals("Select Product")) {
+                    if (!SaveItemActivity.isnewDamages) {
+                        P_Code = spSelectProd.getSelectedItem().toString();
+                        StringTokenizer st = new StringTokenizer(P_Code);
+                        P_Code = st.nextToken();
+                        GetProdID();
+                    }
+                }
                 saveDamages();
                 Intent intent2 = new Intent(DamagesActivity.this, HomeActivity.class);
                 intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

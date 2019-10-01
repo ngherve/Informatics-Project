@@ -106,7 +106,9 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
     }
 
     public void backAction(View view) {
-        super.onBackPressed();
+        Intent intent2 = new Intent(EditItemsActivity.this, HomeActivity.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent2);
     }
 
 
