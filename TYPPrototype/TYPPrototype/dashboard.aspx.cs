@@ -47,15 +47,16 @@ namespace TYPPrototype
                 Product pro = prodClient.SearchProduct(inv.P_Code);
                 User u = userClient.GetUserbyID(inv.UserID);
                 display += "<tr>"
-                        + "<td class='text-truncate'>"+pro.P_Name +" "+inv.P_Code +"</td>"
+                        + "<td class='text-truncate'>" + pro.P_Name + " " + inv.P_Code + "</td>"
                         + "<td class='text-truncate p-1'>"
                         + "<ul class='list-unstyled users-list m-0'>"
-                        + "<li data-toggle='tooltip' data-popup='tooltip-custom' data-original-title='"+u.Name+"' class='avatar avatar-sm pull-up'>"
-                        + "<img class='" + u.pphoto + "' alt='Avatar'> "
-                        + "</li>"
+                        + "<li><span class='avatar avatar-busy'>"
+                        + "<img src='"+ u.pphoto +"' alt='avatar' data-toggle='tooltip' data-placement='right' title='"+ u.Name +"'><i class=''></i>"
+                        + "</span></li>"
                         + "</ul>"
                         + "</td>"
                         + "<td class='text-truncate'>"+inv.Total_Price+"</td> "
+                        + "<td class='text-truncate'>" + inv.INV_Date + "</td> "
                         + "</tr>"
                         ;
             }

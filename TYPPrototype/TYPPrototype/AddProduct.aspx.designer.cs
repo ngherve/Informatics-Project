@@ -37,7 +37,7 @@ namespace TYPPrototype {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Pprice;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Pprice;
         
         /// <summary>
         /// PQuant control.
@@ -46,7 +46,7 @@ namespace TYPPrototype {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText PQuant;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl PQuant;
         
         /// <summary>
         /// PCode control.

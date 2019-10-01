@@ -66,7 +66,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            <input type="text" runat="server" id="Pprice" class="form-control border-primary" placeholder="2560" name="username">
+                                                            <input type="number" runat="server" id="Pprice" class="form-control border-primary" placeholder="2560" name="username">
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -75,7 +75,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            <input type="text" runat="server" id="PQuant" class="form-control border-primary" placeholder="54" name="Password">
+                                                            <input type="number" runat="server" id="PQuant" class="form-control border-primary" placeholder="54" name="Password">
                                                             <br />
                                                             Product Code:&nbsp; :&nbsp;
                                                     <input class="form-control border-primary" runat="server" id="PCode" type="text" placeholder="A01">

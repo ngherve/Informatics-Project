@@ -138,6 +138,7 @@
                                                     <th class="border-top-0">Product</th>
                                                     <th class="border-top-0">Dispatcher</th>
                                                     <th class="border-top-0">Total(R)</th>
+                                                    <th class="border-top-0">Date dispatched</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

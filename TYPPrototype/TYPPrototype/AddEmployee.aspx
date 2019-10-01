@@ -65,9 +65,9 @@
                                                             <label for="userinput2">User Type</label>
                                                             
                                                             <asp:DropDownList ID="Utype" runat="server" class="form-control border-primary">
-                                                                <asp:ListItem Text="Stock" Value="stock"></asp:ListItem>
-                                                                <asp:ListItem Text="Admin" Value="admin"></asp:ListItem>
-                                                                <asp:ListItem Text="Warehouse" Value="warehouse"></asp:ListItem>
+                                                                <asp:ListItem Text="stock" Value="stock"></asp:ListItem>
+                                                                <asp:ListItem Text="admin" Value="admin"></asp:ListItem>
+                                                                <asp:ListItem Text="warehouse" Value="warehouse"></asp:ListItem>
                                                                 </asp:DropDownList>
                                                             
 
