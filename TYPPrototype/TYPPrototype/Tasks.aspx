@@ -52,9 +52,10 @@
                                                     <th><input type="checkbox" class="input-chk-all"></th>
                                                     <th>Task</th>
                                                     <th>Start Date</th>
-                                                    <th>Priority</th>
-                                                    <th>Status</th>
+                                                    <th>Date Completed</th>
                                                     <th>Owner</th>
+                                                    <th>Status</th>
+                                                    <th>Priority</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>

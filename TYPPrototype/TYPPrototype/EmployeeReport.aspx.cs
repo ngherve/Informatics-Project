@@ -28,11 +28,11 @@ namespace TYPPrototype
             data = prodService.GetTasks();
 
             string lowstock = "Suggestion: ";
-            foreach (User u in prodService.GetAllUsers())
+            
+            foreach(var i in data)
             {
-                foreach(var i in data)
+                foreach (User u in prodService.GetAllUsers())
                 {
-                    
                     if (i.UserID.Equals(u.UserID))
                     {
                         bool isdone = true;
@@ -43,7 +43,7 @@ namespace TYPPrototype
                                 isdone = false;
                             }
                         }
-                        if(isdone) lowstock += u.Name.ToUpper();
+                        if(isdone) lowstock += u.Name.ToUpper() + " - ";
                     }
                 }
             }
@@ -52,6 +52,18 @@ namespace TYPPrototype
             suggestiontask.InnerHtml = lowstock;
         }
 
+        private static bool searchID(int id, List<int> ids)
+        {
+            foreach(int i in ids)
+            {
+                if (i == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static object[] GetChartData()
@@ -72,6 +84,17 @@ namespace TYPPrototype
                 "Tasks Done"
             };
             int j = 0;
+            List<int> us = new List<int>();
+            foreach (var i in data)
+            {
+                foreach (User u in users)
+                {
+                    if (u.UserID.Equals(i.UserID))
+                    {
+                        us.Add(u.UserID);
+                    }
+                }
+            }
             foreach (var i in data)
             {
                 j++;
@@ -98,12 +121,9 @@ namespace TYPPrototype
                         }
                     }
 
-                    foreach (Task t in task)
+                    if (u.UserID.Equals(i.UserID)/* && !searchID(i.UserID, us)*/)
                     {
-                        if (u.UserID.Equals(i.UserID))
-                        {
-                            chartData[j] = new object[] { u.Name + ": " + i.T_Type + " task", taskcount, donecount };
-                        }
+                        chartData[j] = new object[] { u.Name + ": " + i.T_Type + " task", taskcount, donecount };
                     }
                 }                
             }

@@ -33,13 +33,14 @@ namespace TYPPrototype
                     if (!u.User_Type.Equals("admin"))
                     {
                         ListItem li = new ListItem();
-                        li.Text = u.UserID + " " + u.Name.ToString();
-                        li.Value = u.UserID + " " + u.Name.ToString();
+                        li.Text = u.UserID + " " + u.Name.ToString() + "(" + u.User_Type + ")";
+                        li.Value = u.UserID + " " + u.Name.ToString() + "(" + u.User_Type + ")";
                         items.Add(li);
                     }
                 }
                 Towner.DataSource = items;
                 Towner.DataBind();
+
                 foreach(Product p in products)
                 {
                     ListItem x = new ListItem();
@@ -47,6 +48,10 @@ namespace TYPPrototype
                     x.Value = p.P_Code.ToString();
                     prods.Add(x);
                 }
+                ListItem newProd = new ListItem();
+                newProd.Text = "New Incoming Product!!!";
+                newProd.Text = "New Incoming Product!!!";
+                prods.Add(newProd);
                 ProList.DataSource = prods;
                 ProList.DataBind();
             }
