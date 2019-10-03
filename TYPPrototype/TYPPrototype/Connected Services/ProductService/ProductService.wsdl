@@ -7,7 +7,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="http://tempuri.org/" location="http://10.254.17.96:8083/ProductService.svc?wsdl" />
+  <wsdl:import namespace="http://tempuri.org/" location="http://localhost:8082/ProductService.svc?wsdl" />
   <wsdl:types />
   <wsdl:binding name="MetadataExchangeHttpBinding_IProductService" type="i0:IProductService">
     <wsp:PolicyReference URI="#MetadataExchangeHttpBinding_IProductService_policy" />

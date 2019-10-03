@@ -119,7 +119,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        id = ePCode.getText().toString();
         if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
             if(requestCode ==0) {
                 Uri filepath = data.getData();
@@ -134,10 +134,15 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
 
             } else if(requestCode==1){
                 Uri filepath = data.getData();
-                Bundle bundle = data.getExtras();
-                bitmap = (Bitmap) bundle.get("data");
-                profileimage2.setImageBitmap(bitmap);
-                UploadPicture(String.valueOf(id), getStringImage(bitmap));
+                try {
+                    Bundle bundle = data.getExtras();
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filepath);
+                    profileimage2.setImageBitmap(bitmap);
+                    UploadPicture(id, getStringImage(bitmap));
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -265,6 +270,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
         String warehouse = eW_name.getText().toString();
         String pcode = ePCode.getText().toString();
         String binloc = binlocation.getSelectedItem().toString();
+        image = ServerRequests.REQUEST_URL + "profile_image/prod"+ pcode  +".jpeg";
         id = pcode;
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -345,7 +351,7 @@ public class SaveItemActivity extends AppCompatActivity implements View.OnClickL
                                 Intent intent = new Intent(SaveItemActivity.this, DamagesActivity.class);
                                 intent.putExtra("P_Name", epName.getText().toString());
                                 intent.putExtra("P_Price", eprice.getText().toString());
-                                intent.putExtra("P_Image", "image");
+                                intent.putExtra("P_Image", ServerRequests.REQUEST_URL + "profile_image/prod"+ ePCode.getText().toString() +".jpeg");
                                 intent.putExtra("P_Quantity", eQuant.getText().toString());
                                 intent.putExtra("Supplier_Name", esuppname.getText().toString());
                                 intent.putExtra("P_Type", ep_type.getText().toString());

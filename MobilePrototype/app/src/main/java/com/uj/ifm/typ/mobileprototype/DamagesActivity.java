@@ -32,7 +32,7 @@ import java.util.*;
 public class DamagesActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String P_ID = "";
-    private String URL_Upload = ServerRequests.REQUEST_URL + "UploadProduct.php";
+    private String URL_Upload = ServerRequests.REQUEST_URL + "UploadDamaged.php";
     private Bitmap bitmap;
     private static final String TAG = EditActivity.class.getSimpleName();
     private String id = "";
@@ -82,11 +82,11 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
 
                     for(int i=0; i<jsonarray.length(); i++) {
                         JSONObject jsonRes = jsonarray.getJSONObject(i);
-
+                        String PID = jsonRes.getString("P_ID");
                         String P_Nam = jsonRes.getString("P_Name");
                         String P_Cod = jsonRes.getString("P_Code");
                         String bin_locatio = jsonRes.getString("bin_location");
-                        tasks.add(P_Cod+" ("+P_Nam+")-"+bin_locatio);
+                        tasks.add(P_Cod+" ("+P_Nam+")-"+bin_locatio+ "#" + PID + "#");
 
                     }
 
@@ -179,7 +179,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                 params.put("P_ID", P_ID);
                 params.put("Quantity", edQuan.getText().toString());
                 params.put("Description", edDescript.getText().toString());
-                params.put("P_Photo", ServerRequests.REQUEST_URL + "profile_image/prod"+ P_Code  +".jpeg");
+                params.put("P_Photo", ServerRequests.REQUEST_URL + "profile_image/damprod"+ P_ID  +".jpeg");
 
                 return params;
             }
@@ -213,7 +213,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                 Map<String, String> params = new HashMap<>();
                 params.put("P_Code", id);
                 params.put("Quantity", edQuan.getText().toString());
-                params.put("Total_Price", Integer.toString(Integer.parseInt(P_Quantity)*Integer.parseInt(P_Price)));
+                params.put("Total_Price", Integer.toString(Integer.parseInt(edQuan.getText().toString())*100));
                 params.put("C_ID", "1");
                 params.put("INV_Date", datetime);
                 params.put("UserID", Integer.toString(LoginActivity.userID));
@@ -256,6 +256,8 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        GetProdID();
+
         if(resultCode ==RESULT_OK && data !=null && data.getData() != null){
             if(!SaveItemActivity.isnewDamages) {
                 P_Code = spSelectProd.getSelectedItem().toString();
@@ -286,7 +288,6 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
             }
-            GetProdID();
         }
     }
 
@@ -303,6 +304,11 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
         final ProgressDialog progressDial = new ProgressDialog(this);
         progressDial.setMessage("Uploading...");
         progressDial.show();
+        if (SaveItemActivity.isnewDamages) {
+            StringTokenizer st = new StringTokenizer(spSelectProd.getSelectedItem().toString(), "#");
+            P_ID = st.nextToken();
+            //P_ID = st.nextToken();
+        }
 
         StringRequest strRequest = new StringRequest(Request.Method.POST, URL_Upload,
                 new Response.Listener<String>() {
@@ -335,7 +341,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("P_Code", id);
+                params.put("P_Code", P_ID);
                 params.put("P_Image", photo);
                 return params;
             }
@@ -365,6 +371,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                         P_Code = spSelectProd.getSelectedItem().toString();
                         StringTokenizer st = new StringTokenizer(P_Code);
                         P_Code = st.nextToken();
+                        id = P_Code;
                         GetProdID();
                     }
                 }
@@ -372,6 +379,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                 Intent intent2 = new Intent(DamagesActivity.this, HomeActivity.class);
                 intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent2);
+                SaveItemActivity.isnewDamages = false;
                 break;
 
             case R.id.btntakepic:
@@ -398,6 +406,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void backAction(View view) {
+        SaveItemActivity.isnewDamages = false;
         Intent intent2 = new Intent(DamagesActivity.this, HomeActivity.class);
         intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent2);

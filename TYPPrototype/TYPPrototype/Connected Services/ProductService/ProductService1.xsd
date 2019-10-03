@@ -1,152 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://10.254.17.96:8083/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WirelecWCFService" />
-  <xs:element name="GetAllProducts">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllProductsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetAllProductsResult" nillable="true" type="q1:ArrayOfProduct" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllInvoices">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllInvoicesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetAllInvoicesResult" nillable="true" type="q2:ArrayOfInvoice" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetInvoicebyType">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetInvoicebyTypeResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetInvoicebyTypeResult" nillable="true" type="q3:ArrayOfInvoice" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetProductbyID">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetProductbyIDResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetProductbyIDResult" nillable="true" type="q4:Product" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetProductsbyWarehouse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetProductsbyWarehouseResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetProductsbyWarehouseResult" nillable="true" type="q5:ArrayOfProduct" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteProduct">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteProductResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="DeleteProductResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SearchProduct">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SearchProductResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="SearchProductResult" nillable="true" type="q6:Product" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddDamagedProduct">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="d" nillable="true" type="q7:Damaged" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddDamagedProductResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddDamagedProductResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddProduct">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="product" nillable="true" type="q8:Product" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddProductResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddProductResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateProduct">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="product" nillable="true" type="q9:Product" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateProductResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateProductResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDamagedProducts">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDamagedProductsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WirelecWCFService" minOccurs="0" name="GetDamagedProductsResult" nillable="true" type="q10:ArrayOfDamaged" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WirelecWCFService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WirelecWCFService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="P_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="P_Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Price" type="xs:int" />
+      <xs:element minOccurs="0" name="P_Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="P_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="W_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bin_location" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="C_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="INV_Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INV_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Inv_Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Total_Price" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="Damaged">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateDamaged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="P_Photo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Damaged" nillable="true" type="tns:Damaged" />
+  <xs:complexType name="ArrayOfDamaged">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Damaged" nillable="true" type="tns:Damaged" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDamaged" nillable="true" type="tns:ArrayOfDamaged" />
 </xs:schema>
