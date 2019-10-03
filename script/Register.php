@@ -14,9 +14,6 @@
 		$Gender = $_POST["Gender"];
 		$DOB = $_POST["DOB"];
 	}
-	/*$dateOfB = explode(' ', $DOB);
-	print_r($dateOfB);
-	$string = date("Y-m-d", strtotime("$dateOfB[0]-$dateOfB[1]-$dateOfB[2]"));*/
 	
 	$statement = mysqli_prepare($con, "INSERT INTO User (Name, Username, Email, Password, Tel_Number, Address, Gender, DOB) 
 									   VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
