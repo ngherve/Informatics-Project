@@ -14,7 +14,7 @@ namespace WirelecWCFService
     public class ProductService : IProductService
     {
         private static readonly string mycon = "server =localhost; Uid=root; password = ; " +
-          "persistsecurityinfo = True; database =Wirelecdatabase; SslMode = none; Convert Zero Datetime=True";
+          "persistsecurityinfo = True; database =Wirelecdatabase; SslMode = none; Convert Zero Datetime=True; Connect Timeout=3000000; pooling='true'; Max Pool Size=3000000";
         private MySqlConnection connection = new MySqlConnection(mycon);
 
         public string AddDamagedProduct(Damaged d)
@@ -31,6 +31,7 @@ namespace WirelecWCFService
                 {
                     connection.Open();
                 }
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -63,6 +64,7 @@ namespace WirelecWCFService
                 {
                     connection.Open();
                 }
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -81,6 +83,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "DELETE FROM DAMAGED WHERE damaged.D_ID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
 
             return "Damage Successfully Deleted";
@@ -92,6 +95,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "DELETE FROM PRODUCT WHERE P_ID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
 
             return "Product Successfully Deleted";
@@ -105,6 +109,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM INVOICE";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -138,6 +143,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM PRODUCT";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -173,6 +179,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM DAMAGED";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -205,6 +212,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM INVOICE WHERE invoice.Inv_Type = '" + type + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -237,6 +245,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.P_ID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -272,6 +281,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.W_Name = '" + warehouse + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -307,6 +317,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.W_Name = '" + warehouse + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -344,6 +355,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM PRODUCT WHERE product.P_Code LIKE CONCAT( '" + code + "')";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -383,6 +395,7 @@ namespace WirelecWCFService
                     product.P_Quantity + "',Supplier_Name ='" + product.Supplier_Name + "', P_Type='" +
                     product.P_Type + "',W_Name ='" + product.W_Name + "',P_Code ='" + product.P_Code +
                     "'WHERE product.P_Code = '" + product.P_Code + "'";
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

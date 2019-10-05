@@ -5,23 +5,46 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.*;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnRegister;
-    EditText eName, eDOB, eEmail, ePassword, eUsername, eAdress, ePhone, eGender;
+    EditText eName, eDOB, eEmail, ePassword, eUsername, eAdress, ePhone;
+    Spinner eGender;
+    private ArrayList<String> genders = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        eGender = (Spinner) findViewById(R.id.etGender);
+
+        genders.add("Male");
+        genders.add("Female");
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterActivity.this,
+                android.R.layout.simple_list_item_1, genders);
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        eGender.setAdapter(myAdapter);
+        eGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         eUsername = (EditText) findViewById(R.id.etUsename);
         ePassword = (EditText) findViewById(R.id.etPassword);
@@ -30,7 +53,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         ePhone = (EditText) findViewById(R.id.etPhone);
         eEmail = (EditText) findViewById(R.id.etEmail);
         eDOB = (EditText) findViewById(R.id.etDOB);
-        eGender = (EditText) findViewById(R.id.etGender);
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(this);
     }
@@ -49,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 String Password = Secrecy.HashPassword(ePassword.getText().toString());
                 String telNumber = ePhone.getText().toString();
                 String address = eAdress.getText().toString();
-                String gender = eGender.getText().toString();
+                String gender = eGender.getSelectedItem().toString();
                 String dob = eDOB.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {

@@ -59,10 +59,12 @@ public class StockActivity extends AppCompatActivity {
 
                     List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
-                    for (Product p : products) {
+                    //for (Product p : products)
+                    for(int i=products.size()-1; i>=0; i--)
+                    {
                         HashMap<String, String> hm = new HashMap<String, String>();
-                        hm.put("listview_title", p.getP_Name());
-                        hm.put("listview_discription", p.toString());
+                        hm.put("listview_title", products.get(i).getP_Name());
+                        hm.put("listview_discription", products.get(i).toString());
                         //Bitmap bmp = getBitmapFromURL("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg");
 
                         hm.put("listview_image", Integer.toString(R.drawable.nav_image));

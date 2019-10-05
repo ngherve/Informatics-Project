@@ -35,7 +35,7 @@ public class ViewNotifications extends AppCompatActivity {
                             JSONArray jsonarray = new JSONArray(response);
 
                             String message = "";
-                            for (int i = 0; i < jsonarray.length(); i++) {
+                            for (int i = jsonarray.length()-1; i >=0; i--) {
                                 final JSONObject jsonRes = jsonarray.getJSONObject(i);
                                 message += i+1+"- " + jsonRes.getString("Message") + "\n" +
                                         jsonRes.getString("N_Email") + "\n" +

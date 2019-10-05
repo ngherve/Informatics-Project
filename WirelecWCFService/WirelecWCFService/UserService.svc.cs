@@ -14,7 +14,7 @@ namespace WirelecWCFService
     public class UserService : IUserService
     {
         private static readonly string mycon = "server =localhost; Uid=root; password = ; " +
-           "persistsecurityinfo = True; database =Wirelecdatabase; SslMode = none; Convert Zero Datetime=True";
+           "persistsecurityinfo = True; database =Wirelecdatabase; SslMode = none; Convert Zero Datetime=True; Connect Timeout=3000000; pooling='true'; Max Pool Size=3000000";
         private MySqlConnection connection = new MySqlConnection(mycon);
 
         public string CreateTask(Task task)
@@ -35,6 +35,7 @@ namespace WirelecWCFService
                 {
                     connection.Open();
                 }
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -54,6 +55,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "DELETE FROM TASK WHERE Task_ID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
 
             return "Task Successfully Deleted";
@@ -65,6 +67,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "DELETE FROM USER WHERE user.UserID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
 
             return "User Successfully Deleted";
@@ -79,6 +82,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM USER";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -114,6 +118,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM Notification WHERE UserID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -143,6 +148,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM Notification";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -174,6 +180,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM Task";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -207,6 +214,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM USER WHERE user.UserID = '" + id + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -243,6 +251,7 @@ namespace WirelecWCFService
                 MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
                 cmd.CommandType = CommandType.Text; //setting the command type
                 cmd.CommandText = "SELECT * FROM USER WHERE Username = '" + username + "' AND Password = '" + password + "'";
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -291,6 +300,7 @@ namespace WirelecWCFService
                 {
                     connection.Open();
                 }
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -318,6 +328,7 @@ namespace WirelecWCFService
                 {
                     connection.Open();
                 }
+                cmd.CommandTimeout = 1000;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -338,6 +349,7 @@ namespace WirelecWCFService
             MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
             cmd.CommandType = CommandType.Text; //setting the command type
             cmd.CommandText = "SELECT * FROM USER WHERE user.Name LIKE CONCAT( '" + name + "')";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -375,6 +387,7 @@ namespace WirelecWCFService
                 "', Email ='" + user.Email + "',Password ='" + user.Password + "',Tel_Number ='" + user.Tel_Number
                 + "', Address='" + user.Address + "',Gender ='" + user.Gender + "',DOB = '" + user.DOB
                 + "',User_Type='" + user.User_Type + "',pphoto='" + user.pphoto + "'WHERE user.UserID = '" + user.UserID + "'";
+            cmd.CommandTimeout = 1000;
             cmd.ExecuteNonQuery();
             return "Data Updated Successfully";
         }

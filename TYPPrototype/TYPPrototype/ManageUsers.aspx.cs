@@ -19,30 +19,31 @@ namespace TYPPrototype
 
             string display = "";
 
-            foreach (User user in products)
+            //foreach (User user in products)
+            for (int i = products.Length - 1; i >= 0; i--)
             {
                 display += "<div class='col-xl-4 col-md-6 col-12'>"
                         + "<div class='card'>"
                         + "<div class='text-center'>"
                         + "<div class='card-body'>"
-                        + "<img src ='http://10.254.17.96:80/script/profile_image/" + user.UserID + ".jpeg' class='rounded-circle  height-150' alt='Card image'>"
+                        + "<img src ='http://10.254.17.96:80/script/profile_image/" + products[i].UserID + ".jpeg' class='rounded-circle  height-150' alt='Card image'>"
                         + "</div>"
                         + "<div class='card-body'>"
-                        + "<h4 class='card-title'>" + user.Name + "</h4>"
-                        + "<h6 class='text-center'>" + "Username: " + user.Username + "</h6>"
-                        + "<h6 class='text-center'>" + "Gender: " + user.Gender + "</h6>"
-                        + "<h6 class='text-center'>" + " Contacts: " + user.Tel_Number + "</h6>"
-                        + "<h6 class='text-center'>" + " Date of Birth: " + user.DOB + "</h6>"
-                        + "<h6 class='text-center'>" + " User Type: " + user.User_Type + "</h6>"
+                        + "<h4 class='card-title'>" + products[i].Name + "</h4>"
+                        + "<h6 class='text-center'>" + "Username: " + products[i].Username + "</h6>"
+                        + "<h6 class='text-center'>" + "Gender: " + products[i].Gender + "</h6>"
+                        + "<h6 class='text-center'>" + " Contacts: " + products[i].Tel_Number + "</h6>"
+                        + "<h6 class='text-center'>" + " Date of Birth: " + products[i].DOB + "</h6>"
+                        + "<h6 class='text-center'>" + " User Type: " + products[i].User_Type + "</h6>"
                         + "</div>"
                         + "<div class='card-body'>"
-                        + "<a href=UpdateUser.aspx?ID=" + user.UserID + " class='btn btn-danger mr-1' onclick='return confirm('Are you sure?')'><i class='la la-plus'></i> Edit</a>"
-                        + "<a href=DeleteUser.aspx?ID=" + user.UserID + " class='btn btn-primary mr-1'><i class='ft-user'></i> Remove</a>"
+                        + "<a href=UpdateUser.aspx?ID=" + products[i].UserID + " class='btn btn-danger mr-1' onclick='return confirm('Are you sure?')'><i class='la la-plus'></i> Edit</a>"
+                        + "<a href=DeleteUser.aspx?ID=" + products[i].UserID + " class='btn btn-primary mr-1'><i class='ft-user'></i> Remove</a>"
                         + "</div>"
                         + "</div>"
                         + "<div class='list-group list-group-flush'>"
-                        + "<a href = '#' class='list-group-item'><i class='ft-mail'></i>Email: " + user.Email +"</a>"
-                        + "<a href = '#' class='list-group-item'> <i class='ft-message-square'>Address: </i>" + user.Address + "</a>"
+                        + "<a href = '#' class='list-group-item'><i class='ft-mail'></i>Email: " + products[i].Email +"</a>"
+                        + "<a href = '#' class='list-group-item'> <i class='ft-message-square'>Address: </i>" + products[i].Address + "</a>"
                         + "</div>"
                         + "</div>"
                         + "</div>";

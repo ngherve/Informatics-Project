@@ -44,7 +44,7 @@
                 android:id="@+id/etDOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="date|textAutoComplete"
                 android:layout_marginBottom="10dp" />
 
         <TextView
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="Gender" />
 
-        <EditText
+        <Spinner
                 android:id="@+id/etGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,6 +78,7 @@
 
         <EditText
                 android:id="@+id/etAddress"
+                android:inputType="textPostalAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp" />
@@ -91,6 +92,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textWebEmailAddress"
                 android:layout_marginBottom="10dp" />
 
         <TextView
