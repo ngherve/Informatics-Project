@@ -6200,7 +6200,6 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\TYPPrototype.dll.config" />
-
     <Content Include="bin\BouncyCastle.Crypto.dll" />
     <Content Include="bin\Google.Protobuf.dll" />
     <Content Include="bin\Google.Protobuf.xml" />
@@ -6263,7 +6262,13 @@
     <Content Include="bin\WebMatrix.Data.xml" />
     <Content Include="bin\WebMatrix.WebData.dll" />
     <Content Include="bin\WebMatrix.WebData.xml" />
-
+    <None Include="Connected Services\ProductService\ProductService.disco" />
+    <None Include="Connected Services\ProductService\configuration91.svcinfo" />
+    <None Include="Connected Services\ProductService\configuration.svcinfo" />
+    <None Include="Connected Services\ProductService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -6273,15 +6278,13 @@
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-
-
+    <None Include="Connected Services\UserService\UserService.disco" />
     <None Include="Connected Services\UserService\configuration91.svcinfo" />
     <None Include="Connected Services\UserService\configuration.svcinfo" />
     <None Include="Connected Services\UserService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\UserService\UserService1.disco" />
     <Content Include="ContactEmployee.aspx" />
     <Content Include="contactSupplier.aspx" />
     <Content Include="DamagedProducts.aspx" />
@@ -7830,7 +7833,6 @@
     <Content Include="dash\vendor\slick\slick-theme.scss" />
     <Content Include="dash\vendor\slick\slick.less" />
     <Content Include="dash\vendor\slick\slick.scss" />
-
     <None Include="Connected Services\ProductService\ProductService.wsdl" />
     <None Include="Connected Services\ProductService\ProductService.xsd">
       <SubType>Designer</SubType>
@@ -7853,13 +7855,13 @@
     </Content>
     <None Include="Connected Services\UserService\UserService.wsdl" />
     <None Include="Connected Services\UserService\UserService.xsd">
-
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserService\UserService31.xsd">
+    <None Include="Connected Services\UserService\UserService1.wsdl" />
+    <None Include="Connected Services\UserService\UserService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserService\UserService32.xsd">
+    <None Include="Connected Services\UserService\UserService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />

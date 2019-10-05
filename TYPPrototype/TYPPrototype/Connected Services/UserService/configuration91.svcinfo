@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="oi5labMSZAfggbPSNU7k/uyFAOs=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="qh0FcabZADrZQOZFAlzvh9dpiD0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="MetadataExchangeHttpBinding_IUserService2">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="MetadataExchangeHttpBinding_IUserService" contract="UserService.IUserService" bindingType="wsHttpBinding" address="http://localhost:50487/UserService.svc/mex" bindingConfiguration="MetadataExchangeHttpBinding_IUserService2">
+    <endpoint name="MetadataExchangeHttpBinding_IUserService" contract="UserService.IUserService" bindingType="wsHttpBinding" address="http://localhost:8082/UserService.svc/mex" bindingConfiguration="MetadataExchangeHttpBinding_IUserService2">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:50487/UserService.svc/mex</serializedValue>
+          <serializedValue>http://localhost:8082/UserService.svc/mex</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

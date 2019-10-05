@@ -23,7 +23,7 @@ import java.util.StringTokenizer;
 public class EditItemsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Spinner eItem;
-    CircleImageView searchimage;
+    public static CircleImageView searchimage;
 
     private Button btnEdit, btnDelete, btnSearch, btnscan;
     public static TextView txtresult;
@@ -188,6 +188,7 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                                 int P_Price = jsonRes.getInt("P_Price");
                                 String P_Image = jsonRes.getString("P_Image");
                                 imageProd = P_Image;
+                                new HomeActivity.GetImageFromURL(searchimage).execute(P_Image);
                                 int P_Quantity = jsonRes.getInt("P_Quantity");
                                 String Supplier_Name = jsonRes.getString("Supplier_Name");
                                 String P_Type = jsonRes.getString("P_Type");
@@ -216,6 +217,7 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                 ServerRequests loginReq1 = new ServerRequests(code, respList1);
                 RequestQueue queue1 = Volley.newRequestQueue(EditItemsActivity.this);
                 queue1.add(loginReq1);
+
                 break;
             case R.id.btnedit:
 

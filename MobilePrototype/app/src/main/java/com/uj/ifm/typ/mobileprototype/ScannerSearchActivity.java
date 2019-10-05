@@ -85,7 +85,7 @@ public class ScannerSearchActivity extends AppCompatActivity implements ZXingSca
                                         P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +
                                         " Type: " + P_Type + " Warehouse: " + W_Name + "\nBin Location: " + bin_location;
                                 //ScanItemsActivity.resultView.append(ScannerSearchActivity.result);
-
+                                new HomeActivity.GetImageFromURL(EditItemsActivity.searchimage).execute(P_Image);
                             } else {
                                 ScannerSearchActivity.result = "Item Does not exit in stock!!!\n:" + "Product Info: \nItem: " + P_Name + " Code: " + P_Code + " Price: " +
                                         P_Price + " Quantity: " + P_Quantity + " Supplier: " + Supplier_Name +

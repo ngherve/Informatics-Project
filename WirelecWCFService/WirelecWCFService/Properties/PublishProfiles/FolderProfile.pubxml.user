@@ -16,61 +16,61 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/11/2019 00:04:19</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:16</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:16</publishTime>
     </File>
     <File Include="bin/MySql.Web.dll">
-      <publishTime>09/06/2019 14:17:10</publishTime>
+      <publishTime>09/11/2019 15:47:16</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/WebMatrix.Data.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:14</publishTime>
     </File>
     <File Include="bin/WebMatrix.WebData.dll">
-      <publishTime>09/06/2019 14:17:09</publishTime>
+      <publishTime>09/11/2019 15:47:16</publishTime>
     </File>
     <File Include="bin/WirelecWCFService.dll">
-      <publishTime>09/30/2019 23:39:52</publishTime>
+      <publishTime>10/05/2019 16:13:16</publishTime>
     </File>
     <File Include="bin/WirelecWCFService.pdb">
-      <publishTime>09/30/2019 23:39:52</publishTime>
+      <publishTime>10/05/2019 16:13:16</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>09/30/2019 23:40:10</publishTime>
+      <publishTime>10/05/2019 16:17:01</publishTime>
     </File>
     <File Include="ProductService.svc">
-      <publishTime>09/06/2019 14:17:07</publishTime>
+      <publishTime>09/11/2019 15:47:10</publishTime>
     </File>
     <File Include="Service1.svc">
       <publishTime>05/10/2019 15:45:01</publishTime>
     </File>
     <File Include="UserService.svc">
-      <publishTime>09/06/2019 14:17:07</publishTime>
+      <publishTime>09/11/2019 15:47:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/06/2019 14:42:56</publishTime>
+      <publishTime>09/11/2019 15:47:12</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -83,8 +83,10 @@ public class ProfileActivity<getSim> extends AppCompatActivity implements View.O
         eDOB = (EditText) findViewById(R.id.txtDOB);
         eGender = (EditText) findViewById(R.id.txtgender);
 
+
         eUsername.setText(username);
         ePassword.setText(pass);
+        ePassword.setEnabled(false);
         eName.setText(name);
         eAdress.setText(Address);
         ePhone.setText(Tel);
