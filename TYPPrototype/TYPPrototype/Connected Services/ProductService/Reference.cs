@@ -524,6 +524,12 @@ namespace TYPPrototype.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         System.Threading.Tasks.Task<string> DeleteProductAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteDamages", ReplyAction="http://tempuri.org/IProductService/DeleteDamagesResponse")]
+        string DeleteDamages(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteDamages", ReplyAction="http://tempuri.org/IProductService/DeleteDamagesResponse")]
+        System.Threading.Tasks.Task<string> DeleteDamagesAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/SearchProduct", ReplyAction="http://tempuri.org/IProductService/SearchProductResponse")]
         TYPPrototype.ProductService.Product SearchProduct(string code);
         
@@ -628,6 +634,14 @@ namespace TYPPrototype.ProductService {
         
         public System.Threading.Tasks.Task<string> DeleteProductAsync(int id) {
             return base.Channel.DeleteProductAsync(id);
+        }
+        
+        public string DeleteDamages(int id) {
+            return base.Channel.DeleteDamages(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteDamagesAsync(int id) {
+            return base.Channel.DeleteDamagesAsync(id);
         }
         
         public TYPPrototype.ProductService.Product SearchProduct(string code) {

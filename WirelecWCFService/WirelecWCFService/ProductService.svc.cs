@@ -75,6 +75,16 @@ namespace WirelecWCFService
             }
             return "Product Added Successfully";
         }
+        public string DeleteDamages(int id)
+        {
+            connection.Open();//openning the connection
+            MySqlCommand cmd = connection.CreateCommand(); //creating a cmd
+            cmd.CommandType = CommandType.Text; //setting the command type
+            cmd.CommandText = "DELETE FROM DAMAGED WHERE damaged.D_ID = '" + id + "'";
+            cmd.ExecuteNonQuery();
+
+            return "Damage Successfully Deleted";
+        }
 
         public string DeleteProduct(int id)
         {

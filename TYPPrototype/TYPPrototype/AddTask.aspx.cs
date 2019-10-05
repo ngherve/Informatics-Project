@@ -17,6 +17,7 @@ namespace TYPPrototype
         User[] users = null;
         Product[] products = null;
         string owner = "";
+        string pro = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new UserServiceClient();
@@ -44,8 +45,10 @@ namespace TYPPrototype
                 foreach(Product p in products)
                 {
                     ListItem x = new ListItem();
-                    x.Text = p.P_Name +" " +"Current Quantity="+" "+p.P_Quantity.ToString();
-                    x.Value = p.P_Code.ToString();
+                    x.Text = p.P_ID +" "+ p.P_Name + " " +"Current Quantity="+" "+p.P_Quantity.ToString();
+                    x.Value = p.P_ID.ToString();
+                    
+          
                     prods.Add(x);
                 }
                 ListItem newProd = new ListItem();
@@ -62,34 +65,50 @@ namespace TYPPrototype
             owner = Towner.SelectedValue.ToString();
             owner = owner.Split(' ')[0];
             DateTime currenttime = DateTime.Now;
-            string selec = (ttype.SelectedValue+" "+"Amount"+" "+ Quantity.Value + " " + ProList.SelectedValue);
+            pro = ProList.SelectedValue.ToString();
+            pro = pro.Split(' ')[0];
+            Product sP = pClient.GetProductbyID(int.Parse(pro));
+            int q = int.Parse(Quantity.Value);
 
-            Task task = new Task
-            {
-                //UserID = Int32.Parse(Towner.SelectedValue),
-                UserID = int.Parse(owner),
-                TaskContent = selec,
-                Start_Date = currenttime.ToString(),
-                End_Date = "",
-                //Priority = prty.SelectedItem.ToString(),
-                Priority = prty.SelectedValue,
-                Status = "pending",
-                T_Type = ttype.SelectedValue
-            };
-
-            string result = client.CreateTask(task);
-            if (!client.GetUserbyID(task.UserID).User_Type.Equals("admin"))
-            {
-                var url = string.Format("http://localhost/script/send_push.php");
-                using (var webClient = new WebClient())
+            
+                if (ttype.SelectedValue == "dispatch" && sP.P_Quantity < q)
                 {
-                    var response = webClient.DownloadString(url);
-                    Console.WriteLine(response);
-                }
-            }
-            Response.Redirect("Tasks.aspx");
+                    error.InnerHtml = "Selected Quantity exceeds Stock!";
 
-        }
+                }
+                else
+                {
+                    string selec = (ttype.SelectedValue + " " + "Amount" + " " + Quantity.Value + " " + ProList.SelectedItem);
+
+                    Task task = new Task
+                    {
+                        //UserID = Int32.Parse(Towner.SelectedValue),
+                        UserID = int.Parse(owner),
+                        TaskContent = selec,
+                        Start_Date = currenttime.ToString(),
+                        End_Date = "",
+                        //Priority = prty.SelectedItem.ToString(),
+                        Priority = prty.SelectedValue,
+                        Status = "pending",
+                        T_Type = ttype.SelectedValue
+                    };
+
+                    string result = client.CreateTask(task);
+                    if (!client.GetUserbyID(task.UserID).User_Type.Equals("admin"))
+                    {
+                        var url = string.Format("http://localhost/script/send_push.php");
+                        using (var webClient = new WebClient())
+                        {
+                            var response = webClient.DownloadString(url);
+                            Console.WriteLine(response);
+                        }
+                    }
+                    Response.Redirect("Tasks.aspx");
+                }
+
+            }
+            
+        
 
         protected void btnCancelTask_Click(object sender, EventArgs e)
         {

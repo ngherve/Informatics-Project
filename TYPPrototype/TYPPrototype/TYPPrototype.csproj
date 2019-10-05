@@ -6200,9 +6200,19 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\TYPPrototype.dll.config" />
-    <None Include="Connected Services\ProductService\ProductService.disco" />
     <None Include="Connected Services\ProductService\configuration91.svcinfo" />
     <None Include="Connected Services\ProductService\configuration.svcinfo" />
+    <None Include="Connected Services\ProductService\ProductService2.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService21.wsdl" />
+    <None Include="Connected Services\ProductService\ProductService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductService\ProductService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProductService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -6269,6 +6279,7 @@
     <Content Include="bin\WebMatrix.Data.xml" />
     <Content Include="bin\WebMatrix.WebData.dll" />
     <Content Include="bin\WebMatrix.WebData.xml" />
+    <None Include="Connected Services\ProductService\ProductService1.disco" />
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.Notification.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -6278,17 +6289,6 @@
     <Content Include="Connected Services\UserService\TYPPrototype.UserService.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ProductService\ProductService.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProductService\ProductService1.wsdl" />
-    <None Include="Connected Services\ProductService\ProductService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProductService\ProductService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Damaged.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -6298,13 +6298,13 @@
     <Content Include="Connected Services\ProductService\TYPPrototype.ProductService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\UserService\UserService.disco" />
     <None Include="Connected Services\UserService\configuration91.svcinfo" />
     <None Include="Connected Services\UserService\configuration.svcinfo" />
     <None Include="Connected Services\UserService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\UserService\UserService1.disco" />
     <Content Include="ContactEmployee.aspx" />
     <Content Include="contactSupplier.aspx" />
     <Content Include="DamagedProducts.aspx" />
@@ -6385,6 +6385,7 @@
     <Content Include="dash\vendor\slick\slick.js" />
     <Content Include="dash\vendor\slick\slick.min.js" />
     <Content Include="dash\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="deleteDamages.aspx" />
     <Content Include="DeleteProduct.aspx" />
     <Content Include="DeleteTask.aspx" />
     <Content Include="DeleteUser.aspx" />
@@ -7850,15 +7851,15 @@
     <Content Include="dash\vendor\slick\slick-theme.scss" />
     <Content Include="dash\vendor\slick\slick.less" />
     <Content Include="dash\vendor\slick\slick.scss" />
-    <None Include="Connected Services\UserService\UserService.wsdl" />
-    <None Include="Connected Services\UserService\UserService.xsd">
+    <None Include="Connected Services\UserService\UserService2.wsdl" />
+    <None Include="Connected Services\UserService\UserService21.wsdl" />
+    <None Include="Connected Services\UserService\UserService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserService\UserService1.wsdl" />
-    <None Include="Connected Services\UserService\UserService1.xsd">
+    <None Include="Connected Services\UserService\UserService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserService\UserService2.xsd">
+    <None Include="Connected Services\UserService\UserService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -8420,6 +8421,13 @@
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deleteDamages.aspx.cs">
+      <DependentUpon>deleteDamages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteDamages.aspx.designer.cs">
+      <DependentUpon>deleteDamages.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteProduct.aspx.cs">
       <DependentUpon>DeleteProduct.aspx</DependentUpon>

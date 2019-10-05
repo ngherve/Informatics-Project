@@ -116,8 +116,10 @@
 
                                             <div class="form-actions text-right">
                                                 <asp:Button ID="btnCancelTask" runat="server" Text="Cancel" BorderStyle="Solid" ToolTip="Submit" class="btn btn-warning mr-1" OnClick="btnCancelTask_Click" />  
-
-                                                <asp:Button ID="btnAddTask" runat="server" Text="Add Task" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary" OnClick="btnAddTask_Click"  />  
+                                                
+                                                
+                                         <asp:Button ID="btnAddTask" runat="server" Text="Add Task" BorderStyle="Solid" ToolTip="Submit" class="btn btn-primary" OnClick="btnAddTask_Click"  />  
+                                            <div class="col-sm-6 col-12 text-center text-sm-right" id="error" runat="server"></div>
                                             </div>
 
                                         </form>

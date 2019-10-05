@@ -41,6 +41,11 @@ namespace WirelecWCFService
         string DeleteProduct(int id);
 
         [OperationContract]
+        [WebInvoke(Method = "DELETE", UriTemplate = "DeleteDamages", BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string DeleteDamages(int id);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "SearchProduct", BodyStyle = WebMessageBodyStyle.WrappedRequest,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Product SearchProduct(string code);

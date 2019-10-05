@@ -1,0 +1,10 @@
+2019-07-15 23:54:43 0 [Note] InnoDB: Buffer pool(s) load completed at 190715 23:54:43
+2019-07-15 23:54:43 0 [Note] Reading of all Master_info entries succeded
+2019-07-15 23:54:43 0 [Note] Added new Master_info '' to hash table
+2019-07-15 23:54:43 0 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.3.15-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2019-07-16 10:54:19 0 [Note] Reading of all Master_info entries succeded
+2019-07-16 10:54:19 0 [Note] Added new Master_info '' to hash table
+2019-07-16 10:54:19 0 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.3.15-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2019-07-16 11:01:53 22 [Warning] Aborted connection 22 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
