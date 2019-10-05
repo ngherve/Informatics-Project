@@ -10,6 +10,7 @@ import android.widget.*;
 import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import de.hdodenhof.circleimageview.CircleImageView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,18 +23,23 @@ import java.util.StringTokenizer;
 public class EditItemsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Spinner eItem;
+    CircleImageView searchimage;
+
     private Button btnEdit, btnDelete, btnSearch, btnscan;
     public static TextView txtresult;
     public static JSONObject jsonRes;
     public static Product p = null;
     private ArrayList<String> products = new ArrayList<>();
     private static String results, code;
+    String imageProd = "";
     public static boolean isEdit = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edititems);
+
+        searchimage = findViewById(R.id.searchimg);
 
         eItem = (Spinner) findViewById(R.id.etitem);
         products.add("Select an Item");
@@ -181,6 +187,7 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
                                 String P_Name = jsonRes.getString("P_Name");
                                 int P_Price = jsonRes.getInt("P_Price");
                                 String P_Image = jsonRes.getString("P_Image");
+                                imageProd = P_Image;
                                 int P_Quantity = jsonRes.getInt("P_Quantity");
                                 String Supplier_Name = jsonRes.getString("Supplier_Name");
                                 String P_Type = jsonRes.getString("P_Type");

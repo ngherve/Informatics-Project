@@ -70,6 +70,7 @@ namespace WirelecWCFService
             return "User Successfully Deleted";
         }
 
+        
         public List<User> GetAllUsers()
         {
             List<User> users = new List<User>();

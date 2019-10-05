@@ -36,7 +36,8 @@
                     <div class="col-12">
                         <h4 class="text-uppercase">Product Records</h4>
                     </div>
-
+                       
+                    <asp:Button ID="damDel" runat="server" Text="Delete" />
                 </section>
 
                 <!--/ User Profile Cards -->

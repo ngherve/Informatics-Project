@@ -72,18 +72,15 @@
                                                         <label for="remember-me">Remember Me</label>
                                                     </fieldset>
                                                 </div>
-                                                <div class="col-sm-6 col-12 text-center text-sm-right"><a href="recover-password.aspx" class="card-link">Forgot Password?</a></div>
+                                                
                                             </div>
-                                            <asp:Button ID="btnLogin" runat="server" Text="Login" BorderStyle="Solid" ToolTip="Submit" class="btn btn-info btn-block" OnClick="btnLogin_Click" />
+                                            <asp:Button ID="btnLogin" runat="server" Text="Login" BorderStyle="Solid" ToolTip="Submit" class="btn btn-info bg-blue bg-darken-3 btn-block" OnClick="btnLogin_Click" />
                                             <div class="col-sm-6 col-12 text-center text-sm-right" id="error" runat="server"></div>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="">
-                                        <p class="float-xl-left text-center m-0"><a href="recover-password.aspx" class="card-link">Recover password</a></p>
-                                        <p class="float-xl-right text-center m-0">New Employee ? <a href="register.aspx" class="card-link">Confirm Account</a></p>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

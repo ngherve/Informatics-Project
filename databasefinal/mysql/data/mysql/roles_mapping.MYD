@@ -1,0 +1,72 @@
+2019-09-11  9:44:54 0 [Note] Reading of all Master_info entries succeded
+2019-09-11  9:44:54 0 [Note] Added new Master_info '' to hash table
+2019-09-11  9:44:54 0 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.3.15-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2019-09-11  9:45:21 8 [ERROR] InnoDB: Failed to find tablespace for table `wirelecdatabase`.`damages` in the cache. Attempting to load the tablespace with space id 102
+2019-09-11  9:45:21 8 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2019-09-11  9:45:21 8 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2019-09-11  9:45:21 8 [ERROR] InnoDB: Cannot open datafile for read-only: '.\wirelecdatabase\damages.ibd' OS error: 71
+2019-09-11  9:45:21 8 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2019-09-11  9:45:21 8 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2019-09-11  9:45:21 8 [ERROR] InnoDB: Could not find a valid tablespace file for ``wirelecdatabase`.`damages``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2019-09-11  9:46:00 27 [ERROR] InnoDB: Expected tablespace id 104 but found 110 in the file .\wirelecdatabase\damage.ibd
+2019-09-11  9:46:00 27 [ERROR] InnoDB: Expected tablespace id 104 but found 110 in the file .\wirelecdatabase\damage.ibd
+2019-09-11  9:46:58 29 [Warning] Aborted connection 29 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 92 [Warning] Aborted connection 92 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 44 [Warning] Aborted connection 44 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 139 [Warning] Aborted connection 139 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 105 [Warning] Aborted connection 105 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 94 [Warning] Aborted connection 94 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 97 [Warning] Aborted connection 97 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 107 [Warning] Aborted connection 107 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 116 [Warning] Aborted connection 116 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 126 [Warning] Aborted connection 126 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 106 [Warning] Aborted connection 106 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 98 [Warning] Aborted connection 98 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 103 [Warning] Aborted connection 103 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 101 [Warning] Aborted connection 101 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 45 [Warning] Aborted connection 45 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 111 [Warning] Aborted connection 111 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 99 [Warning] Aborted connection 99 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 144 [Warning] Aborted connection 144 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 137 [Warning] Aborted connection 137 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 120 [Warning] Aborted connection 120 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 118 [Warning] Aborted connection 118 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 142 [Warning] Aborted connection 142 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 141 [Warning] Aborted connection 141 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 49 [Warning] Aborted connection 49 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 47 [Warning] Aborted connection 47 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 52 [Warning] Aborted connection 52 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 50 [Warning] Aborted connection 50 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 136 [Warning] Aborted connection 136 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 54 [Warning] Aborted connection 54 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 102 [Warning] Aborted connection 102 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 112 [Warning] Aborted connection 112 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 121 [Warning] Aborted connection 121 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 117 [Warning] Aborted connection 117 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 109 [Warning] Aborted connection 109 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 96 [Warning] Aborted connection 96 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 114 [Warning] Aborted connection 114 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 138 [Warning] Aborted connection 138 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 135 [Warning] Aborted connection 135 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 108 [Warning] Aborted connection 108 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 104 [Warning] Aborted connection 104 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 113 [Warning] Aborted connection 113 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 93 [Warning] Aborted connection 93 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 115 [Warning] Aborted connection 115 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 95 [Warning] Aborted connection 95 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 100 [Warning] Aborted connection 100 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 132 [Warning] Aborted connection 132 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 128 [Warning] Aborted connection 128 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 55 [Warning] Aborted connection 55 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 48 [Warning] Aborted connection 48 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 131 [Warning] Aborted connection 131 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 53 [Warning] Aborted connection 53 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 130 [Warning] Aborted connection 130 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 127 [Warning] Aborted connection 127 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 125 [Warning] Aborted connection 125 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 134 [Warning] Aborted connection 134 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 46 [Warning] Aborted connection 46 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 140 [Warning] Aborted connection 140 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 129 [Warning] Aborted connection 129 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2019-09-11  9:54:57 51 [Warning] Aborted connection 51 to db: 'wirelecdatabase' user: 'root' host: 'localhost' (Got an error reading communication packets)

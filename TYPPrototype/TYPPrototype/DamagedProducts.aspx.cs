@@ -41,6 +41,8 @@ namespace TYPPrototype
 
                 display += "<h6 class='text-center'>" + " Quantity: " + prod.Quantity + "</h6>";
                 display += "<h6 class='text-center'>" + " Description: " + prod.Description + "</h6>";
+                //display += "<a href=UpdateUser.aspx?ID=" + prod.D_ID + " class='btn btn-primary mr-1'><i class='ft-user' '></i> Edit Status</a>";
+                display += "<a href=deleteDamages.aspx?ID=" + prod.D_ID + " class='btn btn-danger mr-1' <i class='la la-plus'> </i> Remove</a>";
                 //display += "<h6 class='text-center'>" + " Warehouse: " + prod.W_Name + "</h6>";
                 //display += "<h6 class='text-center'>" + " Supplier: " + prod.Supplier_Name + "</h6>";
                 display += "</div>";
