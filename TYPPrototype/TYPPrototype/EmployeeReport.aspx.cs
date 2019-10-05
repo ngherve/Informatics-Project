@@ -54,14 +54,22 @@ namespace TYPPrototype
 
         private static bool searchID(int id, List<int> ids)
         {
+            bool retSearch = false;
+            int count = 0;
             foreach(int i in ids)
             {
                 if (i == id)
                 {
-                    return true;
+                    count++;
                 }
             }
-            return false;
+            if (count > 1)
+            {
+                retSearch = true;
+            }
+            else
+                retSearch = false;
+            return retSearch;
         }
         
         [WebMethod]
@@ -120,8 +128,7 @@ namespace TYPPrototype
                             donecount++;
                         }
                     }
-
-                    if (u.UserID.Equals(i.UserID)/* && !searchID(i.UserID, us)*/)
+                    if (u.UserID.Equals(i.UserID))
                     {
                         chartData[j] = new object[] { u.Name + ": " + i.T_Type + " task", taskcount, donecount };
                     }

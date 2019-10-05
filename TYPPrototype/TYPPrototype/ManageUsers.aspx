@@ -25,9 +25,10 @@
                     </div>
                     <div class="content-header-right col-md-3 col-12">
                         <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="#"> Alerts</a>
-                                
+                            <button class="btn btn-primary round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Group By</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="ManageStockUser.aspx">Stock Users</a>
+                                <a class="dropdown-item" href="ManageWarehouseUser.aspx">Warehouse Users</a>  
                             </div>
                         </div>
                     </div>

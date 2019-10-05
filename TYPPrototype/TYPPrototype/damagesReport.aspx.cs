@@ -30,30 +30,30 @@ namespace TYPPrototype
             products = prodService.GetDamagedProducts();
             List<Damaged> data = new List<Damaged>();
             data = products.ToList();
-            int x = 0;
+            //int x = 0;
             product = prodService.GetAllProducts();
-            foreach (Product p in product)
+            Product prod = null;
+            
+            var chartData = new object[products.Count() + 1];
+            chartData[0] = new object[]{
+                            "Date of Damage",
+                            "Amount Damaged",
+                            "Quantity in Stock"
+                        };
+            int j = 0;
+            foreach (var i in data)
             {
-
-                if (p.P_ID.Equals(products[x].P_ID))
+                foreach (Product p in product)
                 {
-
-                    var chartData = new object[products.Count() + 1];
-                    chartData[0] = new object[]{
-                    "Date of Damage",
-                    "Amount Damaged",
-                    "Quantity in Stock"
-                };
-                    int j = 0;
-                    foreach (var i in data)
+                    if (i.P_ID.Equals(p.P_ID))
                     {
-                        j++;
-                        chartData[j] = new object[] { p.P_Name + "(" + i.DateDamaged + ")", i.Quantity, p.P_Quantity };
+                        prod = p;
                     }
-                    retChartData = chartData;
                 }
-             
+                j++;
+                chartData[j] = new object[] { prod.P_Name + "(" + i.DateDamaged + ")", i.Quantity, prod.P_Quantity };
             }
+            retChartData = chartData;
             return retChartData;
         }
     }
