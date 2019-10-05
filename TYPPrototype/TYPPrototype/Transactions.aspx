@@ -53,7 +53,7 @@
                                                     <th>Date</th>
                                                     <th>Product</th>
                                                     <th>Quantity</th>
-                                                    <th>Total(R)</th>
+                                                    <th>Handler</th>
                                                     <th>Type</th>
                                                     
                                                 </tr>
@@ -70,7 +70,7 @@
                                                     <th>Date</th>
                                                     <th>Product</th>
                                                     <th>Quantity</th>
-                                                    <th>Total</th>
+                                                    <th>Handler</th>
                                                     <th>Type</th>
                                                     
                                                 </tr>

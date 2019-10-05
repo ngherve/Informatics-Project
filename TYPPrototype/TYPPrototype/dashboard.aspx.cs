@@ -55,7 +55,7 @@ namespace TYPPrototype
                         + "</span></li>"
                         + "</ul>"
                         + "</td>"
-                        + "<td class='text-truncate'>"+inv.Total_Price+"</td> "
+                        + "<td class='text-truncate'>"+inv.Quantity+"</td> "
                         + "<td class='text-truncate'>" + inv.INV_Date + "</td> "
                         + "</tr>"
                         ;
