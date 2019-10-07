@@ -6855,6 +6855,7 @@
     <Content Include="ManageStockUser.aspx" />
     <Content Include="ManageUsers.aspx" />
     <Content Include="ManageWarehouseUser.aspx" />
+    <Content Include="MostSoldReport.aspx" />
     <Content Include="NotifyUser.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="Productlist.aspx" />
@@ -8549,6 +8550,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MostSoldReport.aspx.cs">
+      <DependentUpon>MostSoldReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostSoldReport.aspx.designer.cs">
+      <DependentUpon>MostSoldReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="NotifyUser.aspx.cs">
       <DependentUpon>NotifyUser.aspx</DependentUpon>

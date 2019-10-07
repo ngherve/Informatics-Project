@@ -184,13 +184,6 @@
                                 </li>
                             </ul>
 
-                            <li><a class="menu-item" href="#"><i class="material-icons"></i><span>Supplier Management</span></a>
-                                <ul class="menu-content">
-                                    <li><a class="menu-item" href="contactSupplier.aspx"><i class="material-icons"></i><span>Contact Supplier</span></a>
-
-                                    </li>
-                                </ul>
-                            </li>
                     </ul>
                 </li>
 
@@ -204,7 +197,8 @@
                         </li>
                          <li><a class="menu-item" href="InvoiceReports.aspx"><i class="material-icons"></i><span>Invoice Report</span></a>
                         </li>
-                       
+                         <li><a class="menu-item" href="MostSoldReport.aspx"><i class="material-icons"></i><span>Comparison Report</span></a>
+                        </li>
                     </ul>
                 </li>
             </ul>
