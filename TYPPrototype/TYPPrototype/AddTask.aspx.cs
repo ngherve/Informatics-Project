@@ -99,42 +99,54 @@ namespace TYPPrototype
             {
                 pro = pro.Split(' ')[0];
                 Product sP = pClient.GetProductbyID(int.Parse(pro));
-                int q = int.Parse(Quantity.Value);
-
-
-                if (ttype.SelectedValue == "dispatch" && sP.P_Quantity < q)
+                if (!Quantity.Value.Equals(""))
                 {
-                    error.InnerHtml = "Selected Quantity exceeds Stock!";
 
+                    int q = int.Parse(Quantity.Value);
+
+
+                    if (ttype.SelectedValue == "dispatch" && sP.P_Quantity < q)
+                    {
+                        error.InnerHtml = "Selected Quantity exceeds Stock!!";
+
+                    }
+                    else if (q <= 0)
+                    {
+                        error.InnerHtml = "Invalid Quantity !!";
+                    }
+                    else
+                    {
+                        string selec = (ttype.SelectedValue + " " + "Amount" + " " + Quantity.Value + " " + ProList.SelectedItem);
+
+                        Task task = new Task
+                        {
+                            //UserID = Int32.Parse(Towner.SelectedValue),
+                            UserID = int.Parse(owner),
+                            TaskContent = selec,
+                            Start_Date = currenttime.ToString(),
+                            End_Date = "",
+                            //Priority = prty.SelectedItem.ToString(),
+                            Priority = prty.SelectedValue,
+                            Status = "pending",
+                            T_Type = ttype.SelectedValue
+                        };
+
+                        string result = client.CreateTask(task);
+                        if (!client.GetUserbyID(task.UserID).User_Type.Equals("admin"))
+                        {
+                            var url = string.Format("http://localhost/script/send_push.php");
+                            using (var webClient = new WebClient())
+                            {
+                                var response = webClient.DownloadString(url);
+                                Console.WriteLine(response);
+                            }
+                        }
+                        Response.Redirect("Tasks.aspx");
+                    }
                 }
                 else
                 {
-                    string selec = (ttype.SelectedValue + " " + "Amount" + " " + Quantity.Value + " " + ProList.SelectedItem);
-
-                    Task task = new Task
-                    {
-                        //UserID = Int32.Parse(Towner.SelectedValue),
-                        UserID = int.Parse(owner),
-                        TaskContent = selec,
-                        Start_Date = currenttime.ToString(),
-                        End_Date = "",
-                        //Priority = prty.SelectedItem.ToString(),
-                        Priority = prty.SelectedValue,
-                        Status = "pending",
-                        T_Type = ttype.SelectedValue
-                    };
-
-                    string result = client.CreateTask(task);
-                    if (!client.GetUserbyID(task.UserID).User_Type.Equals("admin"))
-                    {
-                        var url = string.Format("http://localhost/script/send_push.php");
-                        using (var webClient = new WebClient())
-                        {
-                            var response = webClient.DownloadString(url);
-                            Console.WriteLine(response);
-                        }
-                    }
-                    Response.Redirect("Tasks.aspx");
+                    error.InnerHtml = "Enter a Quantity!!";
                 }
             }
         }
