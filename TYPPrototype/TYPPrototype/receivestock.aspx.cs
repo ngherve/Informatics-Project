@@ -27,12 +27,12 @@ namespace TYPPrototype
             List<Product> data = new List<Product>();
             data = products.ToList();
            
-            string lowstock = "The following items are low in stock;\n ";
+            string lowstock = "The following items are low in stock;</br> ";
             foreach (var i in data)
             {
                 if (i.P_Quantity < 30)
                 {
-                    lowstock += i.P_Name + "(" + i.P_Code + ")\n";
+                    lowstock += i.P_Name + "(" + i.P_Code + ")</br>";
                 }
             }
             lowstock += "Suggestion: Order new Stock!!!";

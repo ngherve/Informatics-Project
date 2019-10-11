@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Script.Services;
 using System.Web.Services;
@@ -24,35 +22,46 @@ namespace TYPPrototype
             UserServiceClient prodService;
             Task[] data;
             prodService = new UserServiceClient();
-
+            List<User> ds = new List<User>();
             data = prodService.GetTasks();
 
             string lowstock = "Suggestion: ";
-            
-            foreach(var i in data)
+
+            foreach (User u in prodService.GetAllUsers())
             {
-                foreach (User u in prodService.GetAllUsers())
+                bool isdone = true;
+                foreach (var i in data)
                 {
                     if (i.UserID.Equals(u.UserID))
                     {
-                        bool isdone = true;
-                        foreach (var j in data)
+                        if (!i.Status.Equals("done"))
                         {
-                            if (!i.Status.Equals("done"))
-                            {
-                                isdone = false;
-                            }
+                            isdone = false;
                         }
-                        if(isdone) lowstock += u.Name.ToUpper() + " - ";
+                        else if(isdone)
+                        ds.Add(u);
+                    }
+                }
+                
+            }
+            
+            foreach(User usr in prodService.GetAllUsers())
+            {
+
+                foreach (User u in ds)
+                {
+                    if (usr.Name.Equals(u.Name))
+                    {
+                        lowstock += u.Name.ToUpper() + ", ";
                     }
                 }
             }
-            if(!lowstock.Equals("Suggestion: "))
+                if (!lowstock.Equals("Suggestion: "))
                 lowstock += " completed all tasks(fastest) (:- should get the next jobs !!!";
             suggestiontask.InnerHtml = lowstock;
         }
 
-        private static bool searchID(int id, List<int> ids)
+        private static bool searchID(int id, int[] ids)
         {
             bool retSearch = false;
             int count = 0;
@@ -92,17 +101,12 @@ namespace TYPPrototype
                 "Tasks Done"
             };
             int j = 0;
-            List<int> us = new List<int>();
-            foreach (var i in data)
+            int[] us = new int[task.Length];
+            //foreach (Task t in task)
+            /*for(int i=0; i<task.Length; i++)
             {
-                foreach (User u in users)
-                {
-                    if (u.UserID.Equals(i.UserID))
-                    {
-                        us.Add(u.UserID);
-                    }
-                }
-            }
+                us[i] = task[i].UserID;    
+            }*/
             foreach (var i in data)
             {
                 j++;
@@ -129,6 +133,7 @@ namespace TYPPrototype
                         }
                     }
                     if (u.UserID.Equals(i.UserID))
+
                     {
                         chartData[j] = new object[] { u.Name + ": " + i.T_Type + " task", taskcount, donecount };
                     }

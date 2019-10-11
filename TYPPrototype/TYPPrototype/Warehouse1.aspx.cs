@@ -15,11 +15,13 @@ namespace TYPPrototype
         {
             prodService = new ProductServiceClient();
             string display = "";
-            string ware = "warehouse1";
+            
            
-            Product[] products = prodService.GetProductsbyWarehouse(ware);
-            foreach (Product prod in products)
+            Product[] Mproducts = prodService.GetAllProducts();
+            foreach (Product prod in Mproducts)
             {
+                if (prod.P_Type.Equals("Mechanical"))
+                {
                     display += "<div class='col-xl-4 col-md-6 col-12'>";
                     display += "<div class='card'>";
                     display += "<div class='text-center'>";
@@ -41,6 +43,7 @@ namespace TYPPrototype
                     display += "</div>";
                     display += "</div>";
                     display += "</div>";
+                }
             }
 
             mec.InnerHtml = display;

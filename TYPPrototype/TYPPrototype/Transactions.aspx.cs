@@ -26,19 +26,20 @@ namespace TYPPrototype
            
             
 
-            foreach (Invoice inv in invoices)
+            //foreach (Invoice inv in invoices)
+            for(int i = invoices.Length-1; i>=0; i--)
             {
                 //User u = userService.GetUserbyID(inv.UserID);
                 foreach (User us in users)
                 {
-                    if (us.UserID.Equals(inv.UserID))
+                    if (us.UserID.Equals(invoices[i].UserID))
                     {
                         u = us;
                     }
                 }
                 foreach (Product p in products)
                 {
-                    if (p.P_Code.Equals(inv.P_Code))
+                    if (p.P_Code.Equals(invoices[i].P_Code))
                     {
                         pro = p;
                     }
@@ -47,12 +48,12 @@ namespace TYPPrototype
                     display += "<tr>"
                            + "<td><input type='checkbox' class='input-chk'></td>"
                            + "<td>"
-                           + "<p class='text'>" + inv.INV_Date + "</p>"
+                           + "<p class='text'>" + invoices[i].INV_Date + "</p>"
                            + "</td>"
-                           + "<td><span class='badge badge-primary'>" + pro.P_Name + " " + inv.P_Code + "</span></td>"
-                           + "<td><p class='text'>" + inv.Quantity + "</p></td>"
+                           + "<td><span class='badge badge-primary'>" + pro.P_Name + " " + invoices[i].P_Code + "</span></td>"
+                           + "<td><p class='text'>" + invoices[i].Quantity + "</p></td>"
                            + "<td><span class='badge badge-danger'>" + u.Name + "</span></td>"
-                           + "<td><span class='badge badge-primary'>" + inv.Inv_Type + "</span></td>"
+                           + "<td><span class='badge badge-primary'>" + invoices[i].Inv_Type + "</span></td>"
                            + "</tbody>"
                            ;
                 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using TYPPrototype.UserService;
 using TYPPrototype.ProductService;
-
+using System.Web.Services;
+using System.Web.Script.Services;
 
 namespace TYPPrototype
 {
@@ -63,6 +62,65 @@ namespace TYPPrototype
             ordertable.InnerHtml = display;
             incoming.InnerHtml = incomingcount.ToString();
             outgoing.InnerHtml = outgoingcount.ToString();
+            GetChartData();
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static object[] GetChartData()
+        {
+            UserServiceClient userService;
+            Task[] task;
+            userService = new UserServiceClient();
+            User[] users = userService.GetAllUsers();
+            task = userService.GetTasks();
+            List<Task> data = new List<Task>();
+            data = task.ToList();
+
+            var chartData = new object[task.Count() + 1];
+            chartData[0] = new object[]
+            {
+                "Emp_Name: Task_Type",
+                "Assigned Tasks",
+                "Tasks Done"
+            };
+            int j = 0;
+            foreach (var i in data)
+            {
+                j++;
+                foreach (User u in users)
+                {
+                    //task per user
+                    int taskcount = 0;
+                    foreach (Task t in task)
+                    {
+                        if (u.UserID.Equals(t.UserID))
+                        {
+                            taskcount++;
+                        }
+                    }
+
+                    //tasks done per user
+                    int donecount = 0;
+
+                    foreach (Task t in task)
+                    {
+                        if (u.UserID.Equals(t.UserID) && t.Status.Equals("done"))
+                        {
+                            donecount++;
+                        }
+                    }
+
+                    foreach (Task t in task)
+                    {
+                        if (u.UserID.Equals(i.UserID))
+                        {
+                            chartData[j] = new object[] { u.Name + ": " + i.T_Type + " task", taskcount, donecount };
+                        }
+                    }
+                }
+            }
+            return chartData;
         }
     }
 }

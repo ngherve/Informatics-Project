@@ -199,7 +199,7 @@ public class EditItemsActivity extends AppCompatActivity implements View.OnClick
 
                                 String formatted = userID+": Name: "+P_Name+"" +
                                         " Price: "+P_Price+"\nQuantity: "+P_Quantity+" Supplier Name: " + Supplier_Name
-                                        +"\nType: "+P_Type+" Warehouse: "+W_Name+"\nCode: " + P_Code+" ImageURL: "+ P_Image
+                                        +"\nType: "+P_Type+" Warehouse: "+W_Name+"\nCode: " + P_Code
                                         + "\nLocation: " + bin_location;
                                 txtresult.setText(formatted);
                                 Toast.makeText(EditItemsActivity.this, "Item Found!! !", Toast.LENGTH_LONG).show();

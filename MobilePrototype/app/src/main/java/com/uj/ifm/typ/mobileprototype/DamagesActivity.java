@@ -264,6 +264,7 @@ public class DamagesActivity extends AppCompatActivity implements View.OnClickLi
                 StringTokenizer st = new StringTokenizer(P_Code);
                 P_Code = st.nextToken();
                 id = P_Code;
+                GetProdID();
             }
             if(requestCode ==0) {
                 Uri filepath = data.getData();

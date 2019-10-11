@@ -1,56 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddTask.aspx.cs" Inherits="TYPPrototype.AddTask" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-     <%-- Here We need to write some js code for load google chart with database data --%>
-    <script src="Scripts/jquery-1.7.1.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
- 
-    <script>
-        var chartData; // globar variable for hold chart data
-        google.load("visualization", "1", { packages: ["corechart"] });
- 
-        // Here We will fill chartData
- 
-        $(document).ready(function ()
-        {
-           
-            $.ajax({
-                url: "AddTask.aspx/GetChartData",
-                data: "",
-                dataType: "json",
-                type: "POST",
-                contentType: "application/json; chartset=utf-8",
-                success: function (data) {
-                    chartData = data.d;
-                },
-                error: function () {
-                    alert("Error loading data! Please try again.");
-                }
-            }).done(function () {
-                // after complete loading data
-                google.setOnLoadCallback(drawChart);
-                drawChart();
-            });
-        });
-
-        function drawChart()
-        {
-            var data = google.visualization.arrayToDataTable(chartData);
- 
-            var options =
-            {
-                title: "Employee Task Report",
-                pointSize: 5,
-                seriesType: "bars",
-                series: { 2: {type: "line"}}
-            };
- 
-            var lineChart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-            lineChart.draw(data, options);
-        }
-    </script>
-
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -80,20 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-content collapse show">
-            <div class="card-body">
-
-                <div class="row">
-                    <div class="col-md-6">
-
-                        <div id="chart_div" style="width: 900px; height: 500px">
-                            <%-- Here Chart Will Load --%>
-                        </div>
-                        <h5 class="card-title" id="suggestiontask" runat="server"></h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="content-wrapper">
             <div class="content-body">
                 <!-- Basic form layout section start -->

@@ -312,6 +312,9 @@ public class WarehouseHomeActivity extends AppCompatActivity implements View.OnC
         } else if(menuItem.getItemId() == R.id.activities){
             Intent intent2 = new Intent(WarehouseHomeActivity.this, TaskActivity.class);
             startActivity(intent2);
+        } else if(menuItem.getItemId() == R.id.event){
+            Intent intent2 = new Intent(WarehouseHomeActivity.this, DamagesActivity.class);
+            startActivity(intent2);
         }
         else {
             return super.onOptionsItemSelected(menuItem);

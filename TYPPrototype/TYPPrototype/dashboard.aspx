@@ -1,5 +1,54 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="TYPPrototype.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+     <%-- Here We need to write some js code for load google chart with database data --%>
+    <script src="Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ 
+    <script>
+        var chartData; // globar variable for hold chart data
+        google.load("visualization", "1", { packages: ["corechart"] });
+ 
+        // Here We will fill chartData
+ 
+        $(document).ready(function ()
+        {
+           
+            $.ajax({
+                url: "dashboard.aspx/GetChartData",
+                data: "",
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; chartset=utf-8",
+                success: function (data) {
+                    chartData = data.d;
+                },
+                error: function () {
+                    alert("Error loading data! Please try again.");
+                }
+            }).done(function () {
+                // after complete loading data
+                google.setOnLoadCallback(drawChart);
+                drawChart();
+            });
+        });
+
+        function drawChart()
+        {
+            var data = google.visualization.arrayToDataTable(chartData);
+ 
+            var options =
+            {
+                title: "Employee Task Report",
+                pointSize: 5,
+                seriesType: "bars",
+                series: { 2: {type: "line"}}
+            };
+ 
+            var lineChart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            lineChart.draw(data, options);
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="app-content content">
@@ -94,27 +143,21 @@
 
                      <!-- Products sell and New Orders -->
                 <div class="row match-height">
-                    <div class="col-xl-8 col-12" id="ecommerceChartView">
+                   <div class="col-xl-8 col-12" id="ecommerceChartView">
                         <div class="card card-shadow">
-                            <div class="card-header card-header-transparent py-20">
-                                <div class="btn-group dropdown">
-                                    <a href="#" class="text-body dropdown-toggle blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
-                                    <div class="dropdown-menu animate" role="menu">
-                                        <a class="dropdown-item" href="#" role="menuitem">Sales</a>
-                                        <a class="dropdown-item" href="#" role="menuitem">Total sales</a>
-                                        <a class="dropdown-item" href="#" role="menuitem">profit</a>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div id="chart_div" style="width: 650px; height: 400px">
+                                                <%-- Here Chart Will Load --%>
+                                            </div>
+                                            <h5 class="card-title" id="suggestiontask" runat="server"></h5>
+                                        </div>
                                     </div>
                                 </div>
-                                <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
-                                    <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Day</a></li>
-                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToWeek">Week</a></li>
-                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToMonth">Month</a></li>
-                                </ul>
-                            </div>
-                            <div class="widget-content tab-content bg-white p-20">
-                                <div class="ct-chart tab-pane active scoreLineShadow" id="scoreLineToDay"></div>
-                                <div class="ct-chart tab-pane scoreLineShadow" id="scoreLineToWeek"></div>
-                                <div class="ct-chart tab-pane scoreLineShadow" id="scoreLineToMonth"></div>
                             </div>
                         </div>
                     </div>
@@ -142,7 +185,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <section id ="ordertable" runat="server">
+                                               <section id ="ordertable" runat="server">
 
                                                </section>
                                               

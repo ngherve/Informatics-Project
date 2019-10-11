@@ -1802,6 +1802,7 @@
     <Content Include="app-assets\images\datatables\resources\examples.php" />
     <Content Include="app-assets\images\datatables\resources\syntax\shCore.css" />
     <Content Include="app-assets\images\datatables\resources\syntax\shCore.js" />
+    <Content Include="app-assets\images\datatables\resources\syntax\Syntax Highlighter license" />
     <Content Include="app-assets\images\doc-images\modern-build-process.png" />
     <Content Include="app-assets\images\elements\01.png" />
     <Content Include="app-assets\images\elements\02.png" />
@@ -1819,10 +1820,16 @@
     <Content Include="app-assets\images\elements\14.png" />
     <Content Include="app-assets\images\elements\air-jordan.png" />
     <Content Include="app-assets\images\elements\apple-watch.png" />
+    <Content Include="app-assets\images\elements\electrical.jpg" />
     <Content Include="app-assets\images\elements\fitbit-watch.png" />
+    <Content Include="app-assets\images\elements\industrial.jpg" />
+    <Content Include="app-assets\images\elements\Industrial3.png" />
+    <Content Include="app-assets\images\elements\Mechanical.png" />
     <Content Include="app-assets\images\elements\samsung-gear.png" />
     <Content Include="app-assets\images\elements\sws.png" />
+    <Content Include="app-assets\images\elements\tape.jpg" />
     <Content Include="app-assets\images\elements\vr.png" />
+    <Content Include="app-assets\images\elements\wires.jpg" />
     <Content Include="app-assets\images\flags\ak.png" />
     <Content Include="app-assets\images\flags\al.png" />
     <Content Include="app-assets\images\flags\ar.png" />
@@ -1961,6 +1968,7 @@
     <Content Include="app-assets\images\icons\video-play.png" />
     <Content Include="app-assets\images\icons\video-play.svg" />
     <Content Include="app-assets\images\icons\xrp.png" />
+    <Content Include="app-assets\images\ico\apple-icon-12.png" />
     <Content Include="app-assets\images\ico\apple-icon-120.png" />
     <Content Include="app-assets\images\ico\apple-icon-152.png" />
     <Content Include="app-assets\images\ico\apple-icon-60.png" />
@@ -9151,7 +9159,6 @@
     <Content Include="app-assets\fonts\tinymce\tinymce.json" />
     <Content Include="app-assets\fonts\tinymce\tinymce.ttf" />
     <Content Include="app-assets\fonts\tinymce\tinymce.woff" />
-    <Content Include="app-assets\images\datatables\resources\syntax\Syntax Highlighter license" />
     <Content Include="app-assets\vendors\css\cryptocoins\cryptocoins.ttf" />
     <Content Include="app-assets\vendors\css\cryptocoins\cryptocoins.woff" />
     <Content Include="app-assets\vendors\css\cryptocoins\cryptocoins.woff2" />
